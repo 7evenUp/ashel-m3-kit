@@ -1,4 +1,5 @@
 import React from 'react'
+import ThemeToggle from './ThemeToggle'
 
 const NavigationRail = () => {
   return (
@@ -6,6 +7,7 @@ const NavigationRail = () => {
       <span>1</span>
       <span>2</span>
       <span>3</span>
+      <ThemeToggle />
     </div>
   )
 }
