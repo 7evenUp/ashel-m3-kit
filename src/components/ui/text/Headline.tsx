@@ -1,6 +1,7 @@
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 import { FC, HTMLAttributes } from "react";
+import { cn } from "@/utils/classNames";
 
 const headlineVariants = cva("text-light-onSurface dark:text-dark-onSurface", {
   variants: {
@@ -19,8 +20,8 @@ interface Props
   extends VariantProps<typeof headlineVariants>,
     HTMLAttributes<HTMLHeadingElement> {}
 
-const Headline: FC<Props> = ({ children, size }) => {
-  return <h2 className={headlineVariants({ size })}>{children}</h2>;
+const Headline: FC<Props> = ({ children, size, className }) => {
+  return <h2 className={cn(headlineVariants({ size }), className)}>{children}</h2>;
 };
 
 export default Headline;

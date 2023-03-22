@@ -1,6 +1,7 @@
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
-import { FC, HTMLAttributes, ReactNode } from "react";
+import { FC, HTMLAttributes } from "react";
+import { cn } from "@/utils/classNames";
 
 const displayVariants = cva("text-light-onSurface dark:text-dark-onSurface", {
   variants: {
@@ -19,8 +20,8 @@ interface Props
   extends VariantProps<typeof displayVariants>,
     HTMLAttributes<HTMLHeadingElement> {}
 
-const Display: FC<Props> = ({ children, size }) => {
-  return <h1 className={displayVariants({ size })}>{children}</h1>;
+const Display: FC<Props> = ({ children, size, className }) => {
+  return <h1 className={cn(displayVariants({ size }), className)}>{children}</h1>;
 };
 
 export default Display;

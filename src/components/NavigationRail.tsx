@@ -1,5 +1,5 @@
 import ThemeToggle from "./ThemeToggle";
-import { Code, HomeSimple } from "iconoir-react";
+import { Code, HomeSimple, TextAlt, TextSize } from "iconoir-react";
 import NavLink from "./NavLink";
 
 const NavigationRail = () => {
@@ -17,6 +17,13 @@ const NavigationRail = () => {
             href="/documentation"
             title="Docs"
             icon={<Code />}
+          />
+        </li>
+        <li>
+          <NavLink
+            href="/typography"
+            title="Typography"
+            icon={<TextSize />}
           />
         </li>
       </ul>

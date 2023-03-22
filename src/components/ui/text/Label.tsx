@@ -1,6 +1,7 @@
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 import { FC, HTMLAttributes } from "react";
+import { cn } from "@/utils/classNames";
 
 const labelVariants = cva("text-light-onSurface dark:text-dark-onSurface", {
   variants: {
@@ -19,8 +20,8 @@ interface Props
   extends VariantProps<typeof labelVariants>,
     HTMLAttributes<HTMLHeadingElement> {}
 
-const Label: FC<Props> = ({ children, size }) => {
-  return <p className={labelVariants({ size })}>{children}</p>;
+const Label: FC<Props> = ({ children, size, className }) => {
+  return <span className={cn(labelVariants({ size }), className)}>{children}</span>;
 };
 
 export default Label;
