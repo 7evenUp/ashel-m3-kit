@@ -8,7 +8,7 @@ export const metadata = {
   description: "Ashel's implementation of material design V3",
 };
 
-const roboto = Roboto({ weight: ["300"], subsets: ["latin"] });
+const roboto = Roboto({ weight: ["400", '500'], subsets: ["latin"] });
 
 export default function RootLayout({
   children,
