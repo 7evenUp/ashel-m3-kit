@@ -1,7 +1,7 @@
 import NavigationRail from "@/components/NavigationRail";
 import Providers from "@/components/Providers";
-import "@/styles/globals.css";
 import { Roboto } from "next/font/google";
+import "@/styles/globals.css";
 
 export const metadata = {
   title: "Ashel | UI kit",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={"bg-white antialiased " + roboto.className}>
-      <body className="min-h-screen w-full bg-white dark:bg-slate-900">
+      <body className="min-h-screen w-full bg-light-background dark:bg-dark-background">
         <Providers>
           <NavigationRail />
           <main className="pl-[80px]">{children}</main>
