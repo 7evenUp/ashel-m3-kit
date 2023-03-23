@@ -2,10 +2,10 @@ import Body from "@/components/ui/text/Body";
 import Display from "@/components/ui/text/Display";
 import Headline from "@/components/ui/text/Headline";
 import Image from "next/image";
-import typeStylesPic from "../../../public/type_styles.png";
-import customTypefacesPic from "../../../public/custom_typefaces.png";
-import majorSecondScalefacesPic from "../../../public/major_second_scale.png";
-import reducedSetPic from "../../../public/reduset_set.png";
+import typeStylesPic from "../../../public/typography/overview/type_styles.png";
+import customTypefacesPic from "../../../public/typography/overview/custom_typefaces.png";
+import majorSecondScalefacesPic from "../../../public/typography/overview/major_second_scale.png";
+import reducedSetPic from "../../../public/typography/overview/reduset_set.png";
 
 const Typography = () => {
   return (
@@ -58,39 +58,48 @@ const Typography = () => {
           body и label, создавая тем самым целостную типографику.
         </Body>
 
-        <Image
-          className="rounded-xl my-6 border border-light-outlineVariant dark:border-dark-outlineVariant"
-          alt="Custom typefaces"
-          src={customTypefacesPic}
-          width={400}
-        />
-        <Body size={"large"} className="max-w-prose">
-          Креативность же можно проявить при использовании больших размеров
-          (например, display или headline)
-        </Body>
+        <div className="flex flex-col gap-2 my-6 w-fit">
+          <Image
+            className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+            alt="Custom typefaces"
+            src={customTypefacesPic}
+            width={400}
+          />
+          <Body size={"small"} className="max-w-[400px] px-2">
+            Креативность же можно проявить при использовании больших размеров
+            (например, display или headline)
+          </Body>
+        </div>
 
-        <Body size={"large"} className="max-w-prose">
-          В Material Design используется шкала типа Major Second scale (1.125) с
-          14px в качестве основного размера. Это привязка к наиболее важному
-          стилю, наиболее часто используемому для набора основного текста.
-        </Body>
-        <Image
-          className="rounded-xl my-6 border border-light-outlineVariant dark:border-dark-outlineVariant"
-          alt="Material's major font scales"
-          src={majorSecondScalefacesPic}
-          width={400}
-        />
-
-        <Body size={"large"} className="max-w-prose">
-          Вероятнее всего, для ваших нужд не обязательно использовать все 15
-          стилей. В данном примере выбрано пять размеров, а остальные удалены
-        </Body>
-        <Image
-          className="rounded-xl my-6 border border-light-outlineVariant dark:border-dark-outlineVariant"
-          alt="Reduced set of type scales"
-          src={reducedSetPic}
-          width={400}
-        />
+        <div className="flex gap-2">
+          <div className="flex flex-col gap-2 my-6 w-fit">
+            <Image
+              className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+              alt="Material's major font scales"
+              src={majorSecondScalefacesPic}
+              width={400}
+            />
+            <Body size={"small"} className="max-w-[400px] px-2">
+              В Material Design используется шкала типа Major Second scale
+              (1.125) с 14px в качестве основного размера. Это привязка к
+              наиболее важному стилю, наиболее часто используемому для набора
+              основного текста.
+            </Body>
+          </div>
+          <div className="flex flex-col gap-2 my-6 w-fit">
+            <Image
+              className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+              alt="Reduced set of type scales"
+              src={reducedSetPic}
+              width={400}
+            />
+            <Body size={"small"} className="max-w-[400px] px-2">
+              Вероятнее всего, для ваших нужд не обязательно использовать все 15
+              стилей. В данном примере выбрано пять размеров, а остальные
+              удалены
+            </Body>
+          </div>
+        </div>
       </div>
     </div>
   );
