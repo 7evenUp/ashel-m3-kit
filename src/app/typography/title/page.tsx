@@ -1,11 +1,17 @@
+import Display from "@/components/ui/text/Display";
+import Headline from "@/components/ui/text/Headline";
 import Title from "@/components/ui/text/Title";
 
 const TitlePage = () => {
   return (
-    <div className="p-3 bg-light-surfaceVariant dark:bg-dark-surfaceVariant text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant rounded-xl flex flex-col gap-3">
-      <Title size={"large"}>Title large</Title>
-      <Title size={"medium"}>Title medium</Title>
-      <Title size={"small"}>Title small</Title>
+    <div>
+      <Display className="mb-4">Title роль</Display>
+
+      <div className="flex flex-col gap-2">
+        <Headline className="mt-4 mb-2" size={"small"}>
+          Описание
+        </Headline>
+      </div>
     </div>
   );
 };

@@ -1,11 +1,17 @@
 import Body from "@/components/ui/text/Body";
+import Display from "@/components/ui/text/Display";
+import Headline from "@/components/ui/text/Headline";
 
 const BodyPage = () => {
   return (
-    <div className="p-3 bg-light-surfaceVariant dark:bg-dark-surfaceVariant text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant rounded-xl flex flex-col gap-3">
-      <Body size={"large"}>Body large</Body>
-      <Body size={"medium"}>Body medium</Body>
-      <Body size={"small"}>Body small</Body>
+    <div>
+      <Display className="mb-4">Body роль</Display>
+
+      <div className="flex flex-col gap-2">
+        <Headline className="mt-4 mb-2" size={"small"}>
+          Описание
+        </Headline>
+      </div>
     </div>
   );
 };
