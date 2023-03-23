@@ -14,13 +14,13 @@ const Typography = () => {
 
       <div className="flex flex-col gap-2">
         <Headline className="mt-4 mb-2" size={"small"}>
-          Пять стилей шрифта
+          Пять ролей шрифта
         </Headline>
         <Body size={"large"} className="max-w-prose">
           Material Design V3 определяет 5 ролей для шрифта: Display, headline,
-          title, body и label. Эти роли носят более описательный характер,
+          title, body и label. Эти роли носят более описательный характер, нежели прошлые версии Material Design,
           позволяя упростить применение в более широком диапазоне вариантов
-          использования.
+          использования. Подробнее о каждой роли написано в соответствующей вкладке.
         </Body>
         <Image
           className="max-w-[800px] my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
