@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className="min-h-screen w-full flex bg-light-background dark:bg-dark-background">
         <Providers>
           <NavigationRail />
-          <main className="ml-24 px-6 py-8 w-full">{children}</main>
+          <main className="ml-[100px] w-full">{children}</main>
         </Providers>
       </body>
     </html>

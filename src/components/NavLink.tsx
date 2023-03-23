@@ -1,14 +1,14 @@
 "use client";
 
 import { cn } from "@/utils/classNames";
-import { RouteType } from "next/dist/lib/load-custom-routes";
-import Link, { LinkProps } from "next/link";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FC } from "react";
 import Title from "./ui/text/Title";
 import UIStateLayer from "./ui/UIStateLayer";
 
-interface Props extends LinkProps<RouteType> {
+interface Props {
+  href: string
   label: string
 }
 
@@ -19,11 +19,11 @@ const NavLink: FC<Props> = ({ href, label }) => {
   return (
     <Link
       href={href}
-      className="group flex flex-col items-center gap-1 rounded-md outline-offset-4"
+      className="group flex flex-col items-start gap-1 rounded-full outline-offset-0"
     >
       <div
         className={cn(
-          "rounded-full",
+          "rounded-full w-full",
           isActive &&
             "bg-light-secondaryContainer dark:bg-dark-secondaryContainer"
         )}
@@ -37,7 +37,6 @@ const NavLink: FC<Props> = ({ href, label }) => {
           )}
         >
           <Title
-            size={"small"}
             className={
               isActive
                 ? "text-light-onSecondaryContainer dark:text-dark-onSecondaryContainer"

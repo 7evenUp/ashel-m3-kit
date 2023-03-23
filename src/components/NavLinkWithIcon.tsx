@@ -2,7 +2,7 @@
 
 import { cn } from "@/utils/classNames";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useSelectedLayoutSegment } from "next/navigation";
 import { ReactNode } from "react";
 import Label from "./ui/text/Label";
 import UIStateLayer from "./ui/UIStateLayer";
@@ -16,8 +16,8 @@ const NavLinkWithIcon = ({
   label: string;
   icon: ReactNode;
 }) => {
-  const pathname = usePathname();
-  const isActive = href === pathname;
+  const segment = useSelectedLayoutSegment()
+  const isActive = href.split('/')[1] === segment;
 
   return (
     <Link href={href} className="group flex flex-col items-center gap-1 rounded-md outline-offset-4">
