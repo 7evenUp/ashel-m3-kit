@@ -6,6 +6,7 @@ import typeStylesPic from "../../../public/typography/overview/type_styles.png";
 import customTypefacesPic from "../../../public/typography/overview/custom_typefaces.png";
 import majorSecondScalefacesPic from "../../../public/typography/overview/major_second_scale.png";
 import reducedSetPic from "../../../public/typography/overview/reduset_set.png";
+import InlineLink from "@/components/InlineLink";
 
 const Typography = () => {
   return (
@@ -13,25 +14,35 @@ const Typography = () => {
       <Display className="mb-4">Typography Overview</Display>
 
       <div className="flex flex-col gap-2">
-        <Headline className="mt-4 mb-2" size={"small"}>
-          Пять ролей шрифта
-        </Headline>
+        <Headline className="mt-4 mb-2">Пять ролей шрифта</Headline>
         <Body size={"large"} className="max-w-prose">
           Material Design V3 определяет 5 ролей для шрифта: Display, headline,
-          title, body и label. Эти роли носят более описательный характер, нежели прошлые версии Material Design,
-          позволяя упростить применение в более широком диапазоне вариантов
-          использования. Подробнее о каждой роли написано в соответствующей вкладке.
+          title, body и label. Эти роли носят более описательный характер,
+          нежели прошлые версии Material Design, позволяя упростить применение в
+          более широком диапазоне вариантов использования. Подробнее можно
+          прочитать на{" "}
+          <InlineLink
+            href="https://m3.material.io/styles/typography/overview"
+            target="_blank"
+          >
+            официальном сайте Material Design V3
+          </InlineLink>
         </Body>
         <Image
-          className="max-w-[800px] my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+          className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
           alt="Type styles"
           src={typeStylesPic}
+          width={600}
         />
-        <Headline className="mt-4 mb-2" size={"small"}>
-          Стандартные шрифты
-        </Headline>
+        <Headline className="mt-4 mb-2">Стандартные шрифты</Headline>
         <Body size={"large"} className="max-w-prose">
-          Стандартным шрифтом в Material Design является Roboto.
+          Стандартным шрифтом в Material Design является{" "}
+          <InlineLink
+            href="https://fonts.google.com/specimen/Roboto"
+            target="_blank"
+          >
+            Roboto.
+          </InlineLink>
         </Body>
 
         <Body size={"large"} className="max-w-prose">
@@ -39,13 +50,23 @@ const Typography = () => {
         </Body>
 
         <Body size={"large"} className="max-w-prose">
-          Для гибкой настройки можно использовать переменный шрифт - Roboto
-          Flex. В качестве шрифта с засечками используется Roboto Serif.
+          Для гибкой настройки можно использовать переменный шрифт -{" "}
+          <InlineLink
+            href="https://fonts.google.com/specimen/Roboto+Flex"
+            target="_blank"
+          >
+            Roboto Flex
+          </InlineLink>
+          . В качестве шрифта с засечками используется{" "}
+          <InlineLink
+            href="https://fonts.google.com/specimen/Roboto+Serif"
+            target="_blank"
+          >
+            Roboto Serif.
+          </InlineLink>
         </Body>
 
-        <Headline className="mt-4 mb-2" size={"small"}>
-          Размерность шрифта
-        </Headline>
+        <Headline className="mt-4 mb-2">Размерность шрифта</Headline>
         <Body size={"large"} className="max-w-prose">
           Material Design предлагает комбинацию из 15 стилей, каждый из которых
           имеет своё значение и применение. Они назначаются в зависимости от

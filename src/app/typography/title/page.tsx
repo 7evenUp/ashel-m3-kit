@@ -12,7 +12,7 @@ const TitlePage = () => {
       <Display className="mb-4">Title роль</Display>
 
       <div className="flex flex-col gap-2">
-        <Headline className="mt-4 mb-2" size={"small"}>
+        <Headline className="mt-4 mb-2">
           Описание
         </Headline>
         <Body size={"large"} className="max-w-prose">
