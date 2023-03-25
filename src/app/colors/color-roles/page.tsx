@@ -13,7 +13,7 @@ import tertiaryContainerExamplePic from "../../../../public/colors/color-roles/t
 import Title from "@/components/ui/text/Title";
 import InlineLink from "@/components/InlineLink";
 
-const TitlePage = () => {
+const ColorRoles = () => {
   return (
     <div>
       <Display className="mb-4">Цветовые роли</Display>
@@ -181,4 +181,4 @@ const TitlePage = () => {
   );
 };
 
-export default TitlePage;
+export default ColorRoles;
