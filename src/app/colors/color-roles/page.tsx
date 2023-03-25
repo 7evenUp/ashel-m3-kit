@@ -6,6 +6,12 @@ import thirteenTonesPic from "../../../../public/colors/color-roles/thirteen_ton
 import tonesToRolesPic from "../../../../public/colors/color-roles/tones_to_roles.png";
 import lightThemePic from "../../../../public/colors/color-roles/light_theme.png";
 import darkThemePic from "../../../../public/colors/color-roles/dark_theme.png";
+import primaryExamplePic from "../../../../public/colors/color-roles/primaryExample.png";
+import primaryContainerExamplePic from "../../../../public/colors/color-roles/primaryContainerExample.png";
+import secondaryContainerExamplePic from "../../../../public/colors/color-roles/secondaryContainerExample.png";
+import tertiaryContainerExamplePic from "../../../../public/colors/color-roles/tertiaryContainerExample.png";
+import Title from "@/components/ui/text/Title";
+import InlineLink from "@/components/InlineLink";
 
 const TitlePage = () => {
   return (
@@ -60,31 +66,116 @@ const TitlePage = () => {
         </Body>
 
         <div className="flex flex-col gap-2 my-6 w-fit">
+          <Image
+            className="max-w-[700px] rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+            alt="From five key colors, roles are automatically assigned roles that map to light theme components"
+            src={lightThemePic}
+            quality={100}
+          />
+          <Body size={"small"} className="max-w-[700px] px-2">
+            Из пяти ключевых цветов автоматически назначаются роли,
+            соответствующие компонентам светлой темы
+          </Body>
+        </div>
+
+        <div className="flex flex-col gap-2 my-6 w-fit">
+          <Image
+            className="max-w-[700px] rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+            alt="From five key colors, roles are automatically assigned roles that map to dark theme components"
+            src={darkThemePic}
+            quality={100}
+          />
+          <Body size={"small"} className="max-w-[700px] px-2">
+            Из пяти ключевых цветов автоматически назначаются роли,
+            соответствующие компонентам темной темы
+          </Body>
+        </div>
+
+        <Headline className="mt-4 mb-2">Акцентные цвета</Headline>
+
+        <Title size="large" className="mt-3 mb-2">
+          Primary
+        </Title>
+        <Body size={"large"} className="max-w-prose">
+          Primary используются для ключевых компонентов пользовательского
+          интерфейса, таких как FAB, выступающие кнопки, активные состояния, а
+          также оттенок приподнятых поверхностей.
+        </Body>
+        <div className="flex gap-2">
+          <div className="flex flex-col gap-2 my-6 w-fit">
             <Image
-              className="max-w-[700px] rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
-              alt="From five key colors, roles are automatically assigned roles that map to light theme components"
-              src={lightThemePic}
-              quality={100}
+              className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+              alt="Primary example"
+              src={primaryExamplePic}
+              width={400}
             />
-            <Body size={"small"} className="max-w-[700px] px-2">
-              Из пяти ключевых цветов автоматически назначаются роли,
-              соответствующие компонентам светлой темы
+            <Body size={"small"} className="max-w-prose px-2">
+              1. On-primary <br />
+              2. Primary
             </Body>
           </div>
 
           <div className="flex flex-col gap-2 my-6 w-fit">
             <Image
+              className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+              alt="Primary container example"
+              src={primaryContainerExamplePic}
+              width={400}
+            />
+            <Body size={"small"} className="max-w-prose px-2">
+              3. On-primary container <br />
+              4. Primary container
+            </Body>
+          </div>
+        </div>
+        <Title size="large" className="mt-3 mb-2">
+            Secondary
+          </Title>
+          <Body size={"large"} className="max-w-prose">
+            Secondary цвета используются для менее заметных компонентов
+            пользовательского интерфейса, таких как{" "}
+            <InlineLink href="#">chips</InlineLink>, расширяя при этом
+            возможности цветового выражения.
+          </Body>
+          <div className="flex flex-col gap-2 my-6 w-fit">
+            <Image
               className="max-w-[700px] rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
-              alt="From five key colors, roles are automatically assigned roles that map to dark theme components"
-              src={darkThemePic}
-              quality={100}
+              alt="Secondary container example"
+              src={secondaryContainerExamplePic}
+              width={700}
             />
             <Body size={"small"} className="max-w-[700px] px-2">
-              Из пяти ключевых цветов автоматически назначаются роли,
-              соответствующие компонентам темной темы
+              1. Иконка: on-Secondary container <br />
+              2. Secondary container
             </Body>
           </div>
 
+          <Title size="large" className="mt-3 mb-2">
+            Tertiary
+          </Title>
+          <Body size={"large"} className="max-w-prose">
+            Tertiary цвета используются для контрастных акцентов, которые могут
+            быть использованы для баланса primary и secondary цветов или
+            привлечения повышенного внимания к элементу, такому как{" "}
+            <InlineLink href="#">input field</InlineLink>.
+          </Body>
+          <Body size={"large"} className="max-w-prose">
+            Роль tertiary цвета оставлена на ваше усмотрение - можете
+            использовать его по своему усмотрению, и предназначена для поддержки
+            более широкого цветового выражения в продуктах.
+          </Body>
+          <div className="flex flex-col gap-2 my-6 w-fit">
+            <Image
+              className="max-w-[700px] rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+              alt="Tertiary container example"
+              src={tertiaryContainerExamplePic}
+              width={700}
+            />
+            <Body size={"small"} className="max-w-[700px] px-2">
+              1. On-tertiary container <br />
+              2. Tertiary container
+            </Body>
+          </div>
       </div>
     </div>
   );

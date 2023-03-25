@@ -63,6 +63,12 @@ const Colors = () => {
           src={neutralColorsPic}
           width={700}
         />
+        <Body size={"large"} className="max-w-prose">
+          Подробнее о цвете можно прочитать на{" "}
+          <InlineLink href="https://m3.material.io/styles/color/overview">
+            официальном сайте
+          </InlineLink>
+        </Body>
       </div>
     </div>
   );
