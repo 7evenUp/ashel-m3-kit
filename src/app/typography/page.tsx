@@ -1,12 +1,12 @@
 import Body from "@/components/ui/text/Body";
 import Display from "@/components/ui/text/Display";
 import Headline from "@/components/ui/text/Headline";
-import Image from "next/image";
-import typeStylesPic from "../../../public/typography/overview/type_styles.png";
-import customTypefacesPic from "../../../public/typography/overview/custom_typefaces.png";
-import majorSecondScalefacesPic from "../../../public/typography/overview/major_second_scale.png";
-import reducedSetPic from "../../../public/typography/overview/reduset_set.png";
 import InlineLink from "@/components/InlineLink";
+import Image from "next/image";
+import typeStylesPic from "@/public/typography/overview/type_styles.png";
+import customTypefacesPic from "@/public/typography/overview/custom_typefaces.png";
+import majorSecondScalefacesPic from "@/public/typography/overview/major_second_scale.png";
+import reducedSetPic from "@/public/typography/overview/reduset_set.png";
 
 const Typography = () => {
   return (

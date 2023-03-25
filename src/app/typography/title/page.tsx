@@ -2,9 +2,9 @@ import Display from "@/components/ui/text/Display";
 import Headline from "@/components/ui/text/Headline";
 import Body from "@/components/ui/text/Body";
 import Image from "next/image";
-import newsExamplePic from "../../../../public/typography/title/news_example.png";
-import appBarExamplePic from "../../../../public/typography/title/app_bar_example.png";
-import categoryHeaderExamplePic from "../../../../public/typography/title/category_header_example.png";
+import newsExamplePic from "@/public/typography/title/news_example.png";
+import appBarExamplePic from "@/public/typography/title/app_bar_example.png";
+import categoryHeaderExamplePic from "@/public/typography/title/category_header_example.png";
 
 const TitlePage = () => {
   return (
@@ -12,9 +12,7 @@ const TitlePage = () => {
       <Display className="mb-4">Title роль</Display>
 
       <div className="flex flex-col gap-2">
-        <Headline className="mt-4 mb-2">
-          Описание
-        </Headline>
+        <Headline className="mt-4 mb-2">Описание</Headline>
         <Body size={"large"} className="max-w-prose">
           Title меньше, чем headline, и их следует использовать для текста со
           средним акцентом, который остается относительно коротким. Например,

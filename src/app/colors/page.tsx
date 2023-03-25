@@ -1,10 +1,10 @@
 import Body from "@/components/ui/text/Body";
 import Display from "@/components/ui/text/Display";
 import Headline from "@/components/ui/text/Headline";
-import Image from "next/image";
-import keyColorsPic from "../../../public/colors/overview/key_colors.png";
-import neutralColorsPic from "../../../public/colors/overview/neutral_colors.png";
 import InlineLink from "@/components/InlineLink";
+import Image from "next/image";
+import keyColorsPic from "@/public/colors/overview/key_colors.png";
+import neutralColorsPic from "@/public/colors/overview/neutral_colors.png";
 
 const Colors = () => {
   return (

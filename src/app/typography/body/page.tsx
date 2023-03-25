@@ -2,9 +2,9 @@ import Display from "@/components/ui/text/Display";
 import Headline from "@/components/ui/text/Headline";
 import Body from "@/components/ui/text/Body";
 import Image from "next/image";
-import readablePassagesPic from "../../../../public/typography/body/readable_passages.png";
-import articlePestoPic from "../../../../public/typography/body/article_pesto.png";
-import setupFlowPic from "../../../../public/typography/body/setup_flow.png";
+import readablePassagesPic from "@/public/typography/body/readable_passages.png";
+import articlePestoPic from "@/public/typography/body/article_pesto.png";
+import setupFlowPic from "@/public/typography/body/setup_flow.png";
 
 const BodyPage = () => {
   return (
@@ -12,9 +12,7 @@ const BodyPage = () => {
       <Display className="mb-4">Body роль</Display>
 
       <div className="flex flex-col gap-2">
-        <Headline className="mt-4 mb-2">
-          Описание
-        </Headline>
+        <Headline className="mt-4 mb-2">Описание</Headline>
         <Body size={"large"} className="max-w-prose">
           Body роли используются для более длинных отрывков текста в вашем
           приложении.

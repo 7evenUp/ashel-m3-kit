@@ -2,9 +2,9 @@ import Display from "@/components/ui/text/Display";
 import Headline from "@/components/ui/text/Headline";
 import Body from "@/components/ui/text/Body";
 import Image from "next/image";
-import quickReadingPic from "../../../../public/typography/label/quick_reading.png";
-import musicPlayerPic from "../../../../public/typography/label/music_player.png";
-import navigationBarPic from "../../../../public/typography/label/navigation_bar.png";
+import quickReadingPic from "@/public/typography/label/quick_reading.png";
+import musicPlayerPic from "@/public/typography/label/music_player.png";
+import navigationBarPic from "@/public/typography/label/navigation_bar.png";
 
 const LabelPage = () => {
   return (
@@ -12,9 +12,7 @@ const LabelPage = () => {
       <Display className="mb-4">Label роль</Display>
 
       <div className="flex flex-col gap-2">
-        <Headline className="mt-4 mb-2">
-          Описание
-        </Headline>
+        <Headline className="mt-4 mb-2">Описание</Headline>
         <Body size={"large"} className="max-w-prose">
           Label — это меньшие, утилитарные стили, используемые для таких вещей,
           как текст внутри компонентов или для очень маленького текста в
