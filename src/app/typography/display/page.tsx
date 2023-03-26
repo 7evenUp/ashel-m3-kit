@@ -4,6 +4,7 @@ import Headline from "@/components/ui/text/Headline";
 import Image from "next/image";
 import expressiveTypefacePic from "@/public/typography/display/expressive_typeface.png";
 import eyeCatchingDesignPic from "@/public/typography/display/eye_catching_design.png";
+import Paragraph from "@/components/Paragraph";
 
 const DisplayPage = () => {
   return (
@@ -12,12 +13,12 @@ const DisplayPage = () => {
 
       <div className="flex flex-col gap-2">
         <Headline className="mt-4 mb-2">Описание</Headline>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           По умолчанию есть три стиля отображения: большой, средний и маленький.
           Как самый крупный текст на экране, display стили зарезервированы для
           краткого и важного текста или цифр. Лучше всего они работают на
           больших экранах.
-        </Body>
+        </Paragraph>
         <div className="flex gap-2">
           <div className="flex flex-col gap-2 my-6 w-fit">
             <Image

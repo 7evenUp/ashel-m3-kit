@@ -5,6 +5,7 @@ import Image from "next/image";
 import quickReadingPic from "@/public/typography/label/quick_reading.png";
 import musicPlayerPic from "@/public/typography/label/music_player.png";
 import navigationBarPic from "@/public/typography/label/navigation_bar.png";
+import Paragraph from "@/components/Paragraph";
 
 const LabelPage = () => {
   return (
@@ -13,14 +14,14 @@ const LabelPage = () => {
 
       <div className="flex flex-col gap-2">
         <Headline className="mt-4 mb-2">Описание</Headline>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Label — это меньшие, утилитарные стили, используемые для таких вещей,
           как текст внутри компонентов или для очень маленького текста в
           основной части содержимого, например для подписей.
-        </Body>
-        <Body size={"large"} className="max-w-prose">
+        </Paragraph>
+        <Paragraph>
           Кнопки, например, используют крупный стиль label.
-        </Body>
+        </Paragraph>
         <div className="flex flex-col gap-2 my-6 w-fit">
           <Image
             className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"

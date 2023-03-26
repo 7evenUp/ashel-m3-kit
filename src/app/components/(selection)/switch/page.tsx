@@ -1,7 +1,7 @@
 "use client";
 
 import InlineLink from "@/components/InlineLink";
-import Body from "@/components/ui/text/Body";
+import Paragraph from "@/components/Paragraph";
 import Display from "@/components/ui/text/Display";
 import Headline from "@/components/ui/text/Headline";
 import Label from "@/components/ui/text/Label";
@@ -17,13 +17,13 @@ const SwitchPage = () => {
 
       <div className="flex flex-col gap-2">
         <Headline className="mt-4 mb-2">Описание</Headline>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Switch включает или выключает состояние отдельного элемента. Подробнее
           на{" "}
           <InlineLink href="https://m3.material.io/components/switch/overview">
             официальном сайте
           </InlineLink>
-        </Body>
+        </Paragraph>
 
         <Headline className="mt-4 mb-2">Примеры</Headline>
 

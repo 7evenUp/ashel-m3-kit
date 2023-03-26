@@ -5,6 +5,7 @@ import Image from "next/image";
 import readablePassagesPic from "@/public/typography/body/readable_passages.png";
 import articlePestoPic from "@/public/typography/body/article_pesto.png";
 import setupFlowPic from "@/public/typography/body/setup_flow.png";
+import Paragraph from "@/components/Paragraph";
 
 const BodyPage = () => {
   return (
@@ -13,19 +14,19 @@ const BodyPage = () => {
 
       <div className="flex flex-col gap-2">
         <Headline className="mt-4 mb-2">Описание</Headline>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Body роли используются для более длинных отрывков текста в вашем
           приложении.
-        </Body>
-        <Body size={"large"} className="max-w-prose">
+        </Paragraph>
+        <Paragraph>
           Используйте шрифты, предназначенные для стилей основного текста,
           которые читаются при меньших размерах и удобны для чтения в более
           длинных абзацах.
-        </Body>
-        <Body size={"large"} className="max-w-prose">
+        </Paragraph>
+        <Paragraph>
           Избегайте выразительных или декоративных шрифтов для основного текста,
           потому что их может быть труднее читать при маленьком размере.
-        </Body>
+        </Paragraph>
         <div className="flex flex-col gap-2 my-6 w-fit">
           <Image
             className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"

@@ -5,6 +5,7 @@ import Image from "next/image";
 import expressiveTypefacePic from "@/public/typography/headline/expressive_typeface.png";
 import shortTextPic from "@/public/typography/headline/short_text.png";
 import headlineDialogPic from "@/public/typography/headline/headline_dialog.png";
+import Paragraph from "@/components/Paragraph";
 
 const HeadlinePage = () => {
   return (
@@ -13,16 +14,16 @@ const HeadlinePage = () => {
 
       <div className="flex flex-col gap-2">
         <Headline className="mt-4 mb-2">Описание</Headline>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Headline лучше всего подходят для коротких, четких текстов на
           небольших экранах. Эти стили могут быть полезны для маркировки
           основных фрагментов текста или важных областей содержимого.
-        </Body>
-        <Body size={"large"} className="max-w-prose">
+        </Paragraph>
+        <Paragraph>
           В headlines также можно использовать выразительные шрифты при условии,
           что соответствующие высота строки и межбуквенный интервал также
           интегрированы для обеспечения удобочитаемости.
-        </Body>
+        </Paragraph>
         <div className="flex flex-col gap-2 my-6 w-fit">
           <Image
             className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"

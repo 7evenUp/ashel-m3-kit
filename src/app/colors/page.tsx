@@ -5,6 +5,7 @@ import InlineLink from "@/components/InlineLink";
 import Image from "next/image";
 import keyColorsPic from "@/public/colors/overview/key_colors.png";
 import neutralColorsPic from "@/public/colors/overview/neutral_colors.png";
+import Paragraph from "@/components/Paragraph";
 
 const Colors = () => {
   return (
@@ -14,31 +15,24 @@ const Colors = () => {
       <div className="flex flex-col gap-2">
         <Headline className="mt-4 mb-2">Accent цвета</Headline>
 
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Цвет primary используется для определения ролей ключевых компонентов
-          UI, таких как{" "}
-          <InlineLink href="#" target="_blank">
-            FAB
-          </InlineLink>
-          , кнопок, активных состояний, а также оттенок приподнятых
-          поверхностей.
-        </Body>
+          UI, таких как <InlineLink href="#">FAB</InlineLink>, кнопок, активных
+          состояний, а также оттенок приподнятых поверхностей.
+        </Paragraph>
 
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Цвет secondary используется для менее заметных компонентов в UI, таких
-          как{" "}
-          <InlineLink href="#" target="_blank">
-            chips
-          </InlineLink>
-          , расширяя при этом возможности для цветового выражения.
-        </Body>
-        <Body size={"large"} className="max-w-prose">
+          как <InlineLink href="#">chips</InlineLink>, расширяя при этом
+          возможности для цветового выражения.
+        </Paragraph>
+        <Paragraph>
           Цвет tertiary используется для контрастных акцентов, которые можно
           использовать для баланса primary и secondary цветов или для
           привлечения повышенного внимания к элементу. Роль цвета tertiary
           оставлена ​​на ваше усмотрение и предназначена для поддержки более
           широкого цветового выражения в продуктах.
-        </Body>
+        </Paragraph>
         <Image
           className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
           alt="Accent colors"
@@ -47,28 +41,28 @@ const Colors = () => {
         />
 
         <Headline className="mt-4 mb-2">Neutral цвета</Headline>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Neutral цвет используется для получения поверхностных цветов для фона,
           а также цветов, используемых для элементов главного выделения, таких
           как текст, иконки.
-        </Body>
-        <Body size={"large"} className="max-w-prose">
+        </Paragraph>
+        <Paragraph>
           Neutral variant цвет используется для получения цветовых ролей для
           элементов среднего выделения, таких как текст, иконки и контуры
           компонентов.
-        </Body>
+        </Paragraph>
         <Image
           className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
           alt="Neutral colors"
           src={neutralColorsPic}
           width={700}
         />
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Подробнее о цвете можно прочитать на{" "}
           <InlineLink href="https://m3.material.io/styles/color/overview">
             официальном сайте
           </InlineLink>
-        </Body>
+        </Paragraph>
       </div>
     </div>
   );

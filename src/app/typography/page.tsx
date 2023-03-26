@@ -7,6 +7,7 @@ import typeStylesPic from "@/public/typography/overview/type_styles.png";
 import customTypefacesPic from "@/public/typography/overview/custom_typefaces.png";
 import majorSecondScalefacesPic from "@/public/typography/overview/major_second_scale.png";
 import reducedSetPic from "@/public/typography/overview/reduset_set.png";
+import Paragraph from "@/components/Paragraph";
 
 const Typography = () => {
   return (
@@ -15,19 +16,16 @@ const Typography = () => {
 
       <div className="flex flex-col gap-2">
         <Headline className="mt-4 mb-2">Пять ролей шрифта</Headline>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Material Design V3 определяет 5 ролей для шрифта: Display, headline,
           title, body и label. Эти роли носят более описательный характер,
           нежели прошлые версии Material Design, позволяя упростить применение в
           более широком диапазоне вариантов использования. Подробнее можно
           прочитать на{" "}
-          <InlineLink
-            href="https://m3.material.io/styles/typography/overview"
-            target="_blank"
-          >
+          <InlineLink href="https://m3.material.io/styles/typography/overview">
             официальном сайте Material Design V3
           </InlineLink>
-        </Body>
+        </Paragraph>
         <Image
           className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
           alt="Type styles"
@@ -35,49 +33,40 @@ const Typography = () => {
           width={600}
         />
         <Headline className="mt-4 mb-2">Стандартные шрифты</Headline>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Стандартным шрифтом в Material Design является{" "}
-          <InlineLink
-            href="https://fonts.google.com/specimen/Roboto"
-            target="_blank"
-          >
+          <InlineLink href="https://fonts.google.com/specimen/Roboto">
             Roboto.
           </InlineLink>
-        </Body>
+        </Paragraph>
 
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Roboto включает более 3300 глифов для обозначения сотен языков мира.
-        </Body>
+        </Paragraph>
 
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Для гибкой настройки можно использовать переменный шрифт -{" "}
-          <InlineLink
-            href="https://fonts.google.com/specimen/Roboto+Flex"
-            target="_blank"
-          >
+          <InlineLink href="https://fonts.google.com/specimen/Roboto+Flex">
             Roboto Flex
           </InlineLink>
           . В качестве шрифта с засечками используется{" "}
-          <InlineLink
-            href="https://fonts.google.com/specimen/Roboto+Serif"
-            target="_blank"
-          >
+          <InlineLink href="https://fonts.google.com/specimen/Roboto+Serif">
             Roboto Serif.
           </InlineLink>
-        </Body>
+        </Paragraph>
 
         <Headline className="mt-4 mb-2">Размерность шрифта</Headline>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Material Design предлагает комбинацию из 15 стилей, каждый из которых
           имеет своё значение и применение. Они назначаются в зависимости от
           использования (например, для отображения заголовка) и группируются в
           категории в зависимости от масштаба (например, большие или маленькие).
-        </Body>
+        </Paragraph>
 
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           По умолчанию, используется шрифт Roboto для всех компонентов title,
           body и label, создавая тем самым целостную типографику.
-        </Body>
+        </Paragraph>
 
         <div className="flex flex-col gap-2 my-6 w-fit">
           <Image

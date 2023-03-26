@@ -12,6 +12,7 @@ import primaryExamplePic from "@/public/colors/color-roles/primaryExample.png";
 import primaryContainerExamplePic from "@/public/colors/color-roles/primaryContainerExample.png";
 import secondaryContainerExamplePic from "@/public/colors/color-roles/secondaryContainerExample.png";
 import tertiaryContainerExamplePic from "@/public/colors/color-roles/tertiaryContainerExample.png";
+import Paragraph from "@/components/Paragraph";
 
 const ColorRoles = () => {
   return (
@@ -22,12 +23,12 @@ const ColorRoles = () => {
         <Headline className="mt-4 mb-2">
           Один ключевой цвет становится тринадцатью тонами
         </Headline>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Тональная палитра состоит из тринадцати тонов, включая белый и черный.
           Значение тона 100 эквивалентно идее максимального света и приводит к
           белому цвету. Каждое значение тона от 0 до 100 выражает количество
           света, присутствующего в цвете.
-        </Body>
+        </Paragraph>
         <div className="flex flex-col gap-2 my-6 w-fit">
           <Image
             className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
@@ -40,12 +41,12 @@ const ColorRoles = () => {
             ролью, например. primary40 — цвет primary со значением тона 40.
           </Body>
         </div>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           В то время как ключевые цвета являются основой для тональных палитр, в
           UI используется только набор из тринадцати цветов из каждой тональной
           палитры. Схема - это группа тонов, назначенных определенным ролям,
           которые сопоставляются компонентам.
-        </Body>
+        </Paragraph>
         <Headline className="mt-4 mb-2">Роли в схеме</Headline>
         <Image
           className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
@@ -53,17 +54,18 @@ const ColorRoles = () => {
           src={tonesToRolesPic}
           width={700}
         />
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Каждый ключевой цвет акцента (primary, secondary и tertiary)
           представлен в виде группы из 4 совместимых цветов с разными тонами,
           которые можно применять для разного акцента и визуальной
           выразительности, а также сочетать для визуального контраста.
-        </Body>
-        <Body size={"large"} className="max-w-prose">
+        </Paragraph>
+
+        <Paragraph>
           Когда создается цветовая схема, тональные палитры также включают
           сопоставления для темной темы. Приложения получают светлые и темные
           тона с помощью единой сгенерированной схемы.
-        </Body>
+        </Paragraph>
 
         <div className="flex flex-col gap-2 my-6 w-fit">
           <Image
@@ -96,11 +98,11 @@ const ColorRoles = () => {
         <Title size="large" className="mt-3 mb-2">
           Primary
         </Title>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Primary используются для ключевых компонентов пользовательского
           интерфейса, таких как FAB, выступающие кнопки, активные состояния, а
           также оттенок приподнятых поверхностей.
-        </Body>
+        </Paragraph>
         <div className="flex gap-2">
           <div className="flex flex-col gap-2 my-6 w-fit">
             <Image
@@ -131,12 +133,12 @@ const ColorRoles = () => {
         <Title size="large" className="mt-3 mb-2">
           Secondary
         </Title>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Secondary цвета используются для менее заметных компонентов
           пользовательского интерфейса, таких как{" "}
           <InlineLink href="#">chips</InlineLink>, расширяя при этом возможности
           цветового выражения.
-        </Body>
+        </Paragraph>
         <div className="flex flex-col gap-2 my-6 w-fit">
           <Image
             className="max-w-[700px] rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
@@ -153,17 +155,17 @@ const ColorRoles = () => {
         <Title size="large" className="mt-3 mb-2">
           Tertiary
         </Title>
-        <Body size={"large"} className="max-w-prose">
+        <Paragraph>
           Tertiary цвета используются для контрастных акцентов, которые могут
           быть использованы для баланса primary и secondary цветов или
           привлечения повышенного внимания к элементу, такому как{" "}
           <InlineLink href="#">input field</InlineLink>.
-        </Body>
-        <Body size={"large"} className="max-w-prose">
+        </Paragraph>
+        <Paragraph>
           Роль tertiary цвета оставлена на ваше усмотрение - можете использовать
           его по своему усмотрению, и предназначена для поддержки более широкого
           цветового выражения в продуктах.
-        </Body>
+        </Paragraph>
         <div className="flex flex-col gap-2 my-6 w-fit">
           <Image
             className="max-w-[700px] rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
