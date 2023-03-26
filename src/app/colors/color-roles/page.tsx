@@ -1,18 +1,18 @@
-import Display from "@/components/ui/text/Display";
-import Body from "@/components/ui/text/Body";
-import Title from "@/components/ui/text/Title";
+import Heading from "@/components/Heading";
 import InlineLink from "@/components/InlineLink";
 import Paragraph from "@/components/Paragraph";
-import Heading from "@/components/Heading";
-import Image from "next/image";
-import thirteenTonesPic from "@/public/colors/color-roles/thirteen_tones.png";
-import tonesToRolesPic from "@/public/colors/color-roles/tones_to_roles.png";
-import lightThemePic from "@/public/colors/color-roles/light_theme.png";
+import Subheading from "@/components/Subheading";
+import Body from "@/components/ui/text/Body";
+import Display from "@/components/ui/text/Display";
 import darkThemePic from "@/public/colors/color-roles/dark_theme.png";
-import primaryExamplePic from "@/public/colors/color-roles/primaryExample.png";
+import lightThemePic from "@/public/colors/color-roles/light_theme.png";
 import primaryContainerExamplePic from "@/public/colors/color-roles/primaryContainerExample.png";
+import primaryExamplePic from "@/public/colors/color-roles/primaryExample.png";
 import secondaryContainerExamplePic from "@/public/colors/color-roles/secondaryContainerExample.png";
 import tertiaryContainerExamplePic from "@/public/colors/color-roles/tertiaryContainerExample.png";
+import thirteenTonesPic from "@/public/colors/color-roles/thirteen_tones.png";
+import tonesToRolesPic from "@/public/colors/color-roles/tones_to_roles.png";
+import Image from "next/image";
 
 const ColorRoles = () => {
   return (
@@ -30,7 +30,7 @@ const ColorRoles = () => {
         <div className="flex flex-col gap-2 my-6 w-fit">
           <Image
             className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
-            alt="The tonal value of each color is expressed with the number associated with that role, e.g. primary40 is the primary key color at a tone value of 40"
+            alt="Thirteen Tones of color"
             src={thirteenTonesPic}
             width={700}
           />
@@ -93,9 +93,7 @@ const ColorRoles = () => {
 
         <Heading>Акцентные цвета</Heading>
 
-        <Title size="large" className="mt-3 mb-2">
-          Primary
-        </Title>
+        <Subheading>Primary</Subheading>
         <Paragraph>
           Primary используются для ключевых компонентов пользовательского
           интерфейса, таких как FAB, выступающие кнопки, активные состояния, а
@@ -128,9 +126,7 @@ const ColorRoles = () => {
             </Body>
           </div>
         </div>
-        <Title size="large" className="mt-3 mb-2">
-          Secondary
-        </Title>
+        <Subheading>Secondary</Subheading>
         <Paragraph>
           Secondary цвета используются для менее заметных компонентов
           пользовательского интерфейса, таких как{" "}
@@ -150,9 +146,7 @@ const ColorRoles = () => {
           </Body>
         </div>
 
-        <Title size="large" className="mt-3 mb-2">
-          Tertiary
-        </Title>
+        <Subheading>Tertiary</Subheading>
         <Paragraph>
           Tertiary цвета используются для контрастных акцентов, которые могут
           быть использованы для баланса primary и secondary цветов или
