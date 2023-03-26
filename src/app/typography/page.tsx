@@ -8,6 +8,7 @@ import customTypefacesPic from "@/public/typography/overview/custom_typefaces.pn
 import majorSecondScalefacesPic from "@/public/typography/overview/major_second_scale.png";
 import reducedSetPic from "@/public/typography/overview/reduset_set.png";
 import Paragraph from "@/components/Paragraph";
+import Heading from "@/components/Heading";
 
 const Typography = () => {
   return (
@@ -15,7 +16,7 @@ const Typography = () => {
       <Display className="mb-4">Typography Overview</Display>
 
       <div className="flex flex-col gap-2">
-        <Headline className="mt-4 mb-2">Пять ролей шрифта</Headline>
+        <Heading>Пять ролей шрифта</Heading>
         <Paragraph>
           Material Design V3 определяет 5 ролей для шрифта: Display, headline,
           title, body и label. Эти роли носят более описательный характер,
@@ -32,7 +33,7 @@ const Typography = () => {
           src={typeStylesPic}
           width={600}
         />
-        <Headline className="mt-4 mb-2">Стандартные шрифты</Headline>
+        <Heading>Стандартные шрифты</Heading>
         <Paragraph>
           Стандартным шрифтом в Material Design является{" "}
           <InlineLink href="https://fonts.google.com/specimen/Roboto">
@@ -55,7 +56,7 @@ const Typography = () => {
           </InlineLink>
         </Paragraph>
 
-        <Headline className="mt-4 mb-2">Размерность шрифта</Headline>
+        <Heading>Размерность шрифта</Heading>
         <Paragraph>
           Material Design предлагает комбинацию из 15 стилей, каждый из которых
           имеет своё значение и применение. Они назначаются в зависимости от

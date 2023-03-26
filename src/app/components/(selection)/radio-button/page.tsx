@@ -1,5 +1,5 @@
+import Heading from "@/components/Heading";
 import Display from "@/components/ui/text/Display";
-import Headline from "@/components/ui/text/Headline";
 
 const RadioButtonPage = () => {
   return (
@@ -7,10 +7,7 @@ const RadioButtonPage = () => {
       <Display className="mb-4">Radio Button</Display>
 
       <div className="flex flex-col gap-2">
-        <Headline className="mt-4 mb-2">
-          Описание
-        </Headline>
-        
+        <Heading>Описание</Heading>
       </div>
     </div>
   );

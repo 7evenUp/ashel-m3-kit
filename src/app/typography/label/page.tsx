@@ -1,11 +1,11 @@
-import Display from "@/components/ui/text/Display";
-import Headline from "@/components/ui/text/Headline";
+import Heading from "@/components/Heading";
+import Paragraph from "@/components/Paragraph";
 import Body from "@/components/ui/text/Body";
-import Image from "next/image";
-import quickReadingPic from "@/public/typography/label/quick_reading.png";
+import Display from "@/components/ui/text/Display";
 import musicPlayerPic from "@/public/typography/label/music_player.png";
 import navigationBarPic from "@/public/typography/label/navigation_bar.png";
-import Paragraph from "@/components/Paragraph";
+import quickReadingPic from "@/public/typography/label/quick_reading.png";
+import Image from "next/image";
 
 const LabelPage = () => {
   return (
@@ -13,15 +13,13 @@ const LabelPage = () => {
       <Display className="mb-4">Label роль</Display>
 
       <div className="flex flex-col gap-2">
-        <Headline className="mt-4 mb-2">Описание</Headline>
+        <Heading>Описание</Heading>
         <Paragraph>
           Label — это меньшие, утилитарные стили, используемые для таких вещей,
           как текст внутри компонентов или для очень маленького текста в
           основной части содержимого, например для подписей.
         </Paragraph>
-        <Paragraph>
-          Кнопки, например, используют крупный стиль label.
-        </Paragraph>
+        <Paragraph>Кнопки, например, используют крупный стиль label.</Paragraph>
         <div className="flex flex-col gap-2 my-6 w-fit">
           <Image
             className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"

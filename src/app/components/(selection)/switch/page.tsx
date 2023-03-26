@@ -1,9 +1,9 @@
 "use client";
 
+import Heading from "@/components/Heading";
 import InlineLink from "@/components/InlineLink";
 import Paragraph from "@/components/Paragraph";
 import Display from "@/components/ui/text/Display";
-import Headline from "@/components/ui/text/Headline";
 import Label from "@/components/ui/text/Label";
 import Switch from "@/lib/Switch";
 import { Minus, Plus } from "iconoir-react";
@@ -16,7 +16,7 @@ const SwitchPage = () => {
       <Display className="mb-4">Switch</Display>
 
       <div className="flex flex-col gap-2">
-        <Headline className="mt-4 mb-2">Описание</Headline>
+        <Heading>Описание</Heading>
         <Paragraph>
           Switch включает или выключает состояние отдельного элемента. Подробнее
           на{" "}
@@ -25,7 +25,7 @@ const SwitchPage = () => {
           </InlineLink>
         </Paragraph>
 
-        <Headline className="mt-4 mb-2">Примеры</Headline>
+        <Heading>Примеры</Heading>
 
         <div className="flex items-center justify-between max-w-[400px]">
           <Label size="large" className="mt-3 mb-2">

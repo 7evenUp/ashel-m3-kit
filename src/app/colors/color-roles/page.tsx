@@ -1,8 +1,9 @@
 import Display from "@/components/ui/text/Display";
-import Headline from "@/components/ui/text/Headline";
 import Body from "@/components/ui/text/Body";
 import Title from "@/components/ui/text/Title";
 import InlineLink from "@/components/InlineLink";
+import Paragraph from "@/components/Paragraph";
+import Heading from "@/components/Heading";
 import Image from "next/image";
 import thirteenTonesPic from "@/public/colors/color-roles/thirteen_tones.png";
 import tonesToRolesPic from "@/public/colors/color-roles/tones_to_roles.png";
@@ -12,7 +13,6 @@ import primaryExamplePic from "@/public/colors/color-roles/primaryExample.png";
 import primaryContainerExamplePic from "@/public/colors/color-roles/primaryContainerExample.png";
 import secondaryContainerExamplePic from "@/public/colors/color-roles/secondaryContainerExample.png";
 import tertiaryContainerExamplePic from "@/public/colors/color-roles/tertiaryContainerExample.png";
-import Paragraph from "@/components/Paragraph";
 
 const ColorRoles = () => {
   return (
@@ -20,9 +20,7 @@ const ColorRoles = () => {
       <Display className="mb-4">Цветовые роли</Display>
 
       <div className="flex flex-col gap-2">
-        <Headline className="mt-4 mb-2">
-          Один ключевой цвет становится тринадцатью тонами
-        </Headline>
+        <Heading>Один ключевой цвет становится тринадцатью тонами</Heading>
         <Paragraph>
           Тональная палитра состоит из тринадцати тонов, включая белый и черный.
           Значение тона 100 эквивалентно идее максимального света и приводит к
@@ -47,7 +45,7 @@ const ColorRoles = () => {
           палитры. Схема - это группа тонов, назначенных определенным ролям,
           которые сопоставляются компонентам.
         </Paragraph>
-        <Headline className="mt-4 mb-2">Роли в схеме</Headline>
+        <Heading>Роли в схеме</Heading>
         <Image
           className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
           alt="Tones according to roles"
@@ -93,7 +91,7 @@ const ColorRoles = () => {
           </Body>
         </div>
 
-        <Headline className="mt-4 mb-2">Акцентные цвета</Headline>
+        <Heading>Акцентные цвета</Heading>
 
         <Title size="large" className="mt-3 mb-2">
           Primary

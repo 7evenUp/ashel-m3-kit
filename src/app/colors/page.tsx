@@ -1,11 +1,10 @@
-import Body from "@/components/ui/text/Body";
 import Display from "@/components/ui/text/Display";
-import Headline from "@/components/ui/text/Headline";
 import InlineLink from "@/components/InlineLink";
+import Paragraph from "@/components/Paragraph";
+import Heading from "@/components/Heading";
 import Image from "next/image";
 import keyColorsPic from "@/public/colors/overview/key_colors.png";
 import neutralColorsPic from "@/public/colors/overview/neutral_colors.png";
-import Paragraph from "@/components/Paragraph";
 
 const Colors = () => {
   return (
@@ -13,7 +12,7 @@ const Colors = () => {
       <Display className="mb-4">Colors Overview</Display>
 
       <div className="flex flex-col gap-2">
-        <Headline className="mt-4 mb-2">Accent цвета</Headline>
+        <Heading>Accent цвета</Heading>
 
         <Paragraph>
           Цвет primary используется для определения ролей ключевых компонентов
@@ -40,7 +39,7 @@ const Colors = () => {
           width={700}
         />
 
-        <Headline className="mt-4 mb-2">Neutral цвета</Headline>
+        <Heading>Neutral цвета</Heading>
         <Paragraph>
           Neutral цвет используется для получения поверхностных цветов для фона,
           а также цветов, используемых для элементов главного выделения, таких

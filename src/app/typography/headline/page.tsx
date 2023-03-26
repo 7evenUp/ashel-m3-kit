@@ -1,11 +1,11 @@
+import Heading from "@/components/Heading";
+import Paragraph from "@/components/Paragraph";
 import Body from "@/components/ui/text/Body";
 import Display from "@/components/ui/text/Display";
-import Headline from "@/components/ui/text/Headline";
-import Image from "next/image";
 import expressiveTypefacePic from "@/public/typography/headline/expressive_typeface.png";
-import shortTextPic from "@/public/typography/headline/short_text.png";
 import headlineDialogPic from "@/public/typography/headline/headline_dialog.png";
-import Paragraph from "@/components/Paragraph";
+import shortTextPic from "@/public/typography/headline/short_text.png";
+import Image from "next/image";
 
 const HeadlinePage = () => {
   return (
@@ -13,7 +13,7 @@ const HeadlinePage = () => {
       <Display className="mb-4">Headline роль</Display>
 
       <div className="flex flex-col gap-2">
-        <Headline className="mt-4 mb-2">Описание</Headline>
+        <Heading>Описание</Heading>
         <Paragraph>
           Headline лучше всего подходят для коротких, четких текстов на
           небольших экранах. Эти стили могут быть полезны для маркировки
