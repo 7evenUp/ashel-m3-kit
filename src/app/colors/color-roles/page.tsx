@@ -1,8 +1,8 @@
 import Heading from "@/components/Heading";
+import ImageWithText from "@/components/ImageWithText";
 import InlineLink from "@/components/InlineLink";
 import Paragraph from "@/components/Paragraph";
 import Subheading from "@/components/Subheading";
-import Body from "@/components/ui/text/Body";
 import Display from "@/components/ui/text/Display";
 import darkThemePic from "@/public/colors/color-roles/dark_theme.png";
 import lightThemePic from "@/public/colors/color-roles/light_theme.png";
@@ -27,18 +27,14 @@ const ColorRoles = () => {
           белому цвету. Каждое значение тона от 0 до 100 выражает количество
           света, присутствующего в цвете.
         </Paragraph>
-        <div className="flex flex-col gap-2 my-6 w-fit">
-          <Image
-            className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
-            alt="Thirteen Tones of color"
-            src={thirteenTonesPic}
-            width={700}
-          />
-          <Body size={"small"} className="max-w-[700px] px-2">
-            Тональное значение каждого цвета выражается числом, связанным с этой
-            ролью, например. primary40 — цвет primary со значением тона 40.
-          </Body>
-        </div>
+        <ImageWithText
+          src={thirteenTonesPic}
+          alt="Thirteen Tones of color"
+          width={700}
+        >
+          Тональное значение каждого цвета выражается числом, связанным с этой
+          ролью, например. primary40 — цвет primary со значением тона 40.
+        </ImageWithText>
         <Paragraph>
           В то время как ключевые цвета являются основой для тональных палитр, в
           UI используется только набор из тринадцати цветов из каждой тональной
@@ -65,31 +61,25 @@ const ColorRoles = () => {
           тона с помощью единой сгенерированной схемы.
         </Paragraph>
 
-        <div className="flex flex-col gap-2 my-6 w-fit">
-          <Image
-            className="max-w-[700px] rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
-            alt="From five key colors, roles are automatically assigned roles that map to light theme components"
-            src={lightThemePic}
-            quality={100}
-          />
-          <Body size={"small"} className="max-w-[700px] px-2">
-            Из пяти ключевых цветов автоматически назначаются роли,
-            соответствующие компонентам светлой темы
-          </Body>
-        </div>
+        <ImageWithText
+          src={lightThemePic}
+          alt="Light theme example"
+          width={700}
+          quality={100}
+        >
+          Из пяти ключевых цветов автоматически назначаются роли,
+          соответствующие компонентам светлой темы
+        </ImageWithText>
 
-        <div className="flex flex-col gap-2 my-6 w-fit">
-          <Image
-            className="max-w-[700px] rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
-            alt="From five key colors, roles are automatically assigned roles that map to dark theme components"
-            src={darkThemePic}
-            quality={100}
-          />
-          <Body size={"small"} className="max-w-[700px] px-2">
-            Из пяти ключевых цветов автоматически назначаются роли,
-            соответствующие компонентам темной темы
-          </Body>
-        </div>
+        <ImageWithText
+          src={darkThemePic}
+          alt="Dark theme example"
+          width={700}
+          quality={100}
+        >
+          Из пяти ключевых цветов автоматически назначаются роли,
+          соответствующие компонентам темной темы
+        </ImageWithText>
 
         <Heading>Акцентные цвета</Heading>
 
@@ -99,32 +89,24 @@ const ColorRoles = () => {
           интерфейса, таких как FAB, выступающие кнопки, активные состояния, а
           также оттенок приподнятых поверхностей.
         </Paragraph>
-        <div className="flex gap-2">
-          <div className="flex flex-col gap-2 my-6 w-fit">
-            <Image
-              className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
-              alt="Primary example"
-              src={primaryExamplePic}
-              width={400}
-            />
-            <Body size={"small"} className="max-w-prose px-2">
-              1. On-primary <br />
-              2. Primary
-            </Body>
-          </div>
+        <div className="flex gap-5">
+          <ImageWithText
+            src={primaryExamplePic}
+            alt="Primary example"
+            width={400}
+          >
+            1. On-primary <br />
+            2. Primary
+          </ImageWithText>
 
-          <div className="flex flex-col gap-2 my-6 w-fit">
-            <Image
-              className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
-              alt="Primary container example"
-              src={primaryContainerExamplePic}
-              width={400}
-            />
-            <Body size={"small"} className="max-w-prose px-2">
-              3. On-primary container <br />
-              4. Primary container
-            </Body>
-          </div>
+          <ImageWithText
+            src={primaryContainerExamplePic}
+            alt="Primary container example"
+            width={400}
+          >
+            3. On-primary container <br />
+            4. Primary container
+          </ImageWithText>
         </div>
         <Subheading>Secondary</Subheading>
         <Paragraph>
@@ -133,18 +115,14 @@ const ColorRoles = () => {
           <InlineLink href="#">chips</InlineLink>, расширяя при этом возможности
           цветового выражения.
         </Paragraph>
-        <div className="flex flex-col gap-2 my-6 w-fit">
-          <Image
-            className="max-w-[700px] rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
-            alt="Secondary container example"
-            src={secondaryContainerExamplePic}
-            width={700}
-          />
-          <Body size={"small"} className="max-w-[700px] px-2">
-            1. Иконка: on-Secondary container <br />
-            2. Secondary container
-          </Body>
-        </div>
+        <ImageWithText
+          src={secondaryContainerExamplePic}
+          alt="Secondary container example"
+          width={700}
+        >
+          1. Иконка: on-Secondary container <br />
+          2. Secondary container
+        </ImageWithText>
 
         <Subheading>Tertiary</Subheading>
         <Paragraph>
@@ -158,18 +136,14 @@ const ColorRoles = () => {
           его по своему усмотрению, и предназначена для поддержки более широкого
           цветового выражения в продуктах.
         </Paragraph>
-        <div className="flex flex-col gap-2 my-6 w-fit">
-          <Image
-            className="max-w-[700px] rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
-            alt="Tertiary container example"
-            src={tertiaryContainerExamplePic}
-            width={700}
-          />
-          <Body size={"small"} className="max-w-[700px] px-2">
-            1. On-tertiary container <br />
-            2. Tertiary container
-          </Body>
-        </div>
+        <ImageWithText
+          src={tertiaryContainerExamplePic}
+          alt="Tertiary container example"
+          width={700}
+        >
+          1. On-tertiary container <br />
+          2. Tertiary container
+        </ImageWithText>
       </div>
     </div>
   );

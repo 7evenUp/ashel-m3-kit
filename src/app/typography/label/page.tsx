@@ -1,11 +1,10 @@
 import Heading from "@/components/Heading";
+import ImageWithText from "@/components/ImageWithText";
 import Paragraph from "@/components/Paragraph";
-import Body from "@/components/ui/text/Body";
 import Display from "@/components/ui/text/Display";
 import musicPlayerPic from "@/public/typography/label/music_player.png";
 import navigationBarPic from "@/public/typography/label/navigation_bar.png";
 import quickReadingPic from "@/public/typography/label/quick_reading.png";
-import Image from "next/image";
 
 const LabelPage = () => {
   return (
@@ -20,43 +19,30 @@ const LabelPage = () => {
           основной части содержимого, например для подписей.
         </Paragraph>
         <Paragraph>Кнопки, например, используют крупный стиль label.</Paragraph>
-        <div className="flex flex-col gap-2 my-6 w-fit">
-          <Image
-            className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
-            alt="Label styles should enable quick reading at small sizes, such as in buttons"
-            src={quickReadingPic}
+        <ImageWithText
+          alt="Label styles should enable quick reading at small sizes, such as in buttons"
+          src={quickReadingPic}
+          width={400}
+        >
+          Label должны обеспечивать быстрое чтение на небольших размерах,
+          например на кнопках.
+        </ImageWithText>
+
+        <div className="flex gap-5">
+          <ImageWithText
+            alt="A music player using label style for the timecode"
+            src={musicPlayerPic}
             width={400}
-          />
-          <Body size={"small"} className="max-w-prose px-2">
-            Label должны обеспечивать быстрое чтение на небольших размерах,
-            например на кнопках.
-          </Body>
-        </div>
-
-        <div className="flex gap-2">
-          <div className="flex flex-col gap-2 my-6 w-fit">
-            <Image
-              className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
-              alt="A music player using label style for the timecode"
-              src={musicPlayerPic}
-              width={400}
-            />
-            <Body size={"small"} className="max-w-prose px-2">
-              Музыкальный плеер, использующий label для таймкода
-            </Body>
-          </div>
-
-          <div className="flex flex-col gap-2 my-6 w-fit">
-            <Image
-              className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
-              alt="A navigation bar using label style for the destination text"
-              src={navigationBarPic}
-              width={400}
-            />
-            <Body size={"small"} className="max-w-prose px-2">
-              Navigation Bar использующий label в качестве текста к ссылкам
-            </Body>
-          </div>
+          >
+            Музыкальный плеер, использующий label для таймкода
+          </ImageWithText>
+          <ImageWithText
+            alt="A navigation bar using label style for the destination text"
+            src={navigationBarPic}
+            width={400}
+          >
+            Navigation Bar использующий label в качестве текста к ссылкам
+          </ImageWithText>
         </div>
       </div>
     </div>
