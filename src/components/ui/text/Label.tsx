@@ -3,7 +3,7 @@ import type { VariantProps } from "class-variance-authority";
 import { FC, HTMLAttributes } from "react";
 import { cn } from "@/utils/classNames";
 
-const labelVariants = cva("text-light-onSurface dark:text-dark-onSurface", {
+const labelVariants = cva("text-inherit dark:text-inherit", {
   variants: {
     size: {
       large: "text-sm tracking-[0.1px] font-medium",
@@ -20,8 +20,12 @@ interface Props
   extends VariantProps<typeof labelVariants>,
     HTMLAttributes<HTMLHeadingElement> {}
 
-const Label: FC<Props> = ({ children, size, className }) => {
-  return <span className={cn(labelVariants({ size }), className)}>{children}</span>;
+const Label: FC<Props> = ({ children, size, className, ...props }) => {
+  return (
+    <span className={cn(labelVariants({ size }), className)} {...props}>
+      {children}
+    </span>
+  );
 };
 
 export default Label;

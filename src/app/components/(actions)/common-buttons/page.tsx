@@ -95,6 +95,26 @@ const CommonButtonsPage = () => {
             </Button>
           </div>
         </div>
+
+        <Subheading>Text</Subheading>
+        <div className="flex gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10">
+          <div className="flex flex-col gap-4">
+            <Button appearance="text" type="button">
+              Text button
+            </Button>
+            <Button appearance="text" type="button" icon={<Plus />}>
+              Text button
+            </Button>
+          </div>
+          <div className="flex flex-col gap-4">
+            <Button appearance="text" type="button" disabled>
+              Text button
+            </Button>
+            <Button appearance="text" type="button" icon={<Plus />} disabled>
+              Text button
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
