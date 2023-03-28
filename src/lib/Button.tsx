@@ -61,9 +61,7 @@ const Button: FC<Props> = ({
     >
       <UIStateLayer
         className={cn(
-          "rounded-full flex items-center gap-2 px-6 bg-opacity-0 dark:bg-opacity-0",
-          !disabled &&
-            "group-hover:bg-opacity-[0.08] group-active:bg-opacity-[0.12]",
+          "rounded-full flex items-center gap-2 px-6",
           icon && "pl-4",
           uiStateLayerVariants({ appearance }),
           icon && appearance === "text" && "pr-4"

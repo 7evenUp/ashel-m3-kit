@@ -8,8 +8,8 @@ import Title from "./ui/text/Title";
 import UIStateLayer from "./ui/UIStateLayer";
 
 interface Props {
-  href: string
-  label: string
+  href: string;
+  label: string;
 }
 
 const NavLink: FC<Props> = ({ href, label }) => {
@@ -30,7 +30,7 @@ const NavLink: FC<Props> = ({ href, label }) => {
       >
         <UIStateLayer
           className={cn(
-            "py-1 px-4 rounded-full bg-opacity-0 dark:bg-opacity-0 group-hover:bg-opacity-[0.08] group-active:bg-opacity-[0.12]",
+            "py-1 px-4 rounded-full",
             isActive
               ? "bg-light-onSurface dark:bg-dark-onSurface"
               : "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant"

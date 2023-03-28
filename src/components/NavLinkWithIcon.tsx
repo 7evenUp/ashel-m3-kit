@@ -16,29 +16,35 @@ const NavLinkWithIcon = ({
   label: string;
   icon: ReactNode;
 }) => {
-  const segment = useSelectedLayoutSegment()
-  const isActive = href.split('/')[1] === segment;
+  const segment = useSelectedLayoutSegment();
+  const isActive = href.split("/")[1] === segment;
 
   return (
-    <Link href={href} className="group flex flex-col items-center gap-1 rounded-md outline-offset-4">
+    <Link
+      href={href}
+      className="group flex flex-col items-center gap-1 rounded-md outline-offset-4"
+    >
       <div
         className={cn(
           "rounded-full",
-          isActive && 'bg-light-secondaryContainer dark:bg-dark-secondaryContainer'
+          isActive &&
+            "bg-light-secondaryContainer dark:bg-dark-secondaryContainer"
         )}
       >
-        <UIStateLayer className={cn(
-          'py-1 px-4 rounded-full bg-opacity-0 dark:bg-opacity-0 group-hover:bg-opacity-[0.08] group-active:bg-opacity-[0.12]',
-          isActive
-            ? "bg-light-onSurface dark:bg-dark-onSurface"
-            : "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant"
-        )}>
+        <UIStateLayer
+          className={cn(
+            "py-1 px-4 rounded-full",
+            isActive
+              ? "bg-light-onSurface dark:bg-dark-onSurface"
+              : "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant"
+          )}
+        >
           <span
             className={
               isActive
                 ? "text-light-onSecondaryContainer dark:text-dark-onSecondaryContainer"
                 : "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
-              }
+            }
           >
             {icon}
           </span>
