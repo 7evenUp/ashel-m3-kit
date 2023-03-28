@@ -75,6 +75,26 @@ const CommonButtonsPage = () => {
             </Button>
           </div>
         </div>
+
+        <Subheading>Outlined</Subheading>
+        <div className="flex gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10">
+          <div className="flex flex-col gap-4">
+            <Button appearance="outlined" type="button">
+              Outlined
+            </Button>
+            <Button appearance="outlined" type="button" icon={<Plus />}>
+              Outlined
+            </Button>
+          </div>
+          <div className="flex flex-col gap-4">
+            <Button appearance="outlined" type="button" disabled>
+              Outlined
+            </Button>
+            <Button appearance="outlined" type="button" icon={<Plus />} disabled>
+              Outlined
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
