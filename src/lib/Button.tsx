@@ -13,7 +13,7 @@ const buttonVariants = cva(
           "bg-light-surfaceVariant dark:bg-dark-surfaceVariant shadow-elevation1 disabled:bg-light-primary disabled:dark:bg-dark-primary hover:shadow-elevation2 active:shadow-elevation1",
         filled:
           "bg-light-primary dark:bg-dark-primary disabled:bg-light-onSurface disabled:dark:bg-dark-onSurface hover:shadow-elevation1 active:shadow-none",
-        tonal: "",
+        tonal: "bg-light-secondaryContainer dark:bg-dark-secondaryContainer disabled:bg-light-onSurface disabled:dark:bg-dark-onSurface hover:shadow-elevation1 active:shadow-none",
         outlined: "",
         text: "",
       },
@@ -27,7 +27,7 @@ const uiStateLayerVariants = cva("", {
     appearance: {
       elevated: "bg-light-primary dark:bg-dark-primary",
       filled: "bg-light-onPrimary dark:bg-dark-onPrimary",
-      tonal: "",
+      tonal: "bg-light-onSecondaryContainer dark:bg-dark-onSecondaryContainer",
       outlined: "",
       text: "",
     },
@@ -40,7 +40,7 @@ const labelVariants = cva("", {
     appearance: {
       elevated: "text-light-primary dark:text-dark-primary",
       filled: "text-light-onPrimary dark:text-dark-onPrimary",
-      tonal: "",
+      tonal: "text-light-onSecondaryContainer dark:text-dark-onSecondaryContainer",
       outlined: "",
       text: "",
     },

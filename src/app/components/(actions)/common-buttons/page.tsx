@@ -55,6 +55,26 @@ const CommonButtonsPage = () => {
             </Button>
           </div>
         </div>
+
+        <Subheading>Filled Tonal</Subheading>
+        <div className="flex gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10">
+          <div className="flex flex-col gap-4">
+            <Button appearance="tonal" type="button">
+              Filled Tonal
+            </Button>
+            <Button appearance="tonal" type="button" icon={<Plus />}>
+              Filled Tonal
+            </Button>
+          </div>
+          <div className="flex flex-col gap-4">
+            <Button appearance="tonal" type="button" disabled>
+              Filled Tonal
+            </Button>
+            <Button appearance="tonal" type="button" icon={<Plus />} disabled>
+              Filled Tonal
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
