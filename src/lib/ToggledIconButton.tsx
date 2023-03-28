@@ -1,7 +1,7 @@
 import UIStateLayer from "@/components/ui/UIStateLayer";
 import { cn } from "@/utils/classNames";
 import { cva, VariantProps } from "class-variance-authority";
-import { ButtonHTMLAttributes, FC, ReactNode } from "react";
+import { ButtonHTMLAttributes, FC, InputHTMLAttributes, LabelHTMLAttributes, ReactNode } from "react";
 
 const buttonVariants = cva(
   "group h-10 w-10 rounded-full disabled:bg-opacity-[0.12] dark:disabled:bg-opacity-[0.12] disabled:cursor-not-allowed  disabled:text-light-onSurface disabled:dark:text-dark-onSurface disabled:text-opacity-[0.38] disabled:dark:text-opacity-[0.38]",
@@ -9,12 +9,12 @@ const buttonVariants = cva(
     variants: {
       appearance: {
         filled:
-          "bg-light-primary dark:bg-dark-primary disabled:bg-light-onSurface disabled:dark:bg-dark-onSurface   text-light-onPrimary dark:text-dark-onPrimary",
+          "",
         tonal:
-          "bg-light-secondaryContainer dark:bg-dark-secondaryContainer disabled:bg-light-onSurface disabled:dark:bg-dark-onSurface text-light-onSecondaryContainer dark:text-dark-onSecondaryContainer",
+          "",
         outlined:
-          "border border-light-outline dark:border-dark-outline disabled:border-light-outline disabled:dark:border-dark-outline disabled:border-opacity-[0.12] dark:disabled:border-opacity-[0.12] text-light-primary dark:text-dark-primary",
-        standart: "text-light-primary dark:text-dark-primary",
+          "",
+        standart: "",
       },
     },
     defaultVariants: {},
@@ -34,25 +34,28 @@ const uiStateLayerVariants = cva("", {
 });
 
 type IconButtonVariantProps = VariantProps<typeof buttonVariants>;
+type LabelBaseProps = LabelHTMLAttributes<HTMLLabelElement>
 
 interface Props
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
+  extends Omit<LabelBaseProps, "onChange">,
+    Required<Pick<LabelBaseProps, "onChange">>,
     Required<Pick<IconButtonVariantProps, "appearance">> {
   icon: ReactNode;
+  selected: boolean;
+  disabled: boolean
 }
 
-const IconButton: FC<Props> = ({
+const ToggledIconButton: FC<Props> = ({
   icon,
-  onClick,
+  onChange,
   className,
   appearance,
   disabled,
+  selected,
   ...props
 }) => {
   return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
+    <label
       className={cn(className, buttonVariants({ appearance }))}
       {...props}
     >
@@ -62,10 +65,16 @@ const IconButton: FC<Props> = ({
           uiStateLayerVariants({ appearance })
         )}
       >
+        <input
+        className="appearance-none"
+        type={"checkbox"}
+        checked={selected}
+        onChange={onChange}
+      />
         <span>{icon}</span>
       </UIStateLayer>
-    </button>
+    </label>
   );
 };
 
-export default IconButton;
+export default ToggledIconButton;

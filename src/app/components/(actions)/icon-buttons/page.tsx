@@ -1,11 +1,18 @@
+"use client";
+
 import Heading from "@/components/Heading";
 import Subheading from "@/components/Subheading";
 import Display from "@/components/ui/text/Display";
-import Label from "@/components/ui/text/Label";
 import IconButton from "@/lib/IconButton";
+import ToggledIconButton from "@/lib/ToggledIconButton";
 import { BookmarkEmpty, Download, Heart, Settings } from "iconoir-react";
+import { useState } from "react";
 
 const IconButtonsPage = () => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const toggleButton = () => setIsSelected(!isSelected);
+
   return (
     <div>
       <Display className="mb-4">Icon Buttons</Display>
@@ -31,12 +38,19 @@ const IconButtonsPage = () => {
             <Subheading>Filled toggle</Subheading>
             <div className="flex flex-col gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10 w-fit">
               <div className="flex items-center gap-4">
-                <IconButton appearance={"filled"} icon={<BookmarkEmpty />} />
-                <IconButton
+                {/* <ToggledIconButton
+                  appearance={"filled"}
+                  icon={<BookmarkEmpty />}
+                  onClick={toggleButton}
+                  selected={isSelected}
+                />
+                <ToggledIconButton
                   appearance={"filled"}
                   icon={<Download />}
                   disabled
-                />
+                  onClick={toggleButton}
+                  selected={isSelected}
+                /> */}
               </div>
             </div>
           </div>
@@ -69,7 +83,11 @@ const IconButtonsPage = () => {
             <div className="flex flex-col gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10 w-fit">
               <div className="flex items-center gap-4">
                 <IconButton appearance={"outlined"} icon={<Heart />} />
-                <IconButton appearance={"outlined"} icon={<Settings />} disabled />
+                <IconButton
+                  appearance={"outlined"}
+                  icon={<Settings />}
+                  disabled
+                />
               </div>
             </div>
           </div>
@@ -78,7 +96,11 @@ const IconButtonsPage = () => {
             <div className="flex flex-col gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10 w-fit">
               <div className="flex items-center gap-4">
                 <IconButton appearance={"outlined"} icon={<BookmarkEmpty />} />
-                <IconButton appearance={"outlined"} icon={<Download />} disabled />
+                <IconButton
+                  appearance={"outlined"}
+                  icon={<Download />}
+                  disabled
+                />
               </div>
             </div>
           </div>
@@ -90,7 +112,11 @@ const IconButtonsPage = () => {
             <div className="flex flex-col gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10 w-fit">
               <div className="flex items-center gap-4">
                 <IconButton appearance={"standart"} icon={<Heart />} />
-                <IconButton appearance={"standart"} icon={<Settings />} disabled />
+                <IconButton
+                  appearance={"standart"}
+                  icon={<Settings />}
+                  disabled
+                />
               </div>
             </div>
           </div>
@@ -99,12 +125,15 @@ const IconButtonsPage = () => {
             <div className="flex flex-col gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10 w-fit">
               <div className="flex items-center gap-4">
                 <IconButton appearance={"standart"} icon={<BookmarkEmpty />} />
-                <IconButton appearance={"standart"} icon={<Download />} disabled />
+                <IconButton
+                  appearance={"standart"}
+                  icon={<Download />}
+                  disabled
+                />
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
