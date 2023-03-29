@@ -19,11 +19,11 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <Title size="large" className="mt-2 text-xl">Containment</Title>
         <NavLink href={"/components/cards"} label="Cards" />
         <NavLink href={"/components/dialogs"} label="Dialog" />
-        <NavLink href={"/components/tabs"} label="Tabs" />
 
         <Title size="large" className="mt-2 text-xl">Navigation</Title>
         <NavLink href={"/components/navigation-bar"} label="Navigation bar" />
         <NavLink href={"/components/navigation-drawer"} label="Navigation drawer" />
+        <NavLink href={"/components/tabs"} label="Tabs" />
 
         <Title size="large" className="mt-2 text-xl">Selection</Title>
         <NavLink href={"/components/checkbox"} label="Checkbox" />
