@@ -3,7 +3,7 @@ import type { VariantProps } from "class-variance-authority";
 import { FC, HTMLAttributes } from "react";
 import { cn } from "@/utils/classNames";
 
-const displayVariants = cva("text-light-onSurface dark:text-dark-onSurface", {
+const displayVariants = cva("text-inherit dark:text-inherit", {
   variants: {
     size: {
       large: "text-[57px] leading-[64px] tracking-[-0.25px]",
@@ -20,8 +20,12 @@ interface Props
   extends VariantProps<typeof displayVariants>,
     HTMLAttributes<HTMLHeadingElement> {}
 
-const Display: FC<Props> = ({ children, size, className }) => {
-  return <h1 className={cn(displayVariants({ size }), className)}>{children}</h1>;
+const Display: FC<Props> = ({ children, size, className, ...props }) => {
+  return (
+    <h1 className={cn(displayVariants({ size }), className)} {...props}>
+      {children}
+    </h1>
+  );
 };
 
 export default Display;
