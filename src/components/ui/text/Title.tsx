@@ -3,7 +3,7 @@ import type { VariantProps } from "class-variance-authority";
 import { FC, HTMLAttributes } from "react";
 import { cn } from "@/utils/classNames";
 
-const titleVariants = cva("text-light-onSurface dark:text-dark-onSurface", {
+const titleVariants = cva("text-inherit dark:text-inherit", {
   variants: {
     size: {
       large: "text-[22px] leading-7",
@@ -20,8 +20,12 @@ interface Props
   extends VariantProps<typeof titleVariants>,
     HTMLAttributes<HTMLHeadingElement> {}
 
-const Title: FC<Props> = ({ children, size, className }) => {
-  return <p className={cn(titleVariants({ size }), className)}>{children}</p>;
+const Title: FC<Props> = ({ children, size, className, ...props }) => {
+  return (
+    <p className={cn(titleVariants({ size }), className)} {...props}>
+      {children}
+    </p>
+  );
 };
 
 export default Title;
