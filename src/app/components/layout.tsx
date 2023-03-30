@@ -11,6 +11,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <Title size="large" className="mt-2 text-xl">Actions</Title>
         <NavLink href={"/components/common-buttons"} label="Common buttons" />
         <NavLink href={"/components/icon-buttons"} label="Icon buttons" />
+        <NavLink href={"/components/segmented-buttons"} label="Segmented buttons" />
 
         <Title size="large" className="mt-2 text-xl">Communication</Title>
         <NavLink href={"/components/badges"} label="Badges" />
