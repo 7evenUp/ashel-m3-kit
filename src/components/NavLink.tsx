@@ -19,34 +19,23 @@ const NavLink: FC<Props> = ({ href, label }) => {
   return (
     <Link
       href={href}
-      className="group flex flex-col items-start gap-1 rounded-full outline-offset-0"
+      className={cn(
+        "min-h-[48px] group w-full rounded-full outline-offset-0",
+        isActive
+          ? "bg-light-secondaryContainer dark:bg-dark-secondaryContainer text-light-onSecondaryContainer dark:text-dark-onSecondaryContainer"
+          : "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
+      )}
     >
-      <div
+      <UIStateLayer
         className={cn(
-          "rounded-full w-full",
-          isActive &&
-            "bg-light-secondaryContainer dark:bg-dark-secondaryContainer"
+          "px-4 rounded-full flex items-center",
+          isActive
+            ? "bg-light-onSurface dark:bg-dark-onSurface"
+            : "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant"
         )}
       >
-        <UIStateLayer
-          className={cn(
-            "py-1 px-4 rounded-full",
-            isActive
-              ? "bg-light-onSurface dark:bg-dark-onSurface"
-              : "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant"
-          )}
-        >
-          <Title
-            className={
-              isActive
-                ? "text-light-onSecondaryContainer dark:text-dark-onSecondaryContainer"
-                : "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
-            }
-          >
-            {label}
-          </Title>
-        </UIStateLayer>
-      </div>
+        <Title>{label}</Title>
+      </UIStateLayer>
     </Link>
   );
 };
