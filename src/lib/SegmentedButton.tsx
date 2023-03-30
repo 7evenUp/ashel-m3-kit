@@ -28,10 +28,7 @@ const SegmentedButton = forwardRef<
 >(({ className, type, value, children, ...props }, ref) => (
   <ToggleGroup.Item
     value={value}
-    className={cn(
-      "group",
-      className
-    )}
+    className={cn("group", className)}
     {...props}
     ref={ref}
     asChild
@@ -47,43 +44,5 @@ const SegmentedButton = forwardRef<
   </ToggleGroup.Item>
 ));
 SegmentedButton.displayName = ToggleGroup.Item.displayName;
-
-// const SegmentedButton = ({
-//   id,
-//   name,
-//   value,
-//   onChange,
-//   checked,
-//   children,
-// }: {
-//   id: string;
-//   name: string;
-//   value: string;
-//   onChange: (evt: React.ChangeEvent<HTMLInputElement>) => void;
-//   checked?: boolean;
-//   children: ReactNode;
-// }) => {
-//   return (
-//     <div className="group">
-//       <input
-//         className="appearance-none peer"
-//         type="radio"
-//         id={id}
-//         name={name}
-//         value={value}
-//         onChange={onChange}
-//         checked={checked}
-//       />
-//       <label
-//         htmlFor={id}
-//         className=" transition-all border-light-outline dark:border-dark-outline border-r group-last:border-r-0 group-first:rounded-l-full group-last:rounded-r-full"
-//       >
-//         <UIStateLayer className="py-2 text-center bg-light-onSurface dark:bg-dark-onSurface group-last:border-r-0 group-first:rounded-l-full group-last:rounded-r-full">
-//           <Label size={"large"}>{children}</Label>
-//         </UIStateLayer>
-//       </label>
-//     </div>
-//   );
-// };
 
 export { SegmentedButton, SegmentedRoot };

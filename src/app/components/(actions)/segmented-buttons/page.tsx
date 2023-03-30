@@ -37,7 +37,7 @@ const SegmentedButtonsPage = () => {
           className="w-[500px]"
           type="single"
           value={currency}
-          onValueChange={(value) => setCurrency(value)}
+          onValueChange={(value) => value && setCurrency(value)}
         >
           <SegmentedButton
             id="try"
