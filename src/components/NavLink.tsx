@@ -20,7 +20,7 @@ const NavLink: FC<Props> = ({ href, label }) => {
     <Link
       href={href}
       className={cn(
-        "min-h-[48px] group w-full rounded-full outline-offset-0",
+        "min-h-[40px] group w-full rounded-full outline-offset-0",
         isActive
           ? "bg-light-secondaryContainer dark:bg-dark-secondaryContainer text-light-onSecondaryContainer dark:text-dark-onSecondaryContainer"
           : "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
