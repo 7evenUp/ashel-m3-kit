@@ -31,6 +31,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <NavLink href={"/components/radio-button"} label="Radio button" />
         <NavLink href={"/components/chips"} label="Chips" />
         <NavLink href={"/components/switch"} label="Switch" />
+        <NavLink href={"/components/menus"} label="Menus" />
 
         <Title size="large" className="mt-4 text-xl">Text Inputs</Title>
         <NavLink href={"/components/filled-text-field"} label="Filled text field" />
