@@ -8,8 +8,8 @@ const UIStateLayer: FC<HTMLAttributes<HTMLDivElement>> = ({
   return (
     <div
       className={cn(
-        className,
-        "w-full h-full bg-opacity-0 dark:bg-opacity-0 group-hover:bg-opacity-[0.08] group-active:bg-opacity-[0.12] group-disabled:bg-opacity-0"
+        "w-full h-full bg-opacity-0 dark:bg-opacity-0 group-hover:bg-opacity-[0.08] group-active:bg-opacity-[0.12] group-disabled:bg-opacity-0",
+        className
       )}
     >
       {children}
