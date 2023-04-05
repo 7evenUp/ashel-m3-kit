@@ -3,11 +3,20 @@
 import { cn } from "@/utils/classNames";
 import { SunLight, HalfMoon } from "iconoir-react";
 import { useTheme } from "next-themes";
-import { FC, HTMLAttributes } from "react";
+import { FC, HTMLAttributes, useEffect, useState } from "react";
 import UIStateLayer from "./ui/UIStateLayer";
 
 const ThemeToggle: FC<HTMLAttributes<HTMLButtonElement>> = ({ className }) => {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   const toggleTheme = () => {
     if (theme === "light") {
