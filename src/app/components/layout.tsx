@@ -2,6 +2,11 @@ import NavLink from "@/components/NavLink";
 import Title from "@/components/ui/text/Title";
 import { ReactNode } from "react";
 
+export const metadata = {
+  title: "Ashel UI Kit | Components",
+  description: "Implementation of Material Design V3 components",
+};
+
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="w-full">

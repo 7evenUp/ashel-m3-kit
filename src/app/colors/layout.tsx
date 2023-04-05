@@ -1,6 +1,11 @@
 import NavLink from "@/components/NavLink";
 import { ReactNode } from "react";
 
+export const metadata = {
+  title: "Ashel UI Kit | Colors",
+  description: "Material Design V3 color principles",
+};
+
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="w-full">
