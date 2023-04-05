@@ -22,6 +22,8 @@ export const RadioGroup = React.forwardRef<
   </RadixRadioGroup.Root>
 ));
 
+RadioGroup.displayName = "RadioGroup";
+
 export const RadioGroupItem = React.forwardRef<
   React.ElementRef<typeof RadixRadioGroup.Item>,
   React.ComponentPropsWithoutRef<typeof RadixRadioGroup.Item>
@@ -40,6 +42,8 @@ export const RadioGroupItem = React.forwardRef<
     <RadioGroupLabel htmlFor={id}>{children}</RadioGroupLabel>
   </div>
 ));
+
+RadioGroupItem.displayName = "RadioGroupItem";
 
 export const RadioGroupLabel: FC<LabelHTMLAttributes<HTMLLabelElement>> = ({
   className,

@@ -43,3 +43,5 @@ export const Checkbox = React.forwardRef<
     </RadixCheckbox.Root>
   );
 });
+
+Checkbox.displayName = "Checkbox";
