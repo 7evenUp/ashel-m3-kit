@@ -6,6 +6,8 @@ import Display from "@/components/ui/text/Display";
 import { SegmentedButton, SegmentedRoot } from "@/lib/SegmentedButton";
 import { useEffect, useState } from "react";
 
+type currencies = "usd" | "try" | "cny";
+
 const RUB_TO_CURRENCIES = {
   usd: 0.013,
   try: 0.25,
@@ -20,7 +22,7 @@ const SYMBOL_TO_CURRENCIES = {
 
 const SegmentedButtonsPage = () => {
   const [result, setResult] = useState(0);
-  const [currency, setCurrency] = useState<"usd" | "try" | "cny">("usd");
+  const [currency, setCurrency] = useState<currencies>("usd");
 
   useEffect(() => {
     setResult(1000 * RUB_TO_CURRENCIES[currency]);
@@ -37,7 +39,7 @@ const SegmentedButtonsPage = () => {
           className="w-[500px]"
           type="single"
           value={currency}
-          onValueChange={(value) => value && setCurrency(value)}
+          onValueChange={(value: currencies) => value && setCurrency(value)}
         >
           <SegmentedButton
             id="try"
