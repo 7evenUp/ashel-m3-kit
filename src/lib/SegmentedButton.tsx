@@ -2,16 +2,13 @@ import Label from "@/components/ui/text/Label";
 import UIStateLayer from "@/components/ui/UIStateLayer";
 import { cn } from "@/utils/classNames";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
-import { forwardRef, ReactNode } from "react";
+import { forwardRef } from "react";
 
 const SegmentedRoot = forwardRef<
   React.ElementRef<typeof ToggleGroup.Root>,
   React.ComponentPropsWithoutRef<typeof ToggleGroup.Root>
->(({ className, type, value, onValueChange, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <ToggleGroup.Root
-    type="single"
-    value={value}
-    onValueChange={onValueChange}
     className={cn(
       "flex border border-light-outline dark:border-dark-outline rounded-full divide-x divide-light-outline dark:divide-dark-outline",
       className
