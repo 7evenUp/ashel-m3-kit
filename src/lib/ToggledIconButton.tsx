@@ -69,6 +69,7 @@ const ToggledIconButton: FC<Props> = ({
         className="appearance-none"
         type={"checkbox"}
         checked={selected}
+        // @ts-expect-error
         onChange={onChange}
       />
         <span>{icon}</span>
