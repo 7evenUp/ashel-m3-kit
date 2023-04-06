@@ -21,7 +21,7 @@ const Footer = () => {
         <div className="flex flex-col gap-5">
           <Label size="large">Links</Label>
           <InlineLink href="https://github.com/7evenUp/ashel-ui-kit">
-            Project's github
+            Project&apos;s github
           </InlineLink>
           <InlineLink href="https://m3.material.io/">Official docs</InlineLink>
           <InlineLink href="https://www.ashel.site/">My website</InlineLink>
