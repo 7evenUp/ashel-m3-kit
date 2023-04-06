@@ -9,7 +9,7 @@ export const metadata = {
 
 const About = () => {
   return (
-    <div className="p-10">
+    <main className="p-10 flex flex-col gap-3">
       <Display>About page</Display>
       <Paragraph>
         I started this project to improve my skills at building reusable UI
@@ -33,7 +33,7 @@ const About = () => {
         In components section you can see implementation of Material V3
         components, when and where apply them, how to customize them.
       </Paragraph>
-    </div>
+    </main>
   );
 };
 

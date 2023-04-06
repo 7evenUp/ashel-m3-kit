@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import NavLink from "@/components/NavLink";
 import Title from "@/components/ui/text/Title";
 import { ReactNode } from "react";
@@ -42,8 +43,11 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <NavLink href={"/components/filled-text-field"} label="Filled text field" />
         <NavLink href={"/components/outlined-text-field"} label="Outlined text field" />
       </div>
-
-      <div className="ml-[210px] p-3">{children}</div>
+      
+      <div className="ml-[210px] p-3">
+        <main>{children}</main>
+        <Footer />
+      </div>
     </div>
   );
 };

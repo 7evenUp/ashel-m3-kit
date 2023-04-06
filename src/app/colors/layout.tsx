@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import NavLink from "@/components/NavLink";
 import { ReactNode } from "react";
 
@@ -15,7 +16,10 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <NavLink href={"/colors/surfaces"} label="Surfaces" />
       </div>
 
-      <div className="ml-[180px] p-3">{children}</div>
+      <div className="ml-[180px] p-3">
+        <main>{children}</main>
+        <Footer />
+      </div>
     </div>
   );
 };
