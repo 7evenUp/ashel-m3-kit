@@ -82,9 +82,10 @@ export const cn = (...inputs: ClassValue[]) => {
         width={600}
       />
       <Paragraph>
-        После выполненых действий вы получите JSON файлик, из которого нам нужно
-        будет вытянуть цвета для нашего дизайна. Скопируйте поля{" "}
-        <InlineCode>&quot;light&quot;</InlineCode> и <InlineCode>&quot;dark&quot;</InlineCode>.
+        После выполненных действий вы получите JSON файлик, из которого нам
+        нужно будет вытянуть цвета для нашего дизайна. Скопируйте поля{" "}
+        <InlineCode>&quot;light&quot;</InlineCode> и{" "}
+        <InlineCode>&quot;dark&quot;</InlineCode>.
       </Paragraph>
       <Image
         className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
@@ -153,11 +154,10 @@ const Providers = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default Providers;
-`}
+export default Providers;`}
       />
       <Paragraph>
-        Далее оберните ваше приложение этим компонентом{" "}
+        Далее оберните ваше приложение этим компонентом по пути{" "}
         <InlineCode>src/app/layout.tsx</InlineCode>
       </Paragraph>
       <Code
@@ -182,12 +182,11 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
-`}
+}`}
       />
       <Paragraph>
         Добавим поле <InlineCode>darkMode</InlineCode> со значением{" "}
-        <InlineCode>&apos;`class&apos;`</InlineCode> в наш{" "}
+        <InlineCode>&apos;class&apos;</InlineCode> в наш{" "}
         <InlineCode>tailwind.config.js</InlineCode> :
       </Paragraph>
       <Code
@@ -197,8 +196,7 @@ module.exports = {
   ...
   darkMode: 'class',
   ...
-}
-`}
+}`}
       />
       <Paragraph>
         Создадим компонент с кнопками для переключения темы по пути{" "}

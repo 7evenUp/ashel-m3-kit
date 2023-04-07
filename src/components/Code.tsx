@@ -12,7 +12,7 @@ const Code = ({ code, language }: { code: string, language: Language }) => {
         <pre
           className={cn(
             className,
-            "max-w-[600px] py-0 overflow-auto bg-light-inverseSurface dark:bg-dark-surfaceVariant border border-light-outline rounded-t-md p-3"
+            "max-w-[600px] py-0 overflow-auto bg-light-inverseSurface dark:bg-dark-surfaceVariant border border-light-outline rounded-t-md p-3 my-2"
           )}
         >
           {tokens.map((line, i) => {
