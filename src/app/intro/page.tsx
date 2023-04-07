@@ -1,21 +1,21 @@
-import Code from "@/components/Code";
-import Heading from "@/components/Heading";
-import InlineCode from "@/components/InlineCode";
-import InlineLink from "@/components/InlineLink";
-import Paragraph from "@/components/Paragraph";
-import Display from "@/components/ui/text/Display";
-import Image from "next/image";
-import figmaPic from "@/public/intro/figma.gif";
-import jsonPic from "@/public/intro/json.png";
-import afterCopyingPic from "@/public/intro/after-copy.png";
-import finalResultPic from "@/public/intro/result.gif";
-import ImageWithText from "@/components/ImageWithText";
+import Code from "@/components/Code"
+import Heading from "@/components/Heading"
+import InlineCode from "@/components/InlineCode"
+import InlineLink from "@/components/InlineLink"
+import Paragraph from "@/components/Paragraph"
+import Display from "@/components/ui/text/Display"
+import Image from "next/image"
+import figmaPic from "@/public/intro/figma.gif"
+import jsonPic from "@/public/intro/json.png"
+import afterCopyingPic from "@/public/intro/after-copy.png"
+import finalResultPic from "@/public/intro/result.gif"
+import ImageWithText from "@/components/ImageWithText"
 
 export const metadata = {
   title: "Ashel UI Kit | About",
   description:
     "About the Material Design V3, why I started this project and goals I want to reach",
-};
+}
 
 const Intro = () => {
   return (
@@ -84,7 +84,7 @@ export const cn = (...inputs: ClassValue[]) => {
       <Paragraph>
         После выполненых действий вы получите JSON файлик, из которого нам нужно
         будет вытянуть цвета для нашего дизайна. Скопируйте поля{" "}
-        <InlineCode>"light"</InlineCode> и <InlineCode>"dark"</InlineCode>.
+        <InlineCode>&quot;light&quot;</InlineCode> и <InlineCode>&quot;dark&quot;</InlineCode>.
       </Paragraph>
       <Image
         className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
@@ -131,10 +131,10 @@ export const cn = (...inputs: ClassValue[]) => {
       <Paragraph>
         Для доступа приложения к цветовой теме, его необходимо обернуть в{" "}
         <InlineCode>ThemeProvider</InlineCode>. Учитывая, что этому компоненту
-        требуется указывать 'use client' директиву, мы не можем напрямую
-        использовать его в <InlineCode>layout.tsx</InlineCode>. Считается
-        хорошей практикой выносить все провайдеры в отдельный компонент. Мы так
-        и поступим. Создайте компонент по пути{" "}
+        требуется указывать <InlineCode>use client</InlineCode> директиву, мы не
+        можем напрямую использовать его в <InlineCode>layout.tsx</InlineCode>.
+        Считается хорошей практикой выносить все провайдеры в отдельный
+        компонент. Мы так и поступим. Создайте компонент по пути{" "}
         <InlineCode>src/components/Providers.tsx</InlineCode> и вставьте
         следующий код:
       </Paragraph>
@@ -187,7 +187,7 @@ export default function RootLayout({
       />
       <Paragraph>
         Добавим поле <InlineCode>darkMode</InlineCode> со значением{" "}
-        <InlineCode>'class'</InlineCode> в наш{" "}
+        <InlineCode>&apos;`class&apos;`</InlineCode> в наш{" "}
         <InlineCode>tailwind.config.js</InlineCode> :
       </Paragraph>
       <Code
@@ -276,7 +276,7 @@ export default function Home() {
         продвигайтесь дальше по сайту.
       </Paragraph>
     </main>
-  );
-};
+  )
+}
 
-export default Intro;
+export default Intro
