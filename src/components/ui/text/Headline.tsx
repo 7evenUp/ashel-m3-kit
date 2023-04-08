@@ -1,7 +1,7 @@
-import { cva } from "class-variance-authority";
-import type { VariantProps } from "class-variance-authority";
-import { FC, HTMLAttributes } from "react";
-import { cn } from "@/utils/classNames";
+import { cva } from "class-variance-authority"
+import type { VariantProps } from "class-variance-authority"
+import { FC, HTMLAttributes } from "react"
+import { cn } from "@/utils/classNames"
 
 const headlineVariants = cva("text-inherit dark:text-inherit", {
   variants: {
@@ -14,7 +14,7 @@ const headlineVariants = cva("text-inherit dark:text-inherit", {
   defaultVariants: {
     size: "medium",
   },
-});
+})
 
 interface Props
   extends VariantProps<typeof headlineVariants>,
@@ -25,7 +25,7 @@ const Headline: FC<Props> = ({ children, size, className, ...props }) => {
     <h2 className={cn(headlineVariants({ size }), className)} {...props}>
       {children}
     </h2>
-  );
-};
+  )
+}
 
-export default Headline;
+export default Headline
