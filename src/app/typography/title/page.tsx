@@ -1,10 +1,13 @@
-import Heading from "@/components/Heading";
-import ImageWithText from "@/components/ImageWithText";
-import Paragraph from "@/components/Paragraph";
-import Display from "@/components/ui/text/Display";
-import appBarExamplePic from "@/public/typography/title/app_bar_example.png";
-import categoryHeaderExamplePic from "@/public/typography/title/category_header_example.png";
-import newsExamplePic from "@/public/typography/title/news_example.png";
+import Heading from "@/components/Heading"
+import ImageWithText from "@/components/ImageWithText"
+import Paragraph from "@/components/Paragraph"
+import Body from "@/components/ui/text/Body"
+import Display from "@/components/ui/text/Display"
+import Title from "@/components/ui/text/Title"
+import Card from "@/lib/Card"
+import appBarExamplePic from "@/public/typography/title/app_bar_example.png"
+import categoryHeaderExamplePic from "@/public/typography/title/category_header_example.png"
+import newsExamplePic from "@/public/typography/title/news_example.png"
 
 const TitlePage = () => {
   return (
@@ -48,9 +51,33 @@ const TitlePage = () => {
             Пример title, применённого к заголовку категории: Top News.
           </ImageWithText>
         </div>
+
+        <Heading>Примеры</Heading>
+        <Card appearance="outlined" className="w-fit grid grid-cols-2 gap-6">
+          <Title size="large">Title large</Title>
+          <div className="flex flex-col items-end gap-1">
+            <Body>font-size: 22px</Body>
+            <Body>line-height: 28px</Body>
+          </div>
+
+          <Title size="medium">Title medium</Title>
+          <div className="flex flex-col items-end gap-1">
+            <Body>font-size: 16px</Body>
+            <Body>line-height: 24px</Body>
+            <Body>letter-spacing: 0.15px</Body>
+            <Body>font-weight: 500</Body>
+          </div>
+          <Title size="small">Title small</Title>
+          <div className="flex flex-col items-end gap-1">
+            <Body>font-size: 14px</Body>
+            <Body>line-height: 20px</Body>
+            <Body>letter-spacing: 0.1px</Body>
+            <Body>font-weight: 500</Body>
+          </div>
+        </Card>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TitlePage;
+export default TitlePage

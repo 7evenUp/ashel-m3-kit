@@ -1,10 +1,13 @@
-import Heading from "@/components/Heading";
-import ImageWithText from "@/components/ImageWithText";
-import Paragraph from "@/components/Paragraph";
-import Display from "@/components/ui/text/Display";
-import expressiveTypefacePic from "@/public/typography/headline/expressive_typeface.png";
-import headlineDialogPic from "@/public/typography/headline/headline_dialog.png";
-import shortTextPic from "@/public/typography/headline/short_text.png";
+import Heading from "@/components/Heading"
+import ImageWithText from "@/components/ImageWithText"
+import Paragraph from "@/components/Paragraph"
+import Body from "@/components/ui/text/Body"
+import Display from "@/components/ui/text/Display"
+import Headline from "@/components/ui/text/Headline"
+import Card from "@/lib/Card"
+import expressiveTypefacePic from "@/public/typography/headline/expressive_typeface.png"
+import headlineDialogPic from "@/public/typography/headline/headline_dialog.png"
+import shortTextPic from "@/public/typography/headline/short_text.png"
 
 const HeadlinePage = () => {
   return (
@@ -49,9 +52,28 @@ const HeadlinePage = () => {
             Dialog, использующий headline.
           </ImageWithText>
         </div>
+
+        <Heading>Примеры</Heading>
+        <Card appearance="outlined" className="w-fit grid grid-cols-2 gap-6">
+          <Headline size="large">Headline large</Headline>
+          <div className="flex flex-col items-end gap-1">
+            <Body>font-size: 32px</Body>
+            <Body>line-height: 40px</Body>
+          </div>
+          <Headline size="medium">Headline medium</Headline>
+          <div className="flex flex-col items-end gap-1">
+            <Body>font-size: 28px</Body>
+            <Body>line-height: 36px</Body>
+          </div>
+          <Headline size="small">Headline small</Headline>
+          <div className="flex flex-col items-end gap-1">
+            <Body>font-size: 24px</Body>
+            <Body>line-height: 32px</Body>
+          </div>
+        </Card>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HeadlinePage;
+export default HeadlinePage
