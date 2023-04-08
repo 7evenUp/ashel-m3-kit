@@ -1,7 +1,7 @@
-import { cva } from "class-variance-authority";
-import type { VariantProps } from "class-variance-authority";
-import { FC, HTMLAttributes } from "react";
-import { cn } from "@/utils/classNames";
+import { cva } from "class-variance-authority"
+import type { VariantProps } from "class-variance-authority"
+import { FC, HTMLAttributes } from "react"
+import { cn } from "@/utils/classNames"
 
 const labelVariants = cva("text-inherit dark:text-inherit", {
   variants: {
@@ -14,7 +14,7 @@ const labelVariants = cva("text-inherit dark:text-inherit", {
   defaultVariants: {
     size: "medium",
   },
-});
+})
 
 interface Props
   extends VariantProps<typeof labelVariants>,
@@ -25,7 +25,7 @@ const Label: FC<Props> = ({ children, size, className, ...props }) => {
     <span className={cn(labelVariants({ size }), className)} {...props}>
       {children}
     </span>
-  );
-};
+  )
+}
 
-export default Label;
+export default Label
