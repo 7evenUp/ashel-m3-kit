@@ -64,7 +64,11 @@ const DisplayPage = () => {
         </Card>
 
         <Heading>Компонент</Heading>
-        <Paragraph>Скопируйте и вставьте код в свой проект:</Paragraph>
+        <Paragraph>Скопируйте и вставьте код в свой проект.</Paragraph>
+        <Paragraph>
+          Можно сохранить компонент в файл{" "}
+          <InlineCode>src/components/typography/Display.tsx</InlineCode>:
+        </Paragraph>
         <Code
           language="tsx"
           code={`import { cva } from "class-variance-authority"
@@ -101,9 +105,7 @@ export default Display`}
         />
         <Paragraph>
           По умолчанию заголовок среднего размера и наследует цвет от родителя.
-          В любом случае можете изменять компонент под себя. Можно сохранить
-          компонент в файл{" "}
-          <InlineCode>src/components/typography/Display.tsx</InlineCode>
+          В любом случае можете изменять компонент под себя.
         </Paragraph>
         <Heading>Использование</Heading>
         <Code

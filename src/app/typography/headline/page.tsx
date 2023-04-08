@@ -76,7 +76,11 @@ const HeadlinePage = () => {
         </Card>
 
         <Heading>Компонент</Heading>
-        <Paragraph>Скопируйте и вставьте код в свой проект:</Paragraph>
+        <Paragraph>Скопируйте и вставьте код в свой проект.</Paragraph>
+        <Paragraph>
+          Можно сохранить компонент в файл{" "}
+          <InlineCode>src/components/typography/Headline.tsx</InlineCode>:
+        </Paragraph>
         <Code
           language="tsx"
           code={`import { cva } from "class-variance-authority"
@@ -112,9 +116,7 @@ const Headline: FC<Props> = ({ children, size, className, ...props }) => {
 export default Headline`}
         />
         <Paragraph>
-          Всё аналогично компоненту <InlineCode>Display</InlineCode>. Можно
-          сохранить компонент в файл{" "}
-          <InlineCode>src/components/typography/Headline.tsx</InlineCode>
+          Всё аналогично компоненту <InlineCode>Display</InlineCode>.
         </Paragraph>
         <Heading>Использование</Heading>
         <Code
