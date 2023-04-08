@@ -1,7 +1,7 @@
-import { cva } from "class-variance-authority";
-import type { VariantProps } from "class-variance-authority";
-import { FC, HTMLAttributes } from "react";
-import { cn } from "@/utils/classNames";
+import { cva } from "class-variance-authority"
+import type { VariantProps } from "class-variance-authority"
+import { FC, HTMLAttributes } from "react"
+import { cn } from "@/utils/classNames"
 
 const bodyVariants = cva("text-inherit dark:text-inherit", {
   variants: {
@@ -14,7 +14,7 @@ const bodyVariants = cva("text-inherit dark:text-inherit", {
   defaultVariants: {
     size: "medium",
   },
-});
+})
 
 interface Props
   extends VariantProps<typeof bodyVariants>,
@@ -25,7 +25,7 @@ const Body: FC<Props> = ({ children, size, className, ...props }) => {
     <p className={cn(bodyVariants({ size }), className)} {...props}>
       {children}
     </p>
-  );
-};
+  )
+}
 
-export default Body;
+export default Body
