@@ -1,17 +1,17 @@
-"use client";
+"use client"
 
-import Heading from "@/components/Heading";
-import Subheading from "@/components/Subheading";
-import Display from "@/components/ui/text/Display";
-import IconButton from "@/lib/IconButton";
-import ToggledIconButton from "@/lib/ToggledIconButton";
-import { BookmarkEmpty, Download, Heart, Settings } from "iconoir-react";
-import { useState } from "react";
+import Heading from "@/components/Heading"
+import Subheading from "@/components/Subheading"
+import Display from "@/components/ui/text/Display"
+import IconButton from "@/lib/IconButton"
+import ToggledIconButton from "@/lib/ToggledIconButton"
+import { BookmarkEmpty, Download, Heart, Settings } from "iconoir-react"
+import { useState } from "react"
 
 const IconButtonsPage = () => {
-  const [isSelected, setIsSelected] = useState(false);
+  const [isSelected, setIsSelected] = useState(false)
 
-  const toggleButton = () => setIsSelected(!isSelected);
+  const toggleButton = () => setIsSelected(!isSelected)
 
   return (
     <div>
@@ -38,19 +38,12 @@ const IconButtonsPage = () => {
             <Subheading>Filled toggle</Subheading>
             <div className="flex flex-col gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10 w-fit">
               <div className="flex items-center gap-4">
-                {/* <ToggledIconButton
-                  appearance={"filled"}
-                  icon={<BookmarkEmpty />}
-                  onClick={toggleButton}
-                  selected={isSelected}
-                />
-                <ToggledIconButton
-                  appearance={"filled"}
-                  icon={<Download />}
-                  disabled
-                  onClick={toggleButton}
-                  selected={isSelected}
-                /> */}
+                <ToggledIconButton appearance="filled">
+                  <BookmarkEmpty />
+                </ToggledIconButton>
+                <ToggledIconButton appearance="filled" disabled>
+                  <Download />
+                </ToggledIconButton>
               </div>
             </div>
           </div>
@@ -70,8 +63,12 @@ const IconButtonsPage = () => {
             <Subheading>Tonal toggle</Subheading>
             <div className="flex flex-col gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10 w-fit">
               <div className="flex items-center gap-4">
-                <IconButton appearance={"tonal"} icon={<BookmarkEmpty />} />
-                <IconButton appearance={"tonal"} icon={<Download />} disabled />
+                <ToggledIconButton appearance="tonal">
+                  <BookmarkEmpty />
+                </ToggledIconButton>
+                <ToggledIconButton appearance="tonal" disabled>
+                  <Download />
+                </ToggledIconButton>
               </div>
             </div>
           </div>
@@ -82,10 +79,10 @@ const IconButtonsPage = () => {
             <Subheading>Outlined no toggle</Subheading>
             <div className="flex flex-col gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10 w-fit">
               <div className="flex items-center gap-4">
-                <IconButton appearance={"outlined"} icon={<Heart />} />
+                <IconButton appearance={"outlined"} icon={<BookmarkEmpty />} />
                 <IconButton
                   appearance={"outlined"}
-                  icon={<Settings />}
+                  icon={<Download />}
                   disabled
                 />
               </div>
@@ -95,12 +92,12 @@ const IconButtonsPage = () => {
             <Subheading>Outlined toggle</Subheading>
             <div className="flex flex-col gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10 w-fit">
               <div className="flex items-center gap-4">
-                <IconButton appearance={"outlined"} icon={<BookmarkEmpty />} />
-                <IconButton
-                  appearance={"outlined"}
-                  icon={<Download />}
-                  disabled
-                />
+                <ToggledIconButton appearance="outlined">
+                  <BookmarkEmpty />
+                </ToggledIconButton>
+                <ToggledIconButton appearance="outlined" disabled>
+                  <Download />
+                </ToggledIconButton>
               </div>
             </div>
           </div>
@@ -124,19 +121,19 @@ const IconButtonsPage = () => {
             <Subheading>Standart toggle</Subheading>
             <div className="flex flex-col gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10 w-fit">
               <div className="flex items-center gap-4">
-                <IconButton appearance={"standart"} icon={<BookmarkEmpty />} />
-                <IconButton
-                  appearance={"standart"}
-                  icon={<Download />}
-                  disabled
-                />
+                <ToggledIconButton appearance="standart">
+                  <BookmarkEmpty />
+                </ToggledIconButton>
+                <ToggledIconButton appearance="standart" disabled>
+                  <Download />
+                </ToggledIconButton>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default IconButtonsPage;
+export default IconButtonsPage
