@@ -1,8 +1,8 @@
-import Label from "@/components/ui/text/Label";
-import UIStateLayer from "@/components/ui/UIStateLayer";
-import { cn } from "@/utils/classNames";
-import { cva, VariantProps } from "class-variance-authority";
-import { ButtonHTMLAttributes, FC, ReactNode } from "react";
+import Label from "@/components/ui/text/Label"
+import UIStateLayer from "@/components/ui/UIStateLayer"
+import { cn } from "@/utils/classNames"
+import { cva, VariantProps } from "class-variance-authority"
+import { ButtonHTMLAttributes, FC, ReactNode } from "react"
 
 const buttonVariants = cva(
   "group h-10 rounded-full w-fit disabled:bg-opacity-[0.12] dark:disabled:bg-opacity-[0.12] disabled:cursor-not-allowed disabled:shadow-none disabled:text-light-onSurface disabled:dark:text-dark-onSurface disabled:text-opacity-[0.38] disabled:dark:text-opacity-[0.38] transition-shadow",
@@ -22,7 +22,7 @@ const buttonVariants = cva(
     },
     defaultVariants: {},
   }
-);
+)
 
 const uiStateLayerVariants = cva("", {
   variants: {
@@ -35,12 +35,12 @@ const uiStateLayerVariants = cva("", {
     },
   },
   defaultVariants: {},
-});
+})
 
 interface Props
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  icon?: ReactNode;
+  icon?: ReactNode
 }
 
 const Button: FC<Props> = ({
@@ -71,7 +71,7 @@ const Button: FC<Props> = ({
         <Label size="large">{children}</Label>
       </UIStateLayer>
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
