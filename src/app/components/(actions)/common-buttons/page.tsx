@@ -7,6 +7,8 @@ import Subheading from "@/components/Subheading"
 import Display from "@/components/ui/text/Display"
 import Button from "@/lib/Button"
 import { Plus } from "iconoir-react"
+import { buttonCode } from "./buttonCode"
+import { usageCode, usageWithIconsCode } from "./usageCode"
 
 const CommonButtonsPage = () => {
   return (
@@ -147,7 +149,7 @@ const CommonButtonsPage = () => {
         <Subheading>Text</Subheading>
         <Paragraph>
           Text кнопки используются для действий с наименьшим приоритетом,
-          особенно при представлении нескольких вариантов. Например в форме
+          особенно при представлении нескольких вариантов. Например, в форме
           опроса, где ответами являются <InlineCode>Да</InlineCode>,{" "}
           <InlineCode>Нет</InlineCode> и <InlineCode>Возможно</InlineCode>.
         </Paragraph>
@@ -173,95 +175,29 @@ const CommonButtonsPage = () => {
         <Heading>Компонент</Heading>
         <Paragraph>Скопируйте и вставьте код в свой проект.</Paragraph>
         <Paragraph>
+          Обратите внимание, что компонент имеет зависимости таких компонентов
+          как <InlineCode>Label</InlineCode> и{" "}
+          <InlineCode>UIStateLayer</InlineCode>. Если вы еще не добавили их в
+          свой проект, следует заняться сперва ими.
+        </Paragraph>
+        <Paragraph>
           Можно сохранить компонент в файл{" "}
           <InlineCode>src/components/ui/Button.tsx</InlineCode>:
         </Paragraph>
-        <Code
-          language="tsx"
-          code={`import Label from "@/components/ui/text/Label"
-import UIStateLayer from "@/components/ui/UIStateLayer"
-import { cn } from "@/utils/classNames"
-import { cva, VariantProps } from "class-variance-authority"
-import { ButtonHTMLAttributes, FC, ReactNode } from "react"
-
-const buttonVariants = cva(
-  "group h-10 rounded-full w-fit disabled:bg-opacity-[0.12] dark:disabled:bg-opacity-[0.12] disabled:cursor-not-allowed disabled:shadow-none disabled:text-light-onSurface disabled:dark:text-dark-onSurface disabled:text-opacity-[0.38] disabled:dark:text-opacity-[0.38] transition-shadow",
-  {
-    variants: {
-      appearance: {
-        elevated:
-          "bg-light-surfaceVariant dark:bg-dark-surfaceVariant shadow-elevation1 disabled:bg-light-primary disabled:dark:bg-dark-primary hover:shadow-elevation2 active:shadow-elevation1 text-light-primary dark:text-dark-primary",
-        filled:
-          "bg-light-primary dark:bg-dark-primary disabled:bg-light-onSurface disabled:dark:bg-dark-onSurface hover:shadow-elevation1 active:shadow-none text-light-onPrimary dark:text-dark-onPrimary",
-        tonal:
-          "bg-light-secondaryContainer dark:bg-dark-secondaryContainer disabled:bg-light-onSurface disabled:dark:bg-dark-onSurface hover:shadow-elevation1 active:shadow-none text-light-onSecondaryContainer dark:text-dark-onSecondaryContainer",
-        outlined:
-          "border border-light-outline dark:border-dark-outline disabled:border-light-onSurface disabled:dark:border-dark-onSurface disabled:border-opacity-[0.12] dark:disabled:border-opacity-[0.12] text-light-primary dark:text-dark-primary",
-        text: "text-light-primary dark:text-dark-primary",
-      },
-    },
-    defaultVariants: {},
-  }
-)
-
-const uiStateLayerVariants = cva("", {
-  variants: {
-    appearance: {
-      elevated: "bg-light-primary dark:bg-dark-primary",
-      filled: "bg-light-onPrimary dark:bg-dark-onPrimary",
-      tonal: "bg-light-onSecondaryContainer dark:bg-dark-onSecondaryContainer",
-      outlined: "bg-light-primary dark:bg-dark-primary",
-      text: "bg-light-primary dark:bg-dark-primary px-3",
-    },
-  },
-  defaultVariants: {},
-})
-
-interface Props
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  icon?: ReactNode
-}
-
-const Button: FC<Props> = ({
-  icon,
-  children,
-  onClick,
-  className,
-  appearance,
-  disabled,
-  ...props
-}) => {
-  return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      className={cn(className, buttonVariants({ appearance }))}
-      {...props}
-    >
-      <UIStateLayer
-        className={cn(
-          "rounded-full flex items-center gap-2 px-6",
-          icon && "pl-4",
-          uiStateLayerVariants({ appearance }),
-          icon && appearance === "text" && "pr-4"
-        )}
-      >
-        {icon && <span>{icon}</span>}
-        <Label size="large">{children}</Label>
-      </UIStateLayer>
-    </button>
-  )
-}
-
-export default Button`}
-        />
+        <Code language="tsx" code={buttonCode} />
         <Heading>Использование</Heading>
         <Code
           language="tsx"
           code={`import Button from "@/components/ui/Button"`}
         />
-        <Code language="tsx" code={``} />
+        <Code language="tsx" code={usageCode} />
+        <Subheading>Иконки</Subheading>
+        <Paragraph>
+          Также можно использовать кнопки с иконками. Лично я использую{" "}
+          <InlineLink href="https://iconoir.com/">Iconoir</InlineLink>{" "}
+          библиотеку. Можете выбрать свою любимую.
+        </Paragraph>
+        <Code language="tsx" code={usageWithIconsCode} />
       </div>
     </div>
   )

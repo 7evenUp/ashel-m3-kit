@@ -1,4 +1,4 @@
-import Label from "@/components/ui/text/Label"
+export const buttonCode = `import Label from "@/components/ui/text/Label"
 import UIStateLayer from "@/components/ui/UIStateLayer"
 import { cn } from "@/utils/classNames"
 import { cva, VariantProps } from "class-variance-authority"
@@ -71,3 +71,4 @@ const Button: FC<Props> = ({
 }
 
 export default Button
+`
