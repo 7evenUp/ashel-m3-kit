@@ -43,13 +43,13 @@ const Intro = () => {
         </InlineLink>
         , typescript и используем папку src.
       </Paragraph>
-      <Paragraph>Непосредственно установим зависимости:</Paragraph>
+      <Paragraph>Установим дополнительные зависимости:</Paragraph>
       <Code
         language="bash"
         code="yarn add class-variance-authority clsx tailwind-merge"
       />
       <Paragraph>
-        Добавим helper функцию <InlineCode>cn</InlineCode> для работы с css
+        Создадим helper функцию <InlineCode>cn</InlineCode> для работы с css
         классами в файл <InlineCode>src/utils/cn.ts</InlineCode>:
       </Paragraph>
       <Code
@@ -62,7 +62,8 @@ export const cn = (...inputs: ClassValue[]) => {
         language="typescript"
       />
       <Paragraph>
-        Она будет помогать нам условно добавлять tailwind классы к элементам
+        Многие реализованные компоненты используют данную функцию. Она будет
+        помогать нам условно добавлять tailwind классы к элементам.
       </Paragraph>
       <Heading>Загружаем цвета</Heading>
       <Paragraph>
@@ -94,8 +95,9 @@ export const cn = (...inputs: ClassValue[]) => {
         width={300}
       />
       <Paragraph>
-        После чего вставьте данные значения в ваш{" "}
-        <InlineCode>tailwind.config.js</InlineCode>.
+        После чего нужно расширить диапазон цветов темы проекта. Вставьте данные
+        значения в ваш <InlineCode>tailwind.config.js</InlineCode> в раздел{" "}
+        <InlineCode>{`theme: { extend: {colors: {...}}}`}</InlineCode>.
       </Paragraph>
       <ImageWithText alt="After copying" width={600} src={afterCopyingPic}>
         Вы должны увидеть у себя тоже самое.
@@ -185,7 +187,8 @@ export default function RootLayout({
 }`}
       />
       <Paragraph>
-        Добавим поле <InlineCode>darkMode</InlineCode> со значением{" "}
+        Для корректной работы Tailwind с тёмной темой добавим поле{" "}
+        <InlineCode>darkMode</InlineCode> со значением{" "}
         <InlineCode>&apos;class&apos;</InlineCode> в наш{" "}
         <InlineCode>tailwind.config.js</InlineCode> :
       </Paragraph>
