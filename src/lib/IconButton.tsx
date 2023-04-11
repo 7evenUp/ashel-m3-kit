@@ -1,7 +1,7 @@
-import UIStateLayer from "@/components/ui/UIStateLayer";
-import { cn } from "@/utils/classNames";
-import { cva, VariantProps } from "class-variance-authority";
-import { ButtonHTMLAttributes, FC, ReactNode } from "react";
+import UIStateLayer from "@/components/ui/UIStateLayer"
+import { cn } from "@/utils/classNames"
+import { cva, VariantProps } from "class-variance-authority"
+import { ButtonHTMLAttributes, FC, ReactNode } from "react"
 
 const buttonVariants = cva(
   "group h-10 w-10 rounded-full disabled:bg-opacity-[0.12] dark:disabled:bg-opacity-[0.12] disabled:cursor-not-allowed  disabled:text-light-onSurface disabled:dark:text-dark-onSurface disabled:text-opacity-[0.38] disabled:dark:text-opacity-[0.38]",
@@ -13,13 +13,13 @@ const buttonVariants = cva(
         tonal:
           "bg-light-secondaryContainer dark:bg-dark-secondaryContainer disabled:bg-light-onSurface disabled:dark:bg-dark-onSurface text-light-onSecondaryContainer dark:text-dark-onSecondaryContainer",
         outlined:
-          "border border-light-outline dark:border-dark-outline disabled:border-light-outline disabled:dark:border-dark-outline disabled:border-opacity-[0.12] dark:disabled:border-opacity-[0.12] text-light-primary dark:text-dark-primary",
+          "border border-light-outline dark:border-dark-outline disabled:border-opacity-[0.12] dark:disabled:border-opacity-[0.12] text-light-primary dark:text-dark-primary",
         standart: "text-light-primary dark:text-dark-primary",
       },
     },
     defaultVariants: {},
   }
-);
+)
 
 const uiStateLayerVariants = cva("", {
   variants: {
@@ -31,28 +31,19 @@ const uiStateLayerVariants = cva("", {
     },
   },
   defaultVariants: {},
-});
+})
 
-type IconButtonVariantProps = VariantProps<typeof buttonVariants>;
+type IconButtonVariantProps = VariantProps<typeof buttonVariants>
 
 interface Props
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     Required<Pick<IconButtonVariantProps, "appearance">> {
-  icon: ReactNode;
+  icon: ReactNode
 }
 
-const IconButton: FC<Props> = ({
-  icon,
-  onClick,
-  className,
-  appearance,
-  disabled,
-  ...props
-}) => {
+const IconButton: FC<Props> = ({ icon, className, appearance, ...props }) => {
   return (
     <button
-      onClick={onClick}
-      disabled={disabled}
       className={cn(className, buttonVariants({ appearance }))}
       {...props}
     >
@@ -65,7 +56,7 @@ const IconButton: FC<Props> = ({
         <span>{icon}</span>
       </UIStateLayer>
     </button>
-  );
-};
+  )
+}
 
-export default IconButton;
+export default IconButton
