@@ -28,7 +28,7 @@ const Switch = ({
       {/* Track */}
       <div
         className="h-[32px] w-[52px] absolute border-2 rounded-full transition-all
-                bg-light-surfaceVariant dark:bg-dark-surfaceVariant
+                bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest
                 peer-checked:bg-light-primary dark:peer-checked:bg-dark-primary
                 border-light-outline dark:border-dark-outline
                 peer-checked:border-light-primary dark:peer-checked:border-dark-primary"

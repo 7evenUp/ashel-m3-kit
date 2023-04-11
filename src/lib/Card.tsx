@@ -5,8 +5,8 @@ import React, { FC, HTMLAttributes } from "react";
 const cardVariants = cva("rounded-xl px-4 py-3", {
   variants: {
     appearance: {
-      elevated: "bg-light-surface dark:bg-dark-surface shadow-elevation1",
-      filled: "bg-light-surfaceVariant dark:bg-dark-surfaceVariant shadow-elevation1 text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant",
+      elevated: "bg-light-surfaceContainerLow dark:bg-dark-surfaceContainerLow shadow-elevation1",
+      filled: "bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest shadow-elevation1 text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant",
       outlined: "border border-light-outline dark:border-dark-outline",
     },
   },
