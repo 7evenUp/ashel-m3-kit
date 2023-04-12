@@ -1,5 +1,6 @@
 "use client"
 
+import Code from "@/components/Code"
 import Heading from "@/components/Heading"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
@@ -9,6 +10,8 @@ import Body from "@/components/ui/text/Body"
 import Display from "@/components/ui/text/Display"
 import { SegmentedButton, SegmentedRoot } from "@/lib/SegmentedButton"
 import { useEffect, useState } from "react"
+import { sourceCode, usageCodeMultiple, usageCodeSingle } from "./codeSamples"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
 
 type currencies = "usd" | "try" | "cny"
 
@@ -36,7 +39,7 @@ const SegmentedButtonsPage = () => {
     <div>
       <Display className="mb-4">Segmented Buttons</Display>
 
-      <div className="flex flex-col items-start gap-2">
+      <div className="flex flex-col gap-2">
         <Heading>Описание</Heading>
         <Paragraph>
           Segmented buttons помогают пользователям выбирать параметры,
@@ -49,10 +52,16 @@ const SegmentedButtonsPage = () => {
         <Paragraph>
           Если кратко, есть два вида данных кнопок:{" "}
           <InlineCode>Single-select</InlineCode> и{" "}
-          <InlineCode>Multi-select</InlineCode>. Первый используется для выбора
-          одной опции, в частности когда требуется переключить отображение (grid
-          - rows), при сортировке. Второй вариант пригодится для выбора
-          нескольких опций: при фильтрации и похожих задачах.
+          <InlineCode>Multi-select</InlineCode>.
+        </Paragraph>
+
+        <Paragraph>
+          Первый используется для выбора одной опции, в частности когда
+          требуется переключить отображение (grid - rows), при сортировке.
+        </Paragraph>
+        <Paragraph>
+          Второй вариант пригодится для выбора нескольких опций: при фильтрации
+          и похожих задачах.
         </Paragraph>
 
         <Heading>Примеры</Heading>
@@ -64,37 +73,87 @@ const SegmentedButtonsPage = () => {
           onValueChange={(value: currencies) => value && setCurrency(value)}
         >
           <SegmentedButton
-            id="try"
-            name="currenry"
+            name="currency"
             value="try"
-            onChange={() => setCurrency("try")}
           >
             Лира
           </SegmentedButton>
           <SegmentedButton
-            id="usd"
-            name="currenry"
+            name="currency"
             value="usd"
-            onChange={() => setCurrency("usd")}
           >
             Доллары
           </SegmentedButton>
           <SegmentedButton
-            id="cny"
-            name="currenry"
+            name="currency"
             value="cny"
-            onChange={() => setCurrency("cny")}
           >
             Юань
           </SegmentedButton>
         </SegmentedRoot>
 
-        <Body>
+        <Body className="w-[500px] text-center">
           1000 рублей = {result}
           {SYMBOL_TO_CURRENCIES[currency]}
         </Body>
 
         <Subheading>Multi-select</Subheading>
+
+        <SegmentedRoot
+          className="w-[500px]"
+          type="multiple"
+          defaultValue={["english", "german"]}
+        >
+          <SegmentedButton id="english" name="language" value="english">
+            Английский
+          </SegmentedButton>
+          <SegmentedButton id="spanish" name="language" value="spanish">
+            Испанский
+          </SegmentedButton>
+          <SegmentedButton id="german" name="language" value="german">
+            Немецкий
+          </SegmentedButton>
+          <SegmentedButton id="french" name="language" value="french">
+            Французский
+          </SegmentedButton>
+        </SegmentedRoot>
+
+        <Heading>Компонент</Heading>
+        <Paragraph>Скопируйте и вставьте код в свой проект.</Paragraph>
+        <Paragraph>
+          Обратите внимание, что компонент имеет зависимости таких компонентов
+          как <InlineCode>Label</InlineCode> и{" "}
+          <InlineCode>UIStateLayer</InlineCode>. Если вы еще не добавили их в
+          свой проект, следует заняться сперва ими.
+        </Paragraph>
+        <Paragraph>
+          Также необходимо установить зависимость{" "}
+          <InlineLink href="https://www.radix-ui.com/docs/primitives/components/toggle">
+            @radix-ui/react-toggle-group
+          </InlineLink>
+        </Paragraph>
+        <Code language="bash" code="yarn add @radix-ui/react-toggle-group" />
+        <Paragraph>
+          Можно сохранить компонент в файл{" "}
+          <InlineCode>src/components/ui/SegmentedButton.tsx</InlineCode>:
+        </Paragraph>
+        <Code language="tsx" code={sourceCode} />
+
+        <Heading>Использование</Heading>
+        <Paragraph>Обратите внимание, файл экспортирует два компонента: <InlineCode>SegmentedRoot</InlineCode> и <InlineCode>SegmentedButton</InlineCode>.</Paragraph>
+        <Paragraph>Первый служит в качестве контейнера, второй - в качестве самой кнопки.</Paragraph>
+        <Tabs defaultValue="single" className="w-[600px]">
+          <TabsList>
+            <TabsTrigger value="single">Single-select</TabsTrigger>
+            <TabsTrigger value="multi">Multi-select</TabsTrigger>
+          </TabsList>
+          <TabsContent value="single" className="p-0">
+            <Code language="tsx" code={usageCodeSingle} />
+          </TabsContent>
+          <TabsContent value="multi" className="p-0">
+            <Code language="tsx" code={usageCodeMultiple} />
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   )
