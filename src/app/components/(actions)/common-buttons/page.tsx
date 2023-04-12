@@ -1,14 +1,17 @@
-import Code from "@/components/Code"
+import { Plus } from "iconoir-react"
+
+import Display from "@/components/ui/text/Display"
+
 import Heading from "@/components/Heading"
+import Subheading from "@/components/Subheading"
+import Paragraph from "@/components/Paragraph"
+import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
-import Paragraph from "@/components/Paragraph"
-import Subheading from "@/components/Subheading"
-import Display from "@/components/ui/text/Display"
+
 import Button from "@/lib/Button"
-import { Plus } from "iconoir-react"
-import { buttonCode } from "./buttonCode"
-import { usageCode, usageWithIconsCode } from "./usageCode"
+
+import { buttonCode, usageCode, usageWithIconsCode } from "./codeSamples"
 
 const CommonButtonsPage = () => {
   return (

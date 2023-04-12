@@ -1,17 +1,21 @@
 "use client"
 
-import Code from "@/components/Code"
+import { useEffect, useState } from "react"
+
+import Display from "@/components/ui/text/Display"
+import Body from "@/components/ui/text/Body"
+
 import Heading from "@/components/Heading"
+import Subheading from "@/components/Subheading"
+import Paragraph from "@/components/Paragraph"
+import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
-import Paragraph from "@/components/Paragraph"
-import Subheading from "@/components/Subheading"
-import Body from "@/components/ui/text/Body"
-import Display from "@/components/ui/text/Display"
+
 import { SegmentedButton, SegmentedRoot } from "@/lib/SegmentedButton"
-import { useEffect, useState } from "react"
-import { sourceCode, usageCodeMultiple, usageCodeSingle } from "./codeSamples"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+
+import { sourceCode, usageCodeMultiple, usageCodeSingle } from "./codeSamples"
 
 type currencies = "usd" | "try" | "cny"
 
@@ -72,22 +76,13 @@ const SegmentedButtonsPage = () => {
           value={currency}
           onValueChange={(value: currencies) => value && setCurrency(value)}
         >
-          <SegmentedButton
-            name="currency"
-            value="try"
-          >
+          <SegmentedButton name="currency" value="try">
             Лира
           </SegmentedButton>
-          <SegmentedButton
-            name="currency"
-            value="usd"
-          >
+          <SegmentedButton name="currency" value="usd">
             Доллары
           </SegmentedButton>
-          <SegmentedButton
-            name="currency"
-            value="cny"
-          >
+          <SegmentedButton name="currency" value="cny">
             Юань
           </SegmentedButton>
         </SegmentedRoot>
@@ -140,8 +135,14 @@ const SegmentedButtonsPage = () => {
         <Code language="tsx" code={sourceCode} />
 
         <Heading>Использование</Heading>
-        <Paragraph>Обратите внимание, файл экспортирует два компонента: <InlineCode>SegmentedRoot</InlineCode> и <InlineCode>SegmentedButton</InlineCode>.</Paragraph>
-        <Paragraph>Первый служит в качестве контейнера, второй - в качестве самой кнопки.</Paragraph>
+        <Paragraph>
+          Обратите внимание, файл экспортирует два компонента:{" "}
+          <InlineCode>SegmentedRoot</InlineCode> и{" "}
+          <InlineCode>SegmentedButton</InlineCode>.
+        </Paragraph>
+        <Paragraph>
+          Первый служит в качестве контейнера, второй - в качестве самой кнопки.
+        </Paragraph>
         <Tabs defaultValue="single" className="w-[600px]">
           <TabsList>
             <TabsTrigger value="single">Single-select</TabsTrigger>

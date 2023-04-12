@@ -1,19 +1,27 @@
-import Code from "@/components/Code"
-import Heading from "@/components/Heading"
-import InlineCode from "@/components/InlineCode"
-import Paragraph from "@/components/Paragraph"
-import Subheading from "@/components/Subheading"
+import { BookmarkEmpty, Download, Heart, Settings } from "iconoir-react"
+
 import Display from "@/components/ui/text/Display"
 import Label from "@/components/ui/text/Label"
+import Body from "@/components/ui/text/Body"
+
+import Heading from "@/components/Heading"
+import Subheading from "@/components/Subheading"
+import Paragraph from "@/components/Paragraph"
+import Code from "@/components/Code"
+import InlineCode from "@/components/InlineCode"
+import InlineLink from "@/components/InlineLink"
+
 import Card from "@/lib/Card"
 import IconButton from "@/lib/IconButton"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
 import ToggledIconButton from "@/lib/ToggledIconButton"
-import { BookmarkEmpty, Download, Heart, Settings } from "iconoir-react"
-import { noToggleButtonCode, toggleButtonCode } from "./buttonsCode"
-import InlineLink from "@/components/InlineLink"
-import { usageCode, usageCustomCode } from "./usageCode"
-import Body from "@/components/ui/text/Body"
+
+import {
+  noToggleButtonCode,
+  toggleButtonCode,
+  usageCode,
+  usageCustomCode,
+} from "./codeSamples"
 
 const IconButtonsPage = () => {
   return (
