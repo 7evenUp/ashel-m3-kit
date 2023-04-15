@@ -13,9 +13,9 @@ import { cn } from "@/utils/classNames"
 export const CheckboxLabel: FC<LabelHTMLAttributes<HTMLLabelElement>> = ({
   className,
   children,
-  htmlFor,
+  ...props
 }) => (
-  <label htmlFor={htmlFor}>
+  <label {...props}>
     <Label size={"large"} className={cn(className)}>
       {children}
     </Label>
@@ -25,14 +25,11 @@ export const CheckboxLabel: FC<LabelHTMLAttributes<HTMLLabelElement>> = ({
 export const Checkbox = React.forwardRef<
   React.ElementRef<typeof RadixCheckbox.Root>,
   React.ComponentPropsWithoutRef<typeof RadixCheckbox.Root>
->(({ className, id, checked, onCheckedChange, defaultChecked }, ref) => {
+>(({ className, ...props }, ref) => {
   return (
     <RadixCheckbox.Root
-      id={id}
+      {...props}
       ref={ref}
-      checked={checked}
-      onCheckedChange={onCheckedChange}
-      defaultChecked={defaultChecked}
       className={cn(
         "relative group w-[18px] h-[18px]  border-2 border-light-onSurface dark:border-dark-onSurface rounded-sm data-[state=checked]:bg-light-primary dark:data-[state=checked]:bg-dark-primary data-[state=checked]:border-0",
         className

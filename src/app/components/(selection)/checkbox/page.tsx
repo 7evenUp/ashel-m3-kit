@@ -5,7 +5,6 @@ import Paragraph from "@/components/Paragraph"
 import Display from "@/components/ui/text/Display"
 import { Checkbox, CheckboxLabel } from "@/lib/Checkbox"
 import { sourceCode } from "./codeSamples"
-import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
 
 const CheckboxPage = () => {
