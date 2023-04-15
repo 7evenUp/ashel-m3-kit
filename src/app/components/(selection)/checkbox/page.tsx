@@ -1,7 +1,12 @@
-import Heading from "@/components/Heading";
-import Paragraph from "@/components/Paragraph";
-import Display from "@/components/ui/text/Display";
-import { Checkbox, CheckboxLabel } from "@/lib/Checkbox";
+import Code from "@/components/Code"
+import Heading from "@/components/Heading"
+import InlineCode from "@/components/InlineCode"
+import Paragraph from "@/components/Paragraph"
+import Display from "@/components/ui/text/Display"
+import { Checkbox, CheckboxLabel } from "@/lib/Checkbox"
+import { sourceCode } from "./codeSamples"
+import InlineLink from "@/components/InlineLink"
+import InternalLink from "@/components/InternalLink"
 
 const CheckboxPage = () => {
   return (
@@ -26,9 +31,25 @@ const CheckboxPage = () => {
           <Checkbox id="world" />
           <CheckboxLabel htmlFor="world">Покорить мир</CheckboxLabel>
         </div>
+
+        <Heading>Компонент</Heading>
+        <Paragraph>
+          Компонент можно сохранить в{" "}
+          <InlineCode>src/components/ui/Checkbox.tsx</InlineCode>. Обратите
+          внимание на необходимые зависимости:{" "}
+          <InternalLink href="/typography/label">Label</InternalLink> и{" "}
+          <InternalLink href="#">UIStateLayer</InternalLink>. В качестве иконки
+          я использую <InlineCode>iconoir-react</InlineCode>.
+        </Paragraph>
+        <Paragraph>
+          Так же данный компонент использует{" "}
+          <InlineCode>@radix-ui/react-checkbox</InlineCode> компонент.
+        </Paragraph>
+        <Code language="bash" code={"yarn add @radix-ui/react-checkbox"} />
+        <Code language="tsx" code={sourceCode} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CheckboxPage;
+export default CheckboxPage
