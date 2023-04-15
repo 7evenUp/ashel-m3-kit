@@ -4,7 +4,7 @@ import InlineCode from "@/components/InlineCode"
 import Paragraph from "@/components/Paragraph"
 import Display from "@/components/ui/text/Display"
 import { Checkbox, CheckboxLabel } from "@/lib/Checkbox"
-import { sourceCode } from "./codeSamples"
+import { sourceCode, usageCode } from "./codeSamples"
 import InternalLink from "@/components/InternalLink"
 
 const CheckboxPage = () => {
@@ -46,6 +46,16 @@ const CheckboxPage = () => {
         </Paragraph>
         <Code language="bash" code={"yarn add @radix-ui/react-checkbox"} />
         <Code language="tsx" code={sourceCode} />
+
+        <Heading>Использование</Heading>
+        <Paragraph>
+          Данный файл экспортирует два компонента:{" "}
+          <InlineCode>CheckboxLabel</InlineCode> и{" "}
+          <InlineCode>Checkbox</InlineCode>. Первый является текстом для
+          чекбокса, второй же - сам чекбокс.
+        </Paragraph>
+        <Paragraph>Ниже - код для примера в начале страницы.</Paragraph>
+        <Code language="tsx" code={usageCode} />
       </div>
     </div>
   )
