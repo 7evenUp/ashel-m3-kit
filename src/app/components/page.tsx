@@ -24,6 +24,7 @@ const Components = () => {
         <InternalLink href="components/tabs">Tabs</InternalLink>
         <InternalLink href="components/checkbox">Checkbox</InternalLink>
         <InternalLink href="components/radio-button">Radio button</InternalLink>
+        <InternalLink href="components/switch">Switch</InternalLink>
       </div>
     </div>
   )

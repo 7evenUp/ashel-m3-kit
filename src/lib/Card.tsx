@@ -18,7 +18,7 @@ interface Props
 
 const Card: FC<Props> = ({ className, children, appearance, ...props }) => {
   return (
-    <div className={cn(className, cardVariants({ appearance }), "")} {...props}>
+    <div className={cn(cardVariants({ appearance }), className)} {...props}>
       {children}
     </div>
   );
