@@ -6,6 +6,7 @@ import Display from "@/components/ui/text/Display"
 import { Checkbox, CheckboxLabel } from "@/lib/Checkbox"
 import { sourceCode, usageCode } from "./codeSamples"
 import InternalLink from "@/components/InternalLink"
+import InlineLink from "@/components/InlineLink"
 
 const CheckboxPage = () => {
   return (
@@ -38,7 +39,7 @@ const CheckboxPage = () => {
           внимание на необходимые зависимости:{" "}
           <InternalLink href="/typography/label">Label</InternalLink> и{" "}
           <InternalLink href="#">UIStateLayer</InternalLink>. В качестве иконки
-          я использую <InlineCode>iconoir-react</InlineCode>.
+          я использую <InlineLink href="https://iconoir.com/">iconoir-react</InlineLink>.
         </Paragraph>
         <Paragraph>
           Так же данный компонент использует{" "}

@@ -1,4 +1,4 @@
-"use client"
+export const sourceCode = `"use client"
 
 import React, { FC, LabelHTMLAttributes } from "react"
 import * as RadixRadioGroup from "@radix-ui/react-radio-group"
@@ -52,4 +52,16 @@ const RadioGroupLabel: FC<LabelHTMLAttributes<HTMLLabelElement>> = ({
       {children}
     </Label>
   </label>
-)
+)`
+
+export const usageCode = `<RadioGroup>
+  <RadioGroupItem value="x" id="x">
+    First
+  </RadioGroupItem>
+  <RadioGroupItem value="y" id="y">
+    Second
+  </RadioGroupItem>
+  <RadioGroupItem value="z" id="z">
+    Third
+  </RadioGroupItem>
+</RadioGroup>`
