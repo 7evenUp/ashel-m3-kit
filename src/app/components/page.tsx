@@ -17,8 +17,11 @@ const Components = () => {
         </Paragraph>
         <Heading>Задокументированные компоненты</Heading>
         <Paragraph>Текущий список задокументированных компонентов:</Paragraph>
-        <InternalLink href="components/common-buttons">Button</InternalLink>
-        <InternalLink href="components/icon-buttons">IconButton</InternalLink>
+        <InternalLink href="components/common-buttons">Common buttons</InternalLink>
+        <InternalLink href="components/icon-buttons">Icon buttons</InternalLink>
+        <InternalLink href="components/segmented-buttons">Segmented buttons</InternalLink>
+        <InternalLink href="components/checkbox">Checkbox</InternalLink>
+        <InternalLink href="components/radio-button">Radio button</InternalLink>
       </div>
     </div>
   )
