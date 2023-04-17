@@ -1,4 +1,4 @@
-"use client"
+export const sourceCode = `"use client"
 
 import React from "react"
 import * as RadixTabs from "@radix-ui/react-tabs"
@@ -57,4 +57,15 @@ const TabsContent = React.forwardRef<
 ))
 TabsContent.displayName = RadixTabs.Content.displayName
 
-export { Tabs, TabsList, TabsTrigger, TabsContent }
+export { Tabs, TabsList, TabsTrigger, TabsContent }`
+
+export const usageCode = `<Tabs className="w-[500px]" defaultValue="x">
+  <TabsList>
+    <TabsTrigger value="x">First</TabsTrigger>
+    <TabsTrigger value="y">Second</TabsTrigger>
+    <TabsTrigger value="z">Third</TabsTrigger>
+  </TabsList>
+  <TabsContent value="x">First content</TabsContent>
+  <TabsContent value="y">Second content</TabsContent>
+  <TabsContent value="z">Third content</TabsContent>
+</Tabs>`
