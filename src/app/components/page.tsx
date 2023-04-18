@@ -20,6 +20,7 @@ const Components = () => {
         <InternalLink href="components/common-buttons">Common buttons</InternalLink>
         <InternalLink href="components/icon-buttons">Icon buttons</InternalLink>
         <InternalLink href="components/segmented-buttons">Segmented buttons</InternalLink>
+        <InternalLink href="components/cards">Cards</InternalLink>
         <InternalLink href="components/dialogs">Dialog</InternalLink>
         <InternalLink href="components/tabs">Tabs</InternalLink>
         <InternalLink href="components/checkbox">Checkbox</InternalLink>
