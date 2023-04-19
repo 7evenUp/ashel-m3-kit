@@ -31,7 +31,7 @@ const MenuContent = React.forwardRef<
 >(({ className, children, ...props }, forwardedRef) => (
   <DropdownMenu.Content
     className={cn(
-      "flex flex-col rounded bg-light-surfaceContainer dark:bg-dark-surfaceContainer shadow-elevation2 py-2",
+      "flex flex-col rounded bg-light-surfaceContainer dark:bg-dark-surfaceContainer shadow-elevation2 py-2 w-[280px]",
       className
     )}
     {...props}
@@ -46,13 +46,14 @@ MenuContent.displayName = "MenuContent"
 const MenuItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenu.Item>,
   React.ComponentPropsWithoutRef<typeof DropdownMenu.Item>
->(({ className, children, ...props }, forwardedRef) => (
+>(({ className, children, onSelect, ...props }, forwardedRef) => (
   <DropdownMenu.Item
     className={cn(
-      "text-light-onSurface dark:text-dark-onSurface h-12 flex items-center px-3",
+      "text-light-onSurface dark:text-dark-onSurface h-12 flex items-center px-3 aria-disabled:text-opacity-[0.38] dark:aria-disabled:text-opacity-[0.38] select-none outline-none hover:bg-light-onSurface dark:hover:bg-dark-onSurface bg-opacity-0 dark:bg-opacity-0 hover:bg-opacity-[0.08] active:bg-opacity-[0.12] dark:hover:bg-opacity-[0.08] dark:active:bg-opacity-[0.12] aria-disabled:bg-opacity-0 dark:aria-disabled:bg-opacity-0 data-[highlighted]:bg-light-onSurface dark:data-[highlighted]:bg-dark-onSurface data-[highlighted]:bg-opacity-[0.12] dark:data-[highlighted]:bg-opacity-[0.12]",
       className
     )}
     {...props}
+    onSelect={onSelect}
     ref={forwardedRef}
   >
     <Label size={"large"}>{children}</Label>
