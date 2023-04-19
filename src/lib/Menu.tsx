@@ -112,6 +112,7 @@ const MenuSubTrigger = React.forwardRef<
     </>
   </DropdownMenu.SubTrigger>
 ))
+MenuSubTrigger.displayName = "MenuSubTrigger"
 
 const MenuSubContent = React.forwardRef<
   React.ElementRef<typeof DropdownMenu.SubContent>,
@@ -128,6 +129,7 @@ const MenuSubContent = React.forwardRef<
     {children}
   </DropdownMenu.SubContent>
 ))
+MenuSubContent.displayName = "MenuSubContent"
 
 export {
   MenuRoot,
