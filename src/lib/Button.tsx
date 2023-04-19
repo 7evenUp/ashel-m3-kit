@@ -2,6 +2,7 @@ import Label from "@/components/ui/text/Label"
 import UIStateLayer from "@/components/ui/UIStateLayer"
 import { cn } from "@/utils/classNames"
 import { cva, VariantProps } from "class-variance-authority"
+import React from "react"
 import { ButtonHTMLAttributes, FC, ReactNode } from "react"
 
 const buttonVariants = cva(
@@ -43,31 +44,28 @@ interface Props
   icon?: ReactNode
 }
 
-const Button: FC<Props> = ({
-  icon,
-  children,
-  className,
-  appearance,
-  ...props
-}) => {
-  return (
-    <button
-      className={cn(className, buttonVariants({ appearance }))}
-      {...props}
-    >
-      <UIStateLayer
-        className={cn(
-          "rounded-full flex items-center gap-2 px-6",
-          icon && "pl-4",
-          uiStateLayerVariants({ appearance }),
-          icon && appearance === "text" && "pr-4"
-        )}
+const Button = React.forwardRef<HTMLButtonElement, Props>(
+  ({ icon, children, className, appearance, ...props }, forwardedRef) => {
+    return (
+      <button
+        className={cn(className, buttonVariants({ appearance }))}
+        {...props}
+        ref={forwardedRef}
       >
-        {icon && <span>{icon}</span>}
-        <Label size="large">{children}</Label>
-      </UIStateLayer>
-    </button>
-  )
-}
+        <UIStateLayer
+          className={cn(
+            "rounded-full flex items-center gap-2 px-6",
+            icon && "pl-4",
+            uiStateLayerVariants({ appearance }),
+            icon && appearance === "text" && "pr-4"
+          )}
+        >
+          {icon && <span>{icon}</span>}
+          <Label size="large">{children}</Label>
+        </UIStateLayer>
+      </button>
+    )
+  }
+)
 
 export default Button
