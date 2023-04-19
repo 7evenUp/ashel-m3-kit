@@ -6,6 +6,7 @@ import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 import Label from "@/components/ui/text/Label"
 
 import { cn } from "@/utils/classNames"
+import { NavArrowRight } from "iconoir-react"
 
 const MenuRoot = DropdownMenu.Root
 
@@ -90,6 +91,44 @@ const MenuSeparator = () => (
   <DropdownMenu.Separator className="w-full my-2 h-[1px] bg-light-outlineVariant dark:bg-dark-outlineVariant" />
 )
 
+const MenuSub = DropdownMenu.Sub
+
+const MenuSubTrigger = React.forwardRef<
+  React.ElementRef<typeof DropdownMenu.SubTrigger>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenu.SubTrigger>
+>(({ className, children, ...props }, forwardedRef) => (
+  <DropdownMenu.SubTrigger
+    className={cn(
+      "text-light-onSurface dark:text-dark-onSurface h-12 flex items-center justify-between gap-3 px-3 aria-disabled:text-opacity-[0.38] dark:aria-disabled:text-opacity-[0.38] select-none outline-none hover:bg-light-onSurface dark:hover:bg-dark-onSurface bg-opacity-0 dark:bg-opacity-0 hover:bg-opacity-[0.08] active:bg-opacity-[0.12] dark:hover:bg-opacity-[0.08] dark:active:bg-opacity-[0.12] aria-disabled:bg-opacity-0 dark:aria-disabled:bg-opacity-0 data-[highlighted]:bg-light-onSurface dark:data-[highlighted]:bg-dark-onSurface data-[highlighted]:bg-opacity-[0.12] dark:data-[highlighted]:bg-opacity-[0.12]",
+      className
+    )}
+    ref={forwardedRef}
+    {...props}
+  >
+    <>
+      <Label size="large">{children}</Label>
+
+      <NavArrowRight />
+    </>
+  </DropdownMenu.SubTrigger>
+))
+
+const MenuSubContent = React.forwardRef<
+  React.ElementRef<typeof DropdownMenu.SubContent>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenu.SubContent>
+>(({ children, className, ...props }, forwardedRef) => (
+  <DropdownMenu.SubContent
+    className={cn(
+      "flex flex-col rounded bg-light-surfaceContainer dark:bg-dark-surfaceContainer shadow-elevation2 py-2 w-[280px]",
+      className
+    )}
+    ref={forwardedRef}
+    {...props}
+  >
+    {children}
+  </DropdownMenu.SubContent>
+))
+
 export {
   MenuRoot,
   MenuTrigger,
@@ -97,6 +136,9 @@ export {
   MenuContent,
   MenuItem,
   MenuSeparator,
+  MenuSub,
+  MenuSubTrigger,
+  MenuSubContent,
 }
 
 // export default () => (

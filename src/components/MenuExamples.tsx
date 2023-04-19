@@ -8,6 +8,9 @@ import {
   MenuPortal,
   MenuRoot,
   MenuSeparator,
+  MenuSub,
+  MenuSubContent,
+  MenuSubTrigger,
   MenuTrigger,
 } from "@/lib/Menu"
 import { Check, Menu, Plus } from "iconoir-react"
@@ -45,11 +48,20 @@ const MenuExampleWithIconButton = () => (
       <IconButton icon={<Menu />} appearance="tonal" />
     </MenuTrigger>
     <MenuPortal>
-      <MenuContent>
+      <MenuContent className="w-[200px]">
         <MenuItem>Изменить</MenuItem>
         <MenuItem>Удалить</MenuItem>
         <MenuSeparator />
-        <MenuItem>Настройки</MenuItem>
+        <MenuSub>
+          <MenuSubTrigger>Настройки</MenuSubTrigger>
+          <MenuPortal>
+            <MenuSubContent className="w-[200px]">
+              <MenuItem trailing="+">Увеличить</MenuItem>
+              <MenuItem trailing="-">Уменьшить</MenuItem>
+              <MenuItem>В исходное состояние</MenuItem>
+            </MenuSubContent>
+          </MenuPortal>
+        </MenuSub>
       </MenuContent>
     </MenuPortal>
   </MenuRoot>
