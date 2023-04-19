@@ -1,6 +1,7 @@
 import UIStateLayer from "@/components/ui/UIStateLayer"
 import { cn } from "@/utils/classNames"
 import { cva, VariantProps } from "class-variance-authority"
+import React from "react"
 import { ButtonHTMLAttributes, FC, ReactNode } from "react"
 
 const buttonVariants = cva(
@@ -41,11 +42,12 @@ interface Props
   icon: ReactNode
 }
 
-const IconButton: FC<Props> = ({ icon, className, appearance, ...props }) => {
-  return (
+const IconButton = React.forwardRef<HTMLButtonElement, Props>(
+  ({ icon, className, appearance, ...props }, forwardedRef) => (
     <button
       className={cn(className, buttonVariants({ appearance }))}
       {...props}
+      ref={forwardedRef}
     >
       <UIStateLayer
         className={cn(
@@ -57,6 +59,6 @@ const IconButton: FC<Props> = ({ icon, className, appearance, ...props }) => {
       </UIStateLayer>
     </button>
   )
-}
+)
 
 export default IconButton

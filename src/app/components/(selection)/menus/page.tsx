@@ -1,7 +1,10 @@
 import Heading from "@/components/Heading"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
-import MenuExample from "@/components/MenuExample"
+import {
+  MenuExampleWithButton,
+  MenuExampleWithIconButton,
+} from "@/components/MenuExamples"
 import Paragraph from "@/components/Paragraph"
 import Display from "@/components/ui/text/Display"
 
@@ -35,7 +38,10 @@ const MenusPage = () => {
         </Paragraph>
 
         <Heading>Примеры</Heading>
-        <MenuExample />
+        <div className="flex items-center gap-6">
+          <MenuExampleWithButton />
+          <MenuExampleWithIconButton />
+        </div>
       </div>
     </div>
   )

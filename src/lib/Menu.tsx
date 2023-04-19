@@ -3,8 +3,9 @@
 import React, { ReactNode } from "react"
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 
-import { cn } from "@/utils/classNames"
 import Label from "@/components/ui/text/Label"
+
+import { cn } from "@/utils/classNames"
 
 const MenuRoot = DropdownMenu.Root
 
