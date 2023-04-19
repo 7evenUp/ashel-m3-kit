@@ -6,8 +6,10 @@ import {
   MenuItem,
   MenuPortal,
   MenuRoot,
+  MenuSeparator,
   MenuTrigger,
 } from "@/lib/Menu"
+import { Check, Plus } from "iconoir-react"
 
 const MenuExample = () => {
   return (
@@ -17,11 +19,13 @@ const MenuExample = () => {
       </MenuTrigger>
       <MenuPortal>
         <MenuContent>
-          <MenuItem>First item</MenuItem>
-          <MenuItem onSelect={(event) => event.preventDefault()}>Second item</MenuItem>
-          <MenuItem>Third item</MenuItem>
+          <MenuItem leading={<Plus />}>With leading icon</MenuItem>
+          <MenuItem trailing="⌘+B" className="pl-12">With trailing text</MenuItem>
+          <MenuItem trailing={<Check />} className="pl-12">With trailing icon</MenuItem>
+          <MenuItem leading={<Plus />} trailing={<Check />}>With both</MenuItem>
+          <MenuItem leading={<Plus />} trailing="⌘+B">With both</MenuItem>
+          <MenuSeparator />
           <MenuItem disabled>Disabled item</MenuItem>
-          <MenuItem>Forth item</MenuItem>
         </MenuContent>
       </MenuPortal>
     </MenuRoot>
