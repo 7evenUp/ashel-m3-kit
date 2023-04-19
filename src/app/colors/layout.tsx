@@ -16,7 +16,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <NavLink href={"/colors/surfaces"} label="Surfaces" />
       </div>
 
-      <div className="ml-[180px] p-3">
+      <div className="ml-[180px] p-6">
         <main>{children}</main>
         <Footer />
       </div>
