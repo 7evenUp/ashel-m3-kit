@@ -32,7 +32,9 @@ export default function Home() {
       </Paragraph>
       <Paragraph>
         Ниже наглядный пример, какие интерфейсы можно создавать в считанные
-        минуты, используя данные компоненты.
+        минуты, используя данные компоненты, добиваясь при этом идеальной
+        цветовой палитры как для светлой, так и для тёмной тем приложения, не
+        забывая о доступности UI элементов.
       </Paragraph>
       <div className="mt-10 flex flex-col w-full max-w-[1200px] rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant">
         <header className="bg-light-surfaceContainerLow dark:bg-dark-surfaceContainerLow h-20 flex justify-end items-center gap-2 px-3 rounded-t-xl">
