@@ -1,4 +1,6 @@
 import Heading from "@/components/Heading"
+import Paragraph from "@/components/Paragraph"
+
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
@@ -6,11 +8,13 @@ import {
   MenuExampleWithButton,
   MenuExampleWithIconButton,
 } from "@/components/MenuExamples"
-import Paragraph from "@/components/Paragraph"
-import Display from "@/components/ui/text/Display"
-import { sourceCode, usageSimpleCode, usageSubCode } from "./codeSamples"
 import Code from "@/components/Code"
+
+import Display from "@/components/ui/text/Display"
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+
+import { sourceCode, usageSimpleCode, usageSubCode } from "./codeSamples"
 
 const MenusPage = () => {
   return (
@@ -85,8 +89,8 @@ const MenusPage = () => {
           иконкой вначале (leading), иконкой или текстом в конце (trailing)
         </Paragraph>
         <Paragraph>
-          <InlineCode>MenuSeparator</InlineCode> - разделитель для логического
-          разбиения Menu на блоки
+          <InlineCode>MenuSeparator</InlineCode> - разделитель Menu на
+          логические блоки
         </Paragraph>
         <Paragraph>
           <InlineCode>MenuSub</InlineCode> - аналог MenuRoot, но для вторичного
