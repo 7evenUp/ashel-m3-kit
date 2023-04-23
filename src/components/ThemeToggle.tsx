@@ -1,30 +1,32 @@
-"use client";
+"use client"
 
-import { cn } from "@/utils/classNames";
-import { SunLight, HalfMoon } from "iconoir-react";
-import { useTheme } from "next-themes";
-import { FC, HTMLAttributes, useEffect, useState } from "react";
-import UIStateLayer from "./ui/UIStateLayer";
+import { FC, HTMLAttributes, useEffect, useState } from "react"
+import { SunLight, HalfMoon } from "iconoir-react"
+import { useTheme } from "next-themes"
+
+import { cn } from "@/utils/classNames"
+
+import UIStateLayer from "./ui/UIStateLayer"
 
 const ThemeToggle: FC<HTMLAttributes<HTMLButtonElement>> = ({ className }) => {
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    setMounted(true)
+  }, [])
 
   if (!mounted) {
-    return null;
+    return null
   }
 
   const toggleTheme = () => {
     if (theme === "light") {
-      setTheme("dark");
+      setTheme("dark")
     } else if (theme === "dark") {
-      setTheme("light");
+      setTheme("light")
     }
-  };
+  }
 
   return (
     <button
@@ -42,7 +44,7 @@ const ThemeToggle: FC<HTMLAttributes<HTMLButtonElement>> = ({ className }) => {
         )}
       </UIStateLayer>
     </button>
-  );
-};
+  )
+}
 
-export default ThemeToggle;
+export default ThemeToggle
