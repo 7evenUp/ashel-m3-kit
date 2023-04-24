@@ -27,7 +27,9 @@ const buttonVariants = cva(
   }
 )
 
-const uiStateLayerVariants = cva("", {
+// Для стилей State Layer
+// (Необходим, так как Button и State Layer в разных состояниях имеют разные свойства background)
+const uiStateLayerVariants = cva("rounded-full flex items-center gap-2 px-6", {
   variants: {
     appearance: {
       elevated: "bg-light-primary dark:bg-dark-primary",
@@ -37,12 +39,11 @@ const uiStateLayerVariants = cva("", {
       text: "bg-light-primary dark:bg-dark-primary px-3",
     },
   },
-  defaultVariants: {},
 })
 
 interface Props
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+    Required<Pick<VariantProps<typeof buttonVariants>, "appearance">> {
   icon?: React.ReactNode
 }
 
@@ -56,10 +57,9 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
       >
         <UIStateLayer
           className={cn(
-            "rounded-full flex items-center gap-2 px-6",
-            icon && "pl-4",
             uiStateLayerVariants({ appearance }),
-            icon && appearance === "text" && "pr-4"
+            icon && "pl-4",
+            icon && appearance === "text" && "pl-3 pr-4"
           )}
         >
           {icon && <span>{icon}</span>}

@@ -1,8 +1,11 @@
-export const buttonCode = `import Label from "@/components/ui/text/Label"
+export const buttonCode = `import React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import Label from "@/components/typography/Label"
+
 import UIStateLayer from "@/components/ui/UIStateLayer"
+
 import { cn } from "@/utils/classNames"
-import { cva, VariantProps } from "class-variance-authority"
-import { ButtonHTMLAttributes, FC, ReactNode } from "react"
 
 const buttonVariants = cva(
   "group h-10 rounded-full w-fit disabled:bg-opacity-[0.12] dark:disabled:bg-opacity-[0.12] disabled:cursor-not-allowed disabled:shadow-none disabled:text-light-onSurface disabled:dark:text-dark-onSurface disabled:text-opacity-[0.38] disabled:dark:text-opacity-[0.38] transition-shadow",
@@ -24,7 +27,9 @@ const buttonVariants = cva(
   }
 )
 
-const uiStateLayerVariants = cva("", {
+// Для стилей State Layer
+// (Необходим, так как Button и State Layer в разных состояниях имеют разные свойства background)
+const uiStateLayerVariants = cva("rounded-full flex items-center gap-2 px-6", {
   variants: {
     appearance: {
       elevated: "bg-light-primary dark:bg-dark-primary",
@@ -34,41 +39,37 @@ const uiStateLayerVariants = cva("", {
       text: "bg-light-primary dark:bg-dark-primary px-3",
     },
   },
-  defaultVariants: {},
 })
 
 interface Props
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  icon?: ReactNode
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    Required<Pick<VariantProps<typeof buttonVariants>, "appearance">> {
+  icon?: React.ReactNode
 }
 
-const Button: FC<Props> = ({
-  icon,
-  children,
-  className,
-  appearance,
-  ...props
-}) => {
-  return (
-    <button
-      className={cn(className, buttonVariants({ appearance }))}
-      {...props}
-    >
-      <UIStateLayer
-        className={cn(
-          "rounded-full flex items-center gap-2 px-6",
-          icon && "pl-4",
-          uiStateLayerVariants({ appearance }),
-          icon && appearance === "text" && "pr-4"
-        )}
+const Button = React.forwardRef<HTMLButtonElement, Props>(
+  ({ icon, children, className, appearance, ...props }, forwardedRef) => {
+    return (
+      <button
+        className={cn(className, buttonVariants({ appearance }))}
+        {...props}
+        ref={forwardedRef}
       >
-        {icon && <span>{icon}</span>}
-        <Label size="large">{children}</Label>
-      </UIStateLayer>
-    </button>
-  )
-}
+        <UIStateLayer
+          className={cn(
+            uiStateLayerVariants({ appearance }),
+            icon && "pl-4",
+            icon && appearance === "text" && "pl-3 pr-4"
+          )}
+        >
+          {icon && <span>{icon}</span>}
+          <Label size="large">{children}</Label>
+        </UIStateLayer>
+      </button>
+    )
+  }
+)
+Button.displayName = "Button"
 
 export default Button`
 
