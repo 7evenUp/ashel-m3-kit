@@ -73,7 +73,9 @@ Button.displayName = "Button"
 
 export default Button`
 
-export const usageCode = `{/* elevated */}
+export const usageCode = `import Button from "@/components/ui/Button"
+...
+{/* elevated */}
 <Button appearance='elevated'>Elevated button</Button>
 {/* filled */}
 <Button appearance='filled'>Filled button</Button>

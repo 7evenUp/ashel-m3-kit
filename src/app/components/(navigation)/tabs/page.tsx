@@ -1,11 +1,15 @@
-import Code from "@/components/Code"
+import Display from "@/components/typography/Display"
+
 import Heading from "@/components/Heading"
+import Paragraph from "@/components/Paragraph"
+
+import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
-import Paragraph from "@/components/Paragraph"
-import Display from "@/components/ui/text/Display"
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+
 import { sourceCode, usageCode } from "./codeSamples"
 
 const TabsPage = () => {
@@ -56,9 +60,8 @@ const TabsPage = () => {
           Данный файл экспортирует 4 компонента: <InlineCode>Tabs</InlineCode> -
           компонент-обёртка, содержащая весь стейт компонента,{" "}
           <InlineCode>TabsList</InlineCode> - компонент-список, в котором
-          располагаются кнопки,{" "}
-          <InlineCode>TabsTrigger</InlineCode> - компонент-кнопка, которая
-          служит для переключения самих табов,{" "}
+          располагаются кнопки, <InlineCode>TabsTrigger</InlineCode> -
+          компонент-кнопка, которая служит для переключения самих табов,{" "}
           <InlineCode>TabsContent</InlineCode> - компонент, содержащий контент,
           относящийся к определённому табу.
         </Paragraph>

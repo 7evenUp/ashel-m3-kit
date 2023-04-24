@@ -193,12 +193,10 @@ const CommonButtonsPage = () => {
           <InlineCode>src/components/ui/Button.tsx</InlineCode>:
         </Paragraph>
         <Code language="tsx" code={buttonCode} />
+        
         <Heading>Использование</Heading>
-        <Code
-          language="tsx"
-          code={`import Button from "@/components/ui/Button"`}
-        />
         <Code language="tsx" code={usageCode} />
+
         <Subheading>Иконки</Subheading>
         <Paragraph>
           Также можно использовать кнопки с иконками. Лично я использую{" "}
