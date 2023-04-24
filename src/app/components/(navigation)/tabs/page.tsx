@@ -43,7 +43,10 @@ const TabsPage = () => {
           <InlineCode>src/components/ui/Tabs.tsx</InlineCode>. Обратите внимание
           на необходимые зависимости:{" "}
           <InternalLink href="/typography/title">Title</InternalLink> и{" "}
-          <InternalLink href="#">UIStateLayer</InternalLink>.
+          <InternalLink href="/components/ui-state-layer">
+            UIStateLayer
+          </InternalLink>
+          .
         </Paragraph>
         <Paragraph>
           Так же данный компонент использует{" "}

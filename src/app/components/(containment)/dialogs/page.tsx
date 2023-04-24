@@ -54,7 +54,7 @@ const DialogPage = () => {
           Компонент можно сохранить в{" "}
           <InlineCode>src/components/ui/Dialog.tsx</InlineCode>. Обратите
           внимание на необходимые зависимости:{" "}
-          <InternalLink href="/typography/title">Headline</InternalLink>,{" "}
+          <InternalLink href="/typography/headline">Headline</InternalLink>,{" "}
           <InternalLink href="/typography/body">Body</InternalLink> и{" "}
           <InternalLink href="/components/common-buttons">Button</InternalLink>.
         </Paragraph>

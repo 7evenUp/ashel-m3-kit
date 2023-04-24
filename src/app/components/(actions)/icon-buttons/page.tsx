@@ -23,6 +23,7 @@ import {
   usageCode,
   usageCustomCode,
 } from "./codeSamples"
+import InternalLink from "@/components/InternalLink"
 
 const IconButtonsPage = () => {
   return (
@@ -147,6 +148,14 @@ const IconButtonsPage = () => {
           соотвественно в файлы{" "}
           <InlineCode>src/components/ui/IconButton.tsx</InlineCode> и
           <InlineCode>src/components/ui/ToggledIconButton.tsx</InlineCode>
+        </Paragraph>
+
+        <Paragraph>
+          Также обратите внимание, что компоненты требуют{" "}
+          <InternalLink href="/components/ui-state-layer">
+            UIStateLayer
+          </InternalLink>{" "}
+          в качестве зависимости.
         </Paragraph>
 
         <Paragraph>

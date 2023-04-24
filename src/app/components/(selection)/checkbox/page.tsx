@@ -42,13 +42,18 @@ const CheckboxPage = () => {
           <InlineCode>src/components/ui/Checkbox.tsx</InlineCode>. Обратите
           внимание на необходимые зависимости:{" "}
           <InternalLink href="/typography/label">Label</InternalLink> и{" "}
-          <InternalLink href="#">UIStateLayer</InternalLink>. В качестве иконки
-          я использую{" "}
+          <InternalLink href="/components/ui-state-layer">
+            UIStateLayer
+          </InternalLink>
+          . В качестве иконки я использую{" "}
           <InlineLink href="https://iconoir.com/">iconoir-react</InlineLink>.
         </Paragraph>
         <Paragraph>
           Так же данный компонент использует{" "}
-          <InlineCode>@radix-ui/react-checkbox</InlineCode> компонент.
+          <InlineLink href="https://www.radix-ui.com/docs/primitives/components/checkbox">
+            @radix-ui/react-checkbox
+          </InlineLink>{" "}
+          компонент.
         </Paragraph>
         <Code language="bash" code={"yarn add @radix-ui/react-checkbox"} />
         <Code language="tsx" code={sourceCode} />

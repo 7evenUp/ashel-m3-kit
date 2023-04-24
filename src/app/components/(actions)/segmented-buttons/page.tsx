@@ -12,6 +12,7 @@ import Paragraph from "@/components/Paragraph"
 import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
+import InternalLink from "@/components/InternalLink"
 
 import { SegmentedButton, SegmentedRoot } from "@/lib/SegmentedButton"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
@@ -118,8 +119,8 @@ const SegmentedButtonsPage = () => {
         <Paragraph>Скопируйте и вставьте код в свой проект.</Paragraph>
         <Paragraph>
           Обратите внимание, что компонент имеет зависимости таких компонентов
-          как <InlineCode>Label</InlineCode> и{" "}
-          <InlineCode>UIStateLayer</InlineCode>. Если вы еще не добавили их в
+          как <InternalLink href="/typography/label">Label</InternalLink> и{" "}
+          <InternalLink href="/components/ui-state-layer">UIStateLayer</InternalLink>. Если вы еще не добавили их в
           свой проект, следует заняться сперва ими.
         </Paragraph>
         <Paragraph>

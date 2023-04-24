@@ -1,4 +1,4 @@
-export const sourceCode = `import React, { FC, HTMLAttributes } from "react"
+export const sourceCode = `import { FC, HTMLAttributes } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 
 import { cn } from "@/utils/classNames"
@@ -14,7 +14,6 @@ const cardVariants = cva("rounded-xl px-4 py-3", {
     },
   },
 })
-
 interface Props
   extends HTMLAttributes<HTMLDivElement>,
     Required<Pick<VariantProps<typeof cardVariants>, "appearance">> {}

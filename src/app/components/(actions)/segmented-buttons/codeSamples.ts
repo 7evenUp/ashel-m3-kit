@@ -1,32 +1,37 @@
-export const sourceCode = `import Label from "@/components/ui/text/Label"
-import UIStateLayer from "@/components/ui/UIStateLayer"
-import { cn } from "@/utils/classNames"
-import * as ToggleGroup from "@radix-ui/react-toggle-group"
-import { forwardRef } from "react"
+export const sourceCode = `"use client"
 
-const SegmentedRoot = forwardRef<
+import React from "react"
+import * as ToggleGroup from "@radix-ui/react-toggle-group"
+
+import Label from "@/components/typography/Label"
+
+import UIStateLayer from "@/components/ui/UIStateLayer"
+
+import { cn } from "@/utils/classNames"
+
+const SegmentedRoot = React.forwardRef<
   React.ElementRef<typeof ToggleGroup.Root>,
   React.ComponentPropsWithoutRef<typeof ToggleGroup.Root>
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <ToggleGroup.Root
     className={cn(
       "flex border border-light-outline dark:border-dark-outline rounded-full divide-x divide-light-outline dark:divide-dark-outline",
       className
     )}
     {...props}
-    ref={ref}
+    ref={forwardedRef}
   />
 ))
 SegmentedRoot.displayName = ToggleGroup.Root.displayName
 
-const SegmentedButton = forwardRef<
+const SegmentedButton = React.forwardRef<
   React.ElementRef<typeof ToggleGroup.Item>,
   React.ComponentPropsWithoutRef<typeof ToggleGroup.Item>
->(({ className, type, children, ...props }, ref) => (
+>(({ className, type, children, ...props }, forwardedRef) => (
   <ToggleGroup.Item
     className={cn("group", className)}
     {...props}
-    ref={ref}
+    ref={forwardedRef}
     asChild
   >
     <button
@@ -43,8 +48,8 @@ SegmentedButton.displayName = ToggleGroup.Item.displayName
 
 export { SegmentedButton, SegmentedRoot }`
 
-export const usageCodeSingle = `import { SegmentedButton, SegmentedRoot } from "@/components/ui/SegmentedButton
-import { useState } from "react""
+export const usageCodeSingle = `import { SegmentedButton, SegmentedRoot } from "@/components/ui/SegmentedButton"
+import { useState } from "react"
 ...
 const [state, setState] = useState("usd")
 ...
@@ -74,7 +79,7 @@ const [state, setState] = useState("usd")
   </SegmentedButton>
 </SegmentedRoot>`
 
-export const usageCodeMultiple = `import { SegmentedButton, SegmentedRoot } from "@/components/ui/SegmentedButton
+export const usageCodeMultiple = `import { SegmentedButton, SegmentedRoot } from "@/components/ui/SegmentedButton"
 ...
 <SegmentedRoot
   className="w-[500px]"

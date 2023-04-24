@@ -19,21 +19,23 @@ const buttonVariants = cva(
         standart: "text-light-primary dark:text-dark-primary",
       },
     },
-    defaultVariants: {},
   }
 )
 
-const uiStateLayerVariants = cva("", {
-  variants: {
-    appearance: {
-      filled: "bg-light-onPrimary dark:bg-dark-onPrimary",
-      tonal: "bg-light-onSecondaryContainer dark:bg-dark-onSecondaryContainer",
-      outlined: "bg-light-primary dark:bg-dark-primary",
-      standart: "bg-light-primary dark:bg-dark-primary px-3",
+const uiStateLayerVariants = cva(
+  "rounded-full flex items-center justify-center",
+  {
+    variants: {
+      appearance: {
+        filled: "bg-light-onPrimary dark:bg-dark-onPrimary",
+        tonal:
+          "bg-light-onSecondaryContainer dark:bg-dark-onSecondaryContainer",
+        outlined: "bg-light-primary dark:bg-dark-primary",
+        standart: "bg-light-primary dark:bg-dark-primary px-3",
+      },
     },
-  },
-  defaultVariants: {},
-})
+  }
+)
 
 type IconButtonVariantProps = VariantProps<typeof buttonVariants>
 
@@ -46,16 +48,11 @@ interface Props
 const IconButton = React.forwardRef<HTMLButtonElement, Props>(
   ({ icon, className, appearance, ...props }, forwardedRef) => (
     <button
-      className={cn(className, buttonVariants({ appearance }))}
+      className={cn(buttonVariants({ appearance }), className)}
       {...props}
       ref={forwardedRef}
     >
-      <UIStateLayer
-        className={cn(
-          "rounded-full flex items-center justify-center",
-          uiStateLayerVariants({ appearance })
-        )}
-      >
+      <UIStateLayer className={cn(uiStateLayerVariants({ appearance }))}>
         <span>{icon}</span>
       </UIStateLayer>
     </button>

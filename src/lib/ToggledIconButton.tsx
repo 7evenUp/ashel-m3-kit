@@ -2,7 +2,7 @@
 
 import React from "react"
 import * as Toggle from "@radix-ui/react-toggle"
-import { cva, VariantProps } from "class-variance-authority"
+import { cva, type VariantProps } from "class-variance-authority"
 
 import UIStateLayer from "@/components/ui/UIStateLayer"
 
@@ -23,12 +23,11 @@ const buttonVariants = cva(
           "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant data-[state=on]:text-light-primary dark:data-[state=on]:text-dark-primary",
       },
     },
-    defaultVariants: {},
   }
 )
 
 const uiStateLayerVariants = cva(
-  "group-data-[state=on]:bg-opacity-0 dark:group-data-[state=on]:bg-opacity-0 group-data-[state=on]:group-hover:bg-opacity-[0.08] dark:group-data-[state=on]:group-hover:bg-opacity-[0.08] group-data-[state=on]:group-active:bg-opacity-[0.12] dark:group-data-[state=on]:group-active:bg-opacity-[0.12]",
+  "rounded-full flex items-center justify-center group-data-[state=on]:bg-opacity-0 dark:group-data-[state=on]:bg-opacity-0 group-data-[state=on]:group-hover:bg-opacity-[0.08] dark:group-data-[state=on]:group-hover:bg-opacity-[0.08] group-data-[state=on]:group-active:bg-opacity-[0.12] dark:group-data-[state=on]:group-active:bg-opacity-[0.12]",
   {
     variants: {
       appearance: {
@@ -42,7 +41,6 @@ const uiStateLayerVariants = cva(
           "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant group-data-[state=on]:bg-light-primary dark:group-data-[state=on]:bg-dark-inverbg-light-primary",
       },
     },
-    defaultVariants: {},
   }
 )
 
@@ -59,12 +57,7 @@ const ToggledIconButton = React.forwardRef<
     {...props}
     ref={forwardedRef}
   >
-    <UIStateLayer
-      className={cn(
-        "rounded-full flex items-center justify-center",
-        uiStateLayerVariants({ appearance })
-      )}
-    >
+    <UIStateLayer className={cn(uiStateLayerVariants({ appearance }))}>
       {children}
     </UIStateLayer>
   </Toggle.Root>

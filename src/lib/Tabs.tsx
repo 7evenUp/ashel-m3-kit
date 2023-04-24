@@ -24,7 +24,7 @@ const TabsList = React.forwardRef<
     {...props}
   />
 ))
-TabsList.displayName = RadixTabs.List.displayName
+TabsList.displayName = "TabsList"
 
 const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof RadixTabs.Trigger>,
@@ -37,16 +37,13 @@ const TabsTrigger = React.forwardRef<
     )}
     {...props}
     ref={forwardedRef}
-    asChild
   >
-    <button>
-      <UIStateLayer className="p-2 group-data-[state=active]:bg-light-primary group-data-[state=active]:dark:bg-dark-primary bg-light-onSurface dark:bg-dark-onSurface group-data-[state=active]:bg-opacity-0 group-data-[state=active]:group-hover:bg-opacity-[0.08] group-data-[state=active]:group-active:bg-opacity-[0.12]">
-        <Title size={"small"}>{children}</Title>
-      </UIStateLayer>
-    </button>
+    <UIStateLayer className="p-2 group-data-[state=active]:bg-light-primary group-data-[state=active]:dark:bg-dark-primary bg-light-onSurface dark:bg-dark-onSurface group-data-[state=active]:bg-opacity-0 dark:group-data-[state=active]:bg-opacity-0 group-data-[state=active]:group-hover:bg-opacity-[0.08] dark:group-data-[state=active]:group-hover:bg-opacity-[0.08] group-data-[state=active]:group-active:bg-opacity-[0.12] dark:group-data-[state=active]:group-active:bg-opacity-[0.12]">
+      <Title size={"small"}>{children}</Title>
+    </UIStateLayer>
   </RadixTabs.Trigger>
 ))
-TabsTrigger.displayName = RadixTabs.Trigger.displayName
+TabsTrigger.displayName = "TabsTrigger"
 
 const TabsContent = React.forwardRef<
   React.ElementRef<typeof RadixTabs.Content>,
@@ -58,6 +55,6 @@ const TabsContent = React.forwardRef<
     ref={forwardedRef}
   />
 ))
-TabsContent.displayName = RadixTabs.Content.displayName
+TabsContent.displayName = "TabsContent"
 
 export { Tabs, TabsList, TabsTrigger, TabsContent }

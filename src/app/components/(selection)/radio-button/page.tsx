@@ -42,13 +42,13 @@ const RadioButtonPage = () => {
           <InlineCode>src/components/ui/RadioGroup.tsx</InlineCode>. Обратите
           внимание на необходимые зависимости:{" "}
           <InternalLink href="/typography/label">Label</InternalLink> и{" "}
-          <InternalLink href="#">UIStateLayer</InternalLink>. В качестве иконки
+          <InternalLink href="/components/ui-state-layer">UIStateLayer</InternalLink>. В качестве иконки
           я использую{" "}
           <InlineLink href="https://iconoir.com/">iconoir-react</InlineLink>.
         </Paragraph>
         <Paragraph>
           Так же данный компонент использует{" "}
-          <InlineCode>@radix-ui/react-radio-group</InlineCode> компонент.
+          <InlineLink href="https://www.radix-ui.com/docs/primitives/components/radio-group">@radix-ui/react-radio-group</InlineLink> компонент.
         </Paragraph>
         <Code language="bash" code={"yarn add @radix-ui/react-radio-group"} />
         <Code language="tsx" code={sourceCode} />

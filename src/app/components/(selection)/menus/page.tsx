@@ -54,7 +54,7 @@ const MenusPage = () => {
         <Heading>Компонент</Heading>
         <Paragraph>
           Компонент можно сохранить в{" "}
-          <InlineCode>src/components/ui/Dialog.tsx</InlineCode>. Обратите
+          <InlineCode>src/components/ui/Menu.tsx</InlineCode>. Обратите
           внимание на необходимые зависимости:{" "}
           <InternalLink href="/typography/label">Label</InternalLink>.
         </Paragraph>

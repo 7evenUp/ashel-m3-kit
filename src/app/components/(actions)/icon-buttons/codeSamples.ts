@@ -1,7 +1,9 @@
-export const noToggleButtonCode = `import UIStateLayer from "@/components/ui/UIStateLayer"
+export const noToggleButtonCode = `import React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import UIStateLayer from "@/components/ui/UIStateLayer"
+
 import { cn } from "@/utils/classNames"
-import { cva, VariantProps } from "class-variance-authority"
-import { ButtonHTMLAttributes, FC, ReactNode } from "react"
 
 const buttonVariants = cva(
   "group h-10 w-10 rounded-full disabled:bg-opacity-[0.12] dark:disabled:bg-opacity-[0.12] disabled:cursor-not-allowed  disabled:text-light-onSurface disabled:dark:text-dark-onSurface disabled:text-opacity-[0.38] disabled:dark:text-opacity-[0.38]",
@@ -17,57 +19,58 @@ const buttonVariants = cva(
         standart: "text-light-primary dark:text-dark-primary",
       },
     },
-    defaultVariants: {},
   }
 )
 
-const uiStateLayerVariants = cva("", {
-  variants: {
-    appearance: {
-      filled: "bg-light-onPrimary dark:bg-dark-onPrimary",
-      tonal: "bg-light-onSecondaryContainer dark:bg-dark-onSecondaryContainer",
-      outlined: "bg-light-primary dark:bg-dark-primary",
-      standart: "bg-light-primary dark:bg-dark-primary px-3",
+const uiStateLayerVariants = cva(
+  "rounded-full flex items-center justify-center",
+  {
+    variants: {
+      appearance: {
+        filled: "bg-light-onPrimary dark:bg-dark-onPrimary",
+        tonal:
+          "bg-light-onSecondaryContainer dark:bg-dark-onSecondaryContainer",
+        outlined: "bg-light-primary dark:bg-dark-primary",
+        standart: "bg-light-primary dark:bg-dark-primary px-3",
+      },
     },
-  },
-  defaultVariants: {},
-})
+  }
+)
 
 type IconButtonVariantProps = VariantProps<typeof buttonVariants>
 
 interface Props
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     Required<Pick<IconButtonVariantProps, "appearance">> {
-  icon: ReactNode
+  icon: React.ReactNode
 }
 
-const IconButton: FC<Props> = ({ icon, className, appearance, ...props }) => {
-  return (
+const IconButton = React.forwardRef<HTMLButtonElement, Props>(
+  ({ icon, className, appearance, ...props }, forwardedRef) => (
     <button
-      className={cn(className, buttonVariants({ appearance }))}
+      className={cn(buttonVariants({ appearance }), className)}
       {...props}
+      ref={forwardedRef}
     >
-      <UIStateLayer
-        className={cn(
-          "rounded-full flex items-center justify-center",
-          uiStateLayerVariants({ appearance })
-        )}
-      >
+      <UIStateLayer className={cn(uiStateLayerVariants({ appearance }))}>
         <span>{icon}</span>
       </UIStateLayer>
     </button>
   )
-}
+)
+IconButton.displayName = "IconButton"
 
 export default IconButton`
 
 export const toggleButtonCode = `"use client"
 
-import UIStateLayer from "@/components/ui/UIStateLayer"
-import { cn } from "@/utils/classNames"
-import * as Toggle from "@radix-ui/react-toggle"
-import { cva, VariantProps } from "class-variance-authority"
 import React from "react"
+import * as Toggle from "@radix-ui/react-toggle"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import UIStateLayer from "@/components/ui/UIStateLayer"
+
+import { cn } from "@/utils/classNames"
 
 const buttonVariants = cva(
   "group h-10 w-10 rounded-full disabled:bg-opacity-[0.12] dark:disabled:bg-opacity-[0.12] disabled:cursor-not-allowed  disabled:text-light-onSurface disabled:dark:text-dark-onSurface disabled:text-opacity-[0.38] disabled:dark:text-opacity-[0.38]",
@@ -84,12 +87,11 @@ const buttonVariants = cva(
           "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant data-[state=on]:text-light-primary dark:data-[state=on]:text-dark-primary",
       },
     },
-    defaultVariants: {},
   }
 )
 
 const uiStateLayerVariants = cva(
-  "group-data-[state=on]:bg-opacity-0 dark:group-data-[state=on]:bg-opacity-0 group-data-[state=on]:group-hover:bg-opacity-[0.08] dark:group-data-[state=on]:group-hover:bg-opacity-[0.08] group-data-[state=on]:group-active:bg-opacity-[0.12] dark:group-data-[state=on]:group-active:bg-opacity-[0.12]",
+  "rounded-full flex items-center justify-center group-data-[state=on]:bg-opacity-0 dark:group-data-[state=on]:bg-opacity-0 group-data-[state=on]:group-hover:bg-opacity-[0.08] dark:group-data-[state=on]:group-hover:bg-opacity-[0.08] group-data-[state=on]:group-active:bg-opacity-[0.12] dark:group-data-[state=on]:group-active:bg-opacity-[0.12]",
   {
     variants: {
       appearance: {
@@ -103,7 +105,6 @@ const uiStateLayerVariants = cva(
           "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant group-data-[state=on]:bg-light-primary dark:group-data-[state=on]:bg-dark-inverbg-light-primary",
       },
     },
-    defaultVariants: {},
   }
 )
 
@@ -114,18 +115,13 @@ interface Props
 const ToggledIconButton = React.forwardRef<
   React.ElementRef<typeof Toggle.Root>,
   Props
->(({ className, appearance, children, ...props }, ref) => (
+>(({ className, appearance, children, ...props }, forwardedRef) => (
   <Toggle.Root
     className={cn(buttonVariants({ appearance }), className)}
     {...props}
-    ref={ref}
+    ref={forwardedRef}
   >
-    <UIStateLayer
-      className={cn(
-        "rounded-full flex items-center justify-center",
-        uiStateLayerVariants({ appearance })
-      )}
-    >
+    <UIStateLayer className={cn(uiStateLayerVariants({ appearance }))}>
       {children}
     </UIStateLayer>
   </Toggle.Root>

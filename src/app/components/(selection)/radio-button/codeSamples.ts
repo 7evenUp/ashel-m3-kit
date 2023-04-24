@@ -1,19 +1,22 @@
 export const sourceCode = `"use client"
 
-import React, { FC, LabelHTMLAttributes } from "react"
+import React from "react"
 import * as RadixRadioGroup from "@radix-ui/react-radio-group"
+
+import Label from "@/components/typography/Label"
+
 import UIStateLayer from "@/components/ui/UIStateLayer"
+
 import { cn } from "@/utils/classNames"
-import Label from "@/components/ui/text/Label"
 
 export const RadioGroup = React.forwardRef<
   React.ElementRef<typeof RadixRadioGroup.Root>,
   React.ComponentPropsWithoutRef<typeof RadixRadioGroup.Root>
->(({ className, children, ...props }, ref) => (
+>(({ className, children, ...props }, forwardedRef) => (
   <RadixRadioGroup.Root
     className={cn("flex flex-col gap-3", className)}
     {...props}
-    ref={ref}
+    ref={forwardedRef}
   >
     {children}
   </RadixRadioGroup.Root>
@@ -24,11 +27,11 @@ RadioGroup.displayName = "RadioGroup"
 export const RadioGroupItem = React.forwardRef<
   React.ElementRef<typeof RadixRadioGroup.Item>,
   React.ComponentPropsWithoutRef<typeof RadixRadioGroup.Item>
->(({ className, children, id, ...props }, ref) => (
+>(({ className, children, id, ...props }, forwardedRef) => (
   <div className={cn("flex items-center gap-4", className)}>
     <RadixRadioGroup.Item
       className="group relative w-5 h-5 rounded-full border-2 border-light-onSurfaceVariant dark:border-dark-onSurfaceVariant data-[state=checked]:border-light-primary dark:data-[state=checked]:border-dark-primary"
-      ref={ref}
+      ref={forwardedRef}
       id={id}
       {...props}
     >
@@ -42,11 +45,9 @@ export const RadioGroupItem = React.forwardRef<
 
 RadioGroupItem.displayName = "RadioGroupItem"
 
-const RadioGroupLabel: FC<LabelHTMLAttributes<HTMLLabelElement>> = ({
-  className,
-  children,
-  htmlFor,
-}) => (
+const RadioGroupLabel: React.FC<
+  React.LabelHTMLAttributes<HTMLLabelElement>
+> = ({ className, children, htmlFor }) => (
   <label htmlFor={htmlFor}>
     <Label size={"large"} className={cn(className)}>
       {children}
