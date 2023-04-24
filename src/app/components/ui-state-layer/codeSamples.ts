@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from "react"
+export const componentSrc = `import { FC, HTMLAttributes } from "react"
 
 import { cn } from "@/utils/classNames"
 
@@ -18,4 +18,4 @@ const UIStateLayer: FC<HTMLAttributes<HTMLDivElement>> = ({
   )
 }
 
-export default UIStateLayer
+export default UIStateLayer`

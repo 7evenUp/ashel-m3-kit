@@ -13,6 +13,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
     <div className="w-full">
       <div className="nav-with-scroll w-[210px] fixed left-[100px] h-screen top-0 p-3 flex flex-col gap-[1px] overflow-y-auto pb-80">
         <NavLink href={"/components"} label="Overview" />
+        <NavLink href={"/components/ui-state-layer"} label="UIStateLayer" />
 
         <Title size="large" className="mt-4 text-xl">Actions</Title>
         <NavLink href={"/components/common-buttons"} label="Common buttons" />
