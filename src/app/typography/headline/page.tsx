@@ -1,6 +1,6 @@
-import Display from "@/components/ui/text/Display"
-import Body from "@/components/ui/text/Body"
-import Headline from "@/components/ui/text/Headline"
+import Display from "@/components/typography/Display"
+import Headline from "@/components/typography/Headline"
+import Body from "@/components/typography/Body"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"

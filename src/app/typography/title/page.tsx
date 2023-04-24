@@ -1,6 +1,6 @@
-import Display from "@/components/ui/text/Display"
-import Body from "@/components/ui/text/Body"
-import Title from "@/components/ui/text/Title"
+import Display from "@/components/typography/Display"
+import Title from "@/components/typography/Title"
+import Body from "@/components/typography/Body"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -15,6 +15,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
 import appBarExamplePic from "@/public/typography/title/app_bar_example.png"
 import categoryHeaderExamplePic from "@/public/typography/title/category_header_example.png"
 import newsExamplePic from "@/public/typography/title/news_example.png"
+
 import { custom, titleSrc, usage } from "./codeSamples"
 
 const TitlePage = () => {

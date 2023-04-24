@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes } from "react"
+import { FC, HTMLAttributes } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 
 import { cn } from "@/utils/classNames"

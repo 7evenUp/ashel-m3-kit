@@ -1,18 +1,23 @@
 "use client"
 
-import Code from "@/components/Code"
+import { useState } from "react"
+import { Minus, Plus } from "iconoir-react"
+
+import Display from "@/components/typography/Display"
+import Label from "@/components/typography/Label"
+import Body from "@/components/typography/Body"
+
 import Heading from "@/components/Heading"
+import Paragraph from "@/components/Paragraph"
+
+import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
-import Paragraph from "@/components/Paragraph"
-import Display from "@/components/ui/text/Display"
-import Label from "@/components/ui/text/Label"
+
 import Switch from "@/lib/Switch"
-import { Minus, Plus } from "iconoir-react"
-import { useState } from "react"
-import { sourceCode, usageCode } from "./codeSamples"
 import Card from "@/lib/Card"
-import Body from "@/components/ui/text/Body"
+
+import { sourceCode, usageCode } from "./codeSamples"
 
 const SwitchPage = () => {
   const [isSelected, setIsSelected] = useState(false)

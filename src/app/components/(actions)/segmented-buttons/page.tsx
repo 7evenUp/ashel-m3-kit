@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from "react"
 
-import Display from "@/components/ui/text/Display"
-import Body from "@/components/ui/text/Body"
+import Display from "@/components/typography/Display"
+import Body from "@/components/typography/Body"
 
 import Heading from "@/components/Heading"
 import Subheading from "@/components/Subheading"
 import Paragraph from "@/components/Paragraph"
+
 import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"

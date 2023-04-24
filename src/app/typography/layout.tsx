@@ -1,11 +1,13 @@
-import Footer from "@/components/Footer";
-import NavLink from "@/components/NavLink";
-import { ReactNode } from "react";
+import { ReactNode } from "react"
+
+import Footer from "@/components/Footer"
+import NavLink from "@/components/NavLink"
 
 export const metadata = {
   title: "Ashel UI Kit | Typography",
-  description: "Material Design V3 typography principles",
-};
+  description:
+    "Базовые принципы и реализация компонентов для Material Design V3 используя react.js",
+}
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
@@ -24,7 +26,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <Footer />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

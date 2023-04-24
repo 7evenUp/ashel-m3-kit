@@ -1,5 +1,6 @@
-import Heading from "@/components/Heading";
-import Display from "@/components/ui/text/Display";
+import Display from "@/components/typography/Display"
+
+import Heading from "@/components/Heading"
 
 const NavigationBarPage = () => {
   return (
@@ -10,7 +11,7 @@ const NavigationBarPage = () => {
         <Heading>Описание</Heading>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NavigationBarPage;
+export default NavigationBarPage

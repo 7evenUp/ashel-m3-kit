@@ -1,5 +1,6 @@
-import Heading from "@/components/Heading";
-import Display from "@/components/ui/text/Display";
+import Display from "@/components/typography/Display"
+
+import Heading from "@/components/Heading"
 
 const SnackbarPage = () => {
   return (
@@ -10,7 +11,7 @@ const SnackbarPage = () => {
         <Heading>Описание</Heading>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SnackbarPage;
+export default SnackbarPage

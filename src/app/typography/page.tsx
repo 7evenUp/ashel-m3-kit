@@ -1,13 +1,17 @@
-import Display from "@/components/ui/text/Display";
-import InlineLink from "@/components/InlineLink";
-import Image from "next/image";
-import typeStylesPic from "@/public/typography/overview/type_styles.png";
-import customTypefacesPic from "@/public/typography/overview/custom_typefaces.png";
-import majorSecondScalefacesPic from "@/public/typography/overview/major_second_scale.png";
-import reducedSetPic from "@/public/typography/overview/reduset_set.png";
-import Paragraph from "@/components/Paragraph";
-import Heading from "@/components/Heading";
-import ImageWithText from "@/components/ImageWithText";
+import Image from "next/image"
+
+import Display from "@/components/typography/Display"
+
+import Heading from "@/components/Heading"
+import Paragraph from "@/components/Paragraph"
+
+import InlineLink from "@/components/InlineLink"
+import ImageWithText from "@/components/ImageWithText"
+
+import typeStylesPic from "@/public/typography/overview/type_styles.png"
+import customTypefacesPic from "@/public/typography/overview/custom_typefaces.png"
+import majorSecondScalefacesPic from "@/public/typography/overview/major_second_scale.png"
+import reducedSetPic from "@/public/typography/overview/reduset_set.png"
 
 const Typography = () => {
   return (
@@ -98,7 +102,7 @@ const Typography = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Typography;
+export default Typography

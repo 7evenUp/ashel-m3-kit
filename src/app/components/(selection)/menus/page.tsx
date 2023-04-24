@@ -1,3 +1,5 @@
+import Display from "@/components/typography/Display"
+
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
 
@@ -9,8 +11,6 @@ import {
   MenuExampleWithIconButton,
 } from "@/components/MenuExamples"
 import Code from "@/components/Code"
-
-import Display from "@/components/ui/text/Display"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
 

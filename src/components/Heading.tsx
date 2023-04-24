@@ -1,8 +1,9 @@
-import { ReactNode } from "react";
-import Headline from "./ui/text/Headline";
+import { ReactNode } from "react"
+
+import Headline from "./typography/Headline"
 
 const Heading = ({ children }: { children: ReactNode }) => {
-  return <Headline className="mt-4 mb-2">{children}</Headline>;
-};
+  return <Headline className="mt-4 mb-2">{children}</Headline>
+}
 
-export default Heading;
+export default Heading

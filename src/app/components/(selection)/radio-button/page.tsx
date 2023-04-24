@@ -1,12 +1,16 @@
-import Code from "@/components/Code"
+import Display from "@/components/typography/Display"
+
 import Heading from "@/components/Heading"
+import Paragraph from "@/components/Paragraph"
+
+import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InternalLink from "@/components/InternalLink"
-import Paragraph from "@/components/Paragraph"
-import Display from "@/components/ui/text/Display"
-import { RadioGroup, RadioGroupItem } from "@/lib/RadioGroup"
-import { sourceCode, usageCode } from "./codeSamples"
 import InlineLink from "@/components/InlineLink"
+
+import { RadioGroup, RadioGroupItem } from "@/lib/RadioGroup"
+
+import { sourceCode, usageCode } from "./codeSamples"
 
 const RadioButtonPage = () => {
   return (

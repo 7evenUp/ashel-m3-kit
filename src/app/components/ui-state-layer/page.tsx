@@ -1,11 +1,15 @@
-import Code from "@/components/Code"
-import Heading from "@/components/Heading"
-import InlineCode from "@/components/InlineCode"
-import Paragraph from "@/components/Paragraph"
-import Display from "@/components/ui/text/Display"
 import React from "react"
-import { componentSrc } from "./codeSamples"
+
+import Display from "@/components/typography/Display"
+
+import Heading from "@/components/Heading"
+import Paragraph from "@/components/Paragraph"
+
+import Code from "@/components/Code"
+import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
+
+import { componentSrc } from "./codeSamples"
 
 const page = () => {
   return (

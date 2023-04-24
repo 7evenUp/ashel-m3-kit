@@ -1,8 +1,9 @@
-import UIStateLayer from "@/components/ui/UIStateLayer"
-import { cn } from "@/utils/classNames"
-import { cva, VariantProps } from "class-variance-authority"
 import React from "react"
-import { ButtonHTMLAttributes, FC, ReactNode } from "react"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import UIStateLayer from "@/components/ui/UIStateLayer"
+
+import { cn } from "@/utils/classNames"
 
 const buttonVariants = cva(
   "group h-10 w-10 rounded-full disabled:bg-opacity-[0.12] dark:disabled:bg-opacity-[0.12] disabled:cursor-not-allowed  disabled:text-light-onSurface disabled:dark:text-dark-onSurface disabled:text-opacity-[0.38] disabled:dark:text-opacity-[0.38]",
@@ -37,9 +38,9 @@ const uiStateLayerVariants = cva("", {
 type IconButtonVariantProps = VariantProps<typeof buttonVariants>
 
 interface Props
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     Required<Pick<IconButtonVariantProps, "appearance">> {
-  icon: ReactNode
+  icon: React.ReactNode
 }
 
 const IconButton = React.forwardRef<HTMLButtonElement, Props>(

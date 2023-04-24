@@ -1,15 +1,19 @@
-import Code from "@/components/Code"
+import Display from "@/components/typography/Display"
+import Headline from "@/components/typography/Headline"
+import Body from "@/components/typography/Body"
+
 import Heading from "@/components/Heading"
-import InlineCode from "@/components/InlineCode"
-import Paragraph from "@/components/Paragraph"
 import Subheading from "@/components/Subheading"
-import Body from "@/components/ui/text/Body"
-import Display from "@/components/ui/text/Display"
-import Headline from "@/components/ui/text/Headline"
+import Paragraph from "@/components/Paragraph"
+
+import Code from "@/components/Code"
+import InlineCode from "@/components/InlineCode"
+
 import Button from "@/lib/Button"
 import Card from "@/lib/Card"
-import { customCode, sourceCode, usageCode } from "./codeSamples"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+
+import { customCode, sourceCode, usageCode } from "./codeSamples"
 
 const CardsPage = () => {
   return (

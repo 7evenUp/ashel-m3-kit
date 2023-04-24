@@ -1,7 +1,9 @@
+import Display from "@/components/typography/Display"
+
 import Heading from "@/components/Heading"
-import InternalLink from "@/components/InternalLink"
 import Paragraph from "@/components/Paragraph"
-import Display from "@/components/ui/text/Display"
+
+import InternalLink from "@/components/InternalLink"
 
 const Components = () => {
   return (
@@ -17,9 +19,13 @@ const Components = () => {
         </Paragraph>
         <Heading>Задокументированные компоненты</Heading>
         <Paragraph>Текущий список задокументированных компонентов:</Paragraph>
-        <InternalLink href="components/common-buttons">Common buttons</InternalLink>
+        <InternalLink href="components/common-buttons">
+          Common buttons
+        </InternalLink>
         <InternalLink href="components/icon-buttons">Icon buttons</InternalLink>
-        <InternalLink href="components/segmented-buttons">Segmented buttons</InternalLink>
+        <InternalLink href="components/segmented-buttons">
+          Segmented buttons
+        </InternalLink>
         <InternalLink href="components/cards">Cards</InternalLink>
         <InternalLink href="components/dialogs">Dialog</InternalLink>
         <InternalLink href="components/tabs">Tabs</InternalLink>

@@ -1,13 +1,14 @@
-import Image, { StaticImageData } from "next/image";
-import { FC, ReactNode } from "react";
-import Body from "./ui/text/Body";
+import { FC, ReactNode } from "react"
+import Image, { StaticImageData } from "next/image"
+
+import Body from "./typography/Body"
 
 interface Props {
-  src: StaticImageData;
-  alt: string;
-  width: number;
-  children: ReactNode;
-  quality?: number;
+  src: StaticImageData
+  alt: string
+  width: number
+  children: ReactNode
+  quality?: number
 }
 
 const ImageWithText: FC<Props> = ({ src, alt, children, width, quality }) => {
@@ -23,7 +24,7 @@ const ImageWithText: FC<Props> = ({ src, alt, children, width, quality }) => {
         {children}
       </Body>
     </div>
-  );
-};
+  )
+}
 
-export default ImageWithText;
+export default ImageWithText

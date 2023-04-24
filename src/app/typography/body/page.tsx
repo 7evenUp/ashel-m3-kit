@@ -1,5 +1,5 @@
-import Display from "@/components/ui/text/Display"
-import Body from "@/components/ui/text/Body"
+import Display from "@/components/typography/Display"
+import Body from "@/components/typography/Body"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -14,6 +14,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
 import articlePestoPic from "@/public/typography/body/article_pesto.png"
 import readablePassagesPic from "@/public/typography/body/readable_passages.png"
 import setupFlowPic from "@/public/typography/body/setup_flow.png"
+
 import { bodySrc, custom, usage } from "./codeSamples"
 
 const BodyPage = () => {

@@ -9,7 +9,8 @@ import "@/styles/globals.css"
 
 export const metadata = {
   title: "Ashel | UI kit",
-  description: "Ashel's implementation of material design V3",
+  description:
+    "Реализация дизайн системы от Google Material Design V3 от Ashel",
 }
 
 const roboto = Roboto({ weight: ["400", "500"], subsets: ["latin"] })

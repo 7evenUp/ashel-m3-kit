@@ -1,11 +1,12 @@
-import Footer from "@/components/Footer";
-import NavLink from "@/components/NavLink";
-import { ReactNode } from "react";
+import { ReactNode } from "react"
+
+import Footer from "@/components/Footer"
+import NavLink from "@/components/NavLink"
 
 export const metadata = {
   title: "Ashel UI Kit | Colors",
-  description: "Material Design V3 color principles",
-};
+  description: "Основные принципы цвета в Material Design V3",
+}
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
@@ -21,7 +22,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <Footer />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

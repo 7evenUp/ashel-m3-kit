@@ -1,20 +1,19 @@
 "use client"
 
-import React, { FC, LabelHTMLAttributes } from "react"
+import React from "react"
 
 import * as RadixCheckbox from "@radix-ui/react-checkbox"
 import { Check } from "iconoir-react"
 
-import Label from "@/components/ui/text/Label"
+import Label from "@/components/typography/Label"
+
 import UIStateLayer from "@/components/ui/UIStateLayer"
 
 import { cn } from "@/utils/classNames"
 
-export const CheckboxLabel: FC<LabelHTMLAttributes<HTMLLabelElement>> = ({
-  className,
-  children,
-  ...props
-}) => (
+export const CheckboxLabel: React.FC<
+  React.LabelHTMLAttributes<HTMLLabelElement>
+> = ({ className, children, ...props }) => (
   <label {...props}>
     <Label size={"large"} className={cn(className)}>
       {children}
@@ -25,11 +24,11 @@ export const CheckboxLabel: FC<LabelHTMLAttributes<HTMLLabelElement>> = ({
 export const Checkbox = React.forwardRef<
   React.ElementRef<typeof RadixCheckbox.Root>,
   React.ComponentPropsWithoutRef<typeof RadixCheckbox.Root>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, forwardedRef) => {
   return (
     <RadixCheckbox.Root
       {...props}
-      ref={ref}
+      ref={forwardedRef}
       className={cn(
         "relative group w-[18px] h-[18px]  border-2 border-light-onSurface dark:border-dark-onSurface rounded-sm data-[state=checked]:bg-light-primary dark:data-[state=checked]:bg-dark-primary data-[state=checked]:border-0",
         className

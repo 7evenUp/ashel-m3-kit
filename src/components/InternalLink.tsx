@@ -1,6 +1,7 @@
-import { cn } from "@/utils/classNames"
-import Link from "next/link"
 import { ReactNode } from "react"
+import Link from "next/link"
+
+import { cn } from "@/utils/classNames"
 
 const InternalLink = ({
   children,

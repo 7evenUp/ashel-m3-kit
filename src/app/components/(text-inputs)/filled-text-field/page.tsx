@@ -1,8 +1,11 @@
-import Heading from "@/components/Heading";
-import InlineLink from "@/components/InlineLink";
-import Paragraph from "@/components/Paragraph";
-import Display from "@/components/ui/text/Display";
-import FilledTextInput from "@/lib/FilledTextInput";
+import Display from "@/components/typography/Display"
+
+import Heading from "@/components/Heading"
+import Paragraph from "@/components/Paragraph"
+
+import InlineLink from "@/components/InlineLink"
+
+import FilledTextInput from "@/lib/FilledTextInput"
 
 const FilledTextFieldPage = () => {
   return (
@@ -31,7 +34,7 @@ const FilledTextFieldPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FilledTextFieldPage;
+export default FilledTextFieldPage

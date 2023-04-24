@@ -1,20 +1,21 @@
 import { BookmarkEmpty, Download, Heart, Settings } from "iconoir-react"
 
-import Display from "@/components/ui/text/Display"
-import Label from "@/components/ui/text/Label"
-import Body from "@/components/ui/text/Body"
+import Display from "@/components/typography/Display"
+import Label from "@/components/typography/Label"
+import Body from "@/components/typography/Body"
 
 import Heading from "@/components/Heading"
 import Subheading from "@/components/Subheading"
 import Paragraph from "@/components/Paragraph"
+
 import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 
 import Card from "@/lib/Card"
 import IconButton from "@/lib/IconButton"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
 import ToggledIconButton from "@/lib/ToggledIconButton"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
 
 import {
   noToggleButtonCode,

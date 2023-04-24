@@ -1,6 +1,7 @@
-import ThemeToggle from "./ThemeToggle";
-import { HomeSimple, TextSize, ColorFilter, Puzzle, Code } from "iconoir-react";
-import NavLinkWithIcon from "./NavLinkWithIcon";
+import { HomeSimple, TextSize, ColorFilter, Puzzle, Code } from "iconoir-react"
+
+import ThemeToggle from "./ThemeToggle"
+import NavLinkWithIcon from "./NavLinkWithIcon"
 
 const NavigationRail = () => {
   return (
@@ -11,14 +12,22 @@ const NavigationRail = () => {
       <nav className="flex flex-col items-center gap-3 justify-center mt-5">
         <NavLinkWithIcon href="/about" label="About" icon={<HomeSimple />} />
         <NavLinkWithIcon href="/intro" label="Introduction" icon={<Code />} />
-        <NavLinkWithIcon href="/typography" label="Typography" icon={<TextSize />} />
+        <NavLinkWithIcon
+          href="/typography"
+          label="Typography"
+          icon={<TextSize />}
+        />
         <NavLinkWithIcon href="/colors" label="Colors" icon={<ColorFilter />} />
-        <NavLinkWithIcon href="/components" label="Components" icon={<Puzzle />} />
+        <NavLinkWithIcon
+          href="/components"
+          label="Components"
+          icon={<Puzzle />}
+        />
       </nav>
 
       <ThemeToggle className="mb-4" />
     </div>
-  );
-};
+  )
+}
 
-export default NavigationRail;
+export default NavigationRail

@@ -1,18 +1,19 @@
 import { Plus } from "iconoir-react"
 
-import Display from "@/components/ui/text/Display"
+import Display from "@/components/typography/Display"
 
 import Heading from "@/components/Heading"
 import Subheading from "@/components/Subheading"
 import Paragraph from "@/components/Paragraph"
+
 import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
+import InternalLink from "@/components/InternalLink"
 
 import Button from "@/lib/Button"
 
 import { buttonCode, usageCode, usageWithIconsCode } from "./codeSamples"
-import InternalLink from "@/components/InternalLink"
 
 const CommonButtonsPage = () => {
   return (
@@ -181,8 +182,11 @@ const CommonButtonsPage = () => {
         <Paragraph>
           Обратите внимание, что компонент имеет зависимости таких компонентов
           как <InternalLink href="/typography/label">Label</InternalLink> и{" "}
-          <InternalLink href="/components/ui-state-layer">UIStateLayer</InternalLink>. Если вы еще не добавили их в
-          свой проект, следует заняться сперва ими.
+          <InternalLink href="/components/ui-state-layer">
+            UIStateLayer
+          </InternalLink>
+          . Если вы еще не добавили их в свой проект, следует заняться сперва
+          ими.
         </Paragraph>
         <Paragraph>
           Можно сохранить компонент в файл{" "}

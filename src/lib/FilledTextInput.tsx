@@ -1,12 +1,12 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode } from "react"
 
 interface InputProps {
-  label: string;
-  id: string;
-  value: string;
-  onChange: (evt: React.FormEvent<HTMLInputElement>) => void;
-  leadingIcon?: ReactNode;
-  trailingIcon?: ReactNode;
+  label: string
+  id: string
+  value: string
+  onChange: (evt: React.FormEvent<HTMLInputElement>) => void
+  leadingIcon?: ReactNode
+  trailingIcon?: ReactNode
 }
 
 const FilledTextInput: FC<InputProps> = ({
@@ -31,13 +31,13 @@ const FilledTextInput: FC<InputProps> = ({
       />
       <LabelText label={label} />
     </label>
-  );
-};
+  )
+}
 
 const LabelText = ({ label }: Pick<InputProps, "label">) => (
   <span className="text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant peer-focus:text-light-primary dark:peer-focus:text-dark-primary text-xs leading-4 tracking-[0.4px]">
     {label}
   </span>
-);
+)
 
-export default FilledTextInput;
+export default FilledTextInput

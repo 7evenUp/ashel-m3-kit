@@ -1,12 +1,12 @@
 import { Cart, Menu, Settings, User } from "iconoir-react"
 
-import Paragraph from "@/components/Paragraph"
+import Body from "@/components/typography/Body"
+import Display from "@/components/typography/Display"
+import Headline from "@/components/typography/Headline"
+import Label from "@/components/typography/Label"
+import Title from "@/components/typography/Title"
 
-import Body from "@/components/ui/text/Body"
-import Display from "@/components/ui/text/Display"
-import Headline from "@/components/ui/text/Headline"
-import Label from "@/components/ui/text/Label"
-import Title from "@/components/ui/text/Title"
+import Paragraph from "@/components/Paragraph"
 
 import Button from "@/lib/Button"
 import Card from "@/lib/Card"

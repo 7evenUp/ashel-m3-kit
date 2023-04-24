@@ -1,40 +1,43 @@
-import Paragraph from "@/components/Paragraph";
-import Display from "@/components/ui/text/Display";
+import Display from "@/components/typography/Display"
+
+import Paragraph from "@/components/Paragraph"
 
 export const metadata = {
   title: "Ashel UI Kit | About",
   description:
     "About the Material Design V3, why I started this project and goals I want to reach",
-};
+}
 
 const About = () => {
   return (
     <main className="p-10 flex flex-col gap-3">
-      <Display>About page</Display>
+      <Display>Мотивация</Display>
       <Paragraph>
-        I started this project to improve my skills at building reusable UI
-        components and for better understanding architecture of UI React
-        libraries.
+        Я начал работать над этим проектом для прокачки собственных скилов в
+        построении переиспользуемых UI компонентов и для лучшего понимания
+        архитектуры UI библиотек.
       </Paragraph>
       <Paragraph>
-        As there is no official web implementation of Material Design V3 I
-        wanted to do it myself.
+        Так как нет официальной разработки UI компонентов для дизайн системы M3
+        от Google, я решил сделать это сам в рамках обучения.
       </Paragraph>
       <Paragraph>
-        In typography section you can read about standart fonts and font sizes.
-        Also there is implemented set of typography components.
+        В секции typography можете прочитать про стандартные шрифты и размеры
+        шрифтов, использующихся в дизайн системе. Там же сможете найти готовые к
+        использованию компоненты.
       </Paragraph>
       <Paragraph>
-        In colors section you can read about Material V3 colors, their roles,
-        how to build color scheme according to official documentation and how to
-        apply these knowledge to your design.
+        В секции colors можете прочитать о цветовых палитрах в дизайн системе и
+        их ролях. Также рассмотрено, как добавить цвета в ваш проект, набор
+        заготовленных цветовых тем.
       </Paragraph>
       <Paragraph>
-        In components section you can see implementation of Material V3
-        components, when and where apply them, how to customize them.
+        В секции components можете найти информацию о тех самых UI компонентах
+        вроде кнопки, чекбокса, текстового поля, реализованных по стайл гайдам
+        M3.
       </Paragraph>
     </main>
-  );
-};
+  )
+}
 
-export default About;
+export default About

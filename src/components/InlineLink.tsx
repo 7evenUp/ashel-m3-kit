@@ -1,5 +1,6 @@
-import { cn } from "@/utils/classNames";
-import { AnchorHTMLAttributes, FC } from "react";
+import { AnchorHTMLAttributes, FC } from "react"
+
+import { cn } from "@/utils/classNames"
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {}
 
@@ -15,7 +16,7 @@ const InlineLink: FC<Props> = ({ children, href, className }) => {
     >
       {children}
     </a>
-  );
-};
+  )
+}
 
-export default InlineLink;
+export default InlineLink

@@ -2,18 +2,21 @@
 
 import React from "react"
 import * as RadixTabs from "@radix-ui/react-tabs"
-import { cn } from "@/utils/classNames"
-import Title from "@/components/ui/text/Title"
+
+import Title from "@/components/typography/Title"
+
 import UIStateLayer from "@/components/ui/UIStateLayer"
+
+import { cn } from "@/utils/classNames"
 
 const Tabs = RadixTabs.Root
 
 const TabsList = React.forwardRef<
   React.ElementRef<typeof RadixTabs.List>,
   React.ComponentPropsWithoutRef<typeof RadixTabs.List>
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <RadixTabs.List
-    ref={ref}
+    ref={forwardedRef}
     className={cn(
       "h-[48px] w-full flex items-center justify-between bg-light-surface dark:bg-dark-surface",
       className
@@ -26,14 +29,14 @@ TabsList.displayName = RadixTabs.List.displayName
 const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof RadixTabs.Trigger>,
   React.ComponentPropsWithoutRef<typeof RadixTabs.Trigger>
->(({ className, children, ...props }, ref) => (
+>(({ className, children, ...props }, forwardedRef) => (
   <RadixTabs.Trigger
     className={cn(
       "flex-1 group data-[state=active]:border-b-2 data-[state=active]:border-light-primary dark:data-[state=active]:border-dark-primary data-[state=active]:text-light-primary dark:data-[state=active]:text-dark-primary text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant border-b border-light-surfaceVariant dark:border-dark-surfaceVariant",
       className
     )}
     {...props}
-    ref={ref}
+    ref={forwardedRef}
     asChild
   >
     <button>
@@ -48,11 +51,11 @@ TabsTrigger.displayName = RadixTabs.Trigger.displayName
 const TabsContent = React.forwardRef<
   React.ElementRef<typeof RadixTabs.Content>,
   React.ComponentPropsWithoutRef<typeof RadixTabs.Content>
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <RadixTabs.Content
     className={cn("px-3 py-2 w-full", className)}
     {...props}
-    ref={ref}
+    ref={forwardedRef}
   />
 ))
 TabsContent.displayName = RadixTabs.Content.displayName

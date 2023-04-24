@@ -1,5 +1,7 @@
 "use client"
 
+import { Check, Menu, Plus } from "iconoir-react"
+
 import Button from "@/lib/Button"
 import IconButton from "@/lib/IconButton"
 import {
@@ -13,7 +15,6 @@ import {
   MenuSubTrigger,
   MenuTrigger,
 } from "@/lib/Menu"
-import { Check, Menu, Plus } from "iconoir-react"
 
 const MenuExampleWithButton = () => (
   <MenuRoot>

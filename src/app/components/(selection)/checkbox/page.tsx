@@ -1,12 +1,16 @@
-import Code from "@/components/Code"
+import Display from "@/components/typography/Display"
+
 import Heading from "@/components/Heading"
-import InlineCode from "@/components/InlineCode"
 import Paragraph from "@/components/Paragraph"
-import Display from "@/components/ui/text/Display"
-import { Checkbox, CheckboxLabel } from "@/lib/Checkbox"
-import { sourceCode, usageCode } from "./codeSamples"
+
+import Code from "@/components/Code"
+import InlineCode from "@/components/InlineCode"
 import InternalLink from "@/components/InternalLink"
 import InlineLink from "@/components/InlineLink"
+
+import { Checkbox, CheckboxLabel } from "@/lib/Checkbox"
+
+import { sourceCode, usageCode } from "./codeSamples"
 
 const CheckboxPage = () => {
   return (
@@ -39,7 +43,8 @@ const CheckboxPage = () => {
           внимание на необходимые зависимости:{" "}
           <InternalLink href="/typography/label">Label</InternalLink> и{" "}
           <InternalLink href="#">UIStateLayer</InternalLink>. В качестве иконки
-          я использую <InlineLink href="https://iconoir.com/">iconoir-react</InlineLink>.
+          я использую{" "}
+          <InlineLink href="https://iconoir.com/">iconoir-react</InlineLink>.
         </Paragraph>
         <Paragraph>
           Так же данный компонент использует{" "}

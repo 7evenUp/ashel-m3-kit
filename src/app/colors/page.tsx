@@ -1,10 +1,13 @@
-import Display from "@/components/ui/text/Display";
-import InlineLink from "@/components/InlineLink";
-import Paragraph from "@/components/Paragraph";
-import Heading from "@/components/Heading";
-import Image from "next/image";
-import keyColorsPic from "@/public/colors/overview/key_colors.png";
-import neutralColorsPic from "@/public/colors/overview/neutral_colors.png";
+import Image from "next/image"
+
+import Display from "@/components/typography/Display"
+import Heading from "@/components/Heading"
+
+import Paragraph from "@/components/Paragraph"
+import InlineLink from "@/components/InlineLink"
+
+import keyColorsPic from "@/public/colors/overview/key_colors.png"
+import neutralColorsPic from "@/public/colors/overview/neutral_colors.png"
 
 const Colors = () => {
   return (
@@ -64,7 +67,7 @@ const Colors = () => {
         </Paragraph>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Colors;
+export default Colors

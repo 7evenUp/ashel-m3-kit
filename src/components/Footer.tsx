@@ -1,8 +1,10 @@
-import React from "react";
-import Headline from "./ui/text/Headline";
-import Body from "./ui/text/Body";
-import Label from "./ui/text/Label";
-import InlineLink from "./InlineLink";
+import React from "react"
+
+import Headline from "./typography/Headline"
+import Body from "./typography/Body"
+import Label from "./typography/Label"
+
+import InlineLink from "./InlineLink"
 
 const Footer = () => {
   return (
@@ -36,7 +38,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

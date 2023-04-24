@@ -1,12 +1,14 @@
-import Footer from "@/components/Footer";
-import NavLink from "@/components/NavLink";
-import Title from "@/components/ui/text/Title";
-import { ReactNode } from "react";
+import { ReactNode } from "react"
+
+import Title from "@/components/typography/Title"
+
+import Footer from "@/components/Footer"
+import NavLink from "@/components/NavLink"
 
 export const metadata = {
   title: "Ashel UI Kit | Components",
-  description: "Implementation of Material Design V3 components",
-};
+  description: "Реализация компонентов от Material Design V3 для React.js",
+}
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
@@ -15,42 +17,66 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <NavLink href={"/components"} label="Overview" />
         <NavLink href={"/components/ui-state-layer"} label="UIStateLayer" />
 
-        <Title size="large" className="mt-4 text-xl">Actions</Title>
+        <Title size="large" className="mt-4 text-xl">
+          Actions
+        </Title>
         <NavLink href={"/components/common-buttons"} label="Common buttons" />
         <NavLink href={"/components/icon-buttons"} label="Icon buttons" />
-        <NavLink href={"/components/segmented-buttons"} label="Segmented buttons" />
+        <NavLink
+          href={"/components/segmented-buttons"}
+          label="Segmented buttons"
+        />
 
-        <Title size="large" className="mt-4 text-xl">Communication</Title>
+        <Title size="large" className="mt-4 text-xl">
+          Communication
+        </Title>
         <NavLink href={"/components/badges"} label="Badges" />
         <NavLink href={"/components/snackbar"} label="Snackbar" />
 
-        <Title size="large" className="mt-4 text-xl">Containment</Title>
+        <Title size="large" className="mt-4 text-xl">
+          Containment
+        </Title>
         <NavLink href={"/components/cards"} label="Cards" />
         <NavLink href={"/components/dialogs"} label="Dialog" />
 
-        <Title size="large" className="mt-4 text-xl">Navigation</Title>
+        <Title size="large" className="mt-4 text-xl">
+          Navigation
+        </Title>
         <NavLink href={"/components/navigation-bar"} label="Navigation bar" />
-        <NavLink href={"/components/navigation-drawer"} label="Navigation drawer" />
+        <NavLink
+          href={"/components/navigation-drawer"}
+          label="Navigation drawer"
+        />
         <NavLink href={"/components/tabs"} label="Tabs" />
 
-        <Title size="large" className="mt-4 text-xl">Selection</Title>
+        <Title size="large" className="mt-4 text-xl">
+          Selection
+        </Title>
         <NavLink href={"/components/checkbox"} label="Checkbox" />
         <NavLink href={"/components/radio-button"} label="Radio button" />
         <NavLink href={"/components/chips"} label="Chips" />
         <NavLink href={"/components/switch"} label="Switch" />
         <NavLink href={"/components/menus"} label="Menus" />
 
-        <Title size="large" className="mt-4 text-xl">Text Inputs</Title>
-        <NavLink href={"/components/filled-text-field"} label="Filled text field" />
-        <NavLink href={"/components/outlined-text-field"} label="Outlined text field" />
+        <Title size="large" className="mt-4 text-xl">
+          Text Inputs
+        </Title>
+        <NavLink
+          href={"/components/filled-text-field"}
+          label="Filled text field"
+        />
+        <NavLink
+          href={"/components/outlined-text-field"}
+          label="Outlined text field"
+        />
       </div>
-      
+
       <div className="ml-[210px] p-6">
         <main>{children}</main>
         <Footer />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

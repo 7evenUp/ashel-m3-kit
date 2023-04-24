@@ -1,10 +1,10 @@
 "use client"
 
-import React, { ReactNode } from "react"
+import React from "react"
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 import { NavArrowRight } from "iconoir-react"
 
-import Label from "@/components/ui/text/Label"
+import Label from "@/components/typography/Label"
 
 import { cn } from "@/utils/classNames"
 
@@ -50,8 +50,8 @@ type DropdownMenuProps = React.ComponentPropsWithoutRef<
   typeof DropdownMenu.Item
 >
 interface MenuItemProps extends DropdownMenuProps {
-  leading?: ReactNode
-  trailing?: ReactNode | string
+  leading?: React.ReactNode
+  trailing?: React.ReactNode | string
 }
 
 const MenuItem = React.forwardRef<MenuItemElement, MenuItemProps>(

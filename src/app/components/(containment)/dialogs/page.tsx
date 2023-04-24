@@ -1,10 +1,13 @@
-import Code from "@/components/Code"
+import Display from "@/components/typography/Display"
+
 import Heading from "@/components/Heading"
+import Paragraph from "@/components/Paragraph"
+
+import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
-import Paragraph from "@/components/Paragraph"
-import Display from "@/components/ui/text/Display"
+
 import Button from "@/lib/Button"
 import {
   Dialog,
@@ -15,6 +18,7 @@ import {
   DialogActionButtonContainer,
   DialogActionButton,
 } from "@/lib/Dialog"
+
 import { sourceCode, usageCode } from "./codeSamples"
 
 const DialogPage = () => {

@@ -1,20 +1,22 @@
-"use client";
+"use client"
 
-import { cn } from "@/utils/classNames";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { FC } from "react";
-import Title from "./ui/text/Title";
-import UIStateLayer from "./ui/UIStateLayer";
+import { FC } from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+import Title from "./typography/Title"
+import UIStateLayer from "./ui/UIStateLayer"
+
+import { cn } from "@/utils/classNames"
 
 interface Props {
-  href: string;
-  label: string;
+  href: string
+  label: string
 }
 
 const NavLink: FC<Props> = ({ href, label }) => {
-  const pathname = usePathname();
-  const isActive = href === pathname;
+  const pathname = usePathname()
+  const isActive = href === pathname
 
   return (
     <Link
@@ -37,7 +39,7 @@ const NavLink: FC<Props> = ({ href, label }) => {
         <Title>{label}</Title>
       </UIStateLayer>
     </Link>
-  );
-};
+  )
+}
 
-export default NavLink;
+export default NavLink

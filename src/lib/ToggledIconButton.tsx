@@ -1,10 +1,12 @@
 "use client"
 
-import UIStateLayer from "@/components/ui/UIStateLayer"
-import { cn } from "@/utils/classNames"
+import React from "react"
 import * as Toggle from "@radix-ui/react-toggle"
 import { cva, VariantProps } from "class-variance-authority"
-import React from "react"
+
+import UIStateLayer from "@/components/ui/UIStateLayer"
+
+import { cn } from "@/utils/classNames"
 
 const buttonVariants = cva(
   "group h-10 w-10 rounded-full disabled:bg-opacity-[0.12] dark:disabled:bg-opacity-[0.12] disabled:cursor-not-allowed  disabled:text-light-onSurface disabled:dark:text-dark-onSurface disabled:text-opacity-[0.38] disabled:dark:text-opacity-[0.38]",
@@ -51,11 +53,11 @@ interface Props
 const ToggledIconButton = React.forwardRef<
   React.ElementRef<typeof Toggle.Root>,
   Props
->(({ className, appearance, children, ...props }, ref) => (
+>(({ className, appearance, children, ...props }, forwardedRef) => (
   <Toggle.Root
     className={cn(buttonVariants({ appearance }), className)}
     {...props}
-    ref={ref}
+    ref={forwardedRef}
   >
     <UIStateLayer
       className={cn(

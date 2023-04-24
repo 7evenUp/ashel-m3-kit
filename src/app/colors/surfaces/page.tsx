@@ -1,9 +1,12 @@
+import Display from "@/components/typography/Display"
+
 import Heading from "@/components/Heading"
+import Paragraph from "@/components/Paragraph"
+import Subheading from "@/components/Subheading"
+
 import ImageWithText from "@/components/ImageWithText"
 import InlineLink from "@/components/InlineLink"
-import Paragraph from "@/components/Paragraph"
-import Display from "@/components/ui/text/Display"
-import Subheading from "@/components/Subheading"
+
 import lightThemePic from "@/public/colors/surfaces/lightTheme.png"
 import darkThemePic from "@/public/colors/surfaces/darkTheme.png"
 import containerExamplePic from "@/public/colors/surfaces/containerExample.png"

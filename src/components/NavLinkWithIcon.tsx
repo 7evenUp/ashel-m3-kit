@@ -1,23 +1,25 @@
-"use client";
+"use client"
 
-import { cn } from "@/utils/classNames";
-import Link from "next/link";
-import { useSelectedLayoutSegment } from "next/navigation";
-import { ReactNode } from "react";
-import Label from "./ui/text/Label";
-import UIStateLayer from "./ui/UIStateLayer";
+import { ReactNode } from "react"
+import Link from "next/link"
+import { useSelectedLayoutSegment } from "next/navigation"
+
+import Label from "./typography/Label"
+import UIStateLayer from "./ui/UIStateLayer"
+
+import { cn } from "@/utils/classNames"
 
 const NavLinkWithIcon = ({
   href,
   label,
   icon,
 }: {
-  href: string;
-  label: string;
-  icon: ReactNode;
+  href: string
+  label: string
+  icon: ReactNode
 }) => {
-  const segment = useSelectedLayoutSegment();
-  const isActive = href.split("/")[1] === segment;
+  const segment = useSelectedLayoutSegment()
+  const isActive = href.split("/")[1] === segment
 
   return (
     <Link
@@ -59,7 +61,7 @@ const NavLinkWithIcon = ({
         {label}
       </Label>
     </Link>
-  );
-};
+  )
+}
 
-export default NavLinkWithIcon;
+export default NavLinkWithIcon

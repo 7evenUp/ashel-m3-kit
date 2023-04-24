@@ -1,18 +1,22 @@
-import Heading from "@/components/Heading";
-import ImageWithText from "@/components/ImageWithText";
-import InlineLink from "@/components/InlineLink";
-import Paragraph from "@/components/Paragraph";
-import Subheading from "@/components/Subheading";
-import Display from "@/components/ui/text/Display";
-import darkThemePic from "@/public/colors/color-roles/dark_theme.png";
-import lightThemePic from "@/public/colors/color-roles/light_theme.png";
-import primaryContainerExamplePic from "@/public/colors/color-roles/primaryContainerExample.png";
-import primaryExamplePic from "@/public/colors/color-roles/primaryExample.png";
-import secondaryContainerExamplePic from "@/public/colors/color-roles/secondaryContainerExample.png";
-import tertiaryContainerExamplePic from "@/public/colors/color-roles/tertiaryContainerExample.png";
-import thirteenTonesPic from "@/public/colors/color-roles/thirteen_tones.png";
-import tonesToRolesPic from "@/public/colors/color-roles/tones_to_roles.png";
-import Image from "next/image";
+import Image from "next/image"
+
+import Display from "@/components/typography/Display"
+
+import Heading from "@/components/Heading"
+import Subheading from "@/components/Subheading"
+import Paragraph from "@/components/Paragraph"
+
+import ImageWithText from "@/components/ImageWithText"
+import InlineLink from "@/components/InlineLink"
+
+import darkThemePic from "@/public/colors/color-roles/dark_theme.png"
+import lightThemePic from "@/public/colors/color-roles/light_theme.png"
+import primaryContainerExamplePic from "@/public/colors/color-roles/primaryContainerExample.png"
+import primaryExamplePic from "@/public/colors/color-roles/primaryExample.png"
+import secondaryContainerExamplePic from "@/public/colors/color-roles/secondaryContainerExample.png"
+import tertiaryContainerExamplePic from "@/public/colors/color-roles/tertiaryContainerExample.png"
+import thirteenTonesPic from "@/public/colors/color-roles/thirteen_tones.png"
+import tonesToRolesPic from "@/public/colors/color-roles/tones_to_roles.png"
 
 const ColorRoles = () => {
   return (
@@ -146,7 +150,7 @@ const ColorRoles = () => {
         </ImageWithText>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ColorRoles;
+export default ColorRoles
