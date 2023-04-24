@@ -177,7 +177,7 @@ export default function Home() {
   )
 }`
 
-export const appWithProviders = `import Providers from "@/components/Providers";
+export const appWithProviders = `import Providers from "@/components/Providers"
 import "./globals.css"
 
 export default function RootLayout({

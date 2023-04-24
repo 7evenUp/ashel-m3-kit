@@ -1,15 +1,20 @@
-import Code from "@/components/Code"
+import Display from "@/components/ui/text/Display"
+import Body from "@/components/ui/text/Body"
+
 import Heading from "@/components/Heading"
+import Paragraph from "@/components/Paragraph"
+
 import ImageWithText from "@/components/ImageWithText"
 import InlineCode from "@/components/InlineCode"
-import Paragraph from "@/components/Paragraph"
-import Body from "@/components/ui/text/Body"
-import Display from "@/components/ui/text/Display"
+import Code from "@/components/Code"
+
 import Card from "@/lib/Card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+
 import articlePestoPic from "@/public/typography/body/article_pesto.png"
 import readablePassagesPic from "@/public/typography/body/readable_passages.png"
 import setupFlowPic from "@/public/typography/body/setup_flow.png"
+import { bodySrc, custom, usage } from "./codeSamples"
 
 const BodyPage = () => {
   return (
@@ -84,56 +89,9 @@ const BodyPage = () => {
           Можно сохранить компонент в файл{" "}
           <InlineCode>src/components/typography/Body.tsx</InlineCode>:
         </Paragraph>
-        <Code
-          language="tsx"
-          code={`import { cva } from "class-variance-authority"
-import type { VariantProps } from "class-variance-authority"
-import { FC, HTMLAttributes } from "react"
-import { cn } from "@/utils/classNames"
-
-const bodyVariants = cva("text-inherit dark:text-inherit", {
-  variants: {
-    size: {
-      large: "text-base tracking-[0.5px]",
-      medium: "text-sm tracking-[0.25px]",
-      small: "text-xs tracking-[0.4px]",
-    },
-  },
-  defaultVariants: {
-    size: "medium",
-  },
-})
-
-interface Props
-  extends VariantProps<typeof bodyVariants>,
-    HTMLAttributes<HTMLHeadingElement> {}
-
-const Body: FC<Props> = ({ children, size, className, ...props }) => {
-  return (
-    <p className={cn(bodyVariants({ size }), className)} {...props}>
-      {children}
-    </p>
-  )
-}
-
-export default Body`}
-        />
+        <Code language="tsx" code={bodySrc} />
         <Heading>Использование</Heading>
-        <Code
-          language="tsx"
-          code={`import Body from "@/components/typography/Body"`}
-        />
-        <Code
-          language="tsx"
-          code={`{/* Большой */}
-<Body size="large">Body large</Body>
-{/* Средний */}
-<Body size="medium">Body medium</Body>
-{/* или без указания size (medium по умолчанию) */}
-<Body>Body medium</Body>
-{/* Маленький */}
-<Body size="small">Body small</Body>`}
-        />
+        <Code language="tsx" code={usage} />
         <Heading>Кастомайзинг</Heading>
         <Paragraph>
           Не зацикливайтесь на фиксированных размерах компонентов. Можете
@@ -155,15 +113,7 @@ export default Body`}
             <Body size="large">Стандартный текст</Body>
           </TabsContent>
           <TabsContent value="code" className="p-0">
-            <Code
-              language="tsx"
-              code={`<Body size="large" className="text-lg w-[150px]">
-  Короткий текст размером 18px
-</Body>
-<Body size="large">
-  Стандартный текст
-</Body>`}
-            />
+            <Code language="tsx" code={custom} />
           </TabsContent>
         </Tabs>
       </div>

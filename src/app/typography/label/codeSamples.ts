@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from "react"
+export const labelSrc = `import { FC, HTMLAttributes } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/utils/classNames"
@@ -28,4 +28,25 @@ const Label: FC<Props> = ({ children, size, className, ...props }) => {
   )
 }
 
-export default Label
+export default Label`
+
+export const usage = `import Label from "@/components/typography/Label"
+
+{/* Большой */}
+<Label size="large">Label large</Label>
+{/* Средний */}
+<Label size="medium">Label medium</Label>
+{/* или без указания size (medium по умолчанию) */}
+<Label>Label medium</Label>
+{/* Маленький */}
+<Label size="small">Label small</Label>`
+
+export const custom = `<Label className="text-red-400 dark:text-red-400">
+  (R)ed
+</Label>
+<Label className="text-green-400 dark:text-green-400">
+  (G)reen
+</Label>
+<Label className="text-blue-400 dark:text-blue-400">
+  (B)lue
+</Label>`

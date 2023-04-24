@@ -1,14 +1,20 @@
-import Code from "@/components/Code"
+import Display from "@/components/ui/text/Display"
+import Body from "@/components/ui/text/Body"
+
 import Heading from "@/components/Heading"
+import Paragraph from "@/components/Paragraph"
+
 import ImageWithText from "@/components/ImageWithText"
 import InlineCode from "@/components/InlineCode"
-import Paragraph from "@/components/Paragraph"
-import Body from "@/components/ui/text/Body"
-import Display from "@/components/ui/text/Display"
+import Code from "@/components/Code"
+
 import Card from "@/lib/Card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+
 import expressiveTypefacePic from "@/public/typography/display/expressive_typeface.png"
 import eyeCatchingDesignPic from "@/public/typography/display/eye_catching_design.png"
+
+import { custom, displaySrc, usage } from "./codeSamples"
 
 const DisplayPage = () => {
   return (
@@ -69,60 +75,13 @@ const DisplayPage = () => {
           Можно сохранить компонент в файл{" "}
           <InlineCode>src/components/typography/Display.tsx</InlineCode>:
         </Paragraph>
-        <Code
-          language="tsx"
-          code={`import { cva } from "class-variance-authority"
-import type { VariantProps } from "class-variance-authority"
-import { FC, HTMLAttributes } from "react"
-import { cn } from "@/utils/classNames"
-
-const displayVariants = cva("text-inherit dark:text-inherit", {
-  variants: {
-    size: {
-      large: "text-[57px] leading-[64px] tracking-[-0.25px]",
-      medium: "text-[45px] leading-[52px]",
-      small: "text-4xl leading-[44px]",
-    },
-  },
-  defaultVariants: {
-    size: "medium",
-  },
-})
-
-interface Props
-  extends VariantProps<typeof displayVariants>,
-    HTMLAttributes<HTMLHeadingElement> {}
-
-const Display: FC<Props> = ({ children, size, className, ...props }) => {
-  return (
-    <h1 className={cn(displayVariants({ size }), className)} {...props}>
-      {children}
-    </h1>
-  )
-}
-
-export default Display`}
-        />
+        <Code language="tsx" code={displaySrc} />
         <Paragraph>
           По умолчанию заголовок среднего размера и наследует цвет от родителя.
           В любом случае можете изменять компонент под себя.
         </Paragraph>
         <Heading>Использование</Heading>
-        <Code
-          language="tsx"
-          code={`import Display from "@/components/typography/Display"`}
-        />
-        <Code
-          language="tsx"
-          code={`{/* Большой */}
-<Display size="large">Display large</Display>
-{/* Средний */}
-<Display size="medium">Display medium</Display>
-{/* или без указания size (medium по умолчанию) */}
-<Display>Display medium</Display>
-{/* Маленький */}
-<Display size="small">Display small</Display>`}
-        />
+        <Code language="tsx" code={usage} />
         <Heading>Кастомайзинг</Heading>
         <Paragraph>
           Наверняка придётся менять стили, цвет, накладывать hover эффекты. В
@@ -147,16 +106,7 @@ export default Display`}
             <Display size="small">Просто обычный текст</Display>
           </TabsContent>
           <TabsContent value="code" className="p-0">
-            <Code
-              language="tsx"
-              code={`<Display
-  size="small"
-  className="text-green-400 dark:text-green-400 w-[250px]"
->
-  Зелёный текст шириной 250 пикселей
-</Display>
-<Display size="small">Просто обычный текст</Display>`}
-            />
+            <Code language="tsx" code={custom} />
           </TabsContent>
         </Tabs>
       </div>

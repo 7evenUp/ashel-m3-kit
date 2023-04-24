@@ -1,6 +1,6 @@
-import { cva } from "class-variance-authority"
-import type { VariantProps } from "class-variance-authority"
 import { FC, HTMLAttributes } from "react"
+import { cva, type VariantProps } from "class-variance-authority"
+
 import { cn } from "@/utils/classNames"
 
 const displayVariants = cva("text-inherit dark:text-inherit", {

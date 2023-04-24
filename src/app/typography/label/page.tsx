@@ -1,16 +1,22 @@
-import Code from "@/components/Code"
+import Display from "@/components/ui/text/Display"
+import Body from "@/components/ui/text/Body"
+import Label from "@/components/ui/text/Label"
+
 import Heading from "@/components/Heading"
+import Paragraph from "@/components/Paragraph"
+
 import ImageWithText from "@/components/ImageWithText"
 import InlineCode from "@/components/InlineCode"
-import Paragraph from "@/components/Paragraph"
-import Body from "@/components/ui/text/Body"
-import Display from "@/components/ui/text/Display"
-import Label from "@/components/ui/text/Label"
+import Code from "@/components/Code"
+
 import Card from "@/lib/Card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+
 import musicPlayerPic from "@/public/typography/label/music_player.png"
 import navigationBarPic from "@/public/typography/label/navigation_bar.png"
 import quickReadingPic from "@/public/typography/label/quick_reading.png"
+
+import { custom, labelSrc, usage } from "./codeSamples"
 
 const LabelPage = () => {
   return (
@@ -83,56 +89,9 @@ const LabelPage = () => {
           Можно сохранить компонент в файл{" "}
           <InlineCode>src/components/typography/Label.tsx</InlineCode>:
         </Paragraph>
-        <Code
-          language="tsx"
-          code={`import { cva } from "class-variance-authority"
-import type { VariantProps } from "class-variance-authority"
-import { FC, HTMLAttributes } from "react"
-import { cn } from "@/utils/classNames"
-
-const labelVariants = cva("text-inherit dark:text-inherit", {
-  variants: {
-    size: {
-      large: "text-sm tracking-[0.1px] font-medium",
-      medium: "text-xs tracking-[0.5px] font-medium",
-      small: "text-[11px] leading-4 tracking-[0.5px] font-medium",
-    },
-  },
-  defaultVariants: {
-    size: "medium",
-  },
-})
-
-interface Props
-  extends VariantProps<typeof labelVariants>,
-    HTMLAttributes<HTMLHeadingElement> {}
-
-const Label: FC<Props> = ({ children, size, className, ...props }) => {
-  return (
-    <span className={cn(labelVariants({ size }), className)} {...props}>
-      {children}
-    </span>
-  )
-}
-
-export default Label`}
-        />
+        <Code language="tsx" code={labelSrc} />
         <Heading>Использование</Heading>
-        <Code
-          language="tsx"
-          code={`import Label from "@/components/typography/Label"`}
-        />
-        <Code
-          language="tsx"
-          code={`{/* Большой */}
-<Label size="large">Label large</Label>
-{/* Средний */}
-<Label size="medium">Label medium</Label>
-{/* или без указания size (medium по умолчанию) */}
-<Label>Label medium</Label>
-{/* Маленький */}
-<Label size="small">Label small</Label>`}
-        />
+        <Code language="tsx" code={usage} />
         <Heading>Кастомайзинг</Heading>
         <Paragraph>
           Подходя к Label у меня закончились идеи по кастомизации, поэтому
@@ -154,18 +113,7 @@ export default Label`}
             <Label className="text-blue-400 dark:text-blue-400">(B)lue</Label>
           </TabsContent>
           <TabsContent value="code" className="p-0">
-            <Code
-              language="tsx"
-              code={`<Label className="text-red-400 dark:text-red-400">
-  (R)ed
-</Label>
-<Label className="text-green-400 dark:text-green-400">
-  (G)reen
-</Label>
-<Label className="text-blue-400 dark:text-blue-400">
-  (B)lue
-</Label>`}
-            />
+            <Code language="tsx" code={custom} />
           </TabsContent>
         </Tabs>
       </div>

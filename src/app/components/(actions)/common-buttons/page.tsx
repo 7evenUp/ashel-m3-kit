@@ -12,6 +12,7 @@ import InlineLink from "@/components/InlineLink"
 import Button from "@/lib/Button"
 
 import { buttonCode, usageCode, usageWithIconsCode } from "./codeSamples"
+import InternalLink from "@/components/InternalLink"
 
 const CommonButtonsPage = () => {
   return (
@@ -179,8 +180,8 @@ const CommonButtonsPage = () => {
         <Paragraph>Скопируйте и вставьте код в свой проект.</Paragraph>
         <Paragraph>
           Обратите внимание, что компонент имеет зависимости таких компонентов
-          как <InlineCode>Label</InlineCode> и{" "}
-          <InlineCode>UIStateLayer</InlineCode>. Если вы еще не добавили их в
+          как <InternalLink href="/typography/label">Label</InternalLink> и{" "}
+          <InternalLink href="/components/ui-state-layer">UIStateLayer</InternalLink>. Если вы еще не добавили их в
           свой проект, следует заняться сперва ими.
         </Paragraph>
         <Paragraph>

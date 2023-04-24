@@ -66,7 +66,7 @@ const Intro = () => {
       />
       <Paragraph>
         Создадим helper функцию <InlineCode>cn</InlineCode> для работы с css
-        классами в файл <InlineCode>src/utils/cn.ts</InlineCode>:
+        классами в файл <InlineCode>src/utils/classNames.ts</InlineCode>:
       </Paragraph>
       <Code code={classNamesSrc} language="typescript" />
       <Paragraph>
