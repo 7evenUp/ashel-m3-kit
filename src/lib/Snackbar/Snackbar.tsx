@@ -17,7 +17,7 @@ const SnackbarViewport = React.forwardRef<
   <ToastPrimitives.Viewport
     ref={forwardedRef}
     className={cn(
-      "fixed bottom-0 right-0 flex flex-col p-6 w-[390px] max-w-[100vw] m-0 list-none z-[2147483647] outline-none",
+      "fixed bottom-0 right-0 flex flex-col gap-2 p-6 w-[390px] max-w-[100vw] m-0 list-none z-[2147483647] outline-none",
       className
     )}
     {...props}
@@ -33,7 +33,7 @@ const Snackbar = React.forwardRef<
     <ToastPrimitives.Root
       ref={forwardedRef}
       className={cn(
-        "flex items-center justify-between pl-4 pr-2 py-3 shadow-elevation3 rounded bg-light-inverseSurface dark:bg-dark-inverseSurface text-light-inverseOnSurface dark:text-dark-inverseOnSurface min-h-[48px]",
+        "flex items-center justify-between pl-4 pr-2 shadow-elevation3 rounded bg-light-inverseSurface dark:bg-dark-inverseSurface text-light-inverseOnSurface dark:text-dark-inverseOnSurface min-h-[48px]",
         className
       )}
       {...props}
@@ -85,7 +85,7 @@ const SupportingText = React.forwardRef<
   <ToastPrimitives.Description
     ref={forwardedRef}
     className={cn(
-      "text-light-inverseOnSurface dark:text-dark-inverseOnSurface",
+      "text-light-inverseOnSurface dark:text-dark-inverseOnSurface py-3",
       className
     )}
     {...props}

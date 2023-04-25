@@ -1,10 +1,9 @@
-// Inspired by react-hot-toast library
 import * as React from "react"
 
 import { SnackbarProps } from "./Snackbar"
 
 const SNACKBAR_LIMIT = 1
-const SNACKBAR_REMOVE_DELAY = 1000000
+export const SNACKBAR_REMOVE_DELAY = 3000
 
 type useSnackbarProps = SnackbarProps & {
   id: string
