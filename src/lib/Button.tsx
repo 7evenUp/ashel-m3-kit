@@ -51,7 +51,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
   ({ icon, children, className, appearance, ...props }, forwardedRef) => {
     return (
       <button
-        className={cn(className, buttonVariants({ appearance }))}
+        className={cn(buttonVariants({ appearance }), className)}
         {...props}
         ref={forwardedRef}
       >
