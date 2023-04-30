@@ -6,6 +6,8 @@ import Paragraph from "@/components/Paragraph"
 import InlineLink from "@/components/InlineLink"
 
 import FilledTextInput from "@/lib/FilledTextInput"
+import { DeleteCircle, Search } from "iconoir-react"
+import Body from "@/components/typography/Body"
 
 const FilledTextFieldPage = () => {
   return (
@@ -29,9 +31,7 @@ const FilledTextFieldPage = () => {
 
         <Heading>Примеры</Heading>
 
-        <div className="rounded-md border border-light-surfaceVariant dark:border-dark-surfaceVariant w-fit p-10">
-          {/* <FilledTextInput label="Filled text input" id="filled" /> */}
-        </div>
+        <FilledTextInput label="First name" />
       </div>
     </div>
   )

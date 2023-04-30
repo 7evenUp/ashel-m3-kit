@@ -1,4 +1,6 @@
-import { FC, ReactNode } from "react"
+import React, { FC, InputHTMLAttributes, ReactNode } from "react"
+import { cva, type VariantProps } from "class-variance-authority"
+import Body from "@/components/typography/Body"
 
 interface InputProps {
   label: string
@@ -9,35 +11,45 @@ interface InputProps {
   trailingIcon?: ReactNode
 }
 
-const FilledTextInput: FC<InputProps> = ({
-  label,
-  id,
-  value,
-  onChange,
-  leadingIcon,
-  trailingIcon,
-}) => {
-  return (
-    <label
-      htmlFor={id}
-      className="bg-light-surfaceVariant dark:bg-dark-surfaceVariant flex flex-col-reverse border-b border-light-outline dark:border-dark-outline rounded-t py-2 px-6 focus-within:border-light-primary focus-within:dark:border-dark-primary focus-within:border-b-2"
-    >
-      <input
-        id={id}
-        name={id}
-        value={value}
-        onChange={onChange}
-        className="peer caret-light-primary dark:caret-dark-primary text-light-onSurface dark:text-dark-onSurface bg-transparent outline-none text-base leading-6 tracking-[0.5px]"
-      />
-      <LabelText label={label} />
-    </label>
-  )
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
+  label: string
+  leadingIcon?: React.ReactNode
+  trailingIcon?: React.ReactNode
 }
 
-const LabelText = ({ label }: Pick<InputProps, "label">) => (
-  <span className="text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant peer-focus:text-light-primary dark:peer-focus:text-dark-primary text-xs leading-4 tracking-[0.4px]">
-    {label}
-  </span>
-)
+const FilledTextInput: FC<Props> = ({
+  label,
+  leadingIcon,
+  trailingIcon,
+  ...props
+}) => {
+  return (
+    <div className="flex flex-col gap-1 w-fit">
+      <div className="relative h-[56px] bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant rounded-t border-b border-light-onSurfaceVariant dark:border-dark-onSurfaceVariant focus-within:border-b-2 focus-within:border-light-primary dark:focus-within:border-dark-primary">
+        <input
+          className="peer opacity-100 placeholder-shown:opacity-0 focus:opacity-100 text-light-onSurface dark:text-dark-onSurface pt-6 px-4 pb-2 outline-none text-base tracking-[0.5px] bg-transparent caret-light-primary dark:caret-dark-primary"
+          placeholder="&nbsp;"
+          {...props}
+        />
+        <label
+          className="absolute pointer-events-none text-xs tracking-[0.4px] left-4 translate-y-2 peer-placeholder-shown:translate-y-4 transition-all peer-focus:translate-y-2 peer-focus:text-xs peer-focus:tracking-[0.4px] peer-focus:text-light-primary dark:peer-focus:text-dark-primary peer-placeholder-shown:text-base peer-placeholder-shown:tracking-[0.5px]"
+        >
+          {label}
+        </label>
+      </div>
+      <div className="flex items-center gap-4 px-4">
+        <Body
+          size="small"
+          className="text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
+        >
+          Supporting text
+        </Body>
+        <Body size="small" className="ml-auto">
+          5/20
+        </Body>
+      </div>
+    </div>
+  )
+}
 
 export default FilledTextInput
