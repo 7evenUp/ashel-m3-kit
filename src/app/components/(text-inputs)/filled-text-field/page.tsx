@@ -1,3 +1,5 @@
+"use client"
+
 import Display from "@/components/typography/Display"
 
 import Heading from "@/components/Heading"
@@ -8,8 +10,10 @@ import InlineLink from "@/components/InlineLink"
 import FilledTextInput from "@/lib/FilledTextInput"
 import { DeleteCircle, Search } from "iconoir-react"
 import Body from "@/components/typography/Body"
+import { useState } from "react"
 
 const FilledTextFieldPage = () => {
+  const [name, setName] = useState("")
   return (
     <div>
       <Display className="mb-4">Filled text field</Display>
@@ -31,7 +35,28 @@ const FilledTextFieldPage = () => {
 
         <Heading>Примеры</Heading>
 
-        <FilledTextInput label="First name" />
+        <FilledTextInput
+          label="First name"
+          value={name}
+          onChange={(evt) => setName(evt.currentTarget.value)}
+          supportingText="Not enough"
+          maxLength={10}
+          supportingTextCharCount={`${name.length}/10`}
+          trailingIcon={
+            <DeleteCircle
+              className="hover:cursor-pointer"
+              onClick={() => setName("")}
+            />
+          }
+        />
+
+        <FilledTextInput label="Last name" leadingIcon={<Search />} placeholder="Enter your last name" />
+        <FilledTextInput label="Address" trailingIcon={<DeleteCircle />} />
+        <FilledTextInput
+          label="Framework"
+          leadingIcon={<Search />}
+          trailingIcon={<DeleteCircle />}
+        />
       </div>
     </div>
   )
