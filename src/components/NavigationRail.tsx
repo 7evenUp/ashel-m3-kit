@@ -1,4 +1,4 @@
-import { HomeSimple, TextSize, ColorFilter, Puzzle, Code } from "iconoir-react"
+import { HomeSimple, TextSize, ColorFilter, Puzzle, Code, BookStack } from "iconoir-react"
 
 import ThemeToggle from "./ThemeToggle"
 import NavLinkWithIcon from "./NavLinkWithIcon"
@@ -22,6 +22,11 @@ const NavigationRail = () => {
           href="/components"
           label="Components"
           icon={<Puzzle />}
+        />
+        <NavLinkWithIcon
+          href="/guides"
+          label="Guides"
+          icon={<BookStack />}
         />
       </nav>
 
