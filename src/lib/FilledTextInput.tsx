@@ -23,7 +23,7 @@ const FilledTextInput: FC<Props> = ({
 }) => {
   return (
     <div className={cn("flex flex-col gap-1 w-fit", className)}>
-      <div className="group relative h-[56px] bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant rounded-t border-b border-light-onSurfaceVariant dark:border-dark-onSurfaceVariant focus-within:border-b-2 focus-within:border-light-primary dark:focus-within:border-dark-primary flex hover:border-light-onSurface dark:hover:border-dark-onSurface">
+      <div className="group relative h-[56px] bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant rounded-t border-b border-light-onSurfaceVariant dark:border-dark-onSurfaceVariant focus-within:border-b-2 focus-within:border-light-primary dark:focus-within:border-dark-primary flex hover:border-light-onSurface dark:hover:border-dark-onSurface focus-within:hover:border-light-primary dark:focus-within:hover:border-dark-primary">
         <UIStateLayer className="bg-light-onSurface dark:bg-dark-onSurface group-active:bg-opacity-[0.08] focus-within:group-hover:bg-opacity-0">
           {leadingIcon && (
             <span className="absolute left-3 top-4">{leadingIcon}</span>
