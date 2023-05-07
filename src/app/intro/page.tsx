@@ -26,6 +26,7 @@ import {
   talwindConfigExample,
   themeToggleSrc,
 } from "./codeSamples"
+import InternalLink from "@/components/InternalLink"
 
 export const metadata = {
   title: "Ashel UI Kit | About",
@@ -37,6 +38,11 @@ const Intro = () => {
   return (
     <main className="p-10 flex flex-col gap-3">
       <Display>Introduction</Display>
+      <Paragraph>
+        Данная страница описывает использование Ashel UI Kit совместно с Next.js
+        13 версии. На данный момент есть аналогичный способ использования -{" "}
+        <InternalLink href="/guides/vite">Vite</InternalLink>.
+      </Paragraph>
       <Heading>Установка</Heading>
       <Paragraph>
         Давайте разберёмся со всеми зависимостями, которые нам предстоит
