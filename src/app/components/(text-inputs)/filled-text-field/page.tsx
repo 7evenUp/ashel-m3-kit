@@ -1,19 +1,31 @@
-"use client"
+import fs from "fs"
+import path from "path"
+import { DeleteCircle, Search } from "iconoir-react"
 
 import Display from "@/components/typography/Display"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
-
 import InlineLink from "@/components/InlineLink"
 
-import FilledTextInput from "@/lib/FilledTextInput"
-import { DeleteCircle, Search } from "iconoir-react"
-import Body from "@/components/typography/Body"
-import { useState } from "react"
+import FilledTextField from "@/lib/FilledTextField"
+import InternalLink from "@/components/InternalLink"
+import InlineCode from "@/components/InlineCode"
+import Code from "@/components/Code"
+import { usageCode } from "./codeSamples"
 
 const FilledTextFieldPage = () => {
-  const [name, setName] = useState("")
+  const componentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "lib",
+    "FilledTextField.tsx"
+  )
+  const componentCode = fs.readFileSync(componentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Filled text field</Display>
@@ -29,34 +41,60 @@ const FilledTextFieldPage = () => {
         <Paragraph>
           Подробнее на{" "}
           <InlineLink href="https://m3.material.io/components/text-fields/overview">
-            офицальном сайт
+            офицальном сайте
           </InlineLink>
         </Paragraph>
 
         <Heading>Примеры</Heading>
-
-        <FilledTextInput
-          label="First name"
-          value={name}
-          onChange={(evt) => setName(evt.currentTarget.value)}
-          supportingText="Not enough"
-          maxLength={10}
-          supportingTextCharCount={`${name.length}/10`}
-          trailingIcon={
-            <DeleteCircle
-              className="hover:cursor-pointer"
-              onClick={() => setName("")}
-            />
-          }
+        <FilledTextField
+          label="With leading icon"
+          leadingIcon={<Search />}
+          placeholder="This is placeholder"
         />
-
-        <FilledTextInput label="Last name" leadingIcon={<Search />} placeholder="Enter your last name" />
-        <FilledTextInput label="Address" trailingIcon={<DeleteCircle />} />
-        <FilledTextInput
-          label="Framework"
+        <FilledTextField
+          label="With trailing icon"
+          trailingIcon={<DeleteCircle />}
+        />
+        <FilledTextField
+          label="With both icons"
           leadingIcon={<Search />}
           trailingIcon={<DeleteCircle />}
         />
+        <FilledTextField
+          label="Error state"
+          variant="error"
+          trailingIcon={<DeleteCircle />}
+          supportingText="This is supporting text"
+          supportingTextCharCount="14/10"
+        />
+
+        <Heading>Компонент</Heading>
+        <Paragraph>Скопируйте и вставьте код в свой проект.</Paragraph>
+        <Paragraph>
+          Обратите внимание, что компонент имеет зависимости таких компонентов
+          как <InternalLink href="/typography/body">Body</InternalLink> и{" "}
+          <InternalLink href="/components/ui-state-layer">
+            UIStateLayer
+          </InternalLink>
+          . Если вы еще не добавили их в свой проект, следует заняться сперва
+          ими.
+        </Paragraph>
+        <Paragraph>
+          Можно сохранить компонент в файл{" "}
+          <InlineCode>src/components/ui/FilledTextField.tsx</InlineCode>:
+        </Paragraph>
+        <Code language="tsx" code={componentCode} />
+
+        <Heading>Использование</Heading>
+        <Paragraph>
+          Ниже вы можете посмотреть примеры компонентов в секции "Примеры"
+        </Paragraph>
+        <Code language="tsx" code={usageCode} />
+
+        <Paragraph>
+          Пример использования компонентов внутри формы можете посмотреть на{" "}
+          <InternalLink href="/guides/forms">здесь</InternalLink>.
+        </Paragraph>
       </div>
     </div>
   )

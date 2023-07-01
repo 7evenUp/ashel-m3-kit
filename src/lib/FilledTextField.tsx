@@ -1,8 +1,11 @@
-import React, { FC, InputHTMLAttributes, ReactNode } from "react"
+import React, { FC, InputHTMLAttributes } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
+
 import Body from "@/components/typography/Body"
-import { cn } from "@/utils/classNames"
+
 import UIStateLayer from "@/components/ui/UIStateLayer"
+
+import { cn } from "@/utils/classNames"
 
 const containerVariants = cva(
   "group relative flex h-[56px] bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest rounded-t border-b focus-within:border-b-2",
@@ -74,7 +77,7 @@ interface Props
   supportingTextCharCount?: string
 }
 
-const FilledTextInput: FC<Props> = ({
+const FilledTextField: FC<Props> = ({
   label,
   leadingIcon,
   trailingIcon,
@@ -127,4 +130,4 @@ const FilledTextInput: FC<Props> = ({
   )
 }
 
-export default FilledTextInput
+export default FilledTextField
