@@ -29,7 +29,7 @@ const buttonVariants = cva(
 
 // Для стилей State Layer
 // (Необходим, так как Button и State Layer в разных состояниях имеют разные свойства background)
-const uiStateLayerVariants = cva("rounded-full flex items-center gap-2 px-6", {
+const uiStateLayerVariants = cva("rounded-full flex justify-center items-center gap-2 px-6", {
   variants: {
     appearance: {
       elevated: "bg-light-primary dark:bg-dark-primary",

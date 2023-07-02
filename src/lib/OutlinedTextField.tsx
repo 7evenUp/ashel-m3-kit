@@ -39,7 +39,7 @@ const labelVariants = cva(
 )
 
 const inputVariants = cva(
-  "peer opacity-100 placeholder-shown:opacity-0 focus:opacity-100 text-light-onSurface dark:text-dark-onSurface pt-4 px-4 pb-4 outline-none text-base tracking-[0.5px] bg-transparent placeholder:text-light-onSurfaceVariant dark:placeholder:text-dark-onSurfaceVariant",
+  "peer opacity-100 placeholder-shown:opacity-0 focus:opacity-100 text-light-onSurface dark:text-dark-onSurface pt-4 px-4 pb-4 outline-none text-base tracking-[0.5px] bg-transparent placeholder:text-light-onSurfaceVariant dark:placeholder:text-dark-onSurfaceVariant w-full",
   {
     variants: {
       variant: {
@@ -75,55 +75,64 @@ interface Props
   supportingTextCharCount?: string
 }
 
-const OutlinedTextField: FC<Props> = ({
-  label,
-  leadingIcon,
-  trailingIcon,
-  supportingText,
-  supportingTextCharCount,
-  className,
-  variant,
-  ...props
-}) => {
-  return (
-    <div className={cn("flex flex-col gap-1 w-fit", className)}>
-      <div className={cn(containerVariants({ variant }))}>
-        {leadingIcon && (
-          <span className="absolute left-3 top-4">{leadingIcon}</span>
-        )}
-        {trailingIcon && (
-          <span className="absolute right-3 top-4">{trailingIcon}</span>
-        )}
-        <input
-          className={cn(
-            inputVariants({ variant }),
-            leadingIcon && "pl-[52px]",
-            trailingIcon && "pr-[52px]"
+const OutlinedTextField = React.forwardRef<HTMLDivElement, Props>(
+  (
+    {
+      label,
+      leadingIcon,
+      trailingIcon,
+      supportingText,
+      supportingTextCharCount,
+      className,
+      variant,
+      ...props
+    },
+    forwardedRef
+  ) => {
+    return (
+      <div
+        className={cn("flex flex-col gap-1 w-fit", className)}
+        ref={forwardedRef}
+      >
+        <div className={cn(containerVariants({ variant }))}>
+          {leadingIcon && (
+            <span className="absolute left-3 top-4">{leadingIcon}</span>
           )}
-          placeholder="&nbsp;"
-          {...props}
-        />
-        <label
-          className={cn(
-            labelVariants({ variant }),
-            leadingIcon && "translate-x-[52px] peer-focus:translate-x-3"
+          {trailingIcon && (
+            <span className="absolute right-3 top-4">{trailingIcon}</span>
           )}
-        >
-          {label}
-        </label>
-      </div>
-      {supportingText && (
-        <div className={cn(supportingTextVariants({ variant }))}>
-          <Body size="small">{supportingText}</Body>
-          {supportingTextCharCount && (
-            <Body size="small" className="ml-auto">
-              {supportingTextCharCount}
-            </Body>
-          )}
+          <input
+            className={cn(
+              inputVariants({ variant }),
+              leadingIcon && "pl-[52px]",
+              trailingIcon && "pr-[52px]"
+            )}
+            placeholder="&nbsp;"
+            {...props}
+          />
+          <label
+            className={cn(
+              labelVariants({ variant }),
+              leadingIcon && "translate-x-[52px] peer-focus:translate-x-3"
+            )}
+          >
+            {label}
+          </label>
         </div>
-      )}
-    </div>
-  )
-}
+        {supportingText && (
+          <div className={cn(supportingTextVariants({ variant }))}>
+            <Body size="small">{supportingText}</Body>
+            {supportingTextCharCount && (
+              <Body size="small" className="ml-auto">
+                {supportingTextCharCount}
+              </Body>
+            )}
+          </div>
+        )}
+      </div>
+    )
+  }
+)
+OutlinedTextField.displayName = "OutlinedTextField"
 
 export default OutlinedTextField

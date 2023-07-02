@@ -85,7 +85,7 @@ const OutlinedTextFieldPage = () => {
 
         <Heading>Использование</Heading>
         <Paragraph>
-          Ниже вы можете посмотреть примеры компонентов в секции "Примеры"
+          Ниже вы можете посмотреть примеры компонентов в секции &quot;Примеры&quot;
         </Paragraph>
         <Code language="tsx" code={usageCode} />
 

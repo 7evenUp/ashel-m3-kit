@@ -41,7 +41,7 @@ const labelVariants = cva(
 )
 
 const inputVariants = cva(
-  "peer opacity-100 placeholder-shown:opacity-0 focus:opacity-100 text-light-onSurface dark:text-dark-onSurface pt-6 px-4 pb-2 outline-none text-base tracking-[0.5px] bg-transparent placeholder:text-light-onSurfaceVariant dark:placeholder:text-dark-onSurfaceVariant",
+  "peer opacity-100 placeholder-shown:opacity-0 focus:opacity-100 text-light-onSurface dark:text-dark-onSurface pt-6 px-4 pb-2 outline-none text-base tracking-[0.5px] bg-transparent placeholder:text-light-onSurfaceVariant dark:placeholder:text-dark-onSurfaceVariant w-full",
   {
     variants: {
       variant: {
@@ -77,57 +77,66 @@ interface Props
   supportingTextCharCount?: string
 }
 
-const FilledTextField: FC<Props> = ({
-  label,
-  leadingIcon,
-  trailingIcon,
-  supportingText,
-  supportingTextCharCount,
-  className,
-  variant,
-  ...props
-}) => {
-  return (
-    <div className={cn("flex flex-col gap-1 w-fit", className)}>
-      <div className={cn(containerVariants({ variant }))}>
-        <UIStateLayer className="bg-light-onSurface dark:bg-dark-onSurface group-active:bg-opacity-[0.08] focus-within:group-hover:bg-opacity-0">
-          {leadingIcon && (
-            <span className="absolute left-3 top-4">{leadingIcon}</span>
-          )}
-          {trailingIcon && (
-            <span className="absolute right-3 top-4">{trailingIcon}</span>
-          )}
-          <input
-            className={cn(
-              inputVariants({ variant }),
-              leadingIcon && "pl-[52px]",
-              trailingIcon && "pr-[52px]"
+const FilledTextField = React.forwardRef<HTMLDivElement, Props>(
+  (
+    {
+      label,
+      leadingIcon,
+      trailingIcon,
+      supportingText,
+      supportingTextCharCount,
+      className,
+      variant,
+      ...props
+    },
+    forwardedRef
+  ) => {
+    return (
+      <div
+        className={cn("flex flex-col gap-1 w-fit", className)}
+        ref={forwardedRef}
+      >
+        <div className={cn(containerVariants({ variant }))}>
+          <UIStateLayer className="bg-light-onSurface dark:bg-dark-onSurface group-active:bg-opacity-[0.08] focus-within:group-hover:bg-opacity-0">
+            {leadingIcon && (
+              <span className="absolute left-3 top-4">{leadingIcon}</span>
             )}
-            placeholder="&nbsp;"
-            {...props}
-          />
-          <label
-            className={cn(
-              labelVariants({ variant }),
-              leadingIcon && "left-[52px]"
+            {trailingIcon && (
+              <span className="absolute right-3 top-4">{trailingIcon}</span>
             )}
-          >
-            {label}
-          </label>
-        </UIStateLayer>
-      </div>
-      {supportingText && (
-        <div className={cn(supportingTextVariants({ variant }))}>
-          <Body size="small">{supportingText}</Body>
-          {supportingTextCharCount && (
-            <Body size="small" className="ml-auto">
-              {supportingTextCharCount}
-            </Body>
-          )}
+            <input
+              className={cn(
+                inputVariants({ variant }),
+                leadingIcon && "pl-[52px]",
+                trailingIcon && "pr-[52px]"
+              )}
+              placeholder="&nbsp;"
+              {...props}
+            />
+            <label
+              className={cn(
+                labelVariants({ variant }),
+                leadingIcon && "left-[52px]"
+              )}
+            >
+              {label}
+            </label>
+          </UIStateLayer>
         </div>
-      )}
-    </div>
-  )
-}
+        {supportingText && (
+          <div className={cn(supportingTextVariants({ variant }))}>
+            <Body size="small">{supportingText}</Body>
+            {supportingTextCharCount && (
+              <Body size="small" className="ml-auto">
+                {supportingTextCharCount}
+              </Body>
+            )}
+          </div>
+        )}
+      </div>
+    )
+  }
+)
+FilledTextField.displayName = "FilledTextField"
 
 export default FilledTextField

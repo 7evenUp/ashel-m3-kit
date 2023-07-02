@@ -1,33 +1,38 @@
-'use client'
+"use client"
 
-import React from 'react'
-
+import React from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import { useForm } from "react-hook-form"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/lib/Form'
-import FilledTextInput from '@/lib/FilledTextInput'
-import Button from '@/lib/Button'
+
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormControl,
+  FormOutlinedInput,
+} from "@/lib/Form"
+import Button from "@/lib/Button"
 
 const formSchema = z.object({
   username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+    message: "Минимальная длина - 2 символа",
   }),
   password: z.string().min(8, {
-    message: "Password must be at least 8 characters."
-  })
+    message: "Минимальная длина - 8 символов",
+  }),
 })
 
-const FormExample = () => {
+const FormOutlinedExample = () => {
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
-      password: ""
+      password: "",
     },
   })
- 
+
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
@@ -37,17 +42,22 @@ const FormExample = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex flex-col gap-4 border border-light-outlineVariant dark:border-dark-outlineVariant p-6 rounded-md w-[400px]"
+      >
         <FormField
           control={form.control}
           name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
               <FormControl>
-                <FilledTextInput label='Username' {...field} />
+                <FormOutlinedInput
+                  className="w-full"
+                  label="Имя пользователя"
+                  {...field}
+                />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
@@ -56,18 +66,26 @@ const FormExample = () => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
               <FormControl>
-                <FilledTextInput label='Password' {...field} />
+                <FormOutlinedInput
+                  className="w-full"
+                  label="Пароль"
+                  {...field}
+                />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
-        <Button appearance={'filled'} type="submit">Submit</Button>
+        <Button
+          appearance={"filled"}
+          type="submit"
+          className="self-end min-w-[120px]"
+        >
+          Отправить
+        </Button>
       </form>
     </Form>
   )
 }
 
-export default FormExample
+export default FormOutlinedExample

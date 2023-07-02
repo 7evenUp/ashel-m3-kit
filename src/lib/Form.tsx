@@ -11,8 +11,10 @@ import {
   useFormContext,
 } from "react-hook-form"
 
+import FilledTextField from "./FilledTextField"
+import OutlinedTextField from "./OutlinedTextField"
+
 import { cn } from "@/utils/classNames"
-import Label from "@/components/typography/Label"
 
 const Form = FormProvider
 
@@ -85,18 +87,6 @@ const FormItem = React.forwardRef<
 })
 FormItem.displayName = "FormItem"
 
-const FormLabel: React.FC<React.LabelHTMLAttributes<HTMLLabelElement>> = ({
-  className,
-  children,
-  ...props
-}) => (
-  <label {...props}>
-    <Label size={"large"} className={cn(className)}>
-      {children}
-    </Label>
-  </label>
-)
-
 const FormControl = React.forwardRef<
   React.ElementRef<typeof Slot>,
   React.ComponentPropsWithoutRef<typeof Slot>
@@ -119,25 +109,41 @@ const FormControl = React.forwardRef<
 })
 FormControl.displayName = "FormControl"
 
-const FormDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => {
-  const { formDescriptionId } = useFormField()
+const FormFilledInput = React.forwardRef<
+  React.ElementRef<typeof FilledTextField>,
+  React.ComponentPropsWithoutRef<typeof FilledTextField>
+>(({ className, ...props }, forwardedRef) => {
+  const { error } = useFormField()
 
   return (
-    <p
-      ref={ref}
-      id={formDescriptionId}
-      className={cn(
-        "text-sm text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant",
-        className
-      )}
+    <FilledTextField
+      className={cn(className)}
+      supportingText={error && error.message}
+      variant={error ? "error" : "default"}
+      ref={forwardedRef}
       {...props}
     />
   )
 })
-FormDescription.displayName = "FormDescription"
+FormFilledInput.displayName = "FormFilledInput"
+
+const FormOutlinedInput = React.forwardRef<
+  React.ElementRef<typeof FilledTextField>,
+  React.ComponentPropsWithoutRef<typeof FilledTextField>
+>(({ className, ...props }, forwardedRef) => {
+  const { error } = useFormField()
+
+  return (
+    <OutlinedTextField
+      className={cn(className)}
+      supportingText={error && error.message}
+      variant={error ? "error" : "default"}
+      ref={forwardedRef}
+      {...props}
+    />
+  )
+})
+FormOutlinedInput.displayName = "FormOutlinedInput"
 
 const FormMessage = React.forwardRef<
   HTMLParagraphElement,
@@ -170,9 +176,9 @@ export {
   useFormField,
   Form,
   FormItem,
-  FormLabel,
   FormControl,
-  FormDescription,
+  FormFilledInput,
+  FormOutlinedInput,
   FormMessage,
   FormField,
 }

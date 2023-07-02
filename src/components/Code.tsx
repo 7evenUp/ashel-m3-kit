@@ -13,7 +13,7 @@ const Code = ({ code, language }: { code: string; language: Language }) => {
   const { addSnackbar } = useSnackbar()
 
   return (
-    <>
+    <div className="group relative w-fit my-2">
       <Highlight
         {...defaultProps}
         code={code}
@@ -24,7 +24,7 @@ const Code = ({ code, language }: { code: string; language: Language }) => {
           <pre
             className={cn(
               className,
-              "max-w-[600px] py-0 overflow-auto bg-light-inverseSurface dark:bg-dark-surfaceVariant border border-light-outline rounded-t-md p-3 my-2 relative group"
+              "max-w-[600px] max-h-[650px] overflow-auto bg-light-inverseSurface dark:bg-dark-surfaceVariant border border-light-outline rounded-t-md p-3"
             )}
           >
             {tokens.map((line, i) => {
@@ -44,22 +44,23 @@ const Code = ({ code, language }: { code: string; language: Language }) => {
                 </div>
               )
             })}
-            <button
-              className="absolute right-2 top-2 p-1 hidden group-hover:block transition-all rounded-md text-dark-primary bg-dark-surface hover:bg-dark-surfaceContainer active:bg-dark-surfaceContainerHigh"
-              onClick={() => {
-                navigator.clipboard.writeText(code)
-
-                addSnackbar({
-                  supportingText: "Текст скопирован",
-                })
-              }}
-            >
-              <Copy />
-            </button>
           </pre>
         )}
       </Highlight>
-    </>
+
+      <button
+        className="absolute right-3 top-3 p-1 hidden group-hover:block transition-all rounded-md text-dark-primary bg-dark-surface hover:bg-dark-surfaceContainer active:bg-dark-surfaceContainerHigh"
+        onClick={() => {
+          navigator.clipboard.writeText(code)
+
+          addSnackbar({
+            supportingText: "Текст скопирован",
+          })
+        }}
+      >
+        <Copy />
+      </button>
+    </div>
   )
 }
 
