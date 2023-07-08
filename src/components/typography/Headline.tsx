@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from "react"
+import React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/utils/classNames"
@@ -16,16 +16,22 @@ const headlineVariants = cva("text-inherit dark:text-inherit", {
   },
 })
 
-interface Props
+interface HeadlineProps
   extends VariantProps<typeof headlineVariants>,
-    HTMLAttributes<HTMLHeadingElement> {}
+    React.HTMLAttributes<HTMLHeadingElement> {}
 
-const Headline: FC<Props> = ({ children, size, className, ...props }) => {
-  return (
-    <h2 className={cn(headlineVariants({ size }), className)} {...props}>
-      {children}
-    </h2>
-  )
-}
+const Headline = React.forwardRef<HTMLHeadingElement, HeadlineProps>(
+  ({ children, size, className, ...props }, forwardedRef) => {
+    return (
+      <h2
+        className={cn(headlineVariants({ size }), className)}
+        {...props}
+        ref={forwardedRef}
+      >
+        {children}
+      </h2>
+    )
+  }
+)
 
 export default Headline

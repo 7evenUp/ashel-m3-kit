@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from "react"
+import React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/utils/classNames"
@@ -16,16 +16,22 @@ const bodyVariants = cva("text-inherit dark:text-inherit", {
   },
 })
 
-interface Props
+interface BodyProps
   extends VariantProps<typeof bodyVariants>,
-    HTMLAttributes<HTMLHeadingElement> {}
+    React.HTMLAttributes<HTMLParagraphElement> {}
 
-const Body: FC<Props> = ({ children, size, className, ...props }) => {
-  return (
-    <p className={cn(bodyVariants({ size }), className)} {...props}>
-      {children}
-    </p>
-  )
-}
+const Body = React.forwardRef<HTMLParagraphElement, BodyProps>(
+  ({ children, size, className, ...props }, forwardedRef) => {
+    return (
+      <p
+        className={cn(bodyVariants({ size }), className)}
+        {...props}
+        ref={forwardedRef}
+      >
+        {children}
+      </p>
+    )
+  }
+)
 
 export default Body

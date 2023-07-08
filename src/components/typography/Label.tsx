@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from "react"
+import React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/utils/classNames"
@@ -16,16 +16,22 @@ const labelVariants = cva("text-inherit dark:text-inherit", {
   },
 })
 
-interface Props
+interface LabelProps
   extends VariantProps<typeof labelVariants>,
-    HTMLAttributes<HTMLHeadingElement> {}
+    React.HTMLAttributes<HTMLSpanElement> {}
 
-const Label: FC<Props> = ({ children, size, className, ...props }) => {
-  return (
-    <span className={cn(labelVariants({ size }), className)} {...props}>
-      {children}
-    </span>
-  )
-}
+const Label = React.forwardRef<HTMLSpanElement, LabelProps>(
+  ({ children, size, className, ...props }, forwardedRef) => {
+    return (
+      <span
+        className={cn(labelVariants({ size }), className)}
+        {...props}
+        ref={forwardedRef}
+      >
+        {children}
+      </span>
+    )
+  }
+)
 
 export default Label

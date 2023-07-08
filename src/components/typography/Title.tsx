@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from "react"
+import React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/utils/classNames"
@@ -16,16 +16,22 @@ const titleVariants = cva("text-inherit dark:text-inherit", {
   },
 })
 
-interface Props
+interface TitleProps
   extends VariantProps<typeof titleVariants>,
-    HTMLAttributes<HTMLHeadingElement> {}
+    React.HTMLAttributes<HTMLParagraphElement> {}
 
-const Title: FC<Props> = ({ children, size, className, ...props }) => {
-  return (
-    <p className={cn(titleVariants({ size }), className)} {...props}>
-      {children}
-    </p>
-  )
-}
+const Title = React.forwardRef<HTMLParagraphElement, TitleProps>(
+  ({ children, size, className, ...props }, forwardedRef) => {
+    return (
+      <p
+        className={cn(titleVariants({ size }), className)}
+        {...props}
+        ref={forwardedRef}
+      >
+        {children}
+      </p>
+    )
+  }
+)
 
 export default Title

@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from "react"
+import React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/utils/classNames"
@@ -16,16 +16,22 @@ const displayVariants = cva("text-inherit dark:text-inherit", {
   },
 })
 
-interface Props
+interface DisplayProps
   extends VariantProps<typeof displayVariants>,
-    HTMLAttributes<HTMLHeadingElement> {}
+    React.HTMLAttributes<HTMLHeadingElement> {}
 
-const Display: FC<Props> = ({ children, size, className, ...props }) => {
-  return (
-    <h1 className={cn(displayVariants({ size }), className)} {...props}>
-      {children}
-    </h1>
-  )
-}
+const Display = React.forwardRef<HTMLHeadingElement, DisplayProps>(
+  ({ children, size, className, ...props }, forwardedRef) => {
+    return (
+      <h1
+        className={cn(displayVariants({ size }), className)}
+        {...props}
+        ref={forwardedRef}
+      >
+        {children}
+      </h1>
+    )
+  }
+)
 
 export default Display
