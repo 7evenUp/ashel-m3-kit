@@ -33,5 +33,6 @@ const Display = React.forwardRef<HTMLHeadingElement, DisplayProps>(
     )
   }
 )
+Display.displayName = "Display"
 
 export default Display

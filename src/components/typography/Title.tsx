@@ -33,5 +33,6 @@ const Title = React.forwardRef<HTMLParagraphElement, TitleProps>(
     )
   }
 )
+Title.displayName = "Title"
 
 export default Title

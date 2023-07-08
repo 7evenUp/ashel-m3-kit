@@ -33,5 +33,6 @@ const Headline = React.forwardRef<HTMLHeadingElement, HeadlineProps>(
     )
   }
 )
+Headline.displayName = "Headline"
 
 export default Headline

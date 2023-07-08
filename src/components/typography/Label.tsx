@@ -33,5 +33,6 @@ const Label = React.forwardRef<HTMLSpanElement, LabelProps>(
     )
   }
 )
+Label.displayName = "Label"
 
 export default Label
