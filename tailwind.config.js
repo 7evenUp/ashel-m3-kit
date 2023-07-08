@@ -6,6 +6,32 @@ module.exports = {
   ],
   theme: {
     extend: {
+      transitionDuration: {
+        short1: '50ms',
+        short2: '100ms',
+        short3: '150ms',
+        short4: '200ms',
+        medium1: '250ms',
+        medium2: '300ms',
+        medium3: '350ms',
+        medium4: '400ms',
+        long1: '450ms',
+        long2: '500ms',
+        long3: '550ms',
+        long4: '600ms',
+        'extra-long1': '700ms',
+        'extra-long2': '800ms',
+        'extra-long3': '900ms',
+        'extra-long4': '1000ms',
+      },
+      transitionTimingFunction: {
+        standard: 'cubic-bezier(0.2, 0, 0, 1.0)',
+        'standard-decelerate': 'cubic-bezier(0, 0, 0, 1)',
+        'standard-accelerate': 'cubic-bezier(0.3, 0, 1, 1)',
+        emphasized: 'cubic-bezier(0.2, 0, 0, 1.0)',
+        'emphasized-decelerate': 'cubic-bezier(0.05, 0.7, 0.1, 1)',
+        'emphasized-accelerate': 'cubic-bezier(0.3, 0, 0.8, 0.15)',
+      },
       boxShadow: {
         elevation1: '0 1px 2px 0 rgba(0,0,0,0.3), 0 1px 3px 1px rgba(0,0,0,0.15)',
         elevation2: '0 1px 2px 0 rgba(0,0,0,0.3), 0 2px 6px 2px rgba(0,0,0,0.15)',
