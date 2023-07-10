@@ -2,8 +2,8 @@
 
 import { Check, Menu, Plus } from "iconoir-react"
 
-import Button from "@/lib/Button"
-import IconButton from "@/lib/IconButton"
+import Button from "@/shared/ui/Button"
+import IconButton from "@/shared/ui/IconButton"
 import {
   MenuContent,
   MenuItem,
@@ -14,7 +14,7 @@ import {
   MenuSubContent,
   MenuSubTrigger,
   MenuTrigger,
-} from "@/lib/Menu"
+} from "@/shared/ui/Menu"
 
 const MenuExampleWithButton = () => (
   <MenuRoot>

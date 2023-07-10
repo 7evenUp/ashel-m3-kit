@@ -4,9 +4,9 @@ import React from "react"
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 import { NavArrowRight } from "iconoir-react"
 
-import Label from "@/components/typography/Label"
+import Label from "@/shared/typography/Label"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 const MenuRoot = DropdownMenu.Root
 

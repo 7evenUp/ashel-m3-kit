@@ -1,6 +1,6 @@
-import Display from "@/components/typography/Display"
-import Title from "@/components/typography/Title"
-import Body from "@/components/typography/Body"
+import Display from "@/shared/typography/Display"
+import Title from "@/shared/typography/Title"
+import Body from "@/shared/typography/Body"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -9,8 +9,8 @@ import ImageWithText from "@/components/ImageWithText"
 import InlineCode from "@/components/InlineCode"
 import Code from "@/components/Code"
 
-import Card from "@/lib/Card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+import Card from "@/shared/ui/Card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
 import appBarExamplePic from "@/public/typography/title/app_bar_example.png"
 import categoryHeaderExamplePic from "@/public/typography/title/category_header_example.png"

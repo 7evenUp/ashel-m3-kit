@@ -1,4 +1,4 @@
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -8,7 +8,7 @@ import InlineCode from "@/components/InlineCode"
 import InternalLink from "@/components/InternalLink"
 import InlineLink from "@/components/InlineLink"
 
-import { RadioGroup, RadioGroupItem } from "@/lib/RadioGroup"
+import { RadioGroup, RadioGroupItem } from "@/shared/ui/RadioGroup"
 
 import { sourceCode, usageCode } from "./codeSamples"
 

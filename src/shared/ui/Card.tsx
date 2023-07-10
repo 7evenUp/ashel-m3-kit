@@ -1,7 +1,7 @@
 import { FC, HTMLAttributes } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 const cardVariants = cva("rounded-xl px-4 py-3", {
   variants: {

@@ -1,4 +1,4 @@
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -8,7 +8,7 @@ import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
 
-import Button from "@/lib/Button"
+import Button from "@/shared/ui/Button"
 import {
   Dialog,
   DialogTrigger,
@@ -17,7 +17,7 @@ import {
   DialogDescription,
   DialogActionButtonContainer,
   DialogActionButton,
-} from "@/lib/Dialog"
+} from "@/shared/ui/Dialog"
 
 import { sourceCode, usageCode } from "./codeSamples"
 

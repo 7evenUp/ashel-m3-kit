@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -26,7 +26,7 @@ const Typography = () => {
           нежели прошлые версии Material Design, позволяя упростить применение в
           более широком диапазоне вариантов использования. Подробнее можно
           прочитать на{" "}
-          <InlineLink href="https://m3.material.io/styles/typography/overview">
+          <InlineLink href="https://shared.material.io/styles/typography/overview">
             официальном сайте Material Design V3
           </InlineLink>
         </Paragraph>

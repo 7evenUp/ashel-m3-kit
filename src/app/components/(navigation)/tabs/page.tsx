@@ -1,4 +1,4 @@
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -8,7 +8,7 @@ import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
 import { sourceCode, usageCode } from "./codeSamples"
 

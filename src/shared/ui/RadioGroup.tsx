@@ -3,11 +3,11 @@
 import React from "react"
 import * as RadixRadioGroup from "@radix-ui/react-radio-group"
 
-import Label from "@/components/typography/Label"
+import Label from "@/shared/typography/Label"
 
-import UIStateLayer from "@/components/ui/UIStateLayer"
+import UIStateLayer from "@/shared/ui/UIStateLayer"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 export const RadioGroup = React.forwardRef<
   React.ElementRef<typeof RadixRadioGroup.Root>,

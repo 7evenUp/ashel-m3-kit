@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-import Title from "./typography/Title"
+import Title from "../shared/typography/Title"
 
 const Subheading = ({ children }: { children: ReactNode }) => {
   return (

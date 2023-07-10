@@ -5,9 +5,9 @@ import darkTheme from "prism-react-renderer/themes/oceanicNext"
 import Highlight from "prism-react-renderer"
 import { Copy } from "iconoir-react"
 
-import { useSnackbar } from "@/lib/Snackbar/useSnackbar"
+import { useSnackbar } from "@/shared/ui/Snackbar/useSnackbar"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 const Code = ({ code, language }: { code: string; language: Language }) => {
   const { addSnackbar } = useSnackbar()

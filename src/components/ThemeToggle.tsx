@@ -4,9 +4,9 @@ import { FC, HTMLAttributes, useEffect, useState } from "react"
 import { SunLight, HalfMoon } from "iconoir-react"
 import { useTheme } from "next-themes"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
-import UIStateLayer from "./ui/UIStateLayer"
+import UIStateLayer from "../shared/ui/UIStateLayer"
 
 const ThemeToggle: FC<HTMLAttributes<HTMLButtonElement>> = ({ className }) => {
   const [mounted, setMounted] = useState(false)

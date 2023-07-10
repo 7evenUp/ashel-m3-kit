@@ -1,4 +1,4 @@
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Paragraph from "@/components/Paragraph"
 import InternalLink from "@/components/InternalLink"

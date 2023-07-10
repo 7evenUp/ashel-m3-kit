@@ -3,9 +3,9 @@
 import { useState } from "react"
 import { Minus, Plus } from "iconoir-react"
 
-import Display from "@/components/typography/Display"
-import Label from "@/components/typography/Label"
-import Body from "@/components/typography/Body"
+import Display from "@/shared/typography/Display"
+import Label from "@/shared/typography/Label"
+import Body from "@/shared/typography/Body"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -14,8 +14,8 @@ import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 
-import Switch from "@/lib/Switch"
-import Card from "@/lib/Card"
+import Switch from "@/shared/ui/Switch"
+import Card from "@/shared/ui/Card"
 
 import { sourceCode, usageCode } from "./codeSamples"
 
@@ -30,7 +30,7 @@ const SwitchPage = () => {
         <Paragraph>
           Switch включает или выключает состояние отдельного элемента. Подробнее
           на{" "}
-          <InlineLink href="https://m3.material.io/components/switch/overview">
+          <InlineLink href="https://shared.material.io/components/switch/overview">
             официальном сайте
           </InlineLink>
         </Paragraph>

@@ -3,11 +3,11 @@
 import React from "react"
 import * as ToggleGroup from "@radix-ui/react-toggle-group"
 
-import Label from "@/components/typography/Label"
+import Label from "@/shared/typography/Label"
 
-import UIStateLayer from "@/components/ui/UIStateLayer"
+import UIStateLayer from "@/shared/ui/UIStateLayer"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 const SegmentedRoot = React.forwardRef<
   React.ElementRef<typeof ToggleGroup.Root>,

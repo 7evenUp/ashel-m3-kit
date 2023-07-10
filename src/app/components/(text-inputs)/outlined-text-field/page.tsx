@@ -2,7 +2,8 @@ import fs from "fs"
 import path from "path"
 import { DeleteCircle, Search } from "iconoir-react"
 
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
+import OutlinedTextField from "@/shared/ui/OutlinedTextField"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -11,15 +12,14 @@ import InternalLink from "@/components/InternalLink"
 import InlineCode from "@/components/InlineCode"
 import Code from "@/components/Code"
 
-import OutlinedTextField from "@/lib/OutlinedTextField"
-
 import { usageCode } from "./codeSamples"
 
 const OutlinedTextFieldPage = () => {
   const componentFilePath = path.join(
     process.cwd(),
     "src",
-    "lib",
+    "shared",
+    "ui",
     "OutlinedTextField.tsx"
   )
   const componentCode = fs.readFileSync(componentFilePath, {
@@ -41,7 +41,7 @@ const OutlinedTextFieldPage = () => {
         </Paragraph>
         <Paragraph>
           Подробнее на{" "}
-          <InlineLink href="https://m3.material.io/components/text-fields/overview">
+          <InlineLink href="https://shared.material.io/components/text-fields/overview">
             офицальном сайте
           </InlineLink>
         </Paragraph>
@@ -85,7 +85,8 @@ const OutlinedTextFieldPage = () => {
 
         <Heading>Использование</Heading>
         <Paragraph>
-          Ниже вы можете посмотреть примеры компонентов в секции &quot;Примеры&quot;
+          Ниже вы можете посмотреть примеры компонентов в секции
+          &quot;Примеры&quot;
         </Paragraph>
         <Code language="tsx" code={usageCode} />
 

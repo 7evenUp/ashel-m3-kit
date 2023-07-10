@@ -1,4 +1,4 @@
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -12,7 +12,7 @@ import {
 } from "@/components/MenuExamples"
 import Code from "@/components/Code"
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
 import { sourceCode, usageSimpleCode, usageSubCode } from "./codeSamples"
 

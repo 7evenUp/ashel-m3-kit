@@ -1,6 +1,6 @@
 import { FC, HTMLAttributes } from "react"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 const UIStateLayer: FC<HTMLAttributes<HTMLDivElement>> = ({
   children,

@@ -1,7 +1,7 @@
 import fs from "fs"
 import path from "path"
 
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -20,7 +20,13 @@ export const metadata = {
 }
 
 const Forms = () => {
-  const componentFilePath = path.join(process.cwd(), "src", "lib", "Form.tsx")
+  const componentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "Form.tsx"
+  )
   const componentCode = fs.readFileSync(componentFilePath, {
     encoding: "utf-8",
     flag: "r",

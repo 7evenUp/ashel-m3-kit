@@ -1,6 +1,6 @@
 import React from "react"
 
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -19,7 +19,7 @@ const page = () => {
       <div className="flex flex-col items-start gap-2">
         <Paragraph>
           Можно подробно прочитать о том, что такое State Layers на{" "}
-          <InlineLink href="https://m3.material.io/foundations/interaction/states/state-layers">
+          <InlineLink href="https://shared.material.io/foundations/interaction/states/state-layers">
             официальном сайте
           </InlineLink>
           . Учтите, что данный компонент не имеет ничего общего со{" "}

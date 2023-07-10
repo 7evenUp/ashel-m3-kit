@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -119,7 +119,7 @@ const Intro = () => {
       <Paragraph>
         Также сразу расширим свойство <InlineCode>boxShadow</InlineCode>. Про
         тени можете прочитать на{" "}
-        <InlineLink href="https://m3.material.io/styles/elevation/overview">
+        <InlineLink href="https://shared.material.io/styles/elevation/overview">
           официальном сайте
         </InlineLink>
         .
@@ -191,7 +191,7 @@ const Intro = () => {
       <Heading>Что дальше</Heading>
       <Paragraph>
         Далее можете почитать о самом Material Design 3 на{" "}
-        <InlineLink href="https://m3.material.io/">
+        <InlineLink href="https://shared.material.io/">
           официальном сайте
         </InlineLink>
         , чтоб понять основные принципы. После чего возвращайтесь сюда и

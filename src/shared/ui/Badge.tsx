@@ -1,9 +1,9 @@
 import React, { HTMLAttributes } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
-import Label from "@/components/typography/Label"
+import Label from "@/shared/typography/Label"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 const badgeVariants = cva(
   "absolute left-2/3 top-1 select-none flex justify-center items-center text-light-onError dark:text-dark-onError rounded-full bg-light-error dark:bg-dark-error",

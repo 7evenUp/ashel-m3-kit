@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 import Heading from "@/components/Heading"
 
 import Paragraph from "@/components/Paragraph"
@@ -61,7 +61,7 @@ const Colors = () => {
         />
         <Paragraph>
           Подробнее о цвете можно прочитать на{" "}
-          <InlineLink href="https://m3.material.io/styles/color/overview">
+          <InlineLink href="https://shared.material.io/styles/color/overview">
             официальном сайте
           </InlineLink>
         </Paragraph>

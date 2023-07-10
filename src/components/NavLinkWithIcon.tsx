@@ -4,10 +4,10 @@ import { ReactNode } from "react"
 import Link from "next/link"
 import { useSelectedLayoutSegment } from "next/navigation"
 
-import Label from "./typography/Label"
-import UIStateLayer from "./ui/UIStateLayer"
+import Label from "../shared/typography/Label"
+import UIStateLayer from "../shared/ui/UIStateLayer"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 const NavLinkWithIcon = ({
   href,

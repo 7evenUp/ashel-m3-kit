@@ -3,11 +3,11 @@
 import React from "react"
 import * as RadixTabs from "@radix-ui/react-tabs"
 
-import Title from "@/components/typography/Title"
+import Title from "@/shared/typography/Title"
 
-import UIStateLayer from "@/components/ui/UIStateLayer"
+import UIStateLayer from "@/shared/ui/UIStateLayer"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 const Tabs = RadixTabs.Root
 

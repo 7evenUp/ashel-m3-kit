@@ -2,11 +2,11 @@ import React from "react"
 import * as ToastPrimitives from "@radix-ui/react-toast"
 import { Plus } from "iconoir-react"
 
-import Body from "@/components/typography/Body"
+import Body from "@/shared/typography/Body"
 
 import Button from "../Button"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 const SnackbarProvider = ToastPrimitives.Provider
 

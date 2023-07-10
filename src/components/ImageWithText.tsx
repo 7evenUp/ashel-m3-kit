@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react"
 import Image, { StaticImageData } from "next/image"
 
-import Body from "./typography/Body"
+import Body from "../shared/typography/Body"
 
 interface Props {
   src: StaticImageData

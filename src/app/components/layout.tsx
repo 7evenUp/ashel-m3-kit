@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-import Title from "@/components/typography/Title"
+import Title from "@/shared/typography/Title"
 
 import Footer from "@/components/Footer"
 import NavLink from "@/components/NavLink"

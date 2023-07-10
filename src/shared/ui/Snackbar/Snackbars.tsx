@@ -10,7 +10,7 @@ import {
 } from "./Snackbar"
 import { useSnackbar, SNACKBAR_REMOVE_DELAY } from "./useSnackbar"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 const Snackbars = () => {
   const { snackbars } = useSnackbar()

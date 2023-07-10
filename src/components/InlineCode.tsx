@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-import Label from "./typography/Label"
+import Label from "../shared/typography/Label"
 
 const InlineCode = ({ children }: { children: ReactNode }) => {
   return (

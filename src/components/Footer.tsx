@@ -1,8 +1,8 @@
 import React from "react"
 
-import Headline from "./typography/Headline"
-import Body from "./typography/Body"
-import Label from "./typography/Label"
+import Headline from "../shared/typography/Headline"
+import Body from "../shared/typography/Body"
+import Label from "../shared/typography/Label"
 
 import InlineLink from "./InlineLink"
 
@@ -25,7 +25,7 @@ const Footer = () => {
           <InlineLink href="https://github.com/7evenUp/ashel-ui-kit">
             Project&apos;s github
           </InlineLink>
-          <InlineLink href="https://m3.material.io/">Official docs</InlineLink>
+          <InlineLink href="https://shared.material.io/">Official docs</InlineLink>
           <InlineLink href="https://www.ashel.site/">My website</InlineLink>
         </div>
         <div className="flex flex-col gap-5">

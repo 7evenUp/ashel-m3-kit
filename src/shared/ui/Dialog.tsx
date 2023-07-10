@@ -3,8 +3,8 @@
 import React, { ReactNode } from "react"
 import * as RadixDialog from "@radix-ui/react-dialog"
 
-import Headline from "@/components/typography/Headline"
-import Body from "@/components/typography/Body"
+import Headline from "@/shared/typography/Headline"
+import Body from "@/shared/typography/Body"
 
 import Button from "./Button"
 

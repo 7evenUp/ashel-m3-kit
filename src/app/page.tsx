@@ -1,15 +1,15 @@
 import { Cart, Menu, Settings, User } from "iconoir-react"
 
-import Body from "@/components/typography/Body"
-import Display from "@/components/typography/Display"
-import Headline from "@/components/typography/Headline"
-import Label from "@/components/typography/Label"
-import Title from "@/components/typography/Title"
+import Body from "@/shared/typography/Body"
+import Display from "@/shared/typography/Display"
+import Headline from "@/shared/typography/Headline"
+import Label from "@/shared/typography/Label"
+import Title from "@/shared/typography/Title"
 
 import Paragraph from "@/components/Paragraph"
 
-import Button from "@/lib/Button"
-import Card from "@/lib/Card"
+import Button from "@/shared/ui/Button"
+import Card from "@/shared/ui/Card"
 import {
   Dialog,
   DialogActionButton,
@@ -18,8 +18,8 @@ import {
   DialogDescription,
   DialogTitle,
   DialogTrigger,
-} from "@/lib/Dialog"
-import IconButton from "@/lib/IconButton"
+} from "@/shared/ui/Dialog"
+import IconButton from "@/shared/ui/IconButton"
 
 export default function Home() {
   return (

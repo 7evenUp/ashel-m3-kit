@@ -1,4 +1,4 @@
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -8,7 +8,7 @@ import InlineCode from "@/components/InlineCode"
 import InternalLink from "@/components/InternalLink"
 import InlineLink from "@/components/InlineLink"
 
-import { Checkbox, CheckboxLabel } from "@/lib/Checkbox"
+import { Checkbox, CheckboxLabel } from "@/shared/ui/Checkbox"
 
 import { sourceCode, usageCode } from "./codeSamples"
 

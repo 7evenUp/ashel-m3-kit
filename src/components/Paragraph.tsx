@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-import Body from "./typography/Body"
+import Body from "../shared/typography/Body"
 
 const Paragraph = ({ children }: { children: ReactNode }) => {
   return (

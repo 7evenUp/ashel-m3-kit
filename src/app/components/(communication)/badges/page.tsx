@@ -1,11 +1,11 @@
 import { Cart, Message } from "iconoir-react"
 
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
 
-import IconButton from "@/lib/IconButton"
-import Badge from "@/lib/Badge"
+import IconButton from "@/shared/ui/IconButton"
+import Badge from "@/shared/ui/Badge"
 import Paragraph from "@/components/Paragraph"
 import InternalLink from "@/components/InternalLink"
 import Code from "@/components/Code"
@@ -22,7 +22,7 @@ const BadgesPage = () => {
         <Heading>Описание</Heading>
         <Paragraph>
           Подробнее об использовании элемента читайте на{" "}
-          <InlineLink href="https://m3.material.io/components/badges/specs">
+          <InlineLink href="https://shared.material.io/components/badges/specs">
             официальном сайте
           </InlineLink>
         </Paragraph>

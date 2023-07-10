@@ -3,7 +3,7 @@
 import { ReactNode } from "react"
 import { ThemeProvider } from "next-themes"
 
-import Snackbars from "@/lib/Snackbar/Snackbars"
+import Snackbars from "@/shared/ui/Snackbar/Snackbars"
 
 const Providers = ({ children }: { children: ReactNode }) => {
   return (

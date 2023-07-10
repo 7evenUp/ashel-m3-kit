@@ -4,10 +4,10 @@ import { FC } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-import Title from "./typography/Title"
-import UIStateLayer from "./ui/UIStateLayer"
+import Title from "../shared/typography/Title"
+import UIStateLayer from "../shared/ui/UIStateLayer"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 interface Props {
   href: string

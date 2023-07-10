@@ -1,6 +1,9 @@
+import fs from "fs"
+import path from "path"
 import { Plus } from "iconoir-react"
 
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
+import Button from "@/shared/ui/Button"
 
 import Heading from "@/components/Heading"
 import Subheading from "@/components/Subheading"
@@ -11,11 +14,21 @@ import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
 
-import Button from "@/lib/Button"
-
-import { buttonCode, usageCode, usageWithIconsCode } from "./codeSamples"
+import { usageCode, usageWithIconsCode } from "./codeSamples"
 
 const CommonButtonsPage = () => {
+  const componentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "Button.tsx"
+  )
+  const componentCode = fs.readFileSync(componentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Common Buttons</Display>
@@ -25,7 +38,7 @@ const CommonButtonsPage = () => {
         <Paragraph>
           Есть 5 видов кнопок: Elevated, Filled, Tonal, Outlined, Text. Подробно
           об использовании каждой из кнопок можете почитать на{" "}
-          <InlineLink href="https://m3.material.io/components/buttons/guidelines">
+          <InlineLink href="https://shared.material.io/components/buttons/guidelines">
             официальном сайте
           </InlineLink>
           . Здесь же я опишу применение кратко.
@@ -192,8 +205,8 @@ const CommonButtonsPage = () => {
           Можно сохранить компонент в файл{" "}
           <InlineCode>src/components/ui/Button.tsx</InlineCode>:
         </Paragraph>
-        <Code language="tsx" code={buttonCode} />
-        
+        <Code language="tsx" code={componentCode} />
+
         <Heading>Использование</Heading>
         <Code language="tsx" code={usageCode} />
 

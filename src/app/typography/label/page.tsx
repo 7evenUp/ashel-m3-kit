@@ -1,6 +1,6 @@
-import Display from "@/components/typography/Display"
-import Body from "@/components/typography/Body"
-import Label from "@/components/typography/Label"
+import Display from "@/shared/typography/Display"
+import Body from "@/shared/typography/Body"
+import Label from "@/shared/typography/Label"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -9,8 +9,8 @@ import ImageWithText from "@/components/ImageWithText"
 import InlineCode from "@/components/InlineCode"
 import Code from "@/components/Code"
 
-import Card from "@/lib/Card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+import Card from "@/shared/ui/Card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
 import musicPlayerPic from "@/public/typography/label/music_player.png"
 import navigationBarPic from "@/public/typography/label/navigation_bar.png"

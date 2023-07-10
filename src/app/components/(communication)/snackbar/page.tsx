@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -12,8 +12,8 @@ import InlineCode from "@/components/InlineCode"
 import InternalLink from "@/components/InternalLink"
 import Code from "@/components/Code"
 
-import Button from "@/lib/Button"
-import { useSnackbar } from "@/lib/Snackbar/useSnackbar"
+import Button from "@/shared/ui/Button"
+import { useSnackbar } from "@/shared/ui/Snackbar/useSnackbar"
 
 import {
   snackbarSource,
@@ -39,7 +39,7 @@ const SnackbarPage = () => {
         </Paragraph>
         <Paragraph>
           Подробнее можете прочитать на{" "}
-          <InlineLink href="https://m3.material.io/components/snackbar/overview">
+          <InlineLink href="https://shared.material.io/components/snackbar/overview">
             официальном сайте
           </InlineLink>
         </Paragraph>

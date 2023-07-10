@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
 import Subheading from "@/components/Subheading"

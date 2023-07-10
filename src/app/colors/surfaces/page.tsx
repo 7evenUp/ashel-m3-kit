@@ -1,4 +1,4 @@
-import Display from "@/components/typography/Display"
+import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -29,7 +29,7 @@ const Surfaces = () => {
           ролей surface container: surface container lowest, surface container
           low, surface container, surface container high, и surface container
           highest. Подробнее о нюансах на{" "}
-          <InlineLink href="https://m3.material.io/styles/color/the-color-system/color-roles">
+          <InlineLink href="https://shared.material.io/styles/color/the-color-system/color-roles">
             официальном сайте
           </InlineLink>
         </Paragraph>

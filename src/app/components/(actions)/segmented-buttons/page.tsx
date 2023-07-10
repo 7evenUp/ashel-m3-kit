@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react"
 
-import Display from "@/components/typography/Display"
-import Body from "@/components/typography/Body"
+import Display from "@/shared/typography/Display"
+import Body from "@/shared/typography/Body"
 
 import Heading from "@/components/Heading"
 import Subheading from "@/components/Subheading"
@@ -14,8 +14,8 @@ import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
 
-import { SegmentedButton, SegmentedRoot } from "@/lib/SegmentedButton"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+import { SegmentedButton, SegmentedRoot } from "@/shared/ui/SegmentedButton"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
 import { sourceCode, usageCodeMultiple, usageCodeSingle } from "./codeSamples"
 
@@ -50,7 +50,7 @@ const SegmentedButtonsPage = () => {
         <Paragraph>
           Segmented buttons помогают пользователям выбирать параметры,
           переключать виды или сортировать элементы. Подробная информация на{" "}
-          <InlineLink href="https://m3.material.io/components/segmented-buttons/overview">
+          <InlineLink href="https://shared.material.io/components/segmented-buttons/overview">
             официальном сайте
           </InlineLink>
         </Paragraph>

@@ -1,11 +1,11 @@
 import React, { InputHTMLAttributes } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
-import Body from "@/components/typography/Body"
+import Body from "@/shared/typography/Body"
 
-import UIStateLayer from "@/components/ui/UIStateLayer"
+import UIStateLayer from "@/shared/ui/UIStateLayer"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 const containerVariants = cva(
   "group relative flex h-[56px] bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest rounded-t border-b focus-within:border-b-2 transition-colors duration-short4 ease-standard",

@@ -1,6 +1,6 @@
-import Display from "@/components/typography/Display"
-import Headline from "@/components/typography/Headline"
-import Body from "@/components/typography/Body"
+import Display from "@/shared/typography/Display"
+import Headline from "@/shared/typography/Headline"
+import Body from "@/shared/typography/Body"
 
 import Heading from "@/components/Heading"
 import Subheading from "@/components/Subheading"
@@ -9,9 +9,9 @@ import Paragraph from "@/components/Paragraph"
 import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 
-import Button from "@/lib/Button"
-import Card from "@/lib/Card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+import Button from "@/shared/ui/Button"
+import Card from "@/shared/ui/Card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
 import { customCode, sourceCode, usageCode } from "./codeSamples"
 

@@ -1,9 +1,9 @@
 import React, { InputHTMLAttributes } from "react"
 import { type VariantProps, cva } from "class-variance-authority"
 
-import Body from "@/components/typography/Body"
+import Body from "@/shared/typography/Body"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 const containerVariants = cva(
   "group relative flex h-[56px] rounded ring-1 ring-offset-0 focus-within:ring-2 transition-colors duration-short4 ease-standard",

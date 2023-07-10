@@ -5,11 +5,11 @@ import React from "react"
 import * as RadixCheckbox from "@radix-ui/react-checkbox"
 import { Check } from "iconoir-react"
 
-import Label from "@/components/typography/Label"
+import Label from "@/shared/typography/Label"
 
-import UIStateLayer from "@/components/ui/UIStateLayer"
+import UIStateLayer from "@/shared/ui/UIStateLayer"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 export const CheckboxLabel: React.FC<
   React.LabelHTMLAttributes<HTMLLabelElement>

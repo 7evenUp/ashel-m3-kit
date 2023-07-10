@@ -11,8 +11,8 @@ import {
   FormItem,
   FormControl,
   FormFilledInput,
-} from "@/lib/Form"
-import Button from "@/lib/Button"
+} from "@/shared/ui/Form"
+import Button from "@/shared/ui/Button"
 
 const formSchema = z.object({
   username: z.string().min(2, {

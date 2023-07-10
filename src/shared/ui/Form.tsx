@@ -14,7 +14,7 @@ import {
 import FilledTextField from "./FilledTextField"
 import OutlinedTextField from "./OutlinedTextField"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 const Form = FormProvider
 

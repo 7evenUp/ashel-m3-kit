@@ -1,5 +1,5 @@
-import Display from "@/components/typography/Display"
-import Body from "@/components/typography/Body"
+import Display from "@/shared/typography/Display"
+import Body from "@/shared/typography/Body"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -8,8 +8,8 @@ import ImageWithText from "@/components/ImageWithText"
 import InlineCode from "@/components/InlineCode"
 import Code from "@/components/Code"
 
-import Card from "@/lib/Card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/lib/Tabs"
+import Card from "@/shared/ui/Card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
 import expressiveTypefacePic from "@/public/typography/display/expressive_typeface.png"
 import eyeCatchingDesignPic from "@/public/typography/display/eye_catching_design.png"

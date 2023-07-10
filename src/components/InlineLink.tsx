@@ -1,6 +1,6 @@
 import { AnchorHTMLAttributes, FC } from "react"
 
-import { cn } from "@/utils/classNames"
+import { cn } from "@/lib/cn"
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {}
 
