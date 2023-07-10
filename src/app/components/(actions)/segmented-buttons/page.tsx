@@ -1,9 +1,7 @@
-"use client"
-
-import { useEffect, useState } from "react"
+import fs from "fs"
+import path from "path"
 
 import Display from "@/shared/typography/Display"
-import Body from "@/shared/typography/Body"
 
 import Heading from "@/components/Heading"
 import Subheading from "@/components/Subheading"
@@ -13,33 +11,25 @@ import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
+import SegmentedButtonsWithState from "@/components/SegmentedButtonsWithState"
 
 import { SegmentedButton, SegmentedRoot } from "@/shared/ui/SegmentedButton"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
-import { sourceCode, usageCodeMultiple, usageCodeSingle } from "./codeSamples"
-
-type currencies = "usd" | "try" | "cny"
-
-const RUB_TO_CURRENCIES = {
-  usd: 0.013,
-  try: 0.25,
-  cny: 0.089,
-}
-
-const SYMBOL_TO_CURRENCIES = {
-  usd: "$",
-  try: "₺",
-  cny: "¥",
-}
+import { usageCodeMultiple, usageCodeSingle } from "./codeSamples"
 
 const SegmentedButtonsPage = () => {
-  const [result, setResult] = useState(0)
-  const [currency, setCurrency] = useState<currencies>("usd")
-
-  useEffect(() => {
-    setResult(1000 * RUB_TO_CURRENCIES[currency])
-  }, [currency])
+  const componentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "SegmentedButton.tsx"
+  )
+  const componentCode = fs.readFileSync(componentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
 
   return (
     <div>
@@ -71,31 +61,11 @@ const SegmentedButtonsPage = () => {
         </Paragraph>
 
         <Heading>Примеры</Heading>
-        <Subheading>Single-select</Subheading>
-        <SegmentedRoot
-          className="w-[500px]"
-          type="single"
-          value={currency}
-          onValueChange={(value: currencies) => value && setCurrency(value)}
-        >
-          <SegmentedButton name="currency" value="try">
-            Лира
-          </SegmentedButton>
-          <SegmentedButton name="currency" value="usd">
-            Доллары
-          </SegmentedButton>
-          <SegmentedButton name="currency" value="cny">
-            Юань
-          </SegmentedButton>
-        </SegmentedRoot>
 
-        <Body className="w-[500px] text-center">
-          1000 рублей = {result}
-          {SYMBOL_TO_CURRENCIES[currency]}
-        </Body>
+        <Subheading>Single-select</Subheading>
+        <SegmentedButtonsWithState />
 
         <Subheading>Multi-select</Subheading>
-
         <SegmentedRoot
           className="w-[500px]"
           type="multiple"
@@ -120,8 +90,11 @@ const SegmentedButtonsPage = () => {
         <Paragraph>
           Обратите внимание, что компонент имеет зависимости таких компонентов
           как <InternalLink href="/typography/label">Label</InternalLink> и{" "}
-          <InternalLink href="/components/ui-state-layer">UIStateLayer</InternalLink>. Если вы еще не добавили их в
-          свой проект, следует заняться сперва ими.
+          <InternalLink href="/components/ui-state-layer">
+            UIStateLayer
+          </InternalLink>
+          . Если вы еще не добавили их в свой проект, следует заняться сперва
+          ими.
         </Paragraph>
         <Paragraph>
           Также необходимо установить зависимость{" "}
@@ -132,9 +105,9 @@ const SegmentedButtonsPage = () => {
         <Code language="bash" code="yarn add @radix-ui/react-toggle-group" />
         <Paragraph>
           Можно сохранить компонент в файл{" "}
-          <InlineCode>src/components/ui/SegmentedButton.tsx</InlineCode>:
+          <InlineCode>src/shared/ui/SegmentedButton.tsx</InlineCode>:
         </Paragraph>
-        <Code language="tsx" code={sourceCode} />
+        <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>
         <Paragraph>

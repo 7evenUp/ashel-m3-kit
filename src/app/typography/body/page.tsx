@@ -88,7 +88,7 @@ const BodyPage = () => {
         <Paragraph>Скопируйте и вставьте код в свой проект.</Paragraph>
         <Paragraph>
           Можно сохранить компонент в файл{" "}
-          <InlineCode>src/components/typography/Body.tsx</InlineCode>:
+          <InlineCode>src/shared/typography/Body.tsx</InlineCode>:
         </Paragraph>
         <Code language="tsx" code={bodySrc} />
         <Heading>Использование</Heading>

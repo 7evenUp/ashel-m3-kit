@@ -80,8 +80,8 @@ const Vite = () => {
       <Paragraph>
         Все файлы Ashel UI Kit используют path-alias (символ @). Это необходимо
         для того, чтобы при импорте файла вместо{" "}
-        <InlineCode>{"../../src/components/ui/Button"}</InlineCode> было{" "}
-        <InlineCode>{"@/components/ui/Button"}</InlineCode>.
+        <InlineCode>{"../../src/shared/ui/Button"}</InlineCode> было{" "}
+        <InlineCode>{"@/shared/ui/Button"}</InlineCode>.
       </Paragraph>
       <Paragraph>
         Если вам не так необходима данная функция, можете пропустить секцию.
@@ -102,16 +102,16 @@ const Vite = () => {
       <Paragraph>
         Далее скопируем в нашу директорию первый UI компонент - кнопку.
         Разместите файл по пути{" "}
-        <InlineCode>src/components/ui/Button.tsx</InlineCode>.
+        <InlineCode>src/shared/ui/Button.tsx</InlineCode>.
       </Paragraph>
 
       <Code language="tsx" code={btnSrc} />
       <Paragraph>У неё есть два компонента-зависимости.</Paragraph>
       <Paragraph>
         Label сохраните в{" "}
-        <InlineCode>src/components/typography/Label.tsx</InlineCode>, а
+        <InlineCode>src/shared/typography/Label.tsx</InlineCode>, а
         UIStateLayer в{" "}
-        <InlineCode>src/components/ui/UIStateLayer.tsx</InlineCode>.
+        <InlineCode>src/shared/ui/UIStateLayer.tsx</InlineCode>.
       </Paragraph>
       <Code language="tsx" code={labelSrc} />
       <Code language="tsx" code={uiStateLayerSrc} />

@@ -1,6 +1,5 @@
-"use client"
-
-import React from "react"
+import fs from "fs"
+import path from "path"
 
 import Display from "@/shared/typography/Display"
 
@@ -11,21 +10,49 @@ import InlineLink from "@/components/InlineLink"
 import InlineCode from "@/components/InlineCode"
 import InternalLink from "@/components/InternalLink"
 import Code from "@/components/Code"
+import SnackbarExamples from "@/components/SnackbarExamples"
 
-import Button from "@/shared/ui/Button"
-import { useSnackbar } from "@/shared/ui/Snackbar/useSnackbar"
-
-import {
-  snackbarSource,
-  snackbarsSource,
-  usageHook,
-  usageProviders,
-  usageRoot,
-  useSnackbarSource,
-} from "./codeSamples"
+import { usageHook, usageProviders, usageRoot } from "./codeSamples"
 
 const SnackbarPage = () => {
-  const { addSnackbar } = useSnackbar()
+  const snackbarFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "Snackbar",
+    "Snackbar.tsx"
+  )
+  const snackbarCode = fs.readFileSync(snackbarFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
+  const snackbarsFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "Snackbar",
+    "Snackbars.tsx"
+  )
+  const snackbarsCode = fs.readFileSync(snackbarsFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
+  const useSnackbarFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "Snackbar",
+    "useSnackbar.tsx"
+  )
+  const useSnackbarCode = fs.readFileSync(useSnackbarFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
 
   return (
     <div>
@@ -45,57 +72,13 @@ const SnackbarPage = () => {
         </Paragraph>
 
         <Heading>Примеры</Heading>
-        <Button
-          appearance="tonal"
-          onClick={() => {
-            addSnackbar({
-              supportingText:
-                "This is default snackbar with only supporting text",
-            })
-          }}
-        >
-          Open default
-        </Button>
-        <Button
-          appearance="tonal"
-          onClick={() => {
-            addSnackbar({
-              supportingText: "Snackbar with close button",
-              withClose: true,
-            })
-          }}
-        >
-          With close
-        </Button>
-        <Button
-          appearance="tonal"
-          onClick={() => {
-            addSnackbar({
-              supportingText: "Snackbar with action button",
-              action: "Action",
-            })
-          }}
-        >
-          With action
-        </Button>
-        <Button
-          appearance="tonal"
-          onClick={() => {
-            addSnackbar({
-              supportingText: "Snackbar with close and action buttons",
-              action: "Action",
-              withClose: true,
-            })
-          }}
-        >
-          With close and action
-        </Button>
+        <SnackbarExamples />
 
         <Heading>Компонент</Heading>
         <Paragraph>
           Данный компонент состоит из трёх файлов, каждый из которых можно
           сохранить в папку{" "}
-          <InlineCode>src/components/ui/Snackbar/...</InlineCode>. Обратите
+          <InlineCode>src/shared/ui/Snackbar/...</InlineCode>. Обратите
           внимание на необходимые для компонента зависимости:{" "}
           <InternalLink href="/typography/body">Body</InternalLink> и{" "}
           <InternalLink href="/components/common-buttons">Button</InternalLink>.
@@ -114,20 +97,26 @@ const SnackbarPage = () => {
           Первый файл - стилизованные radix-ui компоненты. Сохраним в файл{" "}
           <InlineCode>Snackbar.tsx</InlineCode>
         </Paragraph>
-        <Code language="tsx" code={snackbarSource} />
+        <Code language="tsx" code={snackbarCode} />
 
         <Paragraph>
           Второй файл - кастомный react хук, который делегирует создание
           Snackbar. Сохраним в файл <InlineCode>useSnackbar.tsx</InlineCode>
         </Paragraph>
-        <Code language="tsx" code={useSnackbarSource} />
+        <Paragraph>
+          Так же можете изменить переменную{" "}
+          <InlineCode>SNACKBAR_LIMIT</InlineCode> под себя. Значение данной
+          переменной - максимально допустимое количество всплывающих уведомлений
+          за раз.
+        </Paragraph>
+        <Code language="tsx" code={useSnackbarCode} />
 
         <Paragraph>
           Третий файл - композиция стилизованных компонентов совместно с
           состоянием нашего react хука. Сохраним в файл{" "}
           <InlineCode>Snackbars.tsx</InlineCode>
         </Paragraph>
-        <Code language="tsx" code={snackbarsSource} />
+        <Code language="tsx" code={snackbarsCode} />
 
         <Heading>Использование</Heading>
         <Paragraph>

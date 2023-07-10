@@ -87,7 +87,7 @@ const LabelPage = () => {
         <Paragraph>Скопируйте и вставьте код в свой проект.</Paragraph>
         <Paragraph>
           Можно сохранить компонент в файл{" "}
-          <InlineCode>src/components/typography/Label.tsx</InlineCode>:
+          <InlineCode>src/shared/typography/Label.tsx</InlineCode>:
         </Paragraph>
         <Code language="tsx" code={labelSrc} />
         <Heading>Использование</Heading>

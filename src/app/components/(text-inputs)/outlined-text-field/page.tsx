@@ -79,7 +79,7 @@ const OutlinedTextFieldPage = () => {
         </Paragraph>
         <Paragraph>
           Можно сохранить компонент в файл{" "}
-          <InlineCode>src/components/ui/OutlinedTextField.tsx</InlineCode>:
+          <InlineCode>src/shared/ui/OutlinedTextField.tsx</InlineCode>:
         </Paragraph>
         <Code language="tsx" code={componentCode} />
 

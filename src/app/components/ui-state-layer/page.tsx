@@ -1,4 +1,5 @@
-import React from "react"
+import fs from "fs"
+import path from "path"
 
 import Display from "@/shared/typography/Display"
 
@@ -9,9 +10,19 @@ import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 
-import { componentSrc } from "./codeSamples"
+const UIStateLayerPage = () => {
+  const componentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "UIStateLayer.tsx"
+  )
+  const componentCode = fs.readFileSync(componentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
 
-const page = () => {
   return (
     <div>
       <Display className="mb-4">UI State Layer</Display>
@@ -31,12 +42,12 @@ const page = () => {
         <Paragraph>Скопируйте и вставьте код в свой проект.</Paragraph>
         <Paragraph>
           Можно сохранить компонент в файл{" "}
-          <InlineCode>src/components/ui/UIStateLayer.tsx</InlineCode>:
+          <InlineCode>src/shared/ui/UIStateLayer.tsx</InlineCode>:
         </Paragraph>
-        <Code language="tsx" code={componentSrc} />
+        <Code language="tsx" code={componentCode} />
       </div>
     </div>
   )
 }
 
-export default page
+export default UIStateLayerPage

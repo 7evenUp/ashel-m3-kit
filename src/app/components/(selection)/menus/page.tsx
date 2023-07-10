@@ -1,3 +1,6 @@
+import fs from "fs"
+import path from "path"
+
 import Display from "@/shared/typography/Display"
 
 import Heading from "@/components/Heading"
@@ -14,9 +17,21 @@ import Code from "@/components/Code"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
-import { sourceCode, usageSimpleCode, usageSubCode } from "./codeSamples"
+import { usageSimpleCode, usageSubCode } from "./codeSamples"
 
 const MenusPage = () => {
+  const componentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "Menu.tsx"
+  )
+  const componentCode = fs.readFileSync(componentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Menus</Display>
@@ -45,6 +60,13 @@ const MenusPage = () => {
           .
         </Paragraph>
 
+        <Paragraph>
+          Подробнее об использовании элемента читайте на{" "}
+          <InlineLink href="https://m3.material.io/components/menus/overview">
+            официальном сайте
+          </InlineLink>
+        </Paragraph>
+
         <Heading>Примеры</Heading>
         <div className="flex items-center gap-6">
           <MenuExampleWithButton />
@@ -54,8 +76,8 @@ const MenusPage = () => {
         <Heading>Компонент</Heading>
         <Paragraph>
           Компонент можно сохранить в{" "}
-          <InlineCode>src/components/ui/Menu.tsx</InlineCode>. Обратите
-          внимание на необходимые зависимости:{" "}
+          <InlineCode>src/shared/ui/Menu.tsx</InlineCode>. Обратите внимание
+          на необходимые зависимости:{" "}
           <InternalLink href="/typography/label">Label</InternalLink>.
         </Paragraph>
         <Paragraph>
@@ -66,7 +88,7 @@ const MenusPage = () => {
           компонент.
         </Paragraph>
         <Code language="bash" code={"yarn add @radix-ui/react-dropdown-menu"} />
-        <Code language="tsx" code={sourceCode} />
+        <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>
         <Paragraph>Данный файл экспортирует 9 компонентов</Paragraph>

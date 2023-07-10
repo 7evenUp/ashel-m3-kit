@@ -1,19 +1,33 @@
+import fs from "fs"
+import path from "path"
 import { Cart, Message } from "iconoir-react"
 
 import Display from "@/shared/typography/Display"
-
-import Heading from "@/components/Heading"
-
 import IconButton from "@/shared/ui/IconButton"
 import Badge from "@/shared/ui/Badge"
+
+import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
 import InternalLink from "@/components/InternalLink"
 import Code from "@/components/Code"
-import { badgeSource, badgeUsage } from "./codeSamples"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 
+import { badgeUsage } from "./codeSamples"
+
 const BadgesPage = () => {
+  const componentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "Badge.tsx"
+  )
+  const componentCode = fs.readFileSync(componentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Badges</Display>
@@ -46,9 +60,9 @@ const BadgesPage = () => {
         </Paragraph>
         <Paragraph>
           Сохраните компонент в файл{" "}
-          <InlineCode>src/components/ui/Badge.tsx</InlineCode>
+          <InlineCode>src/shared/ui/Badge.tsx</InlineCode>
         </Paragraph>
-        <Code language="tsx" code={badgeSource} />
+        <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>
         <Paragraph>

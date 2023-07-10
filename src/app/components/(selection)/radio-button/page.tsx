@@ -1,4 +1,8 @@
+import fs from "fs"
+import path from "path"
+
 import Display from "@/shared/typography/Display"
+import { RadioGroup, RadioGroupItem } from "@/shared/ui/RadioGroup"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -8,11 +12,21 @@ import InlineCode from "@/components/InlineCode"
 import InternalLink from "@/components/InternalLink"
 import InlineLink from "@/components/InlineLink"
 
-import { RadioGroup, RadioGroupItem } from "@/shared/ui/RadioGroup"
-
-import { sourceCode, usageCode } from "./codeSamples"
+import { usageCode } from "./codeSamples"
 
 const RadioButtonPage = () => {
+  const componentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "RadioGroup.tsx"
+  )
+  const componentCode = fs.readFileSync(componentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Radio Button</Display>
@@ -21,6 +35,13 @@ const RadioButtonPage = () => {
         <Heading>Описание</Heading>
         <Paragraph>
           Radio buttons позволяют пользователям выбирать один вариант из набора.
+        </Paragraph>
+
+        <Paragraph>
+          Подробнее об использовании элемента читайте на{" "}
+          <InlineLink href="https://m3.material.io/components/radio-button/overview">
+            официальном сайте
+          </InlineLink>
         </Paragraph>
 
         <Heading>Примеры</Heading>
@@ -39,19 +60,24 @@ const RadioButtonPage = () => {
         <Heading>Компонент</Heading>
         <Paragraph>
           Компонент можно сохранить в{" "}
-          <InlineCode>src/components/ui/RadioGroup.tsx</InlineCode>. Обратите
+          <InlineCode>src/shared/ui/RadioGroup.tsx</InlineCode>. Обратите
           внимание на необходимые зависимости:{" "}
           <InternalLink href="/typography/label">Label</InternalLink> и{" "}
-          <InternalLink href="/components/ui-state-layer">UIStateLayer</InternalLink>. В качестве иконки
-          я использую{" "}
+          <InternalLink href="/components/ui-state-layer">
+            UIStateLayer
+          </InternalLink>
+          . В качестве иконки я использую{" "}
           <InlineLink href="https://iconoir.com/">iconoir-react</InlineLink>.
         </Paragraph>
         <Paragraph>
           Так же данный компонент использует{" "}
-          <InlineLink href="https://www.radix-ui.com/docs/primitives/components/radio-group">@radix-ui/react-radio-group</InlineLink> компонент.
+          <InlineLink href="https://www.radix-ui.com/docs/primitives/components/radio-group">
+            @radix-ui/react-radio-group
+          </InlineLink>{" "}
+          компонент.
         </Paragraph>
         <Code language="bash" code={"yarn add @radix-ui/react-radio-group"} />
-        <Code language="tsx" code={sourceCode} />
+        <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>
         <Paragraph>

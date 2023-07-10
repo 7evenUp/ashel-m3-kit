@@ -83,7 +83,7 @@ const FilledTextFieldPage = () => {
         </Paragraph>
         <Paragraph>
           Можно сохранить компонент в файл{" "}
-          <InlineCode>src/components/ui/FilledTextField.tsx</InlineCode>:
+          <InlineCode>src/shared/ui/FilledTextField.tsx</InlineCode>:
         </Paragraph>
         <Code language="tsx" code={componentCode} />
 

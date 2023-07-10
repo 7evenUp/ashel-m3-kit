@@ -76,7 +76,7 @@ const Forms = () => {
       </Paragraph>
       <Paragraph>
         Можно сохранить компонент в файл{" "}
-        <InlineCode>src/components/ui/Form.tsx</InlineCode>:
+        <InlineCode>src/shared/ui/Form.tsx</InlineCode>:
       </Paragraph>
       <Code language="tsx" code={componentCode} />
     </main>

@@ -1,4 +1,8 @@
+import fs from "fs"
+import path from "path"
+
 import Display from "@/shared/typography/Display"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -8,11 +12,21 @@ import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
-
-import { sourceCode, usageCode } from "./codeSamples"
+import { usageCode } from "./codeSamples"
 
 const TabsPage = () => {
+  const componentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "Tabs.tsx"
+  )
+  const componentCode = fs.readFileSync(componentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Tabs</Display>
@@ -23,6 +37,13 @@ const TabsPage = () => {
         <Paragraph>
           Tabs полезны для переключения между представлениями отдельных и
           связанных групп информации.
+        </Paragraph>
+
+        <Paragraph>
+          Подробнее об использовании элемента читайте на{" "}
+          <InlineLink href="https://m3.material.io/components/tabs/overview">
+            официальном сайте
+          </InlineLink>
         </Paragraph>
 
         <Heading>Примеры</Heading>
@@ -40,7 +61,7 @@ const TabsPage = () => {
         <Heading>Компонент</Heading>
         <Paragraph>
           Компонент можно сохранить в{" "}
-          <InlineCode>src/components/ui/Tabs.tsx</InlineCode>. Обратите внимание
+          <InlineCode>src/shared/ui/Tabs.tsx</InlineCode>. Обратите внимание
           на необходимые зависимости:{" "}
           <InternalLink href="/typography/title">Title</InternalLink> и{" "}
           <InternalLink href="/components/ui-state-layer">
@@ -56,7 +77,7 @@ const TabsPage = () => {
           компонент.
         </Paragraph>
         <Code language="bash" code={"yarn add @radix-ui/react-tabs"} />
-        <Code language="tsx" code={sourceCode} />
+        <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>
         <Paragraph>

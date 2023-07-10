@@ -1,8 +1,9 @@
+import fs from "fs"
+import path from "path"
 import { BookmarkEmpty, Download, Heart, Settings } from "iconoir-react"
 
 import Display from "@/shared/typography/Display"
 import Label from "@/shared/typography/Label"
-import Body from "@/shared/typography/Body"
 
 import Heading from "@/components/Heading"
 import Subheading from "@/components/Subheading"
@@ -11,21 +12,40 @@ import Paragraph from "@/components/Paragraph"
 import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
+import InternalLink from "@/components/InternalLink"
 
 import Card from "@/shared/ui/Card"
 import IconButton from "@/shared/ui/IconButton"
 import ToggledIconButton from "@/shared/ui/ToggledIconButton"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
-import {
-  noToggleButtonCode,
-  toggleButtonCode,
-  usageCode,
-  usageCustomCode,
-} from "./codeSamples"
-import InternalLink from "@/components/InternalLink"
+import { usageCode } from "./codeSamples"
 
 const IconButtonsPage = () => {
+  const noToggleComponentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "IconButton.tsx"
+  )
+  const toggleComponentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "ToggledIconButton.tsx"
+  )
+
+  const noToggleComponentCode = fs.readFileSync(noToggleComponentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+  const toggleComponentCode = fs.readFileSync(toggleComponentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Icon Buttons</Display>
@@ -146,8 +166,8 @@ const IconButtonsPage = () => {
           <InlineCode>IconButton</InlineCode> и{" "}
           <InlineCode>ToggledIconButton</InlineCode>. Скопируйте и вставьте
           соотвественно в файлы{" "}
-          <InlineCode>src/components/ui/IconButton.tsx</InlineCode> и
-          <InlineCode>src/components/ui/ToggledIconButton.tsx</InlineCode>
+          <InlineCode>src/shared/ui/IconButton.tsx</InlineCode> и
+          <InlineCode>src/shared/ui/ToggledIconButton.tsx</InlineCode>
         </Paragraph>
 
         <Paragraph>
@@ -178,52 +198,15 @@ const IconButtonsPage = () => {
             <TabsTrigger value="toggle">Toggle</TabsTrigger>
           </TabsList>
           <TabsContent value="no-toggle" className="p-0">
-            <Code language="tsx" code={noToggleButtonCode} />
+            <Code language="tsx" code={noToggleComponentCode} />
           </TabsContent>
           <TabsContent value="toggle" className="p-0">
-            <Code language="tsx" code={toggleButtonCode} />
+            <Code language="tsx" code={toggleComponentCode} />
           </TabsContent>
         </Tabs>
 
         <Heading>Использование</Heading>
         <Code language="tsx" code={usageCode} />
-
-        <Heading>Кастомизация</Heading>
-        <Paragraph>
-          Вам может понадобиться изменять свойство <InlineCode>fill</InlineCode>{" "}
-          иконки у Toggle компонента для большего контраста. Ниже пример как
-          достичь этого:
-        </Paragraph>
-        <Tabs defaultValue="preview" className="w-[600px]">
-          <TabsList>
-            <TabsTrigger value="preview">Preview</TabsTrigger>
-            <TabsTrigger value="code">Code</TabsTrigger>
-          </TabsList>
-          <TabsContent
-            value="preview"
-            className="border border-light-outlineVariant dark:border-dark-outlineVariant rounded-md mt-1 data-[state=active]:flex justify-center"
-          >
-            <div className="flex flex-col items-center gap-3 mr-6">
-              <Body>Без свойства fill</Body>
-              <ToggledIconButton appearance="filled" defaultPressed>
-                <Heart />
-              </ToggledIconButton>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <Body>Со свойством fill</Body>
-              <ToggledIconButton appearance="filled" defaultPressed>
-                <Heart className="group-data-[state=on]:fill-light-onPrimary dark:group-data-[state=on]:fill-dark-onPrimary" />
-              </ToggledIconButton>
-            </div>
-          </TabsContent>
-          <TabsContent value="code" className="p-0">
-            <Code language="tsx" code={usageCustomCode} />
-          </TabsContent>
-        </Tabs>
-        <Paragraph>
-          Стили в данном случае мы применяем не к самому компоненту, а
-          компоненту-иконке.
-        </Paragraph>
       </div>
     </div>
   )

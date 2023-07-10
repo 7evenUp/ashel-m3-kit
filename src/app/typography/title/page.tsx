@@ -89,7 +89,7 @@ const TitlePage = () => {
         <Paragraph>Скопируйте и вставьте код в свой проект.</Paragraph>
         <Paragraph>
           Можно сохранить компонент в файл{" "}
-          <InlineCode>src/components/typography/Title.tsx</InlineCode>:
+          <InlineCode>src/shared/typography/Title.tsx</InlineCode>:
         </Paragraph>
         <Code language="tsx" code={titleSrc} />
         <Heading>Использование</Heading>

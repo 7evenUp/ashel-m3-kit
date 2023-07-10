@@ -203,7 +203,7 @@ const CommonButtonsPage = () => {
         </Paragraph>
         <Paragraph>
           Можно сохранить компонент в файл{" "}
-          <InlineCode>src/components/ui/Button.tsx</InlineCode>:
+          <InlineCode>src/shared/ui/Button.tsx</InlineCode>:
         </Paragraph>
         <Code language="tsx" code={componentCode} />
 

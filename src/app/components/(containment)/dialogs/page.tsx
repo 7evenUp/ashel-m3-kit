@@ -1,4 +1,5 @@
-import Display from "@/shared/typography/Display"
+import fs from "fs"
+import path from "path"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -8,6 +9,7 @@ import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
 
+import Display from "@/shared/typography/Display"
 import Button from "@/shared/ui/Button"
 import {
   Dialog,
@@ -19,9 +21,21 @@ import {
   DialogActionButton,
 } from "@/shared/ui/Dialog"
 
-import { sourceCode, usageCode } from "./codeSamples"
+import { usageCode } from "./codeSamples"
 
 const DialogPage = () => {
+  const componentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "Dialog.tsx"
+  )
+  const componentCode = fs.readFileSync(componentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Dialog</Display>
@@ -31,6 +45,12 @@ const DialogPage = () => {
         <Paragraph>
           Dialogs могут требовать выполнения действия, передавать информацию или
           помогать пользователям выполнить задачу.
+        </Paragraph>
+        <Paragraph>
+          Подробнее об использовании элемента читайте на{" "}
+          <InlineLink href="https://m3.material.io/components/dialogs/overview">
+            официальном сайте
+          </InlineLink>
         </Paragraph>
 
         <Heading>Примеры</Heading>
@@ -52,7 +72,7 @@ const DialogPage = () => {
         <Heading>Компонент</Heading>
         <Paragraph>
           Компонент можно сохранить в{" "}
-          <InlineCode>src/components/ui/Dialog.tsx</InlineCode>. Обратите
+          <InlineCode>src/shared/ui/Dialog.tsx</InlineCode>. Обратите
           внимание на необходимые зависимости:{" "}
           <InternalLink href="/typography/headline">Headline</InternalLink>,{" "}
           <InternalLink href="/typography/body">Body</InternalLink> и{" "}
@@ -66,7 +86,7 @@ const DialogPage = () => {
           компонент.
         </Paragraph>
         <Code language="bash" code={"yarn add @radix-ui/react-dialog"} />
-        <Code language="tsx" code={sourceCode} />
+        <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>
         <Paragraph>Данный файл экспортирует 7 компонентов</Paragraph>

@@ -1,11 +1,9 @@
-"use client"
-
-import { useState } from "react"
-import { Minus, Plus } from "iconoir-react"
+import fs from "fs"
+import path from "path"
 
 import Display from "@/shared/typography/Display"
-import Label from "@/shared/typography/Label"
 import Body from "@/shared/typography/Body"
+import Card from "@/shared/ui/Card"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -14,13 +12,22 @@ import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 
-import Switch from "@/shared/ui/Switch"
-import Card from "@/shared/ui/Card"
-
-import { sourceCode, usageCode } from "./codeSamples"
+import { usageCode } from "./codeSamples"
+import SwitchExample from "@/components/SwitchExample"
 
 const SwitchPage = () => {
-  const [isSelected, setIsSelected] = useState(false)
+  const componentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "Switch.tsx"
+  )
+  const componentCode = fs.readFileSync(componentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Switch</Display>
@@ -36,38 +43,7 @@ const SwitchPage = () => {
         </Paragraph>
 
         <Heading>Примеры</Heading>
-        <div className="flex items-center justify-between max-w-[400px]">
-          <Label size="large" className="mt-3 mb-2">
-            Без иконок
-          </Label>
-          <Switch
-            selected={isSelected}
-            onChange={() => setIsSelected(!isSelected)}
-          />
-        </div>
-
-        <div className="flex items-center justify-between max-w-[400px]">
-          <Label size="large" className="mt-3 mb-2">
-            С иконкой в состоянии selected
-          </Label>
-          <Switch
-            selected={isSelected}
-            onChange={() => setIsSelected(!isSelected)}
-            icon={<Plus />}
-          />
-        </div>
-
-        <div className="flex items-center justify-between max-w-[400px]">
-          <Label size="large" className="mt-3 mb-2">
-            С иконками в обоих состояниях
-          </Label>
-          <Switch
-            selected={isSelected}
-            onChange={() => setIsSelected(!isSelected)}
-            icon={<Plus />}
-            unselectedIcon={<Minus />}
-          />
-        </div>
+        <SwitchExample />
 
         <Heading>Компонент</Heading>
         <Card
@@ -84,9 +60,9 @@ const SwitchPage = () => {
         </Card>
         <Paragraph>
           Компонент можно сохранить в{" "}
-          <InlineCode>src/components/ui/Switch.tsx</InlineCode>.
+          <InlineCode>src/shared/ui/Switch.tsx</InlineCode>.
         </Paragraph>
-        <Code language="tsx" code={sourceCode} />
+        <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>
 

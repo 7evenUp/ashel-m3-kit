@@ -1,4 +1,8 @@
+import fs from "fs"
+import path from "path"
+
 import Display from "@/shared/typography/Display"
+import { Checkbox, CheckboxLabel } from "@/shared/ui/Checkbox"
 
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -8,11 +12,21 @@ import InlineCode from "@/components/InlineCode"
 import InternalLink from "@/components/InternalLink"
 import InlineLink from "@/components/InlineLink"
 
-import { Checkbox, CheckboxLabel } from "@/shared/ui/Checkbox"
-
-import { sourceCode, usageCode } from "./codeSamples"
+import { usageCode } from "./codeSamples"
 
 const CheckboxPage = () => {
+  const componentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "Checkbox.tsx"
+  )
+  const componentCode = fs.readFileSync(componentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Checkbox</Display>
@@ -23,6 +37,13 @@ const CheckboxPage = () => {
         <Paragraph>
           Используются, когда пользователю необходимо выбрать одну или несколько
           опций из списка.
+        </Paragraph>
+
+        <Paragraph>
+          Подробнее об использовании элемента читайте на{" "}
+          <InlineLink href="https://m3.material.io/components/checkbox/overview">
+            официальном сайте
+          </InlineLink>
         </Paragraph>
 
         <Heading>Примеры</Heading>
@@ -39,7 +60,7 @@ const CheckboxPage = () => {
         <Heading>Компонент</Heading>
         <Paragraph>
           Компонент можно сохранить в{" "}
-          <InlineCode>src/components/ui/Checkbox.tsx</InlineCode>. Обратите
+          <InlineCode>src/shared/ui/Checkbox.tsx</InlineCode>. Обратите
           внимание на необходимые зависимости:{" "}
           <InternalLink href="/typography/label">Label</InternalLink> и{" "}
           <InternalLink href="/components/ui-state-layer">
@@ -56,7 +77,7 @@ const CheckboxPage = () => {
           компонент.
         </Paragraph>
         <Code language="bash" code={"yarn add @radix-ui/react-checkbox"} />
-        <Code language="tsx" code={sourceCode} />
+        <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>
         <Paragraph>

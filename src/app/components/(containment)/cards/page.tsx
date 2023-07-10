@@ -1,3 +1,6 @@
+import fs from "fs"
+import path from "path"
+
 import Display from "@/shared/typography/Display"
 import Headline from "@/shared/typography/Headline"
 import Body from "@/shared/typography/Body"
@@ -6,6 +9,7 @@ import Heading from "@/components/Heading"
 import Subheading from "@/components/Subheading"
 import Paragraph from "@/components/Paragraph"
 
+import InlineLink from "@/components/InlineLink"
 import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 
@@ -13,9 +17,21 @@ import Button from "@/shared/ui/Button"
 import Card from "@/shared/ui/Card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
-import { customCode, sourceCode, usageCode } from "./codeSamples"
+import { customCode, usageCode } from "./codeSamples"
 
 const CardsPage = () => {
+  const componentFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "Card.tsx"
+  )
+  const componentCode = fs.readFileSync(componentFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Cards</Display>
@@ -23,7 +39,14 @@ const CardsPage = () => {
       <div className="flex flex-col gap-2">
         <Heading>Описание</Heading>
         <Paragraph>
-          Cards содержат контент и действия, относящиеся к одному предмету
+          Cards содержат контент и действия, относящиеся к единому смысловому
+          контенту
+        </Paragraph>
+        <Paragraph>
+          Подробнее об использовании элемента читайте на{" "}
+          <InlineLink href="https://m3.material.io/components/cards/overview">
+            официальном сайте
+          </InlineLink>
         </Paragraph>
 
         <Heading>Примеры</Heading>
@@ -35,24 +58,24 @@ const CardsPage = () => {
                 appearance={"elevated"}
                 className="flex flex-col gap-2 w-[300px]"
               >
-                <Headline>Обуздай хаос</Headline>
+                <Headline>New Music Friday</Headline>
                 <Body className="max-w-[200px]">
-                  С помощью быстрого искусственного интеллекта
+                  From your favourite artists
                 </Body>
                 <Button appearance={"tonal"} className="mt-auto self-end">
-                  Подробнее
+                  Buy tickets
                 </Button>
               </Card>
               <Card
                 appearance={"elevated"}
                 className="flex flex-col gap-2 w-[300px]"
               >
-                <Headline>Стань художником</Headline>
+                <Headline>Stress Podcast</Headline>
                 <Body className="max-w-[200px]">
-                  Хватит быть потребителем - пора стать дизайнером своей жизни!
+                  Listen anywhere and anytime
                 </Body>
                 <Button appearance={"tonal"} className="mt-auto self-end">
-                  Быть, а не казаться
+                  Listen
                 </Button>
               </Card>
             </div>
@@ -65,24 +88,24 @@ const CardsPage = () => {
                 appearance={"filled"}
                 className="flex flex-col gap-2 w-[300px]"
               >
-                <Headline>Обуздай хаос</Headline>
+                <Headline>New Music Friday</Headline>
                 <Body className="max-w-[200px]">
-                  С помощью быстрого искусственного интеллекта
+                  From your favourite artists
                 </Body>
                 <Button appearance={"filled"} className="mt-auto self-end">
-                  Подробнее
+                  Buy tickets
                 </Button>
               </Card>
               <Card
                 appearance={"filled"}
                 className="flex flex-col gap-2 w-[300px]"
               >
-                <Headline>Стань художником</Headline>
+                <Headline>Stress Podcast</Headline>
                 <Body className="max-w-[200px]">
-                  Хватит быть потребителем - пора стать дизайнером своей жизни!
+                  Listen anywhere and anytime
                 </Body>
                 <Button appearance={"filled"} className="mt-auto self-end">
-                  Быть, а не казаться
+                  Listen
                 </Button>
               </Card>
             </div>
@@ -95,24 +118,24 @@ const CardsPage = () => {
                 appearance={"outlined"}
                 className="flex flex-col gap-2 w-[300px]"
               >
-                <Headline>Обуздай хаос</Headline>
+                <Headline>New Music Friday</Headline>
                 <Body className="max-w-[200px]">
-                  С помощью быстрого искусственного интеллекта
+                  From your favourite artists
                 </Body>
                 <Button appearance={"tonal"} className="mt-auto self-end">
-                  Подробнее
+                  Buy tickets
                 </Button>
               </Card>
               <Card
                 appearance={"outlined"}
                 className="flex flex-col gap-2 w-[300px]"
               >
-                <Headline>Стань художником</Headline>
+                <Headline>Stress Podcast</Headline>
                 <Body className="max-w-[200px]">
-                  Хватит быть потребителем - пора стать дизайнером своей жизни!
+                  Listen anywhere and anytime
                 </Body>
                 <Button appearance={"tonal"} className="mt-auto self-end">
-                  Быть, а не казаться
+                  Listen
                 </Button>
               </Card>
             </div>
@@ -122,9 +145,9 @@ const CardsPage = () => {
         <Heading>Компонент</Heading>
         <Paragraph>
           Компонент можно сохранить в{" "}
-          <InlineCode>src/components/ui/Card.tsx</InlineCode>.
+          <InlineCode>src/shared/ui/Card.tsx</InlineCode>.
         </Paragraph>
-        <Code language="tsx" code={sourceCode} />
+        <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>
         <Paragraph>Ниже - пример всех вариантов компонента Card.</Paragraph>
