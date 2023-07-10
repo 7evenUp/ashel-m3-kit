@@ -33,7 +33,7 @@ const MenuContent = React.forwardRef<
 >(({ className, children, ...props }, forwardedRef) => (
   <DropdownMenu.Content
     className={cn(
-      "flex flex-col rounded bg-light-surfaceContainer dark:bg-dark-surfaceContainer shadow-elevation2 py-2 w-[280px]",
+      "flex flex-col rounded bg-light-surfaceContainer dark:bg-dark-surfaceContainer shadow-elevation2 py-2 w-[280px] will-change-[opacity,transform] data-[side=bottom]:animate-slide-down-and-fade-in origin-top-left data-[state=closed]:animate-slide-up-and-fade-out",
       className
     )}
     {...props}
@@ -120,7 +120,7 @@ const MenuSubContent = React.forwardRef<
 >(({ children, className, ...props }, forwardedRef) => (
   <DropdownMenu.SubContent
     className={cn(
-      "flex flex-col rounded bg-light-surfaceContainer dark:bg-dark-surfaceContainer shadow-elevation2 py-2 w-[280px]",
+      "flex flex-col rounded bg-light-surfaceContainer dark:bg-dark-surfaceContainer shadow-elevation2 py-2 w-[280px] will-change-[opacity,transform] data-[side=right]:animate-slide-down-and-fade-in origin-top-left data-[state=closed]:animate-slide-up-and-fade-out",
       className
     )}
     ref={forwardedRef}

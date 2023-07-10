@@ -6,6 +6,52 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0%' },
+          '100%': { opacity: '100%' }
+        },
+        'fade-out': {
+          '0%': { opacity: '100%' },
+          '100%': { opacity: '0%' }
+        },
+        'slide-down-and-fade-in': {
+          '0%': {
+            opacity: '0%',
+            transform: 'translateY(-30px) scale(0)'
+          },
+          '100%': {
+            opacity: '100%',
+            transform: 'translateY(0) scale(1)'
+          }
+        },
+        'slide-up-and-fade-out': {
+          '0%': {
+            opacity: '100%',
+            transform: 'translateY(0) scale(1)'
+          },
+          '100%': {
+            opacity: '0%',
+            transform: 'translateY(-30px) scale(0)'
+          }
+        },
+        'dialog-show': {
+          from: { opacity: 0.8, transform: 'translate(-50%, -40%) scale(0.9)' },
+          to: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
+        },
+        'dialog-hide': {
+          from: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
+          to: { opacity: 0, transform: 'translate(-50%, -40%) scale(0.9)' },
+        },
+      },
+      animation: {
+        'fade-in': 'fade-in 200ms cubic-bezier(0.05, 0.7, 0.1, 1)',
+        'fade-out': 'fade-out 200ms cubic-bezier(0.3, 0, 0.8, 0.15)',
+        'slide-down-and-fade-in': 'slide-down-and-fade-in 200ms cubic-bezier(0.05, 0.7, 0.1, 1)',
+        'slide-up-and-fade-out': 'slide-up-and-fade-out 100ms cubic-bezier(0.3, 0, 0.8, 0.15)',
+        'dialog-show': 'dialog-show 500ms cubic-bezier(0.05, 0.7, 0.1, 1)',
+        'dialog-hide': 'dialog-hide 200ms cubic-bezier(0.3, 0, 0.8, 0.15)',
+      },
       transitionDuration: {
         short1: '50ms',
         short2: '100ms',

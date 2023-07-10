@@ -21,7 +21,6 @@ export const RadioGroup = React.forwardRef<
     {children}
   </RadixRadioGroup.Root>
 ))
-
 RadioGroup.displayName = "RadioGroup"
 
 export const RadioGroupItem = React.forwardRef<
@@ -30,19 +29,18 @@ export const RadioGroupItem = React.forwardRef<
 >(({ className, children, id, ...props }, forwardedRef) => (
   <div className={cn("flex items-center gap-4", className)}>
     <RadixRadioGroup.Item
-      className="group relative w-5 h-5 rounded-full border-2 border-light-onSurfaceVariant dark:border-dark-onSurfaceVariant data-[state=checked]:border-light-primary dark:data-[state=checked]:border-dark-primary"
+      className="group relative w-5 h-5 rounded-full border-2 border-light-onSurfaceVariant dark:border-dark-onSurfaceVariant data-[state=checked]:border-light-primary dark:data-[state=checked]:border-dark-primary transition-colors duration-short4 ease-standard"
       ref={forwardedRef}
       id={id}
       {...props}
     >
-      <UIStateLayer className="flex items-center justify-center h-10 w-10 rounded-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 group-data-[state=checked]:bg-light-primary dark:data-[state=checked]:bg-dark-primary bg-light-onSurface dark:bg-dark-onSurface group-data-[state=checked]:bg-opacity-0 group-data-[state=checked]:group-hover:bg-opacity-[0.08] group-data-[state=checked]:group-active:bg-opacity-[0.12]">
-        <RadixRadioGroup.Indicator className="w-[10px] h-[10px] bg-light-primary dark:bg-dark-primary rounded-full" />
+      <UIStateLayer className="flex items-center justify-center h-10 w-10 rounded-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 group-data-[state=checked]:bg-light-primary dark:data-[state=checked]:bg-dark-primary bg-light-onSurface dark:bg-dark-onSurface group-data-[state=checked]:bg-opacity-0 group-data-[state=checked]:group-hover:bg-opacity-[0.08] group-data-[state=checked]:group-active:bg-opacity-[0.12] transition-colors duration-short4 ease-standard">
+        <RadixRadioGroup.Indicator className="w-[10px] h-[10px] bg-light-primary dark:bg-dark-primary rounded-full animate-fade-in" />
       </UIStateLayer>
     </RadixRadioGroup.Item>
     <RadioGroupLabel htmlFor={id}>{children}</RadioGroupLabel>
   </div>
 ))
-
 RadioGroupItem.displayName = "RadioGroupItem"
 
 const RadioGroupLabel: React.FC<

@@ -1,4 +1,4 @@
-import React, { FC, InputHTMLAttributes } from "react"
+import React, { InputHTMLAttributes } from "react"
 import { type VariantProps, cva } from "class-variance-authority"
 
 import Body from "@/components/typography/Body"
@@ -6,7 +6,7 @@ import Body from "@/components/typography/Body"
 import { cn } from "@/utils/classNames"
 
 const containerVariants = cva(
-  "group relative flex h-[56px] rounded ring-1 ring-offset-0 focus-within:ring-2",
+  "group relative flex h-[56px] rounded ring-1 ring-offset-0 focus-within:ring-2 transition-colors duration-short4 ease-standard",
   {
     variants: {
       variant: {
@@ -23,7 +23,7 @@ const containerVariants = cva(
 )
 
 const labelVariants = cva(
-  "absolute pointer-events-none text-xs tracking-[0.4px] translate-x-3 px-1 -translate-y-2 peer-placeholder-shown:translate-y-4 peer-placeholder-shown:text-base peer-placeholder-shown:tracking-[0.5px] peer-focus:-translate-y-2 peer-focus:text-xs peer-focus:tracking-[0.4px] will-change-transform transition-transform bg-light-surface dark:bg-dark-surface",
+  "absolute pointer-events-none text-xs tracking-[0.4px] translate-x-3 px-1 -translate-y-2 peer-placeholder-shown:translate-y-4 peer-placeholder-shown:text-base peer-placeholder-shown:tracking-[0.5px] peer-focus:-translate-y-2 peer-focus:text-xs peer-focus:tracking-[0.4px] will-change-transform bg-light-surface dark:bg-dark-surface transition-all duration-short4 ease-standard",
   {
     variants: {
       variant: {

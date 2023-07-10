@@ -32,7 +32,7 @@ const TabsTrigger = React.forwardRef<
 >(({ className, children, ...props }, forwardedRef) => (
   <RadixTabs.Trigger
     className={cn(
-      "flex-1 group data-[state=active]:border-b-2 data-[state=active]:border-light-primary dark:data-[state=active]:border-dark-primary data-[state=active]:text-light-primary dark:data-[state=active]:text-dark-primary text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant border-b border-light-surfaceVariant dark:border-dark-surfaceVariant",
+      "flex-1 group data-[state=active]:border-b-2 data-[state=active]:border-light-primary dark:data-[state=active]:border-dark-primary data-[state=active]:text-light-primary dark:data-[state=active]:text-dark-primary text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant border-b border-light-surfaceVariant dark:border-dark-surfaceVariant transition-colors duration-short4 ease-standard",
       className
     )}
     {...props}

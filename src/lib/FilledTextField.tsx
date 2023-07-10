@@ -1,4 +1,4 @@
-import React, { FC, InputHTMLAttributes } from "react"
+import React, { InputHTMLAttributes } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import Body from "@/components/typography/Body"
@@ -8,7 +8,7 @@ import UIStateLayer from "@/components/ui/UIStateLayer"
 import { cn } from "@/utils/classNames"
 
 const containerVariants = cva(
-  "group relative flex h-[56px] bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest rounded-t border-b focus-within:border-b-2",
+  "group relative flex h-[56px] bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest rounded-t border-b focus-within:border-b-2 transition-colors duration-short4 ease-standard",
   {
     variants: {
       variant: {
@@ -25,7 +25,7 @@ const containerVariants = cva(
 )
 
 const labelVariants = cva(
-  "absolute pointer-events-none text-xs tracking-[0.4px] left-4 translate-y-2 peer-placeholder-shown:translate-y-4 transition-all peer-focus:translate-y-2 peer-focus:text-xs peer-focus:tracking-[0.4px] peer-placeholder-shown:text-base peer-placeholder-shown:tracking-[0.5px]",
+  "absolute pointer-events-none text-xs tracking-[0.4px] left-4 translate-y-2 peer-placeholder-shown:translate-y-4 peer-focus:translate-y-2 peer-focus:text-xs peer-focus:tracking-[0.4px] peer-placeholder-shown:text-base peer-placeholder-shown:tracking-[0.5px] transition-all duration-short4 ease-standard",
   {
     variants: {
       variant: {

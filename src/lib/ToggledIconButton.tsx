@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { isValidElement } from "react"
 import * as Toggle from "@radix-ui/react-toggle"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -9,7 +9,7 @@ import UIStateLayer from "@/components/ui/UIStateLayer"
 import { cn } from "@/utils/classNames"
 
 const buttonVariants = cva(
-  "group h-10 w-10 rounded-full disabled:bg-opacity-[0.12] dark:disabled:bg-opacity-[0.12] disabled:cursor-not-allowed  disabled:text-light-onSurface disabled:dark:text-dark-onSurface disabled:text-opacity-[0.38] disabled:dark:text-opacity-[0.38]",
+  "group h-10 w-10 rounded-full disabled:bg-opacity-[0.12] dark:disabled:bg-opacity-[0.12] disabled:cursor-not-allowed disabled:text-light-onSurface disabled:dark:text-dark-onSurface disabled:text-opacity-[0.38] disabled:dark:text-opacity-[0.38]",
   {
     variants: {
       appearance: {
@@ -32,17 +32,32 @@ const uiStateLayerVariants = cva(
     variants: {
       appearance: {
         filled:
-          "bg-light-primary dark:bg-dark-primary group-data-[state=on]:bg-light-onPrimary dark:group-data-[state=on]:bg-dark-onPrimary",
+          "bg-light-primary dark:bg-dark-primary group-data-[state=on]:bg-light-onPrimary dark:group-data-[state=on]:bg-dark-onPrimary data-[state=on]:fill-light-onPrimary",
         tonal:
           "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant group-data-[state=on]:bg-light-onSecondaryContainer dark:group-data-[state=on]:bg-dark-onSecondaryContainer",
         outlined:
-          "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant group-data-[state=on]:bg-light-inverseOnSurface dark:group-data-[state=on]:bg-dark-inverbg-light-inverseOnSurface",
+          "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant group-data-[state=on]:bg-light-inverseOnSurface dark:group-data-[state=on]:bg-dark-inverseOnSurface",
         standart:
-          "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant group-data-[state=on]:bg-light-primary dark:group-data-[state=on]:bg-dark-inverbg-light-primary",
+          "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant group-data-[state=on]:bg-light-primary dark:group-data-[state=on]:bg-dark-primary",
       },
     },
   }
 )
+
+const iconFillVariants = cva("", {
+  variants: {
+    appearance: {
+      filled:
+        "group-data-[state=on]:fill-light-onPrimary dark:group-data-[state=on]:fill-dark-onPrimary",
+      tonal:
+        "group-data-[state=on]:fill-light-onSecondaryContainer dark:group-data-[state=on]:fill-dark-onSecondaryContainer",
+      outlined:
+        "group-data-[state=on]:fill-light-inverseOnSurface dark:group-data-[state=on]:fill-dark-inverseOnSurface",
+      standart:
+        "group-data-[state=on]:fill-light-primary dark:group-data-[state=on]:fill-dark-primary",
+    },
+  },
+})
 
 interface Props
   extends React.ComponentPropsWithoutRef<typeof Toggle.Root>,
@@ -51,17 +66,27 @@ interface Props
 const ToggledIconButton = React.forwardRef<
   React.ElementRef<typeof Toggle.Root>,
   Props
->(({ className, appearance, children, ...props }, forwardedRef) => (
-  <Toggle.Root
-    className={cn(buttonVariants({ appearance }), className)}
-    {...props}
-    ref={forwardedRef}
-  >
-    <UIStateLayer className={cn(uiStateLayerVariants({ appearance }))}>
-      {children}
-    </UIStateLayer>
-  </Toggle.Root>
-))
+>(({ className, appearance, children, ...props }, forwardedRef) => {
+  const isChildIcon = isValidElement(children)
+  if (!isChildIcon) throw Error("Child must be a React Element")
+
+  const clonedChildren = React.cloneElement(children, {
+    // @ts-expect-error Props types
+    className: cn(iconFillVariants({ appearance })),
+  })
+
+  return (
+    <Toggle.Root
+      className={cn(buttonVariants({ appearance }), className)}
+      {...props}
+      ref={forwardedRef}
+    >
+      <UIStateLayer className={cn(uiStateLayerVariants({ appearance }))}>
+        {clonedChildren}
+      </UIStateLayer>
+    </Toggle.Root>
+  )
+})
 ToggledIconButton.displayName = Toggle.Root.displayName
 
 export default ToggledIconButton
