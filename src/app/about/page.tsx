@@ -5,7 +5,7 @@ import Paragraph from "@/components/Paragraph"
 export const metadata = {
   title: "Ashel UI Kit | About",
   description:
-    "About the Material Design V3, why I started this project and goals I want to reach",
+    "О Material Design V3, почему я начал этот проект и каких целей хочу достичь",
 }
 
 const About = () => {
