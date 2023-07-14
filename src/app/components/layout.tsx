@@ -38,6 +38,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         </Title>
         <NavLink href={"/components/cards"} label="Cards" />
         <NavLink href={"/components/dialogs"} label="Dialog" />
+        <NavLink href={"/components/tooltips"} label="Tooltip" />
 
         <Title size="large" className="mt-4 text-xl">
           Navigation
