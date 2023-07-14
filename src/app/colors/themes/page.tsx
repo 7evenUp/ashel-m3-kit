@@ -1,10 +1,16 @@
+"use client"
+
 import Image from "next/image"
+import { Copy } from "iconoir-react"
 
 import Heading from "@/components/Heading"
 import InlineCode from "@/components/InlineCode"
 import Paragraph from "@/components/Paragraph"
+import Code from "@/components/Code"
 
+import { useSnackbar } from "@/shared/ui/Snackbar/useSnackbar"
 import Display from "@/shared/typography/Display"
+import IconButton from "@/shared/ui/IconButton"
 
 import cyanLight from "@/public/colors/themes/cyan/light.png"
 import cyanDark from "@/public/colors/themes/cyan/dark.png"
@@ -17,7 +23,17 @@ import purpleDark from "@/public/colors/themes/purple/dark.png"
 import yellowLight from "@/public/colors/themes/yellow/light.png"
 import yellowDark from "@/public/colors/themes/yellow/dark.png"
 
+import {
+  tailwindExample,
+  cyanTheme,
+  greenTheme,
+  purpleTheme,
+  corralTheme,
+  yellowTheme,
+} from "./codeSamples"
+
 const Themes = () => {
+  const { addSnackbar } = useSnackbar()
   return (
     <div>
       <Display className="mb-4">Themes</Display>
@@ -29,7 +45,22 @@ const Themes = () => {
           в свой <InlineCode>tailwind.config.js</InlineCode> файл.
         </Paragraph>
 
-        <Heading>Cyan (Бирюзовый)</Heading>
+        <Code language="javascript" code={tailwindExample} />
+
+        <div className="flex justify-between items-center max-w-[700px]">
+          <Heading>Cyan (Бирюзовый)</Heading>
+          <IconButton
+            appearance="tonal"
+            icon={<Copy />}
+            onClick={() => {
+              navigator.clipboard.writeText(cyanTheme)
+
+              addSnackbar({
+                supportingText: "Бирюзовая тема скопированна",
+              })
+            }}
+          />
+        </div>
         <div className="max-w-[700px]">
           <Image
             className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
@@ -47,7 +78,20 @@ const Themes = () => {
           />
         </div>
 
-        <Heading>Green (Зелёный)</Heading>
+        <div className="flex justify-between items-center max-w-[700px]">
+          <Heading>Green (Зелёный)</Heading>
+          <IconButton
+            appearance="tonal"
+            icon={<Copy />}
+            onClick={() => {
+              navigator.clipboard.writeText(greenTheme)
+
+              addSnackbar({
+                supportingText: "Зелёная тема скопированна",
+              })
+            }}
+          />
+        </div>
         <div className="max-w-[700px]">
           <Image
             className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
@@ -65,7 +109,20 @@ const Themes = () => {
           />
         </div>
 
-        <Heading>Purple (Фиолетовый)</Heading>
+        <div className="flex justify-between items-center max-w-[700px]">
+          <Heading>Purple (Фиолетовый)</Heading>
+          <IconButton
+            appearance="tonal"
+            icon={<Copy />}
+            onClick={() => {
+              navigator.clipboard.writeText(purpleTheme)
+
+              addSnackbar({
+                supportingText: "Фиолетовая тема скопированна",
+              })
+            }}
+          />
+        </div>
         <div className="max-w-[700px]">
           <Image
             className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
@@ -83,7 +140,20 @@ const Themes = () => {
           />
         </div>
 
-        <Heading>Corral (Коралловый)</Heading>
+        <div className="flex justify-between items-center max-w-[700px]">
+          <Heading>Corral (Коралловый)</Heading>
+          <IconButton
+            appearance="tonal"
+            icon={<Copy />}
+            onClick={() => {
+              navigator.clipboard.writeText(corralTheme)
+
+              addSnackbar({
+                supportingText: "Коралловая тема скопированна",
+              })
+            }}
+          />
+        </div>
         <div className="max-w-[700px]">
           <Image
             className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
@@ -101,7 +171,20 @@ const Themes = () => {
           />
         </div>
 
-        <Heading>Yellow (Жёлтый)</Heading>
+        <div className="flex justify-between items-center max-w-[700px]">
+          <Heading>Yellow (Жёлтый)</Heading>
+          <IconButton
+            appearance="tonal"
+            icon={<Copy />}
+            onClick={() => {
+              navigator.clipboard.writeText(yellowTheme)
+
+              addSnackbar({
+                supportingText: "Жёлтая тема скопированна",
+              })
+            }}
+          />
+        </div>
         <div className="max-w-[700px]">
           <Image
             className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"

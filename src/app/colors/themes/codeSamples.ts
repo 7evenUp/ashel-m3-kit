@@ -512,3 +512,20 @@ export const yellowTheme = `"light": {
   "surfaceDim": "#15130e",
   "surfaceBright": "#3c3933"
 },`
+
+export const tailwindExample = `/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: 'class',
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Вставьте скопированные значения сюда
+      }
+    },
+  },
+  plugins: [],
+}`

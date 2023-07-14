@@ -81,6 +81,20 @@ const Intro = () => {
       </Paragraph>
       <Heading>Загружаем цвета</Heading>
       <Paragraph>
+        Я подготовил для вас{" "}
+        <InternalLink href="/colors/themes">
+          набор готовых цветовых палитр
+        </InternalLink>
+        . Можете выбрать на свой вкус и цвет.
+      </Paragraph>
+
+      <Paragraph>
+        Если не хотите тратить время на поиски идеальной для вас цветовой темы,
+        можете воспользоваться готовыми цветовыми палитрами и пропустить блок с
+        загрузкой цвета.
+      </Paragraph>
+
+      <Paragraph>
         Воспользуемся{" "}
         <InlineLink href="https://goo.gle/material-theme-builder-figma">
           официальным плагином
