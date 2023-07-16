@@ -38,9 +38,9 @@ const ThemeToggle: FC<HTMLAttributes<HTMLButtonElement>> = ({ className }) => {
     >
       <UIStateLayer className="rounded-full flex items-center justify-center bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant">
         {theme === "dark" ? (
-          <SunLight className="group-hover:fill-dark-onSurfaceVariant" />
+          <SunLight className="text-dark-onSurfaceVariant group-hover:fill-dark-onSurfaceVariant" />
         ) : (
-          <HalfMoon className="group-hover:fill-light-onSurfaceVariant" />
+          <HalfMoon className="text-light-onSurfaceVariant group-hover:fill-light-onSurfaceVariant" />
         )}
       </UIStateLayer>
     </button>
