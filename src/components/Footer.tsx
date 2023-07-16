@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="border-t border-light-outline dark:border-dark-outline mt-16 px-10 py-16">
       <div className="flex justify-between">
         <div>
-          <Headline size="large">Ashel UI Kit</Headline>
+          <Headline size="large">Ashel M3 Kit</Headline>
           <Body className="max-w-[350px] my-2">
             Material Design is an adaptable system of guidelines, components,
             and tools that support the best practices of user interface design.

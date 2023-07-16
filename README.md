@@ -1,4 +1,4 @@
-# This is a repo of Ashel UI Kit
+# This is a repo of Ashel M3 Kit
 
 Here I am implementing Material Design V3 components
 

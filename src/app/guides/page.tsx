@@ -10,12 +10,12 @@ const Guides = () => {
 
       <div className="flex flex-col gap-2">
         <Paragraph>
-          В данной секции рассматриваются варианты использования Ashel UI Kit с
+          В данной секции рассматриваются варианты использования Ashel M3 Kit с
           разными технологиями, такими как vite, next js и прочие
         </Paragraph>
 
         <Paragraph>
-          Почитайте пример базовой настройки Ashel UI Kit с использованием{" "}
+          Почитайте пример базовой настройки Ashel M3 Kit с использованием{" "}
           <InternalLink href="guides/vite">vite</InternalLink>
         </Paragraph>
       </div>

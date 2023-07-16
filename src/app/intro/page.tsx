@@ -29,7 +29,7 @@ import {
 import InternalLink from "@/components/InternalLink"
 
 export const metadata = {
-  title: "Ashel UI Kit | About",
+  title: "Ashel M3 Kit | About",
   description:
     "About the Material Design V3, why I started this project and goals I want to reach",
 }
@@ -39,7 +39,7 @@ const Intro = () => {
     <main className="p-10 flex flex-col gap-3">
       <Display>Introduction</Display>
       <Paragraph>
-        Данная страница описывает использование Ashel UI Kit совместно с Next.js
+        Данная страница описывает использование Ashel M3 Kit совместно с Next.js
         13 версии. На данный момент есть аналогичный способ использования -{" "}
         <InternalLink href="/guides/vite">Vite</InternalLink>.
       </Paragraph>

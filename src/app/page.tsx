@@ -24,7 +24,7 @@ import IconButton from "@/shared/ui/IconButton"
 export default function Home() {
   return (
     <main className="flex flex-col gap-2 text-light-onSurface dark:text-dark-onSurface p-6">
-      <Display>Ashel UI Kit</Display>
+      <Display>Ashel M3 Kit</Display>
       <Paragraph>
         Переиспользуемые компоненты, построенные с помощью Radix-ui и
         TailwindCSS, вдохновлённые последней версией дизайн системы от Google -

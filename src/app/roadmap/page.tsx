@@ -4,8 +4,8 @@ import Paragraph from "@/components/Paragraph"
 import InlineLink from "@/components/InlineLink"
 
 export const metadata = {
-  title: "Ashel UI Kit | Roadmap",
-  description: "Roadmap of Ashel UI Kit",
+  title: "Ashel M3 Kit | Roadmap",
+  description: "Roadmap of Ashel M3 Kit",
 }
 
 const About = () => {

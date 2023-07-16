@@ -25,15 +25,15 @@ import {
 } from "./codeSamples"
 
 export const metadata = {
-  title: "Ashel UI Kit | Vite guide",
+  title: "Ashel M3 Kit | Vite guide",
   description:
-    "Руководство о том, как пользоваться Ashel UI Kit совместно с Vite",
+    "Руководство о том, как пользоваться Ashel M3 Kit совместно с Vite",
 }
 
 const Vite = () => {
   return (
     <main className="p-10 flex flex-col gap-3">
-      <Display>Vite + React + Ashel UI Kit</Display>
+      <Display>Vite + React + Ashel M3 Kit</Display>
       <Heading>Почему</Heading>
       <Paragraph>
         Может быть так, что вам не нужен весь богатый функционал Next.js.
@@ -78,7 +78,7 @@ const Vite = () => {
 
       <Heading>Настроим path-alias</Heading>
       <Paragraph>
-        Все файлы Ashel UI Kit используют path-alias (символ @). Это необходимо
+        Все файлы Ashel M3 Kit используют path-alias (символ @). Это необходимо
         для того, чтобы при импорте файла вместо{" "}
         <InlineCode>{"../../src/shared/ui/Button"}</InlineCode> было{" "}
         <InlineCode>{"@/shared/ui/Button"}</InlineCode>.

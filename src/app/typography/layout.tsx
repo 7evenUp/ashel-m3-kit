@@ -4,7 +4,7 @@ import Footer from "@/components/Footer"
 import NavLink from "@/components/NavLink"
 
 export const metadata = {
-  title: "Ashel UI Kit | Typography",
+  title: "Ashel M3 Kit | Typography",
   description:
     "Базовые принципы и реализация компонентов для Material Design V3 используя react.js",
 }

@@ -14,9 +14,9 @@ import FormFilledExample from "@/components/FormFilledExample"
 import FormOutlinedExample from "@/components/FormOutlinedExample"
 
 export const metadata = {
-  title: "Ashel UI Kit | Forms guide",
+  title: "Ashel M3 Kit | Forms guide",
   description:
-    "Руководство о том, как пользоваться Ashel UI Kit для построения HTML форм",
+    "Руководство о том, как пользоваться Ashel M3 Kit для построения HTML форм",
 }
 
 const Forms = () => {
@@ -34,7 +34,7 @@ const Forms = () => {
 
   return (
     <main className="p-10 flex flex-col gap-3">
-      <Display>React Hook Form + Ashel UI Kit</Display>
+      <Display>React Hook Form + Ashel M3 Kit</Display>
       <Paragraph>
         Сегодня разберёмся с вами как строить правильные, удобные,
         типизированные, с валидацией и самое главное - красивые HTML формы.

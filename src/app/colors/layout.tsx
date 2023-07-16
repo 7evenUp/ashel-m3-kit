@@ -4,7 +4,7 @@ import Footer from "@/components/Footer"
 import NavLink from "@/components/NavLink"
 
 export const metadata = {
-  title: "Ashel UI Kit | Colors",
+  title: "Ashel M3 Kit | Colors",
   description: "Основные принципы цвета в Material Design V3",
 }
 

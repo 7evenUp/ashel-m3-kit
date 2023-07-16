@@ -4,8 +4,8 @@ import Footer from "@/components/Footer"
 import NavLink from "@/components/NavLink"
 
 export const metadata = {
-  title: "Ashel UI Kit | Guides",
-  description: "Руководства по грамотному использованию Ashel UI Kit",
+  title: "Ashel M3 Kit | Guides",
+  description: "Руководства по грамотному использованию Ashel M3 Kit",
 }
 
 const Layout = ({ children }: { children: ReactNode }) => {

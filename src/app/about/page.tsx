@@ -3,7 +3,7 @@ import Display from "@/shared/typography/Display"
 import Paragraph from "@/components/Paragraph"
 
 export const metadata = {
-  title: "Ashel UI Kit | About",
+  title: "Ashel M3 Kit | About",
   description:
     "О Material Design V3, почему я начал этот проект и каких целей хочу достичь",
 }
