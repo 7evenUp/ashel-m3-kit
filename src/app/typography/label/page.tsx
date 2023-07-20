@@ -1,3 +1,6 @@
+import fs from "fs"
+import path from "path"
+
 import Display from "@/shared/typography/Display"
 import Body from "@/shared/typography/Body"
 import Label from "@/shared/typography/Label"
@@ -16,9 +19,21 @@ import musicPlayerPic from "@/public/typography/label/music_player.png"
 import navigationBarPic from "@/public/typography/label/navigation_bar.png"
 import quickReadingPic from "@/public/typography/label/quick_reading.png"
 
-import { custom, labelSrc, usage } from "./codeSamples"
+import { custom, usage } from "./codeSamples"
 
 const LabelPage = () => {
+  const labelFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "typography",
+    "Label.tsx"
+  )
+  const labelCode = fs.readFileSync(labelFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Label роль</Display>
@@ -89,7 +104,7 @@ const LabelPage = () => {
           Можно сохранить компонент в файл{" "}
           <InlineCode>src/shared/typography/Label.tsx</InlineCode>:
         </Paragraph>
-        <Code language="tsx" code={labelSrc} />
+        <Code language="tsx" code={labelCode} />
         <Heading>Использование</Heading>
         <Code language="tsx" code={usage} />
         <Heading>Кастомайзинг</Heading>

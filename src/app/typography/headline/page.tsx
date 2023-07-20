@@ -1,3 +1,6 @@
+import fs from "fs"
+import path from "path"
+
 import Display from "@/shared/typography/Display"
 import Headline from "@/shared/typography/Headline"
 import Body from "@/shared/typography/Body"
@@ -16,9 +19,21 @@ import expressiveTypefacePic from "@/public/typography/headline/expressive_typef
 import headlineDialogPic from "@/public/typography/headline/headline_dialog.png"
 import shortTextPic from "@/public/typography/headline/short_text.png"
 
-import { custom, headlineSrc, usage } from "./codeSamples"
+import { custom, usage } from "./codeSamples"
 
 const HeadlinePage = () => {
+  const headlineFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "typography",
+    "Headline.tsx"
+  )
+  const headlineCode = fs.readFileSync(headlineFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Headline роль</Display>
@@ -87,7 +102,7 @@ const HeadlinePage = () => {
           Можно сохранить компонент в файл{" "}
           <InlineCode>src/shared/typography/Headline.tsx</InlineCode>:
         </Paragraph>
-        <Code language="tsx" code={headlineSrc} />
+        <Code language="tsx" code={headlineCode} />
         <Paragraph>
           Всё аналогично компоненту <InlineCode>Display</InlineCode>.
         </Paragraph>

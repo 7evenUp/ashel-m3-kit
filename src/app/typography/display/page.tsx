@@ -1,3 +1,6 @@
+import fs from "fs"
+import path from "path"
+
 import Display from "@/shared/typography/Display"
 import Body from "@/shared/typography/Body"
 
@@ -14,9 +17,21 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 import expressiveTypefacePic from "@/public/typography/display/expressive_typeface.png"
 import eyeCatchingDesignPic from "@/public/typography/display/eye_catching_design.png"
 
-import { custom, displaySrc, usage } from "./codeSamples"
+import { custom, usage } from "./codeSamples"
 
 const DisplayPage = () => {
+  const displayFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "typography",
+    "Display.tsx"
+  )
+  const displayCode = fs.readFileSync(displayFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Display роль</Display>
@@ -75,7 +90,7 @@ const DisplayPage = () => {
           Можно сохранить компонент в файл{" "}
           <InlineCode>src/shared/typography/Display.tsx</InlineCode>:
         </Paragraph>
-        <Code language="tsx" code={displaySrc} />
+        <Code language="tsx" code={displayCode} />
         <Paragraph>
           По умолчанию заголовок среднего размера и наследует цвет от родителя.
           В любом случае можете изменять компонент под себя.

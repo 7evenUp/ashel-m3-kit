@@ -1,3 +1,6 @@
+import fs from "fs"
+import path from "path"
+
 import Display from "@/shared/typography/Display"
 import Title from "@/shared/typography/Title"
 import Body from "@/shared/typography/Body"
@@ -16,9 +19,21 @@ import appBarExamplePic from "@/public/typography/title/app_bar_example.png"
 import categoryHeaderExamplePic from "@/public/typography/title/category_header_example.png"
 import newsExamplePic from "@/public/typography/title/news_example.png"
 
-import { custom, titleSrc, usage } from "./codeSamples"
+import { custom, usage } from "./codeSamples"
 
 const TitlePage = () => {
+  const titleFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "typography",
+    "Title.tsx"
+  )
+  const titleCode = fs.readFileSync(titleFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Title роль</Display>
@@ -91,7 +106,7 @@ const TitlePage = () => {
           Можно сохранить компонент в файл{" "}
           <InlineCode>src/shared/typography/Title.tsx</InlineCode>:
         </Paragraph>
-        <Code language="tsx" code={titleSrc} />
+        <Code language="tsx" code={titleFilePath} />
         <Heading>Использование</Heading>
         <Code language="tsx" code={usage} />
         <Heading>Кастомайзинг</Heading>

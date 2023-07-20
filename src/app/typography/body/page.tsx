@@ -1,3 +1,6 @@
+import fs from "fs"
+import path from "path"
+
 import Display from "@/shared/typography/Display"
 import Body from "@/shared/typography/Body"
 
@@ -15,9 +18,21 @@ import articlePestoPic from "@/public/typography/body/article_pesto.png"
 import readablePassagesPic from "@/public/typography/body/readable_passages.png"
 import setupFlowPic from "@/public/typography/body/setup_flow.png"
 
-import { bodySrc, custom, usage } from "./codeSamples"
+import { custom, usage } from "./codeSamples"
 
 const BodyPage = () => {
+  const bodyFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "typography",
+    "Body.tsx"
+  )
+  const bodyCode = fs.readFileSync(bodyFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+
   return (
     <div>
       <Display className="mb-4">Body роль</Display>
@@ -90,7 +105,7 @@ const BodyPage = () => {
           Можно сохранить компонент в файл{" "}
           <InlineCode>src/shared/typography/Body.tsx</InlineCode>:
         </Paragraph>
-        <Code language="tsx" code={bodySrc} />
+        <Code language="tsx" code={bodyCode} />
         <Heading>Использование</Heading>
         <Code language="tsx" code={usage} />
         <Heading>Кастомайзинг</Heading>
