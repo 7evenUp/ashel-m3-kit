@@ -32,6 +32,7 @@ const Components = () => {
         <InternalLink href="components/checkbox">Checkbox</InternalLink>
         <InternalLink href="components/radio-button">Radio button</InternalLink>
         <InternalLink href="components/switch">Switch</InternalLink>
+        <InternalLink href="components/sliders">Slider</InternalLink>
       </div>
     </div>
   )
