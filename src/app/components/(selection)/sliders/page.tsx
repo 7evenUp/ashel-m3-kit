@@ -3,6 +3,8 @@ import path from "path"
 
 import Display from "@/shared/typography/Display"
 
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
+
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
 
@@ -12,7 +14,7 @@ import InternalLink from "@/components/InternalLink"
 import InlineLink from "@/components/InlineLink"
 import SliderExample from "@/components/SliderExample"
 
-import { usageCode } from "./codeSamples"
+import { usageOneHandleCode, usageTwoHandlesCode } from "./codeSamples"
 
 const SlidersPage = () => {
   const componentFilePath = path.join(
@@ -50,8 +52,8 @@ const SlidersPage = () => {
         <Heading>Компонент</Heading>
         <Paragraph>
           Компонент можно сохранить в{" "}
-          <InlineCode>src/shared/ui/Slider.tsx</InlineCode>. Обратите
-          внимание на необходимые зависимости:{" "}
+          <InlineCode>src/shared/ui/Slider.tsx</InlineCode>. Обратите внимание
+          на необходимые зависимости:{" "}
           <InternalLink href="/typography/label">Label</InternalLink> и{" "}
           <InternalLink href="/components/ui-state-layer">
             UIStateLayer
@@ -68,8 +70,19 @@ const SlidersPage = () => {
         <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>
-        <Paragraph>Ниже - код для примера в начале страницы.</Paragraph>
-        <Code language="tsx" code={usageCode} />
+        <Paragraph>Ниже - код для примеров в начале страницы.</Paragraph>
+        <Tabs defaultValue="oneHandle" className="w-[600px]">
+          <TabsList>
+            <TabsTrigger value="oneHandle">Один ползунок</TabsTrigger>
+            <TabsTrigger value="twoHandles">Два ползунка</TabsTrigger>
+          </TabsList>
+          <TabsContent value="oneHandle" className="p-0">
+            <Code language="tsx" code={usageOneHandleCode} />
+          </TabsContent>
+          <TabsContent value="twoHandles" className="p-0">
+            <Code language="tsx" code={usageTwoHandlesCode} />
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   )

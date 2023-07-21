@@ -1,22 +1,45 @@
-export const usageCode = `import { Slider } from "@/shared/ui/Slider"
+export const usageOneHandleCode = `import { Slider } from "@/shared/ui/Slider"
 ...
 const [oneHandle, setOneHandle] = useState([30])
-const [twoHandles, setTwoHandles] = useState([10, 50])
+const [withMarks, setWithMarks] = useState([40])
 ...
 return (
-  <div className="flex flex-col gap-3">
-    <h3>С одним ползунком</h3>
-    <div className="flex items-center justify-between w-[300px]">
-      <span>С label</span>
-      <Slider value={oneHandle} onValueChange={setOneHandle} />
-    </div>
+  <span>С меткой</span>
+  <Slider value={oneHandle} onValueChange={setOneHandle} />
 
-    <div className="flex items-center justify-between w-[300px]">
-      <span>Без label</span>
-      <Slider defaultValue={[60]} showLabel={false} />
-    </div>
+  <span>Без метки</span>
+  <Slider defaultValue={[60]} showLabel={false} />
 
-    <h3>С двумя ползунками</h3>
-    <Slider value={twoHandles} onValueChange={setTwoHandles} />
-  </div>
+  <span>С делениями</span>
+  <Slider
+    value={withMarks}
+    onValueChange={setWithMarks}
+    withMarks={true}
+    step={2}
+    min={14}
+    max={30}
+  />
+)`
+
+export const usageTwoHandlesCode = `import { Slider } from "@/shared/ui/Slider"
+...
+const [twoHandles, setTwoHandles] = useState([10, 50])
+const [twoWithMarks, setTwoWithMarks] = useState([18, 28])
+...
+return (
+  <span>С метками</span>
+  <Slider value={twoHandles} onValueChange={setTwoHandles} />
+
+  <span>Без меток</span>
+  <Slider defaultValue={[55, 95]} showLabel={false} />
+
+  <span>С делениями</span>
+  <Slider
+    value={twoWithMarks}
+    onValueChange={setTwoWithMarks}
+    withMarks={true}
+    step={2}
+    min={14}
+    max={30}
+  />
 )`

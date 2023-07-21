@@ -54,15 +54,41 @@ export const Slider = React.forwardRef<
   SliderProps
 >(
   (
-    { showLabel = true, withMarks = false, className, ...props },
+    {
+      showLabel = true,
+      withMarks = false,
+      min = 0,
+      max = 100,
+      step = 1,
+      className,
+      ...props
+    },
     forwardedRef
   ) => {
     const value = props.value || props.defaultValue
+
+    let totalMarks = 0
+    let activeMarkIndex = 0
+    let activeMarkRange = {
+      start: 0,
+      end: 0,
+    }
 
     if (value === undefined)
       throw new Error(
         'You must provide a "value" or "defaultValue" prop for Slider component'
       )
+
+    if (withMarks) {
+      totalMarks = (max - min) / step + 1
+      if (value.length === 1) {
+        activeMarkIndex = (value[0] - min) / step
+      } else if (value.length === 2) {
+        const [start, end] = value
+        activeMarkRange.start = (start - min) / step
+        activeMarkRange.end = (end - min) / step
+      }
+    }
 
     return (
       <SliderPrimitive.Root
@@ -70,11 +96,33 @@ export const Slider = React.forwardRef<
           "hover:cursor-pointer relative flex items-center select-none touch-none w-[200px] h-5",
           className
         )}
+        min={min}
+        max={max}
+        step={step}
         {...props}
         ref={forwardedRef}
       >
         <SliderPrimitive.Track className="bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest relative grow rounded-full h-1">
           <SliderPrimitive.Range className="absolute bg-light-primary dark:bg-dark-primary rounded-full h-full" />
+          {withMarks && (
+            <div className="absolute left-0 top-0 w-full flex items-center justify-between">
+              {new Array(totalMarks).fill(null).map((_, i) => (
+                <span
+                  key={i}
+                  className={cn(
+                    "w-1 h-1 bg-opacity-[0.38] dark:bg-opacity-[0.38] rounded-full cursor-pointer",
+                    value.length === 1
+                      ? i <= activeMarkIndex
+                        ? "bg-light-onPrimary dark:bg-dark-onPrimary"
+                        : "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant"
+                      : i >= activeMarkRange.start && i <= activeMarkRange.end
+                      ? "bg-light-onPrimary dark:bg-dark-onPrimary"
+                      : "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant"
+                  )}
+                />
+              ))}
+            </div>
+          )}
         </SliderPrimitive.Track>
         {value.map((value, i) => (
           <SliderThumb key={i} value={value} showLabel={showLabel} />
