@@ -11,6 +11,7 @@ import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
+import InstallPackage from "@/components/InstallPackage"
 import SegmentedButtonsWithState from "@/components/SegmentedButtonsWithState"
 
 import { SegmentedButton, SegmentedRoot } from "@/shared/ui/SegmentedButton"
@@ -102,7 +103,7 @@ const SegmentedButtonsPage = () => {
             @radix-ui/react-toggle-group
           </InlineLink>
         </Paragraph>
-        <Code language="bash" code="yarn add @radix-ui/react-toggle-group" />
+        <InstallPackage packageName="@radix-ui/react-toggle-group" />
         <Paragraph>
           Можно сохранить компонент в файл{" "}
           <InlineCode>src/shared/ui/SegmentedButton.tsx</InlineCode>:

@@ -9,6 +9,8 @@ import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import ImageWithText from "@/components/ImageWithText"
+import InternalLink from "@/components/InternalLink"
+import InstallPackage from "@/components/InstallPackage"
 
 import figmaPic from "@/public/intro/figma.gif"
 import jsonPic from "@/public/intro/json.png"
@@ -26,7 +28,6 @@ import {
   talwindConfigExample,
   themeToggleSrc,
 } from "./codeSamples"
-import InternalLink from "@/components/InternalLink"
 
 export const metadata = {
   title: "Ashel M3 Kit | About",
@@ -65,11 +66,10 @@ const Intro = () => {
         </InlineLink>
         , typescript и используем папку src.
       </Paragraph>
+
       <Paragraph>Установим дополнительные зависимости:</Paragraph>
-      <Code
-        language="bash"
-        code="yarn add class-variance-authority clsx tailwind-merge"
-      />
+      <InstallPackage packageName="class-variance-authority clsx tailwind-merge" />
+
       <Paragraph>
         Создадим helper функцию <InlineCode>cn</InlineCode> для работы с css
         классами в файл <InlineCode>src/utils/classNames.ts</InlineCode>:
@@ -153,7 +153,9 @@ const Intro = () => {
         </InlineLink>
         .
       </Paragraph>
-      <Code language="bash" code="yarn add next-themes" />
+
+      <InstallPackage packageName="next-themes" />
+
       <Paragraph>
         Для доступа приложения к цветовой теме, его необходимо обернуть в{" "}
         <InlineCode>ThemeProvider</InlineCode>. Учитывая, что этому компоненту

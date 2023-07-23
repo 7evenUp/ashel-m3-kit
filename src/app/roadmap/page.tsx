@@ -27,6 +27,10 @@ const About = () => {
 
       <div className="flex flex-col gap-3 mt-10">
         <div className="flex items-center gap-4">
+          <Checkbox defaultChecked />
+          <Label size="large">Add <b>npm</b> and <b>pnpm</b> variants for adding packages</Label>
+        </div>
+        <div className="flex items-center gap-4">
           <Checkbox />
           <Label size="large">Templates (Парочка готовых UI шаблонов)</Label>
         </div>
@@ -37,10 +41,6 @@ const About = () => {
         <div className="flex items-center gap-4">
           <Checkbox />
           <Label size="large">Tailwind config page</Label>
-        </div>
-        <div className="flex items-center gap-4">
-          <Checkbox />
-          <Label size="large">Add <b>npm</b> and <b>pnpm</b> variants for adding packages</Label>
         </div>
         <div className="flex items-center gap-4">
           <Checkbox />

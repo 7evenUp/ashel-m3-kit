@@ -8,6 +8,7 @@ import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
+import InstallPackage from "@/components/InstallPackage"
 
 import Display from "@/shared/typography/Display"
 import Button from "@/shared/ui/Button"
@@ -85,7 +86,7 @@ const DialogPage = () => {
           </InlineLink>{" "}
           компонент.
         </Paragraph>
-        <Code language="bash" code={"yarn add @radix-ui/react-dialog"} />
+        <InstallPackage packageName="@radix-ui/react-dialog" />
         <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>

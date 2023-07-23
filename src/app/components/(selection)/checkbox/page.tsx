@@ -9,8 +9,9 @@ import Paragraph from "@/components/Paragraph"
 
 import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
-import InternalLink from "@/components/InternalLink"
 import InlineLink from "@/components/InlineLink"
+import InternalLink from "@/components/InternalLink"
+import InstallPackage from "@/components/InstallPackage"
 
 import { usageCode } from "./codeSamples"
 
@@ -76,7 +77,8 @@ const CheckboxPage = () => {
           </InlineLink>{" "}
           компонент.
         </Paragraph>
-        <Code language="bash" code={"yarn add @radix-ui/react-checkbox"} />
+        
+        <InstallPackage packageName="@radix-ui/react-checkbox" />
         <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>

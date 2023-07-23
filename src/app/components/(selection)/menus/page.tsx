@@ -6,14 +6,15 @@ import Display from "@/shared/typography/Display"
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
 
+import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
+import InstallPackage from "@/components/InstallPackage"
 import {
   MenuExampleWithButton,
   MenuExampleWithIconButton,
 } from "@/components/MenuExamples"
-import Code from "@/components/Code"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
@@ -76,8 +77,8 @@ const MenusPage = () => {
         <Heading>Компонент</Heading>
         <Paragraph>
           Компонент можно сохранить в{" "}
-          <InlineCode>src/shared/ui/Menu.tsx</InlineCode>. Обратите внимание
-          на необходимые зависимости:{" "}
+          <InlineCode>src/shared/ui/Menu.tsx</InlineCode>. Обратите внимание на
+          необходимые зависимости:{" "}
           <InternalLink href="/typography/label">Label</InternalLink>.
         </Paragraph>
         <Paragraph>
@@ -87,7 +88,8 @@ const MenusPage = () => {
           </InlineLink>{" "}
           компонент.
         </Paragraph>
-        <Code language="bash" code={"yarn add @radix-ui/react-dropdown-menu"} />
+
+        <InstallPackage packageName="@radix-ui/react-dropdown-menu" />
         <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>

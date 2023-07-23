@@ -6,10 +6,11 @@ import Display from "@/shared/typography/Display"
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
 
+import Code from "@/components/Code"
 import InlineLink from "@/components/InlineLink"
 import InlineCode from "@/components/InlineCode"
 import InternalLink from "@/components/InternalLink"
-import Code from "@/components/Code"
+import InstallPackage from "@/components/InstallPackage"
 import SnackbarExamples from "@/components/SnackbarExamples"
 
 import { usageHook, usageProviders, usageRoot } from "./codeSamples"
@@ -91,7 +92,7 @@ const SnackbarPage = () => {
           </InlineLink>
         </Paragraph>
 
-        <Code language="bash" code="yarn add @radix-ui/react-toast" />
+        <InstallPackage packageName="@radix-ui/react-toast" />
 
         <Paragraph>
           Первый файл - стилизованные radix-ui компоненты. Сохраним в файл{" "}

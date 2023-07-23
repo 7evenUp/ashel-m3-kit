@@ -10,9 +10,10 @@ import Paragraph from "@/components/Paragraph"
 
 import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
-import InternalLink from "@/components/InternalLink"
 import InlineLink from "@/components/InlineLink"
+import InternalLink from "@/components/InternalLink"
 import SliderExample from "@/components/SliderExample"
+import InstallPackage from "@/components/InstallPackage"
 
 import { usageOneHandleCode, usageTwoHandlesCode } from "./codeSamples"
 
@@ -66,7 +67,8 @@ const SlidersPage = () => {
           </InlineLink>{" "}
           компонент.
         </Paragraph>
-        <Code language="bash" code={"yarn add @radix-ui/react-slider"} />
+
+        <InstallPackage packageName="@radix-ui/react-slider" />
         <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>

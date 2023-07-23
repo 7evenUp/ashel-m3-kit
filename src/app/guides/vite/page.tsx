@@ -9,6 +9,7 @@ import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
+import InstallPackage from "@/components/InstallPackage"
 
 import ExampleAppGif from "@/public/guides/vite/ExampleAppGif.gif"
 
@@ -51,11 +52,10 @@ const Vite = () => {
         </InlineLink>
         .
       </Paragraph>
+
       <Paragraph>Установим дополнительные зависимости:</Paragraph>
-      <Code
-        language="bash"
-        code="yarn add class-variance-authority clsx tailwind-merge"
-      />
+      <InstallPackage packageName="class-variance-authority clsx tailwind-merge" />
+
       <Paragraph>
         Создадим helper функцию <InlineCode>cn</InlineCode> для работы с css
         классами в файл <InlineCode>src/utils/classNames.ts</InlineCode>:
@@ -88,7 +88,9 @@ const Vite = () => {
         Учтите, что вам придётся переписывать импорты во всех файлах, которые вы
         скопируете.
       </Paragraph>
-      <Code language="bash" code="yarn add -D @types/node" />
+
+      <InstallPackage packageName="-D @types/node" />
+      
       <Paragraph>
         Изменим <InlineCode>vite.config.ts</InlineCode>:
       </Paragraph>

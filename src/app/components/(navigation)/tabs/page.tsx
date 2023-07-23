@@ -11,6 +11,7 @@ import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
+import InstallPackage from "@/components/InstallPackage"
 
 import { usageCode } from "./codeSamples"
 
@@ -76,7 +77,8 @@ const TabsPage = () => {
           </InlineLink>{" "}
           компонент.
         </Paragraph>
-        <Code language="bash" code={"yarn add @radix-ui/react-tabs"} />
+
+        <InstallPackage packageName="@radix-ui/react-tabs" />
         <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>

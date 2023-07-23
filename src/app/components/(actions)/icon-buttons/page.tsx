@@ -13,6 +13,7 @@ import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
+import InstallPackage from "@/components/InstallPackage"
 
 import Card from "@/shared/ui/Card"
 import IconButton from "@/shared/ui/IconButton"
@@ -52,7 +53,16 @@ const IconButtonsPage = () => {
 
       <div className="flex flex-col gap-2">
         <Heading>Описание</Heading>
-        <Paragraph>Используется тогда то тогда то</Paragraph>
+        <Paragraph>
+          Icon Buttons помогают людям выполнять незначительные действия одним
+          нажатием
+        </Paragraph>
+        <Paragraph>
+          Подробнее об использовании элемента читайте на{" "}
+          <InlineLink href="https://m3.material.io/components/icon-buttons/overview">
+            официальном сайте
+          </InlineLink>
+        </Paragraph>
 
         <Heading>Примеры</Heading>
 
@@ -186,7 +196,7 @@ const IconButtonsPage = () => {
           </InlineLink>
         </Paragraph>
 
-        <Code language="bash" code="yarn add @radix-ui/react-toggle" />
+        <InstallPackage packageName="@radix-ui/react-toggle" />
 
         <Paragraph>
           После чего можете смело копировать второй компонент

@@ -2,12 +2,13 @@ import fs from "fs"
 import path from "path"
 import { AddUser, Copy } from "iconoir-react"
 
+import Code from "@/components/Code"
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
-import Code from "@/components/Code"
 import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
+import InstallPackage from "@/components/InstallPackage"
 
 import Display from "@/shared/typography/Display"
 
@@ -112,7 +113,8 @@ const TooltipPage = () => {
           </InlineLink>{" "}
           компонент.
         </Paragraph>
-        <Code language="bash" code={"yarn add @radix-ui/react-tooltip"} />
+
+        <InstallPackage packageName="@radix-ui/react-tooltip" />
 
         <Tabs defaultValue="plain" className="w-[600px]">
           <TabsList>
