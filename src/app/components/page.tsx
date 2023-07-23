@@ -13,12 +13,11 @@ const Components = () => {
       <div className="flex flex-col gap-2">
         <Paragraph>
           Компоненты - это интерактивные строительные блоки для создания
-          пользовательского интерфейса. Их можно разделить на пять категорий в
+          пользовательского интерфейса. Их можно разделить на шесть категорий в
           зависимости от их назначения: action, containment, navigation,
-          selection и text input.
+          communication selection и text input.
         </Paragraph>
-        <Heading>Задокументированные компоненты</Heading>
-        <Paragraph>Текущий список задокументированных компонентов:</Paragraph>
+        <Heading>Actions</Heading>
         <InternalLink href="components/common-buttons">
           Common buttons
         </InternalLink>
@@ -26,13 +25,33 @@ const Components = () => {
         <InternalLink href="components/segmented-buttons">
           Segmented buttons
         </InternalLink>
+
+        <Heading>Communication</Heading>
+        <InternalLink href="components/badges">Badges</InternalLink>
+        <InternalLink href="components/snackbar">Snackbar</InternalLink>
+
+        <Heading>Containment</Heading>
         <InternalLink href="components/cards">Cards</InternalLink>
-        <InternalLink href="components/dialogs">Dialog</InternalLink>
+        <InternalLink href="components/dialogs">Dialogs</InternalLink>
+        <InternalLink href="components/tooltips">Tooltips</InternalLink>
+
+        <Heading>Navigation</Heading>
         <InternalLink href="components/tabs">Tabs</InternalLink>
+
+        <Heading>Selection</Heading>
         <InternalLink href="components/checkbox">Checkbox</InternalLink>
+        <InternalLink href="components/menus">Menus</InternalLink>
         <InternalLink href="components/radio-button">Radio button</InternalLink>
+        <InternalLink href="components/sliders">Sliders</InternalLink>
         <InternalLink href="components/switch">Switch</InternalLink>
-        <InternalLink href="components/sliders">Slider</InternalLink>
+
+        <Heading>Text inputs</Heading>
+        <InternalLink href="components/filled-text-field">
+          Filled Text Fields
+        </InternalLink>
+        <InternalLink href="components/outlined-text-field">
+          Outlined Text Fields
+        </InternalLink>
       </div>
     </div>
   )
