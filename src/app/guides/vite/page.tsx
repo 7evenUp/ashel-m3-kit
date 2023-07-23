@@ -15,7 +15,6 @@ import ExampleAppGif from "@/public/guides/vite/ExampleAppGif.gif"
 
 import {
   appExample,
-  bashCode,
   btnSrc,
   classNamesSrc,
   labelSrc,
@@ -43,7 +42,15 @@ const Vite = () => {
         Vite.
       </Paragraph>
       <Heading>Установка</Heading>
-      <Code language="bash" code={bashCode} />
+
+      <Paragraph>Создадим основу будущего приложения</Paragraph>
+
+      <InstallPackage
+        npmUnique="npm create vite@latest m3-react-app -- --template react-ts"
+        yarnUnique="yarn create vite m3-react-app --template react-ts"
+        pnpmUnique="pnpm create vite m3-react-app --template react-ts"
+      />
+
       <Paragraph>Далее установим TailwindCSS.</Paragraph>
       <Paragraph>
         Подробное описание установки можно посмотреть на{" "}
@@ -90,7 +97,7 @@ const Vite = () => {
       </Paragraph>
 
       <InstallPackage packageName="-D @types/node" />
-      
+
       <Paragraph>
         Изменим <InlineCode>vite.config.ts</InlineCode>:
       </Paragraph>
@@ -111,9 +118,8 @@ const Vite = () => {
       <Paragraph>У неё есть два компонента-зависимости.</Paragraph>
       <Paragraph>
         Label сохраните в{" "}
-        <InlineCode>src/shared/typography/Label.tsx</InlineCode>, а
-        UIStateLayer в{" "}
-        <InlineCode>src/shared/ui/UIStateLayer.tsx</InlineCode>.
+        <InlineCode>src/shared/typography/Label.tsx</InlineCode>, а UIStateLayer
+        в <InlineCode>src/shared/ui/UIStateLayer.tsx</InlineCode>.
       </Paragraph>
       <Code language="tsx" code={labelSrc} />
       <Code language="tsx" code={uiStateLayerSrc} />

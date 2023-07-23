@@ -12,6 +12,7 @@ import ImageWithText from "@/components/ImageWithText"
 import InternalLink from "@/components/InternalLink"
 import InstallPackage from "@/components/InstallPackage"
 
+import installNextAppPic from "@/public/intro/create-next-app.png"
 import figmaPic from "@/public/intro/figma.gif"
 import jsonPic from "@/public/intro/json.png"
 import afterCopyingPic from "@/public/intro/after-copy.png"
@@ -46,25 +47,34 @@ const Intro = () => {
       </Paragraph>
       <Heading>Установка</Heading>
       <Paragraph>
-        Давайте разберёмся со всеми зависимостями, которые нам предстоит
-        установить для разработки будущих приложений.
+        Создадим базовое{" "}
+        <InlineLink href="https://nextjs.org/docs/getting-started/installation">
+          Next JS
+        </InlineLink>{" "}
+        приложение .
       </Paragraph>
-      <Paragraph>
-        Любой наш проект будет начинаться с установки{" "}
-        <InlineLink href="https://nextjs.org/">Next JS</InlineLink> .
-      </Paragraph>
-      <Code
-        language="bash"
-        code="yarn create next-app --experimental-app --tailwind --ts --src-dir"
+
+      <InstallPackage
+        npmUnique="npx create-next-app@latest"
+        yarnUnique="yarn create next-app"
+        pnpmUnique="pnpm dlx create-next-app@latest"
       />
+
       <Paragraph>
-        Используя флаги <InlineCode>--tailwind</InlineCode>,{" "}
-        <InlineCode>--ts</InlineCode>, <InlineCode>--src-dir</InlineCode>, мы по
-        умолчанию устанавливаем{" "}
-        <InlineLink href="https://tailwindcss.com/docs/guides/nextjs">
-          Tailwind CSS
-        </InlineLink>
-        , typescript и используем папку src.
+        При установке придётся пройти через череду ответов на вопросы. Можете
+        посмотреть ниже процесс установки.
+      </Paragraph>
+
+      <Image
+        className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+        alt="Create next app"
+        src={installNextAppPic}
+        width={600}
+        quality={100}
+      />
+
+      <Paragraph>
+        Рекомендую по умолчанию выбрать Typescript, Tailwind CSS, папку <b>src/</b> и настроить path alias со значением <b>{"@/*"}</b>. На счёт остальный функций - действуйте по своему усмотрению.
       </Paragraph>
 
       <Paragraph>Установим дополнительные зависимости:</Paragraph>

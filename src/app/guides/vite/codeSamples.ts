@@ -1,7 +1,3 @@
-export const bashCode = `yarn create vite название_вашего_приложения --template react-ts
-cd название_вашего_приложения
-yarn`
-
 export const classNamesSrc = `import { ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 

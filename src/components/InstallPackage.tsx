@@ -13,7 +13,19 @@ import { cn } from "@/lib/cn"
 
 type PackageManagers = "npm" | "yarn" | "pnpm"
 
-const InstallPackage = ({ packageName }: { packageName: string }) => {
+interface InstallPackageProps {
+  packageName?: string
+  npmUnique?: string
+  yarnUnique?: string
+  pnpmUnique?: string
+}
+
+const InstallPackage = ({
+  packageName,
+  npmUnique,
+  pnpmUnique,
+  yarnUnique,
+}: InstallPackageProps) => {
   const [manager, setManager] = useState<PackageManagers>("yarn")
 
   return (
@@ -47,19 +59,25 @@ const InstallPackage = ({ packageName }: { packageName: string }) => {
         className="px-2 py-1 bg-light-inverseSurface dark:bg-dark-surfaceVariant w-[600px] border border-light-outline"
         value="npm"
       >
-        <BashString code={`npm install ${packageName}`} />
+        <BashString
+          code={npmUnique ? npmUnique : `npm install ${packageName}`}
+        />
       </Tabs.Content>
       <Tabs.Content
         className="px-2 py-1 bg-light-inverseSurface dark:bg-dark-surfaceVariant w-[600px] border border-light-outline"
         value="yarn"
       >
-        <BashString code={`yarn add ${packageName}`} />
+        <BashString
+          code={yarnUnique ? yarnUnique : `yarn add ${packageName}`}
+        />
       </Tabs.Content>
       <Tabs.Content
         className="px-2 py-1 bg-light-inverseSurface dark:bg-dark-surfaceVariant w-[600px] border border-light-outline"
         value="pnpm"
       >
-        <BashString code={`pnpm add ${packageName}`} />
+        <BashString
+          code={pnpmUnique ? pnpmUnique : `pnpm add ${packageName}`}
+        />
       </Tabs.Content>
     </Tabs.Root>
   )
