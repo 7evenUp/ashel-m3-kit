@@ -74,7 +74,9 @@ const Intro = () => {
       />
 
       <Paragraph>
-        Рекомендую по умолчанию выбрать Typescript, Tailwind CSS, папку <b>src/</b> и настроить path alias со значением <b>{"@/*"}</b>. На счёт остальный функций - действуйте по своему усмотрению.
+        Рекомендую по умолчанию выбрать Typescript, Tailwind CSS, папку{" "}
+        <b>src/</b> и настроить path alias со значением <b>{"@/*"}</b>. На счёт
+        остальный функций - действуйте по своему усмотрению.
       </Paragraph>
 
       <Paragraph>Установим дополнительные зависимости:</Paragraph>
@@ -82,7 +84,7 @@ const Intro = () => {
 
       <Paragraph>
         Создадим helper функцию <InlineCode>cn</InlineCode> для работы с css
-        классами в файл <InlineCode>src/utils/classNames.ts</InlineCode>:
+        классами в файл <InlineCode>src/lib/cn.ts</InlineCode>:
       </Paragraph>
       <Code code={classNamesSrc} language="typescript" />
       <Paragraph>
@@ -90,6 +92,13 @@ const Intro = () => {
         помогать нам условно добавлять tailwind классы к элементам.
       </Paragraph>
       <Heading>Загружаем цвета</Heading>
+
+      <Paragraph>
+        Если не хотите тратить время на поиски идеальной для вас цветовой темы,
+        можете воспользоваться готовыми цветовыми палитрами и пропустить блок с
+        загрузкой цвета.
+      </Paragraph>
+
       <Paragraph>
         Я подготовил для вас{" "}
         <InternalLink href="/colors/themes">
@@ -99,21 +108,25 @@ const Intro = () => {
       </Paragraph>
 
       <Paragraph>
-        Если не хотите тратить время на поиски идеальной для вас цветовой темы,
-        можете воспользоваться готовыми цветовыми палитрами и пропустить блок с
-        загрузкой цвета.
+        Если же выбор цветовой темы приложения важен для вас, придётся выполнить
+        череду действий.
       </Paragraph>
 
       <Paragraph>
-        Воспользуемся{" "}
+        Сперва воспользуемся{" "}
         <InlineLink href="https://goo.gle/material-theme-builder-figma">
-          официальным плагином
+          официальным плагином для figma
         </InlineLink>{" "}
-        от M3. На этапе экспорта цветов в JSON, можете поиграться с цветами,
-        которые хотите использовать для своего сайта. (Советую изменять только{" "}
+        от команды Material Design.
+      </Paragraph>
+
+      <Paragraph>
+        На этапе экспорта цветов в JSON, можете поиграться с цветами, которые
+        хотите использовать для своего сайта. (Советую изменять только{" "}
         <InlineCode>Primary</InlineCode> цвет, остальное подстроится
         автоматически)
       </Paragraph>
+
       <Image
         className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
         alt="Figma proccess"
@@ -133,8 +146,8 @@ const Intro = () => {
         width={300}
       />
       <Paragraph>
-        После чего нужно расширить диапазон цветов темы проекта. Вставьте данные
-        значения в ваш <InlineCode>tailwind.config.js</InlineCode> в раздел{" "}
+        Далее добавим скопированные значения в наш{" "}
+        <InlineCode>tailwind.config.js</InlineCode> в раздел{" "}
         <InlineCode>{`theme: { extend: {colors: {...}}}`}</InlineCode>.
       </Paragraph>
       <ImageWithText alt="After copying" width={600} src={afterCopyingPic}>

@@ -8,9 +8,9 @@ import Providers from "@/components/Providers"
 import "@/styles/globals.css"
 
 export const metadata = {
-  title: "Ashel | UI kit",
+  title: "Ashel | M3 kit",
   description:
-    "Реализация дизайн системы от Google Material Design V3 от Ashel",
+    "Реализация дизайн системы Material Design 3 версии от Ashel",
 }
 
 const roboto = Roboto({ weight: ["400", "500"], subsets: ["latin"] })
