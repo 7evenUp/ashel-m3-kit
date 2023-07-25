@@ -1,9 +1,12 @@
 import Display from "@/shared/typography/Display"
+import Label from "@/shared/typography/Label"
 
 import Paragraph from "@/components/Paragraph"
 import InlineLink from "@/components/InlineLink"
+
 import { Checkbox } from "@/shared/ui/Checkbox"
-import Label from "@/shared/typography/Label"
+
+import { cn } from "@/lib/cn"
 
 export const metadata = {
   title: "Ashel M3 Kit | Roadmap",
@@ -26,37 +29,38 @@ const About = () => {
       </Paragraph>
 
       <div className="flex flex-col gap-3 mt-10">
-        <div className="flex items-center gap-4">
-          <Checkbox defaultChecked />
-          <Label size="large">Add <b>npm</b> and <b>pnpm</b> variants for adding packages</Label>
-        </div>
-        <div className="flex items-center gap-4">
-          <Checkbox />
-          <Label size="large">Templates (Парочка готовых UI шаблонов)</Label>
-        </div>
-        <div className="flex items-center gap-4">
-          <Checkbox />
-          <Label size="large">CSS transitions according to M3</Label>
-        </div>
-        <div className="flex items-center gap-4">
-          <Checkbox />
-          <Label size="large">Tailwind config page</Label>
-        </div>
-        <div className="flex items-center gap-4">
-          <Checkbox />
-          <Label size="large">Improve Guides section for <b>Forms</b></Label>
-        </div>
-        <div className="flex items-center gap-4">
-          <Checkbox />
-          <Label size="large">Continue implementing M3 components</Label>
-        </div>
-        <div className="flex items-center gap-4">
-          <Checkbox />
-          <Label size="large">Add English translations</Label>
-        </div>
+        <RoadmapItem checked>
+          Add <b>npm</b> and <b>pnpm</b> variants for adding packages
+        </RoadmapItem>
+        <RoadmapItem checked>Fix Title docs</RoadmapItem>
+        <RoadmapItem>Templates (Парочка готовых UI шаблонов)</RoadmapItem>
+        <RoadmapItem>CSS transitions according to M3</RoadmapItem>
+        <RoadmapItem>Tailwind config page</RoadmapItem>
+        <RoadmapItem>
+          Improve Guides section for <b>Forms</b>
+        </RoadmapItem>
+        <RoadmapItem>Continue implementing M3 components</RoadmapItem>
+        <RoadmapItem>Add English translations</RoadmapItem>
+        <RoadmapItem>Fix width of SegmentedButton. Add icons</RoadmapItem>
+        <RoadmapItem>Implement Chip Component</RoadmapItem>
       </div>
     </main>
   )
 }
+
+const RoadmapItem = ({
+  children,
+  checked = false,
+}: {
+  children: React.ReactNode
+  checked?: boolean
+}) => (
+  <div className="flex items-center gap-4">
+    <Checkbox defaultChecked={checked} />
+    <Label size="large" className={cn(checked && "line-through")}>
+      {children}
+    </Label>
+  </div>
+)
 
 export default About
