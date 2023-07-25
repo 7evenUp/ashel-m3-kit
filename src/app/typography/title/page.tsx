@@ -106,10 +106,12 @@ const TitlePage = () => {
           Можно сохранить компонент в файл{" "}
           <InlineCode>src/shared/typography/Title.tsx</InlineCode>:
         </Paragraph>
-        <Code language="tsx" code={titleFilePath} />
+        <Code language="tsx" code={titleCode} />
+
         <Heading>Использование</Heading>
         <Code language="tsx" code={usage} />
-        <Heading>Кастомайзинг</Heading>
+
+        <Heading>Кастомизация</Heading>
         <Paragraph>Ниже пример текста с низким значением line-height</Paragraph>
         <Tabs className="w-[600px]" defaultValue="preview">
           <TabsList>

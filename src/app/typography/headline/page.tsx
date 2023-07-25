@@ -108,7 +108,7 @@ const HeadlinePage = () => {
         </Paragraph>
         <Heading>Использование</Heading>
         <Code language="tsx" code={usage} />
-        <Heading>Кастомайзинг</Heading>
+        <Heading>Кастомизация</Heading>
         <Paragraph>
           Кастомизируется так же, как и <InlineCode>Display</InlineCode>. Ниже
           пример розового текста с увеличенным letter-spacing.

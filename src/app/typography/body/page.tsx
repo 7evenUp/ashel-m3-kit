@@ -108,7 +108,7 @@ const BodyPage = () => {
         <Code language="tsx" code={bodyCode} />
         <Heading>Использование</Heading>
         <Code language="tsx" code={usage} />
-        <Heading>Кастомайзинг</Heading>
+        <Heading>Кастомизация</Heading>
         <Paragraph>
           Не зацикливайтесь на фиксированных размерах компонентов. Можете
           изменять размер шрифта и прочие базовые css стили под себя. Ниже

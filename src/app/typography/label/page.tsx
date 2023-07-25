@@ -107,7 +107,7 @@ const LabelPage = () => {
         <Code language="tsx" code={labelCode} />
         <Heading>Использование</Heading>
         <Code language="tsx" code={usage} />
-        <Heading>Кастомайзинг</Heading>
+        <Heading>Кастомизация</Heading>
         <Paragraph>
           Подходя к Label у меня закончились идеи по кастомизации, поэтому
           ловите набор разноцветных слов.

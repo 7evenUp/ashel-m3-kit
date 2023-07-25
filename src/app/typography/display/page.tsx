@@ -97,7 +97,7 @@ const DisplayPage = () => {
         </Paragraph>
         <Heading>Использование</Heading>
         <Code language="tsx" code={usage} />
-        <Heading>Кастомайзинг</Heading>
+        <Heading>Кастомизация</Heading>
         <Paragraph>
           Наверняка придётся менять стили, цвет, накладывать hover эффекты. В
           этом случае просто используйте <InlineCode>className</InlineCode>.
