@@ -41,7 +41,7 @@ const About = () => {
         </RoadmapItem>
         <RoadmapItem>Continue implementing M3 components</RoadmapItem>
         <RoadmapItem>Add English translations</RoadmapItem>
-        <RoadmapItem>Fix width of SegmentedButton. Add icons</RoadmapItem>
+        <RoadmapItem checked>Fix width of SegmentedButton. Add icons</RoadmapItem>
         <RoadmapItem>Implement Chip Component</RoadmapItem>
       </div>
     </main>

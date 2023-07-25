@@ -17,7 +17,13 @@ import SegmentedButtonsWithState from "@/components/SegmentedButtonsWithState"
 import { SegmentedButton, SegmentedRoot } from "@/shared/ui/SegmentedButton"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/Tabs"
 
-import { usageCodeMultiple, usageCodeSingle } from "./codeSamples"
+import {
+  usageCodeMultiple,
+  usageCodeSingle,
+  usageDensity,
+  usageIcons,
+} from "./codeSamples"
+import { List, ViewGrid } from "iconoir-react"
 
 const SegmentedButtonsPage = () => {
   const componentFilePath = path.join(
@@ -86,6 +92,72 @@ const SegmentedButtonsPage = () => {
           </SegmentedButton>
         </SegmentedRoot>
 
+        <Subheading>С иконками</Subheading>
+        <SegmentedRoot className="w-fit" type="single" defaultValue="grid">
+          <SegmentedButton
+            value="grid"
+            icon={<ViewGrid width={18} height={18} />}
+          >
+            Grid
+          </SegmentedButton>
+          <SegmentedButton value="list" icon={<List width={18} height={18} />}>
+            List
+          </SegmentedButton>
+        </SegmentedRoot>
+
+        <Subheading>Разные значения высоты</Subheading>
+        <Paragraph>
+          Свойство Density можно использовать в более компактных UI, где
+          пространство ограничено. Density применяется только к высоте.
+        </Paragraph>
+        <div className="flex items-center justify-between w-[500px]">
+          <span className="text-lg">0 (40px)</span>
+          <SegmentedRoot className="w-[400px]" type="single" defaultValue="1">
+            <SegmentedButton value="1">1</SegmentedButton>
+            <SegmentedButton value="2">2</SegmentedButton>
+            <SegmentedButton value="3">3</SegmentedButton>
+          </SegmentedRoot>
+        </div>
+        <div className="flex items-center justify-between w-[500px]">
+          <span className="text-lg">-1 (36px)</span>
+          <SegmentedRoot
+            className="w-[400px]"
+            type="single"
+            defaultValue="1"
+            density="-1"
+          >
+            <SegmentedButton value="1">1</SegmentedButton>
+            <SegmentedButton value="2">2</SegmentedButton>
+            <SegmentedButton value="3">3</SegmentedButton>
+          </SegmentedRoot>
+        </div>
+        <div className="flex items-center justify-between w-[500px]">
+          <span className="text-lg">-2 (32px)</span>
+          <SegmentedRoot
+            className="w-[400px]"
+            type="single"
+            defaultValue="1"
+            density="-2"
+          >
+            <SegmentedButton value="1">1</SegmentedButton>
+            <SegmentedButton value="2">2</SegmentedButton>
+            <SegmentedButton value="3">3</SegmentedButton>
+          </SegmentedRoot>
+        </div>
+        <div className="flex items-center justify-between w-[500px]">
+          <span className="text-lg">-3 (28px)</span>
+          <SegmentedRoot
+            className="w-[400px]"
+            type="single"
+            defaultValue="1"
+            density="-3"
+          >
+            <SegmentedButton value="1">1</SegmentedButton>
+            <SegmentedButton value="2">2</SegmentedButton>
+            <SegmentedButton value="3">3</SegmentedButton>
+          </SegmentedRoot>
+        </div>
+
         <Heading>Компонент</Heading>
         <Paragraph>Скопируйте и вставьте код в свой проект.</Paragraph>
         <Paragraph>
@@ -119,6 +191,7 @@ const SegmentedButtonsPage = () => {
         <Paragraph>
           Первый служит в качестве контейнера, второй - в качестве самой кнопки.
         </Paragraph>
+        <Subheading>Single-select и Multi-select</Subheading>
         <Tabs defaultValue="single" className="w-[600px]">
           <TabsList>
             <TabsTrigger value="single">Single-select</TabsTrigger>
@@ -131,6 +204,16 @@ const SegmentedButtonsPage = () => {
             <Code language="tsx" code={usageCodeMultiple} />
           </TabsContent>
         </Tabs>
+
+        <Subheading>С иконками</Subheading>
+        <Paragraph>
+          Обратите внимание, что по стайл гайдам размеры иконок уменьшены с
+          24x24 до 18x18. Вам придётся делать это вручную.
+        </Paragraph>
+        <Code language="tsx" code={usageIcons} />
+
+        <Subheading>Density</Subheading>
+        <Code language="tsx" code={usageDensity} />
       </div>
     </div>
   )
