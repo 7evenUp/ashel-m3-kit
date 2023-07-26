@@ -1,6 +1,6 @@
 import fs from "fs"
 import path from "path"
-import { Calendar } from "iconoir-react"
+import { Calendar, Cancel, MediaImage, ProfileCircle } from "iconoir-react"
 
 import Display from "@/shared/typography/Display"
 import Label from "@/shared/typography/Label"
@@ -18,7 +18,8 @@ import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
 import InstallPackage from "@/components/InstallPackage"
 
-import { usageAssist } from "./codeSamples"
+import { usageAssist, usageFilter, usageInput } from "./codeSamples"
+import InputChip from "@/shared/ui/Chips/InputChip"
 
 const ChipsPage = () => {
   const assistFilePath = path.join(
@@ -42,6 +43,18 @@ const ChipsPage = () => {
     "FilterChip.tsx"
   )
   const filterCode = fs.readFileSync(filterFilePath, {
+    encoding: "utf-8",
+    flag: "r",
+  })
+  const inputFilePath = path.join(
+    process.cwd(),
+    "src",
+    "shared",
+    "ui",
+    "Chips",
+    "InputChip.tsx"
+  )
+  const inputCode = fs.readFileSync(inputFilePath, {
     encoding: "utf-8",
     flag: "r",
   })
@@ -116,7 +129,7 @@ const ChipsPage = () => {
 
         <Code language="tsx" code={assistCode} />
 
-        <Heading>Использование</Heading>
+        <Subheading>Использование</Subheading>
         <Paragraph>
           Обратите внимание, что по стайл гайдам размеры иконок уменьшены с
           24x24 до 18x18. Вам придётся делать это вручную.
@@ -151,12 +164,108 @@ const ChipsPage = () => {
 
         <Code language="tsx" code={filterCode} />
 
-        <Heading>Использование</Heading>
+        <Subheading>Использование</Subheading>
         <Paragraph>
           Обратите внимание, что по стайл гайдам размеры иконок уменьшены с
           24x24 до 18x18. Вам придётся делать это вручную.
         </Paragraph>
-        <Code language="tsx" code={usageAssist} />
+        <Paragraph>
+          Так же обязательно придётся прокидывать пропсы{" "}
+          <InlineCode>pressed</InlineCode> и{" "}
+          <InlineCode>onPressedChange</InlineCode> для правильного отображения
+          UI.
+        </Paragraph>
+        <Code language="tsx" code={usageFilter} />
+
+        <Heading>InputChip</Heading>
+
+        <Subheading>Примеры</Subheading>
+        <div className="w-fit grid grid-rows-6 grid-cols-2 gap-2">
+          <Label size="large" className="place-self-center">
+            Без иконки
+          </Label>
+          <InputChip className="place-self-center">Input chip</InputChip>
+          <Label size="large" className="place-self-center">
+            Leading icon
+          </Label>
+          <InputChip
+            className="place-self-center"
+            leadingIcon={<MediaImage width={18} height={18} />}
+          >
+            Type: images
+          </InputChip>
+          <Label size="large" className="place-self-center">
+            Trailing icon
+          </Label>
+          <InputChip
+            className="place-self-center"
+            trailingIcon={<Cancel width={18} height={18} />}
+          >
+            {"<$100"}
+          </InputChip>
+          <Label size="large" className="place-self-center">
+            Обе иконки
+          </Label>
+          <InputChip
+            className="place-self-center"
+            leadingIcon={<Calendar width={18} height={18} />}
+            trailingIcon={<Cancel width={18} height={18} />}
+          >
+            Wed, 26.07
+          </InputChip>
+          <Label size="large" className="place-self-center">
+            Avatar
+          </Label>
+          <InputChip className="place-self-center" avatar={<ProfileCircle />}>
+            Jack Siemens
+          </InputChip>
+          <Label size="large" className="place-self-center">
+            Avatar + trailing icon
+          </Label>
+          <InputChip
+            className="place-self-center"
+            avatar={<ProfileCircle />}
+            trailingIcon={<Cancel width={18} height={18} />}
+          >
+            Mohammad
+          </InputChip>
+        </div>
+
+        <Subheading>Компонент</Subheading>
+        <Paragraph>
+          Компонент можно сохранить в{" "}
+          <InlineCode>src/shared/ui/Chips/InputChip.tsx</InlineCode>. Обратите
+          внимание на необходимые зависимости:{" "}
+          <InternalLink href="/typography/label">Label</InternalLink> и{" "}
+          <InternalLink href="/components/ui-state-layer">
+            UIStateLayer
+          </InternalLink>
+        </Paragraph>
+
+        <Paragraph>
+          Так же данный компонент использует{" "}
+          <InlineLink href="https://www.radix-ui.com/docs/primitives/components/toggle">
+            @radix-ui/react-toggle
+          </InlineLink>{" "}
+          компонент.
+        </Paragraph>
+
+        <InstallPackage packageName="@radix-ui/react-toggle" />
+
+        <Code language="tsx" code={inputCode} />
+
+        <Subheading>Использование</Subheading>
+        <Paragraph>
+          Обратите внимание, что по стайл гайдам размеры иконок уменьшены с
+          24x24 до 18x18. Вам придётся делать это вручную.
+        </Paragraph>
+        <Paragraph>
+          Если используете проп <InlineCode>avatar</InlineCode> -
+          удостоверьтесь, что помещаете туда React элемент размерами 24x24. Это
+          может быть как иконка профиля, так и полноценное изображение
+          пользователя.
+        </Paragraph>
+        <Code language="tsx" code={usageInput} />
       </div>
     </div>
   )

@@ -3,13 +3,13 @@
 import React from "react"
 import * as Toggle from "@radix-ui/react-toggle"
 import { cva, type VariantProps } from "class-variance-authority"
+import { Check } from "iconoir-react"
 
 import Label from "@/shared/typography/Label"
 
 import UIStateLayer from "../UIStateLayer"
 
 import { cn } from "@/lib/cn"
-import { Check } from "iconoir-react"
 
 const filterChipVariants = cva(
   "group w-fit rounded-lg h-8 outline-none select-none",
@@ -56,7 +56,7 @@ const FilterChip = React.forwardRef<
       >
         <UIStateLayer
           className={cn(
-            "flex items-center gap-2 px-4 rounded-lg bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant group-focus-visible:bg-light-onSurfaceVariant dark:group-focus-visible:bg-dark-onSurfaceVariant group-data-[state=on]:bg-light-onSurfaceVariant dark:group-data-[state=on]:bg-dark-onSurfaceVariant group-data-[state=on]:group-focus-visible:bg-light-onSurfaceVariant dark:group-data-[state=on]:group-focus-visible:bg-dark-onSurfaceVariant group-focus-visible:bg-opacity-[0.12] dark:group-focus-visible:bg-opacity-[0.12] group-data-[state=on]:bg-opacity-0 dark:group-data-[state=on]:bg-opacity-0 group-data-[state=on]:group-hover:bg-opacity-[0.08] dark:group-data-[state=on]:group-hover:bg-opacity-[0.08] group-data-[state=on]:group-focus-visible:bg-opacity-[0.12] dark:group-data-[state=on]:group-focus-visible:bg-opacity-[0.12]",
+            "flex items-center gap-2 px-4 rounded-lg bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant group-focus-visible:bg-light-onSurfaceVariant dark:group-focus-visible:bg-dark-onSurfaceVariant group-data-[state=on]:bg-light-onSecondaryContainer dark:group-data-[state=on]:bg-dark-onSecondaryContainer group-data-[state=on]:group-focus-visible:bg-light-onSecondaryContainer dark:group-data-[state=on]:group-focus-visible:bg-dark-onSecondaryContainer group-focus-visible:bg-opacity-[0.12] dark:group-focus-visible:bg-opacity-[0.12] group-data-[state=on]:bg-opacity-0 dark:group-data-[state=on]:bg-opacity-0 group-data-[state=on]:group-hover:bg-opacity-[0.08] dark:group-data-[state=on]:group-hover:bg-opacity-[0.08] group-data-[state=on]:group-focus-visible:bg-opacity-[0.12] dark:group-data-[state=on]:group-focus-visible:bg-opacity-[0.12]",
             (leadingIcon || pressed) && "pl-2",
             trailingIcon && "pr-2"
           )}
