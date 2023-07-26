@@ -125,3 +125,24 @@ export const usageInput = `// Без иконки
 >
   Mohammad
 </InputChip>`
+
+export const usageSuggestion = `import SuggestionChip from "@/shared/ui/Chips/SuggestionChip""
+...
+// Без иконки | стиль elevated
+<SuggestionChip appearance="elevated">Elevated</SuggestionChip>
+// Без иконки | стиль outlined
+<SuggestionChip appearance="outlined">Outlined</SuggestionChip>
+// С иконкой | стиль elevated
+<SuggestionChip
+  appearance="elevated"
+  icon={<Calendar width={18} height={18} />}
+>
+  Elevated
+</SuggestionChip>
+// С иконкой | стиль outlined
+<SuggestionChip
+  appearance="outlined"
+  icon={<Calendar width={18} height={18} />}
+>
+  Outlined
+</SuggestionChip>`
