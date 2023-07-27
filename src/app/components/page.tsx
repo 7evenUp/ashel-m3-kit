@@ -33,6 +33,7 @@ const Components = () => {
         <Heading>Containment</Heading>
         <InternalLink href="components/cards">Cards</InternalLink>
         <InternalLink href="components/dialogs">Dialogs</InternalLink>
+        <InternalLink href="components/side-sheets">Side Sheets</InternalLink>
         <InternalLink href="components/tooltips">Tooltips</InternalLink>
 
         <Heading>Navigation</Heading>
@@ -40,6 +41,7 @@ const Components = () => {
 
         <Heading>Selection</Heading>
         <InternalLink href="components/checkbox">Checkbox</InternalLink>
+        <InternalLink href="components/chips">Chips</InternalLink>
         <InternalLink href="components/menus">Menus</InternalLink>
         <InternalLink href="components/radio-button">Radio button</InternalLink>
         <InternalLink href="components/sliders">Sliders</InternalLink>

@@ -78,6 +78,13 @@ module.exports = {
         'emphasized-decelerate': 'cubic-bezier(0.05, 0.7, 0.1, 1)',
         'emphasized-accelerate': 'cubic-bezier(0.3, 0, 0.8, 0.15)',
       },
+      borderRadius: {
+        'extra-small': '0.25rem',
+        small: '0.5rem',
+        medium: '0.75rem',
+        large: '1rem',
+        'extra-large': '1.75rem'
+      },
       boxShadow: {
         elevation1: '0 1px 2px 0 rgba(0,0,0,0.3), 0 1px 3px 1px rgba(0,0,0,0.15)',
         elevation2: '0 1px 2px 0 rgba(0,0,0,0.3), 0 2px 6px 2px rgba(0,0,0,0.15)',
