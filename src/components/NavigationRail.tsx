@@ -6,6 +6,7 @@ import {
   Code,
   BookStack,
   Map,
+  MultiplePages,
 } from "iconoir-react"
 
 import ThemeToggle from "./ThemeToggle"
@@ -29,6 +30,7 @@ const NavigationRail = () => {
           icon={<Puzzle />}
         />
         <NavLinkWithIcon href="/guides" label="Guides" icon={<BookStack />} />
+        <NavLinkWithIcon href="/templates" label="Templates" icon={<MultiplePages />} />
         <div className="h-px w-full bg-light-outlineVariant dark:bg-dark-outlineVariant" />
         <NavLinkWithIcon href="/roadmap" label="Roadmap" icon={<Map />} />
       </nav>

@@ -13,7 +13,7 @@ export const metadata = {
   description: "Roadmap of Ashel M3 Kit",
 }
 
-const About = () => {
+const Roadmap = () => {
   return (
     <main className="p-10 flex flex-col gap-3">
       <Display>Дорожная карта (Roadmap)</Display>
@@ -63,4 +63,4 @@ const RoadmapItem = ({
   </div>
 )
 
-export default About
+export default Roadmap
