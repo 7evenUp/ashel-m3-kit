@@ -33,6 +33,7 @@ const Components = () => {
         <Heading>Containment</Heading>
         <InternalLink href="components/cards">Cards</InternalLink>
         <InternalLink href="components/dialogs">Dialogs</InternalLink>
+        <InternalLink href="components/popover">Popover</InternalLink>
         <InternalLink href="components/side-sheets">Side Sheets</InternalLink>
         <InternalLink href="components/tooltips">Tooltips</InternalLink>
 
