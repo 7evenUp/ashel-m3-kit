@@ -2,9 +2,7 @@
 
 import { useState } from "react"
 import * as Tabs from "@radix-ui/react-tabs"
-import { defaultProps } from "prism-react-renderer"
-import darkTheme from "prism-react-renderer/themes/oceanicNext"
-import Highlight from "prism-react-renderer"
+import { Highlight, themes } from "prism-react-renderer"
 import { Copy } from "iconoir-react"
 
 import { useSnackbar } from "@/shared/ui/Snackbar/useSnackbar"
@@ -90,12 +88,7 @@ const BashString = ({ code }: { code: string }) => {
 
   return (
     <div className="group relative w-full">
-      <Highlight
-        {...defaultProps}
-        code={code}
-        language="bash"
-        theme={darkTheme}
-      >
+      <Highlight code={code} language="bash" theme={themes.oceanicNext}>
         {({ className, tokens, getLineProps, getTokenProps }) => (
           <pre
             className={cn(

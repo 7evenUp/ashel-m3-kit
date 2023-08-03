@@ -1,8 +1,6 @@
 "use client"
 
-import { Language, defaultProps } from "prism-react-renderer"
-import darkTheme from "prism-react-renderer/themes/oceanicNext"
-import Highlight from "prism-react-renderer"
+import { Language, Highlight, themes } from "prism-react-renderer"
 import { Copy } from "iconoir-react"
 
 import { useSnackbar } from "@/shared/ui/Snackbar/useSnackbar"
@@ -14,12 +12,7 @@ const Code = ({ code, language }: { code: string; language: Language }) => {
 
   return (
     <div className="group relative w-fit my-2">
-      <Highlight
-        {...defaultProps}
-        code={code}
-        language={language}
-        theme={darkTheme}
-      >
+      <Highlight code={code} language={language} theme={themes.oceanicNext}>
         {({ className, tokens, getLineProps, getTokenProps }) => (
           <pre
             className={cn(
