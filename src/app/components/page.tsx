@@ -43,6 +43,7 @@ const Components = () => {
         <Heading>Selection</Heading>
         <InternalLink href="components/checkbox">Checkbox</InternalLink>
         <InternalLink href="components/chips">Chips</InternalLink>
+        <InternalLink href="components/date-pickers">Date pickers</InternalLink>
         <InternalLink href="components/menus">Menus</InternalLink>
         <InternalLink href="components/radio-button">Radio button</InternalLink>
         <InternalLink href="components/sliders">Sliders</InternalLink>
