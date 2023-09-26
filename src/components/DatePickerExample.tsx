@@ -1,19 +1,17 @@
 "use client"
 
-import React from "react"
+import { useState } from "react"
+import { format } from "date-fns"
+import { Calendar } from "iconoir-react"
+import * as Popover from "@radix-ui/react-popover"
 
 import DatePicker from "@/shared/ui/DatePicker"
 import OutlinedTextField from "@/shared/ui/OutlinedTextField"
-import { Calendar } from "iconoir-react"
-import * as Popover from "@radix-ui/react-popover"
-import { format } from "date-fns"
 
 const DatePickerExample = () => {
-  const [selected, setSelected] = React.useState<Date>()
-  const [isOpen, setIsOpen] = React.useState(false)
-  const [date, setDate] = React.useState("")
-
-  console.log(selected)
+  const [selected, setSelected] = useState<Date>()
+  const [isOpen, setIsOpen] = useState(false)
+  const [date, setDate] = useState("")
 
   return (
     <Popover.Root open={isOpen} onOpenChange={setIsOpen}>

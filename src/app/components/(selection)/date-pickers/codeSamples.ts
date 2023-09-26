@@ -1,24 +1,44 @@
-export const usageSimpleCode = `<MenuRoot>
-  <MenuTrigger>
-    <Button appearance={"tonal"}>Trigger the menu</Button>
-  </MenuTrigger>
-  <MenuPortal>
-    <MenuContent>
-      <MenuItem leading={<Plus />}>With leading icon</MenuItem>
-      <MenuItem trailing="⌘+B" className="pl-12">
-        With trailing text
-      </MenuItem>
-      <MenuItem trailing={<Check />} className="pl-12">
-        With trailing icon
-      </MenuItem>
-      <MenuItem leading={<Plus />} trailing={<Check />}>
-        With both
-      </MenuItem>
-      <MenuItem leading={<Plus />} trailing="⌘+B">
-        With both
-      </MenuItem>
-      <MenuSeparator />
-      <MenuItem disabled>Disabled item</MenuItem>
-    </MenuContent>
-  </MenuPortal>
-</MenuRoot>`
+export const usageSimpleCode = `"use client"
+
+import { useState } from "react"
+import { format } from "date-fns"
+import { Calendar } from "iconoir-react"
+import * as Popover from "@radix-ui/react-popover"
+
+import DatePicker from "@/shared/ui/DatePicker"
+import OutlinedTextField from "@/shared/ui/OutlinedTextField"
+
+const DatePickerExample = () => {
+  const [selected, setSelected] = useState<Date>()
+  const [isOpen, setIsOpen] = useState(false)
+  const [date, setDate] = useState("")
+
+  return (
+    <Popover.Root open={isOpen} onOpenChange={setIsOpen}>
+      <Popover.Trigger>
+        <OutlinedTextField
+          label="Date"
+          trailingIcon={<Calendar />}
+          value={date}
+          onChange={(e) => setDate(e.currentTarget.value)}
+        />
+      </Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Content align="start" sideOffset={8}>
+          <DatePicker
+            mode="single"
+            selected={selected}
+            onSelect={setSelected}
+            onCancel={() => setIsOpen(false)}
+            onSubmit={() => {
+              selected && setDate(format(selected, "dd/MM/yyyy"))
+              setIsOpen(false)
+            }}
+          />
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
+  )
+}
+
+export default DatePickerExample`

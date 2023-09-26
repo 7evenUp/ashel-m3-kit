@@ -11,10 +11,9 @@ import InlineCode from "@/components/InlineCode"
 import InlineLink from "@/components/InlineLink"
 import InternalLink from "@/components/InternalLink"
 import InstallPackage from "@/components/InstallPackage"
+import DatePickerExample from "@/components/DatePickerExample"
 
 import { usageSimpleCode } from "./codeSamples"
-import DatePicker from "@/shared/ui/DatePicker"
-import DatePickerExample from "@/components/DatePickerExample"
 
 const DatePickersPage = () => {
   const componentFilePath = path.join(
@@ -22,7 +21,7 @@ const DatePickersPage = () => {
     "src",
     "shared",
     "ui",
-    "Menu.tsx"
+    "DatePicker.tsx"
   )
   const componentCode = fs.readFileSync(componentFilePath, {
     encoding: "utf-8",
@@ -37,7 +36,7 @@ const DatePickersPage = () => {
         <Heading>Описание</Heading>
 
         <Paragraph>
-        Date pickers позволяют пользователям выбирать дату или диапазон дат.
+          Date pickers позволяют пользователям выбирать дату или диапазон дат.
         </Paragraph>
 
         <Paragraph>
@@ -53,23 +52,40 @@ const DatePickersPage = () => {
         <Heading>Компонент</Heading>
         <Paragraph>
           Компонент можно сохранить в{" "}
-          <InlineCode>src/shared/ui/DatePicker.tsx</InlineCode>. Обратите внимание на
-          необходимые зависимости:{" "}
-          <InternalLink href="/typography/label">Label</InternalLink>.
-        </Paragraph>
-        <Paragraph>
-          Так же данный компонент использует{" "}
-          <InlineLink href="https://www.radix-ui.com/docs/primitives/components/dropdown-menu">
-            @radix-ui/react-dropdown-menu
-          </InlineLink>{" "}
-          компонент.
+          <InlineCode>src/shared/ui/DatePicker.tsx</InlineCode>. Обратите
+          внимание на необходимые зависимости:{" "}
+          <InternalLink href="/components/common-buttons">Button</InternalLink>.
         </Paragraph>
 
-        <InstallPackage packageName="@radix-ui/react-dropdown-menu" />
+        <Paragraph>
+          Так же данный компонент использует{" "}
+          <InlineLink href="https://react-day-picker.js.org/">
+            react-day-picker
+          </InlineLink>{" "}
+          и{" "}
+          <InlineLink href="https://date-fns.org/">
+            https://date-fns.org/
+          </InlineLink>
+        </Paragraph>
+
+        <InstallPackage packageName="react-day-picker date-fns" />
         <Code language="tsx" code={componentCode} />
 
         <Heading>Использование</Heading>
         <Paragraph>Ниже - код для примера в начале страницы.</Paragraph>
+
+        <Paragraph>
+          Для корректной работы, вам так же понадобятся компонент{" "}
+          <InternalLink href="/components/outlined-text-field">
+            OutlinedTextField
+          </InternalLink>{" "}
+          и{" "}
+          <InlineLink href="https://www.radix-ui.com/primitives/docs/components/popover">
+            @radix-ui/react-popover
+          </InlineLink>
+        </Paragraph>
+        <InstallPackage packageName="@radix-ui/react-popover" />
+
         <Code language="tsx" code={usageSimpleCode} />
       </div>
     </div>
