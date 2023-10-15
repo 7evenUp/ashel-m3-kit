@@ -2,6 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #6150aa;
+  --onPrimary: #ffffff;
+  --primaryContainer: #e6deff;
+  --onPrimaryContainer: #1d0061;
+  --primaryFixed: #e6deff;
+  --onPrimaryFixed: #1d0061;
+  --primaryFixedDim: #cbbeff;
+  --onPrimaryFixedVariant: #493890;
+  --secondary: #605b71;
+  --onSecondary: #ffffff;
+  --secondaryContainer: #e6dff9;
+  --onSecondaryContainer: #1c192b;
+  --secondaryFixed: #e6dff9;
+  --onSecondaryFixed: #1c192b;
+  --secondaryFixedDim: #cac3dc;
+  --onSecondaryFixedVariant: #484458;
+  --tertiary: #7c5263;
+  --onTertiary: #ffffff;
+  --tertiaryContainer: #ffd9e5;
+  --onTertiaryContainer: #30111f;
+  --tertiaryFixed: #ffd9e5;
+  --onTertiaryFixed: #30111f;
+  --tertiaryFixedDim: #edb8cb;
+  --onTertiaryFixedVariant: #623b4b;
+  --error: #ba1a1a;
+  --errorContainer: #ffdad6;
+  --onError: #ffffff;
+  --onErrorContainer: #410002;
+  --background: #fffbff;
+  --onBackground: #1c1b1e;
+  --outline: #79757f;
+  --inverseOnSurface: #f4eff4;
+  --inverseSurface: #313033;
+  --inversePrimary: #cbbeff;
+  --shadow: #000000;
+  --surfaceTint: #6150aa;
+  --outlineVariant: #c9c4d0;
+  --scrim: #000000;
+  --surface: #fdf8fd;
+  --onSurface: #1c1b1e;
+  --surfaceVariant: #e6e0ec;
+  --onSurfaceVariant: #48454e;
+  --surfaceContainerHighest: #e6e1e6;
+  --surfaceContainerHigh: #ebe7ec;
+  --surfaceContainer: #f1ecf1;
+  --surfaceContainerLow: #f7f2f7;
+  --surfaceContainerLowest: #ffffff;
+  --surfaceDim: #ddd9dd;
+  --surfaceBright: #fdf8fd;
+}
+
+.dark {
+
+}
+
 *::-webkit-scrollbar {
   width: 8px;
   height: 8px;
