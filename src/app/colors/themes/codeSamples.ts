@@ -1,517 +1,1196 @@
-export const cyanTheme = `"light": {
-  "primary": "#00696f",
-  "onPrimary": "#ffffff",
-  "primaryContainer": "#74f5ff",
-  "onPrimaryContainer": "#002022",
-  "primaryFixed": "#74f5ff",
-  "onPrimaryFixed": "#002022",
-  "primaryFixedDim": "#4cd9e3",
-  "onPrimaryFixedVariant": "#004f54",
-  "secondary": "#4a6365",
-  "onSecondary": "#ffffff",
-  "secondaryContainer": "#cce8ea",
-  "onSecondaryContainer": "#051f21",
-  "secondaryFixed": "#cce8ea",
-  "onSecondaryFixed": "#051f21",
-  "secondaryFixedDim": "#b1cbce",
-  "onSecondaryFixedVariant": "#324b4d",
-  "tertiary": "#4f5f7d",
-  "onTertiary": "#ffffff",
-  "tertiaryContainer": "#d6e3ff",
-  "onTertiaryContainer": "#091b36",
-  "tertiaryFixed": "#d6e3ff",
-  "onTertiaryFixed": "#091b36",
-  "tertiaryFixedDim": "#b7c7ea",
-  "onTertiaryFixedVariant": "#374764",
-  "error": "#ba1a1a",
-  "errorContainer": "#ffdad6",
-  "onError": "#ffffff",
-  "onErrorContainer": "#410002",
-  "background": "#fafdfc",
-  "onBackground": "#191c1c",
-  "outline": "#6f797a",
-  "inverseOnSurface": "#eff1f1",
-  "inverseSurface": "#2d3131",
-  "inversePrimary": "#4cd9e3",
-  "shadow": "#000000",
-  "surfaceTint": "#00696f",
-  "outlineVariant": "#bec8c9",
-  "scrim": "#000000",
-  "surface": "#f7fafa",
-  "onSurface": "#191c1c",
-  "surfaceVariant": "#dae4e5",
-  "onSurfaceVariant": "#3f4849",
-  "surfaceContainerHighest": "#e0e3e3",
-  "surfaceContainerHigh": "#e6e9e8",
-  "surfaceContainer": "#eceeee",
-  "surfaceContainerLow": "#f2f4f4",
-  "surfaceContainerLowest": "#ffffff",
-  "surfaceDim": "#d8dada",
-  "surfaceBright": "#f7fafa"
-},
-"dark": {
-  "primary": "#4cd9e3",
-  "onPrimary": "#00363a",
-  "primaryContainer": "#004f54",
-  "onPrimaryContainer": "#74f5ff",
-  "primaryFixed": "#74f5ff",
-  "onPrimaryFixed": "#002022",
-  "primaryFixedDim": "#4cd9e3",
-  "onPrimaryFixedVariant": "#004f54",
-  "secondary": "#b1cbce",
-  "onSecondary": "#1b3436",
-  "secondaryContainer": "#324b4d",
-  "onSecondaryContainer": "#cce8ea",
-  "secondaryFixed": "#cce8ea",
-  "onSecondaryFixed": "#051f21",
-  "secondaryFixedDim": "#b1cbce",
-  "onSecondaryFixedVariant": "#324b4d",
-  "tertiary": "#b7c7ea",
-  "onTertiary": "#20304c",
-  "tertiaryContainer": "#374764",
-  "onTertiaryContainer": "#d6e3ff",
-  "tertiaryFixed": "#d6e3ff",
-  "onTertiaryFixed": "#091b36",
-  "tertiaryFixedDim": "#b7c7ea",
-  "onTertiaryFixedVariant": "#374764",
-  "error": "#ffb4ab",
-  "errorContainer": "#93000a",
-  "onError": "#690005",
-  "onErrorContainer": "#ffdad6",
-  "background": "#191c1c",
-  "onBackground": "#e0e3e3",
-  "outline": "#899393",
-  "inverseOnSurface": "#191c1c",
-  "inverseSurface": "#e0e3e3",
-  "inversePrimary": "#00696f",
-  "shadow": "#000000",
-  "surfaceTint": "#4cd9e3",
-  "outlineVariant": "#3f4849",
-  "scrim": "#000000",
-  "surface": "#101414",
-  "onSurface": "#c4c7c7",
-  "surfaceVariant": "#3f4849",
-  "onSurfaceVariant": "#bec8c9",
-  "surfaceContainerHighest": "#323536",
-  "surfaceContainerHigh": "#272b2b",
-  "surfaceContainer": "#1d2020",
-  "surfaceContainerLow": "#191c1c",
-  "surfaceContainerLowest": "#0b0f0f",
-  "surfaceDim": "#101414",
-  "surfaceBright": "#363a3a"
+export const tailwindVariables = `"primary": "hsl(var(--primary) / <alpha-value>)",
+"onPrimary": "hsl(var(--onPrimary) / <alpha-value>)",
+"primaryContainer": "hsl(var(--primaryContainer) / <alpha-value>)",
+"onPrimaryContainer": "hsl(var(--onPrimaryContainer) / <alpha-value>)",
+"primaryFixed": "hsl(var(--primaryFixed) / <alpha-value>)",
+"onPrimaryFixed": "hsl(var(--onPrimaryFixed) / <alpha-value>)",
+"primaryFixedDim": "hsl(var(--primaryFixedDim) / <alpha-value>)",
+"onPrimaryFixedVariant": "hsl(var(--onPrimaryFixedVariant) / <alpha-value>)",
+"secondary": "hsl(var(--secondary) / <alpha-value>)",
+"onSecondary": "hsl(var(--onSecondary) / <alpha-value>)",
+"secondaryContainer": "hsl(var(--secondaryContainer) / <alpha-value>)",
+"onSecondaryContainer": "hsl(var(--onSecondaryContainer) / <alpha-value>)",
+"secondaryFixed": "hsl(var(--secondaryFixed) / <alpha-value>)",
+"onSecondaryFixed": "hsl(var(--onSecondaryFixed) / <alpha-value>)",
+"secondaryFixedDim": "hsl(var(--secondaryFixedDim) / <alpha-value>)",
+"onSecondaryFixedVariant": "hsl(var(--onSecondaryFixedVariant) / <alpha-value>)",
+"tertiary": "hsl(var(--tertiary) / <alpha-value>)",
+"onTertiary": "hsl(var(--onTertiary) / <alpha-value>)",
+"tertiaryContainer": "hsl(var(--tertiaryContainer) / <alpha-value>)",
+"onTertiaryContainer": "hsl(var(--onTertiaryContainer) / <alpha-value>)",
+"tertiaryFixed": "hsl(var(--tertiaryFixed) / <alpha-value>)",
+"onTertiaryFixed": "hsl(var(--onTertiaryFixed) / <alpha-value>)",
+"tertiaryFixedDim": "hsl(var(--tertiaryFixedDim) / <alpha-value>)",
+"onTertiaryFixedVariant": "hsl(var(--onTertiaryFixedVariant) / <alpha-value>)",
+"error": "hsl(var(--error) / <alpha-value>)",
+"errorContainer": "hsl(var(--errorContainer) / <alpha-value>)",
+"onError": "hsl(var(--onError) / <alpha-value>)",
+"onErrorContainer": "hsl(var(--onErrorContainer) / <alpha-value>)",
+"background": "hsl(var(--background) / <alpha-value>)",
+"onBackground": "hsl(var(--onBackground) / <alpha-value>)",
+"outline": "hsl(var(--outline) / <alpha-value>)",
+"inverseOnSurface": "hsl(var(--inverseOnSurface) / <alpha-value>)",
+"inverseSurface": "hsl(var(--inverseSurface) / <alpha-value>)",
+"inversePrimary": "hsl(var(--inversePrimary) / <alpha-value>)",
+"shadow": "hsl(var(--shadow) / <alpha-value>)",
+"surfaceTint": "hsl(var(--surfaceTint) / <alpha-value>)",
+"outlineVariant": "hsl(var(--outlineVariant) / <alpha-value>)",
+"scrim": "hsl(var(--scrim) / <alpha-value>)",
+"surface": "hsl(var(--surface) / <alpha-value>)",
+"onSurface": "hsl(var(--onSurface) / <alpha-value>)",
+"surfaceVariant": "hsl(var(--surfaceVariant) / <alpha-value>)",
+"onSurfaceVariant": "hsl(var(--onSurfaceVariant) / <alpha-value>)",
+"surfaceContainerHighest": "hsl(var(--surfaceContainerHighest) / <alpha-value>)",
+"surfaceContainerHigh": "hsl(var(--surfaceContainerHigh) / <alpha-value>)",
+"surfaceContainer": "hsl(var(--surfaceContainer) / <alpha-value>)",
+"surfaceContainerLow": "hsl(var(--surfaceContainerLow) / <alpha-value>)",
+"surfaceContainerLowest": "hsl(var(--surfaceContainerLowest) / <alpha-value>)",
+"surfaceDim": "hsl(var(--surfaceDim) / <alpha-value>)",
+"surfaceBright": "hsl(var(--surfaceBright) / <alpha-value>)"`
+
+export const defaultTheme = `:root {
+  --primary: 256 34% 48%;
+  --onPrimary: 0 0% 100%;
+  --primaryContainer: 263 100% 93%;
+  --onPrimaryContainer: 261 100% 18%;
+  --primaryFixed: 263 100% 93%;
+  --onPrimaryFixed: 261 100% 18%;
+  --primaryFixedDim: 258 100% 87%;
+  --onPrimaryFixedVariant: 257 43% 38%;
+  --secondary: 259 11% 40%;
+  --onSecondary: 0 0% 100%;
+  --secondaryContainer: 263 65% 92%;
+  --onSecondaryContainer: 253 26% 13%;
+  --secondaryFixed: 263 65% 92%;
+  --onSecondaryFixed: 253 26% 13%;
+  --secondaryFixedDim: 263 27% 81%;
+  --onSecondaryFixedVariant: 258 13% 31%;
+  --tertiary: 340 21% 41%;
+  --onTertiary: 0 0% 100%;
+  --tertiaryContainer: 342 100% 92%;
+  --onTertiaryContainer: 338 48% 13%;
+  --tertiaryFixed: 342 100% 92%;
+  --onTertiaryFixed: 338 48% 13%;
+  --tertiaryFixedDim: 343 63% 83%;
+  --onTertiaryFixedVariant: 341 25% 31%;
+  --error: 3 71% 41%;
+  --onError: 0 0% 100%;
+  --errorContainer: 4 71% 92%;
+  --onErrorContainer: 3 71% 15%;
+  --outline: 270 4% 47%;
+  --background: 293 100% 98%;
+  --onBackground: 264 8% 12%;
+  --surface: 293 100% 98%;
+  --onSurface: 264 8% 12%;
+  --surfaceVariant: 275 24% 90%;
+  --onSurfaceVariant: 264 7% 29%;
+  --inverseSurface: 270 6% 20%;
+  --inverseOnSurface: 285 33% 95%;
+  --inversePrimary: 258 100% 87%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 256 34% 48%;
+  --outlineVariant: 270 11% 79%;
+  --scrim: 0 0% 0%;
+  --surfaceContainerHighest: 280 17% 90%;
+  --surfaceContainerHigh: 276 25% 92%;
+  --surfaceContainer: 276 38% 95%;
+  --surfaceContainerLow: 278 44% 96%;
+  --surfaceContainerLowest: 0 0% 100%;
+  --surfaceBright: 293 100% 98%;
+  --surfaceDim: 280 13% 86%;
+}
+
+.dark {
+  --primary: 258 100% 87%;
+  --onPrimary: 259 58% 28%;
+  --primaryContainer: 257 43% 38%;
+  --onPrimaryContainer: 263 100% 93%;
+  --primaryFixed: 263 100% 93%;
+  --onPrimaryFixed: 261 100% 18%;
+  --primaryFixedDim: 258 100% 87%;
+  --onPrimaryFixedVariant: 257 43% 38%;
+  --secondary: 263 27% 81%;
+  --onSecondary: 258 18% 22%;
+  --secondaryContainer: 258 13% 31%;
+  --onSecondaryContainer: 263 65% 92%;
+  --secondaryFixed: 263 65% 92%;
+  --onSecondaryFixed: 253 26% 13%;
+  --secondaryFixedDim: 263 27% 81%;
+  --onSecondaryFixedVariant: 258 13% 31%;
+  --tertiary: 343 63% 83%;
+  --onTertiary: 338 33% 22%;
+  --tertiaryContainer: 341 25% 31%;
+  --onTertiaryContainer: 342 100% 92%;
+  --tertiaryFixed: 342 100% 92%;
+  --onTertiaryFixed: 338 48% 13%;
+  --tertiaryFixedDim: 343 63% 83%;
+  --onTertiaryFixedVariant: 341 25% 31%;
+  --error: 3 70% 83%;
+  --onError: 3 71% 22%;
+  --errorContainer: 3 71% 32%;
+  --onErrorContainer: 4 71% 92%;
+  --outline: 264 5% 58%;
+  --background: 260 14% 8%;
+  --onBackground: 280 17% 90%;
+  --surface: 260 14% 8%;
+  --onSurface: 280 17% 90%;
+  --surfaceVariant: 264 7% 29%;
+  --onSurfaceVariant: 270 11% 79%;
+  --inverseSurface: 280 17% 90%;
+  --inverseOnSurface: 270 6% 20%;
+  --inversePrimary: 256 34% 48%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 258 100% 87%;
+  --outlineVariant: 264 7% 29%;
+  --scrim: 0 0% 0%;
+  --surfaceContainerHighest: 257 6% 22%;
+  --surfaceContainerHigh: 257 8% 17%;
+  --surfaceContainer: 257 10% 14%;
+  --surfaceContainerLow: 264 8% 12%;
+  --surfaceContainerLowest: 260 19% 6%;
+  --surfaceBright: 270 5% 23%;
+  --surfaceDim: 260 14% 8%;
 }`
 
-export const greenTheme = `"light": {
-  "primary": "#006d31",
-  "onPrimary": "#ffffff",
-  "primaryContainer": "#78fd99",
-  "onPrimaryContainer": "#00210a",
-  "primaryFixed": "#78fd99",
-  "onPrimaryFixed": "#00210a",
-  "primaryFixedDim": "#5adf80",
-  "onPrimaryFixedVariant": "#005323",
-  "secondary": "#506351",
-  "onSecondary": "#ffffff",
-  "secondaryContainer": "#d3e8d2",
-  "onSecondaryContainer": "#0e1f11",
-  "secondaryFixed": "#d3e8d2",
-  "onSecondaryFixed": "#0e1f11",
-  "secondaryFixedDim": "#b7ccb6",
-  "onSecondaryFixedVariant": "#394b3b",
-  "tertiary": "#39656d",
-  "onTertiary": "#ffffff",
-  "tertiaryContainer": "#bdeaf4",
-  "onTertiaryContainer": "#001f24",
-  "tertiaryFixed": "#bdeaf4",
-  "onTertiaryFixed": "#001f24",
-  "tertiaryFixedDim": "#a1ced7",
-  "onTertiaryFixedVariant": "#204d55",
-  "error": "#ba1a1a",
-  "errorContainer": "#ffdad6",
-  "onError": "#ffffff",
-  "onErrorContainer": "#410002",
-  "background": "#fcfdf7",
-  "onBackground": "#1a1c19",
-  "outline": "#727970",
-  "inverseOnSurface": "#f0f1ec",
-  "inverseSurface": "#2e312e",
-  "inversePrimary": "#5adf80",
-  "shadow": "#000000",
-  "surfaceTint": "#006d31",
-  "outlineVariant": "#c1c9be",
-  "scrim": "#000000",
-  "surface": "#f9faf4",
-  "onSurface": "#1a1c19",
-  "surfaceVariant": "#dde5da",
-  "onSurfaceVariant": "#414941",
-  "surfaceContainerHighest": "#e2e3de",
-  "surfaceContainerHigh": "#e7e9e3",
-  "surfaceContainer": "#edeee9",
-  "surfaceContainerLow": "#f3f4ee",
-  "surfaceContainerLowest": "#ffffff",
-  "surfaceDim": "#d9dbd5",
-  "surfaceBright": "#f9faf4"
-},
-"dark": {
-  "primary": "#5adf80",
-  "onPrimary": "#003916",
-  "primaryContainer": "#005323",
-  "onPrimaryContainer": "#78fd99",
-  "primaryFixed": "#78fd99",
-  "onPrimaryFixed": "#00210a",
-  "primaryFixedDim": "#5adf80",
-  "onPrimaryFixedVariant": "#005323",
-  "secondary": "#b7ccb6",
-  "onSecondary": "#233425",
-  "secondaryContainer": "#394b3b",
-  "onSecondaryContainer": "#d3e8d2",
-  "secondaryFixed": "#d3e8d2",
-  "onSecondaryFixed": "#0e1f11",
-  "secondaryFixedDim": "#b7ccb6",
-  "onSecondaryFixedVariant": "#394b3b",
-  "tertiary": "#a1ced7",
-  "onTertiary": "#00363e",
-  "tertiaryContainer": "#204d55",
-  "onTertiaryContainer": "#bdeaf4",
-  "tertiaryFixed": "#bdeaf4",
-  "onTertiaryFixed": "#001f24",
-  "tertiaryFixedDim": "#a1ced7",
-  "onTertiaryFixedVariant": "#204d55",
-  "error": "#ffb4ab",
-  "errorContainer": "#93000a",
-  "onError": "#690005",
-  "onErrorContainer": "#ffdad6",
-  "background": "#1a1c19",
-  "onBackground": "#e2e3de",
-  "outline": "#8b9389",
-  "inverseOnSurface": "#1a1c19",
-  "inverseSurface": "#e2e3de",
-  "inversePrimary": "#006d31",
-  "shadow": "#000000",
-  "surfaceTint": "#5adf80",
-  "outlineVariant": "#414941",
-  "scrim": "#000000",
-  "surface": "#111411",
-  "onSurface": "#c5c7c2",
-  "surfaceVariant": "#414941",
-  "onSurfaceVariant": "#c1c9be",
-  "surfaceContainerHighest": "#333532",
-  "surfaceContainerHigh": "#282b27",
-  "surfaceContainer": "#1e201d",
-  "surfaceContainerLow": "#1a1c19",
-  "surfaceContainerLowest": "#0c0f0c",
-  "surfaceDim": "#111411",
-  "surfaceBright": "#373a36"
-},`
+export const burgundyTheme = `:root {
+  --primary: 338 41% 42%;
+  --onPrimary: 0 0% 100%;
+  --primaryContainer: 346 100% 93%;
+  --onPrimaryContainer: 331.9 100% 12.2%;
+  --primaryFixed: 346 100% 93%;
+  --onPrimaryFixed: 331.9 100% 12.2%;
+  --primaryFixedDim: 341.8 100% 84.5%;
+  --onPrimaryFixedVariant: 336.6 50% 32.2%;
+  --secondary: 342 14.9% 39.6%;
+  --onSecondary: 0 0% 100%;
+  --secondaryContainer: 345.8 100% 92.5%;
+  --onSecondaryContainer: 340.9 34.4% 12.5%;
+  --secondaryFixed: 345.8 100% 92.5%;
+  --onSecondaryFixed: 340.9 34.4% 12.5%;
+  --secondaryFixedDim: 345.4 38.9% 81.4%;
+  --onSecondaryFixedVariant: 342.2 17.6% 30%;
+  --tertiary: 27.9 40.1% 34.7%;
+  --onTertiary: 0 0% 100%;
+  --tertiaryContainer: 25.6 100% 88%;
+  --onTertiaryContainer: 27.4 100% 9%;
+  --tertiaryFixed: 25.6 100% 88%;
+  --onTertiaryFixed: 27.4 100% 9%;
+  --tertiaryFixedDim: 27 74% 75.9%;
+  --onTertiaryFixedVariant: 28.2 50.8% 25.5%;
+  --error: 0 75.5% 41.6%;
+  --errorContainer: 5.9 100% 92%;
+  --onError: 0 0% 100%;
+  --onErrorContainer: 358.2 100% 12.7%;
+  --background: 300 100% 99.2%;
+  --onBackground: 350 10.3% 11.4%;
+  --outline: 345 6.5% 48.2%;
+  --inverseOnSurface: 355 54.5% 95.7%;
+  --inverseSurface: 350 6% 19.6%;
+  --inversePrimary: 341.8 100% 84.5%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 337.5 40.7% 42.4%;
+  --outlineVariant: 347.4 18.4% 79.8%;
+  --scrim: 0 0% 0%;
+  --surface: 0 100% 98.6%;
+  --onSurface: 350 10.3% 11.4%;
+  --surfaceVariant: 345.7 44.7% 90.8%;
+  --onSurfaceVariant: 342.9 9.5% 29%;
+  --surfaceContainerHighest: 354.5 21.6% 90%;
+  --surfaceContainerHigh: 350 30% 92.2%;
+  --surfaceContainer: 355 42.9% 94.5%;
+  --surfaceContainerLow: 355 75% 96.9%;
+  --surfaceContainerLowest: 0 0% 100%;
+  --surfaceDim: 350 17.6% 86.7%;
+  --surfaceBright: 0 100% 98.6%;
+}
 
-export const purpleTheme = `"light": {
-  "primary": "#8b4483",
-  "onPrimary": "#ffffff",
-  "primaryContainer": "#ffd7f4",
-  "onPrimaryContainer": "#380037",
-  "primaryFixed": "#ffd7f4",
-  "onPrimaryFixed": "#380037",
-  "primaryFixedDim": "#ffabf1",
-  "onPrimaryFixedVariant": "#702c6a",
-  "secondary": "#6e5868",
-  "onSecondary": "#ffffff",
-  "secondaryContainer": "#f8daee",
-  "onSecondaryContainer": "#271624",
-  "secondaryFixed": "#f8daee",
-  "onSecondaryFixed": "#271624",
-  "secondaryFixedDim": "#dabfd2",
-  "onSecondaryFixedVariant": "#554150",
-  "tertiary": "#815344",
-  "onTertiary": "#ffffff",
-  "tertiaryContainer": "#ffdbd0",
-  "onTertiaryContainer": "#321207",
-  "tertiaryFixed": "#ffdbd0",
-  "onTertiaryFixed": "#321207",
-  "tertiaryFixedDim": "#f5b8a6",
-  "onTertiaryFixedVariant": "#663c2e",
-  "error": "#ba1a1a",
-  "errorContainer": "#ffdad6",
-  "onError": "#ffffff",
-  "onErrorContainer": "#410002",
-  "background": "#fffbff",
-  "onBackground": "#1f1a1d",
-  "outline": "#80747b",
-  "inverseOnSurface": "#f8eef2",
-  "inverseSurface": "#342f32",
-  "inversePrimary": "#ffabf1",
-  "shadow": "#000000",
-  "surfaceTint": "#8b4483",
-  "outlineVariant": "#d1c2cb",
-  "scrim": "#000000",
-  "surface": "#fff7f9",
-  "onSurface": "#1f1a1d",
-  "surfaceVariant": "#eedee7",
-  "onSurfaceVariant": "#4e444b",
-  "surfaceContainerHighest": "#e9e0e4",
-  "surfaceContainerHigh": "#efe6e9",
-  "surfaceContainer": "#f5ebef",
-  "surfaceContainerLow": "#fbf1f5",
-  "surfaceContainerLowest": "#ffffff",
-  "surfaceDim": "#e1d8db",
-  "surfaceBright": "#fff7f9"
-},
-"dark": {
-  "primary": "#ffabf1",
-  "onPrimary": "#551351",
-  "primaryContainer": "#702c6a",
-  "onPrimaryContainer": "#ffd7f4",
-  "primaryFixed": "#ffd7f4",
-  "onPrimaryFixed": "#380037",
-  "primaryFixedDim": "#ffabf1",
-  "onPrimaryFixedVariant": "#702c6a",
-  "secondary": "#dabfd2",
-  "onSecondary": "#3d2b39",
-  "secondaryContainer": "#554150",
-  "onSecondaryContainer": "#f8daee",
-  "secondaryFixed": "#f8daee",
-  "onSecondaryFixed": "#271624",
-  "secondaryFixedDim": "#dabfd2",
-  "onSecondaryFixedVariant": "#554150",
-  "tertiary": "#f5b8a6",
-  "onTertiary": "#4c261a",
-  "tertiaryContainer": "#663c2e",
-  "onTertiaryContainer": "#ffdbd0",
-  "tertiaryFixed": "#ffdbd0",
-  "onTertiaryFixed": "#321207",
-  "tertiaryFixedDim": "#f5b8a6",
-  "onTertiaryFixedVariant": "#663c2e",
-  "error": "#ffb4ab",
-  "errorContainer": "#93000a",
-  "onError": "#690005",
-  "onErrorContainer": "#ffdad6",
-  "background": "#1f1a1d",
-  "onBackground": "#e9e0e4",
-  "outline": "#9a8d95",
-  "inverseOnSurface": "#1f1a1d",
-  "inverseSurface": "#e9e0e4",
-  "inversePrimary": "#8b4483",
-  "shadow": "#000000",
-  "surfaceTint": "#ffabf1",
-  "outlineVariant": "#4e444b",
-  "scrim": "#000000",
-  "surface": "#161215",
-  "onSurface": "#cdc4c8",
-  "surfaceVariant": "#4e444b",
-  "onSurfaceVariant": "#d1c2cb",
-  "surfaceContainerHighest": "#383336",
-  "surfaceContainerHigh": "#2d292b",
-  "surfaceContainer": "#231e21",
-  "surfaceContainerLow": "#1f1a1d",
-  "surfaceContainerLowest": "#110d10",
-  "surfaceDim": "#161215",
-  "surfaceBright": "#3d383b"
-},`
+.dark {
+  --primary: 341.8 100% 84.5%;
+  --onPrimary: 333.5 69.4% 21.8%;
+  --primaryContainer: 336.6 50% 32.2%;
+  --onPrimaryContainer: 345.8 100% 92.5%;
+  --primaryFixed: 345.8 100% 92.5%;
+  --onPrimaryFixed: 331.9 100% 12.2%;
+  --primaryFixedDim: 341.8 100% 84.5%;
+  --onPrimaryFixedVariant: 336.6 50% 32.2%;
+  --secondary: 345.4 38.9% 81.4%;
+  --onSecondary: 340.8 23.4% 21%;
+  --secondaryContainer: 342.2 17.6% 30%;
+  --onSecondaryContainer: 345.8 100% 92.5%;
+  --secondaryFixed: 345.8 100% 92.5%;
+  --onSecondaryFixed: 340.9 34.4% 12.5%;
+  --secondaryFixedDim: 345.4 38.9% 81.4%;
+  --onSecondaryFixedVariant: 342.2 17.6% 30%;
+  --tertiary: 27 74% 75.9%;
+  --onTertiary: 29 71.4% 16.5%;
+  --tertiaryContainer: 28.2 50.8% 25.5%;
+  --onTertiaryContainer: 25.6 100% 88%;
+  --tertiaryFixed: 25.6 100% 88%;
+  --onTertiaryFixed: 27.4 100% 9%;
+  --tertiaryFixedDim: 27 74% 75.9%;
+  --onTertiaryFixedVariant: 28.2 50.8% 25.5%;
+  --error: 6.4 100% 83.5%;
+  --errorContainer: 355.9 100% 28.8%;
+  --onError: 357.1 100% 20.6%;
+  --onErrorContainer: 5.9 100% 92%;
+  --background: 350 10.3% 11.4%;
+  --onBackground: 354.5 21.6% 90%;
+  --outline: 346.7 8.5% 58.4%;
+  --inverseOnSurface: 350 10.3% 11.4%;
+  --inverseSurface: 354.5 21.6% 90%;
+  --inversePrimary: 337.5 40.7% 42.4%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 341.8 100% 84.5%;
+  --outlineVariant: 342.9 9.5% 29%;
+  --scrim: 0 0% 0%;
+  --surface: 348 12.2% 8%;
+  --onSurface: 354.5 10.3% 79%;
+  --surfaceVariant: 342.9 9.5% 29%;
+  --onSurfaceVariant: 347.4 18.4% 79.8%;
+  --surfaceContainerHighest: 351.4 6.4% 21.4%;
+  --surfaceContainerHigh: 342.9 8% 17.1%;
+  --surfaceContainer: 350 9.1% 12.9%;
+  --surfaceContainerLow: 350 10.3% 11.4%;
+  --surfaceContainerLowest: 348 16.1% 6.1%;
+  --surfaceDim: 348 12.2% 8%;
+  --surfaceBright: 342.9 6% 22.9%;
+}`
 
-export const corralTheme = `"light": {
-  "primary": "#a5384b",
-  "onPrimary": "#ffffff",
-  "primaryContainer": "#ffd9dc",
-  "onPrimaryContainer": "#400010",
-  "primaryFixed": "#ffd9dc",
-  "onPrimaryFixed": "#400010",
-  "primaryFixedDim": "#ffb2b9",
-  "onPrimaryFixedVariant": "#851f35",
-  "secondary": "#765659",
-  "onSecondary": "#ffffff",
-  "secondaryContainer": "#ffd9dc",
-  "onSecondaryContainer": "#2c1518",
-  "secondaryFixed": "#ffd9dc",
-  "onSecondaryFixed": "#2c1518",
-  "secondaryFixedDim": "#e5bdbf",
-  "onSecondaryFixedVariant": "#5c3f42",
-  "tertiary": "#785930",
-  "onTertiary": "#ffffff",
-  "tertiaryContainer": "#ffddb6",
-  "onTertiaryContainer": "#2a1800",
-  "tertiaryFixed": "#ffddb6",
-  "onTertiaryFixed": "#2a1800",
-  "tertiaryFixedDim": "#e8c08e",
-  "onTertiaryFixedVariant": "#5d411b",
-  "error": "#ba1a1a",
-  "errorContainer": "#ffdad6",
-  "onError": "#ffffff",
-  "onErrorContainer": "#410002",
-  "background": "#fffbff",
-  "onBackground": "#201a1a",
-  "outline": "#847374",
-  "inverseOnSurface": "#fbeeee",
-  "inverseSurface": "#362f2f",
-  "inversePrimary": "#ffb2b9",
-  "shadow": "#000000",
-  "surfaceTint": "#a5384b",
-  "outlineVariant": "#d7c1c2",
-  "scrim": "#000000",
-  "surface": "#fff8f7",
-  "onSurface": "#201a1a",
-  "surfaceVariant": "#f4ddde",
-  "onSurfaceVariant": "#524344",
-  "surfaceContainerHighest": "#ece0e0",
-  "surfaceContainerHigh": "#f2e5e5",
-  "surfaceContainer": "#f8ebeb",
-  "surfaceContainerLow": "#fef1f1",
-  "surfaceContainerLowest": "#ffffff",
-  "surfaceDim": "#e4d7d7",
-  "surfaceBright": "#fff8f7"
-},
-"dark": {
-  "primary": "#ffb2b9",
-  "onPrimary": "#660420",
-  "primaryContainer": "#851f35",
-  "onPrimaryContainer": "#ffd9dc",
-  "primaryFixed": "#ffd9dc",
-  "onPrimaryFixed": "#400010",
-  "primaryFixedDim": "#ffb2b9",
-  "onPrimaryFixedVariant": "#851f35",
-  "secondary": "#e5bdbf",
-  "onSecondary": "#43292c",
-  "secondaryContainer": "#5c3f42",
-  "onSecondaryContainer": "#ffd9dc",
-  "secondaryFixed": "#ffd9dc",
-  "onSecondaryFixed": "#2c1518",
-  "secondaryFixedDim": "#e5bdbf",
-  "onSecondaryFixedVariant": "#5c3f42",
-  "tertiary": "#e8c08e",
-  "onTertiary": "#442b06",
-  "tertiaryContainer": "#5d411b",
-  "onTertiaryContainer": "#ffddb6",
-  "tertiaryFixed": "#ffddb6",
-  "onTertiaryFixed": "#2a1800",
-  "tertiaryFixedDim": "#e8c08e",
-  "onTertiaryFixedVariant": "#5d411b",
-  "error": "#ffb4ab",
-  "errorContainer": "#93000a",
-  "onError": "#690005",
-  "onErrorContainer": "#ffdad6",
-  "background": "#201a1a",
-  "onBackground": "#ece0e0",
-  "outline": "#9f8c8d",
-  "inverseOnSurface": "#201a1a",
-  "inverseSurface": "#ece0e0",
-  "inversePrimary": "#a5384b",
-  "shadow": "#000000",
-  "surfaceTint": "#ffb2b9",
-  "outlineVariant": "#524344",
-  "scrim": "#000000",
-  "surface": "#181212",
-  "onSurface": "#d0c4c4",
-  "surfaceVariant": "#524344",
-  "onSurfaceVariant": "#d7c1c2",
-  "surfaceContainerHighest": "#3a3333",
-  "surfaceContainerHigh": "#2f2829",
-  "surfaceContainer": "#241e1e",
-  "surfaceContainerLow": "#201a1a",
-  "surfaceContainerLowest": "#120d0d",
-  "surfaceDim": "#181212",
-  "surfaceBright": "#3f3738"
-},`
+export const corralTheme = `:root {
+  --primary: 11.5 54.5% 39.6%;
+  --onPrimary: 0 0% 100%;
+  --primaryContainer: 10.7 100% 91.2%;
+  --onPrimaryContainer: 5.9 100% 12%;
+  --primaryFixed: 10.7 100% 91.2%;
+  --onPrimaryFixed: 5.9 100% 12%;
+  --primaryFixedDim: 11.1 100% 82%;
+  --onPrimaryFixedVariant: 11.4 66.7% 29.4%;
+  --secondary: 12 20.2% 38.8%;
+  --onSecondary: 0 0% 100%;
+  --secondaryContainer: 10.7 100% 91.2%;
+  --onSecondaryContainer: 10.7 46.7% 11.8%;
+  --secondaryFixed: 10.7 100% 91.2%;
+  --onSecondaryFixed: 10.7 46.7% 11.8%;
+  --secondaryFixedDim: 11.5 52% 80.4%;
+  --onSecondaryFixedVariant: 11.4 24.8% 29.2%;
+  --tertiary: 44.8 40.6% 30.4%;
+  --onTertiary: 0 0% 100%;
+  --tertiaryContainer: 43.2 85.4% 81.2%;
+  --onTertiaryContainer: 43.3 100% 7.1%;
+  --tertiaryFixed: 43.2 85.4% 81.2%;
+  --onTertiaryFixed: 43.3 100% 7.1%;
+  --tertiaryFixedDim: 43.8 51.3% 70.2%;
+  --onTertiaryFixedVariant: 44.7 54.1% 21.4%;
+  --error: 0 75.5% 41.6%;
+  --errorContainer: 5.9 100% 92%;
+  --onError: 0 0% 100%;
+  --onErrorContainer: 358.2 100% 12.7%;
+  --background: 300 100% 99.2%;
+  --onBackground: 8.6 12.3% 11.2%;
+  --outline: 10.9 9% 47.8%;
+  --inverseOnSurface: 11.3 66.7% 95.3%;
+  --inverseSurface: 13.3 9.1% 19.4%;
+  --inversePrimary: 11.1 100% 82%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 11.5 54.5% 39.6%;
+  --outlineVariant: 11.1 25.7% 79.4%;
+  --scrim: 0 0% 0%;
+  --surface: 13.3 100% 98.2%;
+  --onSurface: 8.6 12.3% 11.2%;
+  --surfaceVariant: 10.3 59.2% 90.4%;
+  --onSurfaceVariant: 9.5 12.9% 28.8%;
+  --surfaceContainerHighest: 11.2 30.8% 89.8%;
+  --surfaceContainerHigh: 10.6 41.5% 92%;
+  --surfaceContainer: 11.2 53.3% 94.1%;
+  --surfaceContainerLow: 11.2 88.9% 96.5%;
+  --surfaceContainerLowest: 0 0% 100%;
+  --surfaceDim: 11.2 22.9% 86.3%;
+  --surfaceBright: 13.3 100% 98.2%;
+}
 
-export const yellowTheme = `"light": {
-  "primary": "#725c00",
-  "onPrimary": "#ffffff",
-  "primaryContainer": "#ffe07e",
-  "onPrimaryContainer": "#231b00",
-  "primaryFixed": "#ffe07e",
-  "onPrimaryFixed": "#231b00",
-  "primaryFixedDim": "#e6c449",
-  "onPrimaryFixedVariant": "#564500",
-  "secondary": "#685e40",
-  "onSecondary": "#ffffff",
-  "secondaryContainer": "#f0e2bb",
-  "onSecondaryContainer": "#221b04",
-  "secondaryFixed": "#f0e2bb",
-  "onSecondaryFixed": "#221b04",
-  "secondaryFixedDim": "#d3c6a1",
-  "onSecondaryFixedVariant": "#4f462a",
-  "tertiary": "#45664c",
-  "onTertiary": "#ffffff",
-  "tertiaryContainer": "#c7eccb",
-  "onTertiaryContainer": "#01210d",
-  "tertiaryFixed": "#c7eccb",
-  "onTertiaryFixed": "#01210d",
-  "tertiaryFixedDim": "#abcfb0",
-  "onTertiaryFixedVariant": "#2e4e36",
-  "error": "#ba1a1a",
-  "errorContainer": "#ffdad6",
-  "onError": "#ffffff",
-  "onErrorContainer": "#410002",
-  "background": "#fffbff",
-  "onBackground": "#1e1b16",
-  "outline": "#7d7767",
-  "inverseOnSurface": "#f6f0e7",
-  "inverseSurface": "#33302a",
-  "inversePrimary": "#e6c449",
-  "shadow": "#000000",
-  "surfaceTint": "#725c00",
-  "outlineVariant": "#cec6b4",
-  "scrim": "#000000",
-  "surface": "#fff8f0",
-  "onSurface": "#1e1b16",
-  "surfaceVariant": "#ebe2cf",
-  "onSurfaceVariant": "#4b4639",
-  "surfaceContainerHighest": "#e8e2d9",
-  "surfaceContainerHigh": "#eee7de",
-  "surfaceContainer": "#f3ede4",
-  "surfaceContainerLow": "#f9f3e9",
-  "surfaceContainerLowest": "#ffffff",
-  "surfaceDim": "#dfd9d0",
-  "surfaceBright": "#fff8f0"
-},
-"dark": {
-  "primary": "#e6c449",
-  "onPrimary": "#3b2f00",
-  "primaryContainer": "#564500",
-  "onPrimaryContainer": "#ffe07e",
-  "primaryFixed": "#ffe07e",
-  "onPrimaryFixed": "#231b00",
-  "primaryFixedDim": "#e6c449",
-  "onPrimaryFixedVariant": "#564500",
-  "secondary": "#d3c6a1",
-  "onSecondary": "#383016",
-  "secondaryContainer": "#4f462a",
-  "onSecondaryContainer": "#f0e2bb",
-  "secondaryFixed": "#f0e2bb",
-  "onSecondaryFixed": "#221b04",
-  "secondaryFixedDim": "#d3c6a1",
-  "onSecondaryFixedVariant": "#4f462a",
-  "tertiary": "#abcfb0",
-  "onTertiary": "#173720",
-  "tertiaryContainer": "#2e4e36",
-  "onTertiaryContainer": "#c7eccb",
-  "tertiaryFixed": "#c7eccb",
-  "onTertiaryFixed": "#01210d",
-  "tertiaryFixedDim": "#abcfb0",
-  "onTertiaryFixedVariant": "#2e4e36",
-  "error": "#ffb4ab",
-  "errorContainer": "#93000a",
-  "onError": "#690005",
-  "onErrorContainer": "#ffdad6",
-  "background": "#1e1b16",
-  "onBackground": "#e8e2d9",
-  "outline": "#979080",
-  "inverseOnSurface": "#1e1b16",
-  "inverseSurface": "#e8e2d9",
-  "inversePrimary": "#725c00",
-  "shadow": "#000000",
-  "surfaceTint": "#e6c449",
-  "outlineVariant": "#4b4639",
-  "scrim": "#000000",
-  "surface": "#15130e",
-  "onSurface": "#cbc6bd",
-  "surfaceVariant": "#4b4639",
-  "onSurfaceVariant": "#cec6b4",
-  "surfaceContainerHighest": "#37342e",
-  "surfaceContainerHigh": "#2c2a24",
-  "surfaceContainer": "#221f1a",
-  "surfaceContainerLow": "#1e1b16",
-  "surfaceContainerLowest": "#100e09",
-  "surfaceDim": "#15130e",
-  "surfaceBright": "#3c3933"
-},`
+.dark {
+  --primary: 11.1 100% 82%;
+  --onPrimary: 11.5 89.9% 19.4%;
+  --primaryContainer: 11.4 66.7% 29.4%;
+  --onPrimaryContainer: 10.7 100% 91.2%;
+  --primaryFixed: 10.7 100% 91.2%;
+  --onPrimaryFixed: 5.9 100% 12%;
+  --primaryFixedDim: 11.1 100% 82%;
+  --onPrimaryFixedVariant: 11.4 66.7% 29.4%;
+  --secondary: 11.5 52% 80.4%;
+  --onSecondary: 12.7 32% 20.2%;
+  --secondaryContainer: 11.4 24.8% 29.2%;
+  --onSecondaryContainer: 10.7 100% 91.2%;
+  --secondaryFixed: 10.7 100% 91.2%;
+  --onSecondaryFixed: 10.7 46.7% 11.8%;
+  --secondaryFixedDim: 11.5 52% 80.4%;
+  --onSecondaryFixedVariant: 11.4 24.8% 29.2%;
+  --tertiary: 43.8 51.3% 70.2%;
+  --onTertiary: 46.1 87.5% 12.5%;
+  --tertiaryContainer: 44.7 54.1% 21.4%;
+  --onTertiaryContainer: 43.2 85.4% 81.2%;
+  --tertiaryFixed: 43.2 85.4% 81.2%;
+  --onTertiaryFixed: 43.3 100% 7.1%;
+  --tertiaryFixedDim: 43.8 51.3% 70.2%;
+  --onTertiaryFixedVariant: 44.7 54.1% 21.4%;
+  --error: 6.4 100% 83.5%;
+  --errorContainer: 355.9 100% 28.8%;
+  --onError: 357.1 100% 20.6%;
+  --onErrorContainer: 5.9 100% 92%;
+  --background: 8.6 12.3% 11.2%;
+  --onBackground: 11.2 30.8% 89.8%;
+  --outline: 10 11.2% 58%;
+  --inverseOnSurface: 8.6 12.3% 11.2%;
+  --inverseSurface: 11.2 30.8% 89.8%;
+  --inversePrimary: 11.5 54.5% 39.6%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 11.1 100% 82%;
+  --outlineVariant: 9.5 12.9% 28.8%;
+  --scrim: 0 0% 0%;
+  --surface: 8.6 17.1% 8%;
+  --onSurface: 12 13.8% 78.6%;
+  --surfaceVariant: 9.5 12.9% 28.8%;
+  --onSurfaceVariant: 11.1 25.7% 79.4%;
+  --surfaceContainerHighest: 12 9.3% 21.2%;
+  --surfaceContainerHigh: 7.5 9.3% 16.9%;
+  --surfaceContainer: 7.5 12.1% 12.9%;
+  --surfaceContainerLow: 8.6 12.3% 11.2%;
+  --surfaceContainerLowest: 10 20% 5.9%;
+  --surfaceDim: 8.6 17.1% 8%;
+  --surfaceBright: 6.7 7.7% 22.9%;
+}`
+
+export const beigeTheme = `:root {
+  --primary: 38.5 100% 25.7%;
+  --onPrimary: 0 0% 100%;
+  --primaryContainer: 32.4 100% 85.5%;
+  --onPrimaryContainer: 34.3 100% 8.2%;
+  --primaryFixed: 32.4 100% 85.5%;
+  --onPrimaryFixed: 34.3 100% 8.2%;
+  --primaryFixedDim: 35 100% 67.1%;
+  --onPrimaryFixedVariant: 37.8 100% 19.6%;
+  --secondary: 33.8 27.3% 34.5%;
+  --onSecondary: 0 0% 100%;
+  --secondaryContainer: 32.4 88.7% 86.1%;
+  --onSecondaryContainer: 35.3 77.3% 8.6%;
+  --secondaryFixed: 32.4 88.7% 86.1%;
+  --onSecondaryFixed: 35.3 77.3% 8.6%;
+  --secondaryFixedDim: 32 47.6% 75.3%;
+  --onSecondaryFixedVariant: 32.7 33.8% 25.5%;
+  --tertiary: 88.4 23.5% 31.8%;
+  --onTertiary: 0 0% 100%;
+  --tertiaryContainer: 86.3 53.3% 82.4%;
+  --onTertiaryContainer: 90 82.4% 6.7%;
+  --tertiaryFixed: 86.3 53.3% 82.4%;
+  --onTertiaryFixed: 90 82.4% 6.7%;
+  --tertiaryFixedDim: 86.7 31% 71.6%;
+  --onTertiaryFixedVariant: 89.1 29.9% 22.9%;
+  --error: 0 75.5% 41.6%;
+  --errorContainer: 5.9 100% 92%;
+  --onError: 0 0% 100%;
+  --onErrorContainer: 358.2 100% 12.7%;
+  --background: 300 100% 99.2%;
+  --onBackground: 33.3 17% 10.4%;
+  --outline: 31.2 10.7% 45.7%;
+  --inverseOnSurface: 26.7 60% 94.1%;
+  --inverseSurface: 32.7 11.6% 18.6%;
+  --inversePrimary: 35 100% 67.1%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 38.5 100% 25.7%;
+  --outlineVariant: 31 26.1% 76.7%;
+  --scrim: 0 0% 0%;
+  --surface: 21.8 100% 97.8%;
+  --onSurface: 33.3 17% 10.4%;
+  --surfaceVariant: 30 51.6% 87.8%;
+  --onSurfaceVariant: 32.7 16.2% 26.7%;
+  --surfaceContainerHighest: 26.7 31% 88.6%;
+  --surfaceContainerHigh: 26.7 37.5% 90.6%;
+  --surfaceContainer: 26.7 50% 92.9%;
+  --surfaceContainerLow: 26.7 75% 95.3%;
+  --surfaceContainerLowest: 0 0% 100%;
+  --surfaceDim: 26.7 23.7% 85.1%;
+  --surfaceBright: 21.8 100% 97.8%;
+}
+
+.dark {
+  --primary: 35 100% 67.1%;
+  --onPrimary: 36.9 100% 13.7%;
+  --primaryContainer: 37.8 100% 19.6%;
+  --onPrimaryContainer: 32.4 100% 85.5%;
+  --primaryFixed: 32.4 100% 85.5%;
+  --onPrimaryFixed: 34.3 100% 8.2%;
+  --primaryFixedDim: 35 100% 67.1%;
+  --onPrimaryFixedVariant: 37.8 100% 19.6%;
+  --secondary: 32 47.6% 75.3%;
+  --onSecondary: 34.5 47.6% 16.5%;
+  --secondaryContainer: 32.7 33.8% 25.5%;
+  --onSecondaryContainer: 32.4 88.7% 86.1%;
+  --secondaryFixed: 32.4 88.7% 86.1%;
+  --onSecondaryFixed: 35.3 77.3% 8.6%;
+  --secondaryFixedDim: 32 47.6% 75.3%;
+  --onSecondaryFixedVariant: 32.7 33.8% 25.5%;
+  --tertiary: 86.7 31% 71.6%;
+  --onTertiary: 89.1 45.2% 14.3%;
+  --tertiaryContainer: 89.1 29.9% 22.9%;
+  --onTertiaryContainer: 86.3 53.3% 82.4%;
+  --tertiaryFixed: 86.3 53.3% 82.4%;
+  --onTertiaryFixed: 90 82.4% 6.7%;
+  --tertiaryFixedDim: 86.7 31% 71.6%;
+  --onTertiaryFixedVariant: 89.1 29.9% 22.9%;
+  --error: 6.4 100% 83.5%;
+  --errorContainer: 355.9 100% 28.8%;
+  --onError: 357.1 100% 20.6%;
+  --onErrorContainer: 5.9 100% 92%;
+  --background: 33.3 17% 10.4%;
+  --onBackground: 26.7 31% 88.6%;
+  --outline: 30 12.4% 55.7%;
+  --inverseOnSurface: 33.3 17% 10.4%;
+  --inverseSurface: 26.7 31% 88.6%;
+  --inversePrimary: 38.5 100% 25.7%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 35 100% 67.1%;
+  --outlineVariant: 32.7 16.2% 26.7%;
+  --scrim: 0 0% 0%;
+  --surface: 33.3 24.3% 7.3%;
+  --onSurface: 28.2 14.8% 77.5%;
+  --surfaceVariant: 32.7 16.2% 26.7%;
+  --onSurfaceVariant: 31 26.1% 76.7%;
+  --surfaceContainerHighest: 30 9.6% 20.4%;
+  --surfaceContainerHigh: 30 12.2% 16.1%;
+  --surfaceContainer: 33.3 14.8% 12%;
+  --surfaceContainerLow: 33.3 17% 10.4%;
+  --surfaceContainerLowest: 37.5 30.8% 5.1%;
+  --surfaceDim: 33.3 24.3% 7.3%;
+  --surfaceBright: 27.3 9.7% 22.2%;
+}`
+
+export const marshTheme = `:root {
+  --primary: 63 100% 19.4%;
+  --onPrimary: 0 0% 100%;
+  --primaryContainer: 63.5 73.9% 68.4%;
+  --onPrimaryContainer: 64.1 100% 5.7%;
+  --primaryFixed: 63.5 73.9% 68.4%;
+  --onPrimaryFixed: 64.1 100% 5.7%;
+  --primaryFixedDim: 63.2 53.3% 58%;
+  --onPrimaryFixedVariant: 63.2 100% 14.5%;
+  --secondary: 62.1 17.1% 32.2%;
+  --onSecondary: 0 0% 100%;
+  --secondaryContainer: 60 41.6% 82.5%;
+  --onSecondaryContainer: 62.6 65.7% 6.9%;
+  --secondaryFixed: 60 41.6% 82.5%;
+  --onSecondaryFixed: 62.6 65.7% 6.9%;
+  --secondaryFixedDim: 61.7 24.5% 72%;
+  --onSecondaryFixedVariant: 62.3 22% 23.1%;
+  --tertiary: 161.4 25.9% 31.8%;
+  --onTertiary: 0 0% 100%;
+  --tertiaryContainer: 157.8 54.8% 83.5%;
+  --onTertiaryContainer: 165 100% 6.3%;
+  --tertiaryFixed: 157.8 54.8% 83.5%;
+  --onTertiaryFixed: 165 100% 6.3%;
+  --tertiaryFixedDim: 157.3 32.4% 72.7%;
+  --onTertiaryFixedVariant: 161.4 36.8% 22.4%;
+  --error: 0 75.5% 41.6%;
+  --errorContainer: 5.9 100% 92%;
+  --onError: 0 0% 100%;
+  --onErrorContainer: 358.2 100% 12.7%;
+  --background: 60 100% 91.4%;
+  --onBackground: 60 9.8% 10%;
+  --outline: 60 6.7% 44.1%;
+  --inverseOnSurface: 45 35.3% 93.3%;
+  --inverseSurface: 60 6.5% 18%;
+  --inversePrimary: 63.2 53.3% 58%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 63 100% 19.4%;
+  --outlineVariant: 53.7 15% 75.1%;
+  --scrim: 0 0% 0%;
+  --surface: 45 66.7% 96.5%;
+  --onSurface: 60 9.8% 10%;
+  --surfaceVariant: 53.7 26.8% 86.1%;
+  --onSurfaceVariant: 60 9.2% 25.5%;
+  --surfaceContainerHighest: 43.6 17.5% 87.6%;
+  --surfaceContainerHigh: 45 23.1% 89.8%;
+  --surfaceContainer: 45 30% 92.2%;
+  --surfaceContainerLow: 40 42.9% 94.5%;
+  --surfaceContainerLowest: 0 0% 100%;
+  --surfaceDim: 45 15% 84.3%;
+  --surfaceBright: 45 66.7% 96.5%;
+}
+
+.dark {
+  --primary: 63.2 53.3% 58%;
+  --onPrimary: 63.5 100% 10%;
+  --primaryContainer: 63.2 100% 14.5%;
+  --onPrimaryContainer: 63.5 73.9% 68.4%;
+  --primaryFixed: 63.5 73.9% 68.4%;
+  --onPrimaryFixed: 64.1 100% 5.7%;
+  --primaryFixedDim: 63.2 53.3% 58%;
+  --onPrimaryFixedVariant: 63.2 100% 14.5%;
+  --secondary: 61.7 24.5% 72%;
+  --onSecondary: 62.4 33.3% 14.7%;
+  --secondaryContainer: 62.3 22% 23.1%;
+  --onSecondaryContainer: 60 41.6% 82.5%;
+  --secondaryFixed: 60 41.6% 82.5%;
+  --onSecondaryFixed: 62.6 65.7% 6.9%;
+  --secondaryFixedDim: 61.7 24.5% 72%;
+  --onSecondaryFixedVariant: 62.3 22% 23.1%;
+  --tertiary: 157.3 32.4% 72.7%;
+  --onTertiary: 166 74.6% 12.4%;
+  --tertiaryContainer: 161.4 36.8% 22.4%;
+  --onTertiaryContainer: 157.8 54.8% 83.5%;
+  --tertiaryFixed: 157.8 54.8% 83.5%;
+  --onTertiaryFixed: 165 100% 6.3%;
+  --tertiaryFixedDim: 157.3 32.4% 72.7%;
+  --onTertiaryFixedVariant: 161.4 36.8% 22.4%;
+  --error: 6.4 100% 83.5%;
+  --errorContainer: 355.9 100% 28.8%;
+  --onError: 357.1 100% 20.6%;
+  --onErrorContainer: 5.9 100% 92%;
+  --background: 60 9.8% 10%;
+  --onBackground: 43.6 17.5% 87.6%;
+  --outline: 56.3 6.8% 54.1%;
+  --inverseOnSurface: 60 9.8% 10%;
+  --inverseSurface: 43.6 17.5% 87.6%;
+  --inversePrimary: 63 100% 19.4%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 63.2 53.3% 58%;
+  --outlineVariant: 60 9.2% 25.5%;
+  --scrim: 0 0% 0%;
+  --surface: 60 14.3% 6.9%;
+  --onSurface: 43.6 9.2% 76.7%;
+  --surfaceVariant: 60 9.2% 25.5%;
+  --onSurfaceVariant: 53.7 15% 75.1%;
+  --surfaceContainerHighest: 60 6% 19.6%;
+  --surfaceContainerHigh: 60 6.3% 15.5%;
+  --surfaceContainer: 60 8.5% 11.6%;
+  --surfaceContainerLow: 60 9.8% 10%;
+  --surfaceContainerLowest: 60 16.7% 4.7%;
+  --surfaceDim: 60 14.3% 6.9%;
+  --surfaceBright: 51.4 6.4% 21.4%;
+}`
+
+export const greenTheme = `:root {
+  --primary: 124.4 100% 21.6%;
+  --onPrimary: 0 0% 100%;
+  --primaryContainer: 111.1 90.6% 75.1%;
+  --onPrimaryContainer: 121.8 100% 6.7%;
+  --primaryFixed: 111.1 90.6% 75.1%;
+  --onPrimaryFixed: 121.8 100% 6.7%;
+  --primaryFixedDim: 111.9 61.3% 64.5%;
+  --onPrimaryFixedVariant: 122.9 100% 16.3%;
+  --secondary: 105.7 11.9% 34.7%;
+  --onSecondary: 0 0% 100%;
+  --secondaryContainer: 97.8 37% 85.7%;
+  --onSecondaryContainer: 105.9 37.8% 8.8%;
+  --secondaryFixed: 97.8 37% 85.7%;
+  --onSecondaryFixed: 105.9 37.8% 8.8%;
+  --secondaryFixedDim: 98.4 19.4% 74.7%;
+  --onSecondaryFixedVariant: 105 15.4% 25.5%;
+  --tertiary: 184.9 30.4% 31.6%;
+  --onTertiary: 0 0% 100%;
+  --tertiaryContainer: 184.7 61.4% 83.7%;
+  --onTertiaryContainer: 183.5 100% 6.7%;
+  --tertiaryFixed: 184.7 61.4% 83.7%;
+  --onTertiaryFixed: 183.5 100% 6.7%;
+  --tertiaryFixedDim: 183.6 35.7% 72.5%;
+  --onTertiaryFixedVariant: 184.7 45.9% 21.8%;
+  --error: 0 75.5% 41.6%;
+  --errorContainer: 5.9 100% 92%;
+  --onError: 0 0% 100%;
+  --onErrorContainer: 358.2 100% 12.7%;
+  --background: 68.6 63.6% 97.8%;
+  --onBackground: 90 7.7% 10.2%;
+  --outline: 92.7 4.8% 45.3%;
+  --inverseOnSurface: 60 17.6% 93.3%;
+  --inverseSurface: 90 4.3% 18.4%;
+  --inversePrimary: 111.9 61.3% 64.5%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 124.4 100% 21.6%;
+  --outlineVariant: 85 9.8% 76.1%;
+  --scrim: 0 0% 0%;
+  --surface: 68.6 41.2% 96.7%;
+  --onSurface: 90 7.7% 10.2%;
+  --surfaceVariant: 85 18.2% 87.1%;
+  --onSurfaceVariant: 93.3 6.7% 26.5%;
+  --surfaceContainerHighest: 70 9.7% 87.8%;
+  --surfaceContainerHigh: 68.6 13.7% 90%;
+  --surfaceContainer: 60 15% 92.2%;
+  --surfaceContainerLow: 60 24.1% 94.3%;
+  --surfaceContainerLowest: 0 0% 100%;
+  --surfaceDim: 60 7.5% 84.3%;
+  --surfaceBright: 68.6 41.2% 96.7%;
+}
+
+.dark {
+  --primary: 111.9 61.3% 64.5%;
+  --onPrimary: 122.1 100% 11.4%;
+  --primaryContainer: 122.9 100% 16.3%;
+  --onPrimaryContainer: 111.1 90.6% 75.1%;
+  --primaryFixed: 111.1 90.6% 75.1%;
+  --onPrimaryFixed: 121.8 100% 6.7%;
+  --primaryFixedDim: 111.9 61.3% 64.5%;
+  --onPrimaryFixedVariant: 122.9 100% 16.3%;
+  --secondary: 98.4 19.4% 74.7%;
+  --onSecondary: 106.7 20.9% 16.9%;
+  --secondaryContainer: 105 15.4% 25.5%;
+  --onSecondaryContainer: 97.8 37% 85.7%;
+  --secondaryFixed: 97.8 37% 85.7%;
+  --onSecondaryFixed: 105.9 37.8% 8.8%;
+  --secondaryFixedDim: 98.4 19.4% 74.7%;
+  --onSecondaryFixedVariant: 105 15.4% 25.5%;
+  --tertiary: 183.6 35.7% 72.5%;
+  --onTertiary: 183.1 100% 11.4%;
+  --tertiaryContainer: 184.7 45.9% 21.8%;
+  --onTertiaryContainer: 184.7 61.4% 83.7%;
+  --tertiaryFixed: 184.7 61.4% 83.7%;
+  --onTertiaryFixed: 183.5 100% 6.7%;
+  --tertiaryFixedDim: 183.6 35.7% 72.5%;
+  --onTertiaryFixedVariant: 184.7 45.9% 21.8%;
+  --error: 6.4 100% 83.5%;
+  --errorContainer: 355.9 100% 28.8%;
+  --onError: 357.1 100% 20.6%;
+  --onErrorContainer: 5.9 100% 92%;
+  --background: 90 7.7% 10.2%;
+  --onBackground: 70 9.7% 87.8%;
+  --outline: 90 5.3% 55.3%;
+  --inverseOnSurface: 90 7.7% 10.2%;
+  --inverseSurface: 70 9.7% 87.8%;
+  --inversePrimary: 124.4 100% 21.6%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 111.9 61.3% 64.5%;
+  --outlineVariant: 93.3 6.7% 26.5%;
+  --scrim: 0 0% 0%;
+  --surface: 90 11.1% 7.1%;
+  --onSurface: 70 5.1% 76.9%;
+  --surfaceVariant: 93.3 6.7% 26.5%;
+  --onSurfaceVariant: 85 9.8% 76.1%;
+  --surfaceContainerHighest: 90 3.9% 20%;
+  --surfaceContainerHigh: 105 4.9% 16.1%;
+  --surfaceContainer: 90 6.7% 11.8%;
+  --surfaceContainerLow: 90 7.7% 10.2%;
+  --surfaceContainerLowest: 90 15.4% 5.1%;
+  --surfaceDim: 90 11.1% 7.1%;
+  --surfaceBright: 90 3.6% 22%;
+}`
+
+export const emeraldTheme = `:root {
+  --primary: 176.6 100% 20.8%;
+  --onPrimary: 0 0% 100%;
+  --primaryContainer: 175.1 89.3% 70.6%;
+  --onPrimaryContainer: 176.3 100% 6.3%;
+  --primaryFixed: 175.1 89.3% 70.6%;
+  --onPrimaryFixed: 176.3 100% 6.3%;
+  --primaryFixedDim: 175.3 65.9% 58.6%;
+  --onPrimaryFixedVariant: 176.3 100% 15.7%;
+  --secondary: 172.8 14.5% 33.9%;
+  --onSecondary: 0 0% 100%;
+  --secondaryContainer: 171.4 37.8% 85.5%;
+  --onSecondaryContainer: 175.4 72.2% 7.1%;
+  --secondaryFixed: 171.4 37.8% 85.5%;
+  --onSecondaryFixed: 175.4 72.2% 7.1%;
+  --secondaryFixedDim: 171.4 21.5% 74.5%;
+  --onSecondaryFixedVariant: 175.2 20% 24.5%;
+  --tertiary: 210 25.8% 38%;
+  --onTertiary: 0 0% 100%;
+  --tertiaryContainer: 212.5 100% 90.6%;
+  --onTertiaryContainer: 206.5 100% 10.2%;
+  --tertiaryFixed: 212.5 100% 90.6%;
+  --onTertiaryFixed: 206.5 100% 10.2%;
+  --tertiaryFixedDim: 212.1 53.8% 79.6%;
+  --onTertiaryFixedVariant: 210 34.2% 28.6%;
+  --error: 0 75.5% 41.6%;
+  --errorContainer: 5.9 100% 92%;
+  --onError: 0 0% 100%;
+  --onErrorContainer: 358.2 100% 12.7%;
+  --background: 140 42.9% 98.6%;
+  --onBackground: 180 5.7% 10.4%;
+  --outline: 168 4.3% 45.5%;
+  --inverseOnSurface: 150 6.7% 94.1%;
+  --inverseSurface: 165 4.3% 18.4%;
+  --inversePrimary: 175.3 65.9% 58.6%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 176.6 100% 20.8%;
+  --outlineVariant: 163.6 9.2% 76.7%;
+  --scrim: 0 0% 0%;
+  --surface: 140 23.1% 97.5%;
+  --onSurface: 180 5.7% 10.4%;
+  --surfaceVariant: 163.6 17.5% 87.6%;
+  --onSurfaceVariant: 168 7.4% 26.7%;
+  --surfaceContainerHighest: 160 5.1% 88.4%;
+  --surfaceContainerHigh: 140 6.4% 90.8%;
+  --surfaceContainer: 150 5.6% 92.9%;
+  --surfaceContainerLow: 150 8.3% 95.3%;
+  --surfaceContainerLowest: 0 0% 100%;
+  --surfaceDim: 140 4% 85.3%;
+  --surfaceBright: 140 23.1% 97.5%;
+}
+
+.dark {
+  --primary: 175.3 65.9% 58.6%;
+  --onPrimary: 176.7 100% 10.8%;
+  --primaryContainer: 176.3 100% 15.7%;
+  --onPrimaryContainer: 175.1 89.3% 70.6%;
+  --primaryFixed: 175.1 89.3% 70.6%;
+  --onPrimaryFixed: 176.3 100% 6.3%;
+  --primaryFixedDim: 175.3 65.9% 58.6%;
+  --onPrimaryFixedVariant: 176.3 100% 15.7%;
+  --secondary: 171.4 21.5% 74.5%;
+  --onSecondary: 172.8 30.9% 15.9%;
+  --secondaryContainer: 175.2 20% 24.5%;
+  --onSecondaryContainer: 171.4 37.8% 85.5%;
+  --secondaryFixed: 171.4 37.8% 85.5%;
+  --onSecondaryFixed: 175.4 72.2% 7.1%;
+  --secondaryFixedDim: 171.4 21.5% 74.5%;
+  --onSecondaryFixedVariant: 175.2 20% 24.5%;
+  --tertiary: 212.1 53.8% 79.6%;
+  --onTertiary: 208.8 51% 19.2%;
+  --tertiaryContainer: 210 34.2% 28.6%;
+  --onTertiaryContainer: 212.5 100% 90.6%;
+  --tertiaryFixed: 212.5 100% 90.6%;
+  --onTertiaryFixed: 206.5 100% 10.2%;
+  --tertiaryFixedDim: 212.1 53.8% 79.6%;
+  --onTertiaryFixedVariant: 210 34.2% 28.6%;
+  --error: 6.4 100% 83.5%;
+  --errorContainer: 355.9 100% 28.8%;
+  --onError: 357.1 100% 20.6%;
+  --onErrorContainer: 5.9 100% 92%;
+  --background: 180 5.7% 10.4%;
+  --onBackground: 160 5.1% 88.4%;
+  --outline: 168 4.4% 55.7%;
+  --inverseOnSurface: 180 5.7% 10.4%;
+  --inverseSurface: 160 5.1% 88.4%;
+  --inversePrimary: 176.6 100% 20.8%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 175.3 65.9% 58.6%;
+  --outlineVariant: 168 7.4% 26.7%;
+  --scrim: 0 0% 0%;
+  --surface: 180 11.1% 7.1%;
+  --onSurface: 160 2.6% 77.5%;
+  --surfaceVariant: 168 7.4% 26.7%;
+  --onSurfaceVariant: 163.6 9.2% 76.7%;
+  --surfaceContainerHighest: 180 2.9% 20.2%;
+  --surfaceContainerHigh: 165 4.9% 16.1%;
+  --surfaceContainer: 180 4.9% 12%;
+  --surfaceContainerLow: 180 5.7% 10.4%;
+  --surfaceContainerLowest: 165 15.4% 5.1%;
+  --surfaceDim: 180 11.1% 7.1%;
+  --surfaceBright: 165 3.6% 22%;
+}`
+
+export const skyTheme = `:root {
+  --primary: 197.6 100% 28%;
+  --onPrimary: 0 0% 100%;
+  --primaryContainer: 205.7 100% 89%;
+  --onPrimaryContainer: 200.9 100% 9%;
+  --primaryFixed: 205.7 100% 89%;
+  --onPrimaryFixed: 200.9 100% 9%;
+  --primaryFixedDim: 203.8 100% 76.3%;
+  --onPrimaryFixedVariant: 198.2 100% 21.4%;
+  --secondary: 205.2 16.4% 37.1%;
+  --onSecondary: 0 0% 100%;
+  --secondaryContainer: 207.4 63.6% 89.2%;
+  --onSecondaryContainer: 204 57.7% 10.2%;
+  --secondaryFixed: 207.4 63.6% 89.2%;
+  --onSecondaryFixed: 204 57.7% 10.2%;
+  --secondaryFixedDim: 206.5 30.4% 78%;
+  --onSecondaryFixedVariant: 206 21.1% 27.8%;
+  --tertiary: 257.1 16.4% 41.8%;
+  --onTertiary: 0 0% 100%;
+  --tertiaryContainer: 261.2 100% 93.3%;
+  --onTertiaryContainer: 257.4 41.3% 14.7%;
+  --tertiaryFixed: 261.2 100% 93.3%;
+  --onTertiaryFixed: 257.4 41.3% 14.7%;
+  --tertiaryFixedDim: 259 48.2% 83.3%;
+  --onTertiaryFixedVariant: 256.4 20% 32.4%;
+  --error: 0 75.5% 41.6%;
+  --errorContainer: 5.9 100% 92%;
+  --onError: 0 0% 100%;
+  --onErrorContainer: 358.2 100% 12.7%;
+  --background: 240 100% 99.4%;
+  --onBackground: 204 9.1% 10.8%;
+  --outline: 207.7 5.4% 46.9%;
+  --inverseOnSurface: 240 11.1% 94.7%;
+  --inverseSurface: 204 5.2% 19%;
+  --inversePrimary: 203.8 100% 76.3%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 197.6 100% 28%;
+  --outlineVariant: 212.3 11.7% 78.2%;
+  --scrim: 0 0% 0%;
+  --surface: 240 33.3% 98.2%;
+  --onSurface: 204 9.1% 10.8%;
+  --surfaceVariant: 212.3 23.6% 89.2%;
+  --onSurfaceVariant: 205 8.5% 27.8%;
+  --surfaceContainerHighest: 240 5.5% 89.2%;
+  --surfaceContainerHigh: 225 9.1% 91.4%;
+  --surfaceContainer: 220 9.1% 93.5%;
+  --surfaceContainerLow: 240 14.3% 95.9%;
+  --surfaceContainerLowest: 0 0% 100%;
+  --surfaceDim: 225 5.6% 85.9%;
+  --surfaceBright: 240 33.3% 98.2%;
+}
+
+.dark {
+  --primary: 203.8 100% 76.3%;
+  --onPrimary: 198.9 100% 14.9%;
+  --primaryContainer: 198.2 100% 21.4%;
+  --onPrimaryContainer: 205.7 100% 89%;
+  --primaryFixed: 205.7 100% 89%;
+  --onPrimaryFixed: 200.9 100% 9%;
+  --primaryFixedDim: 203.8 100% 76.3%;
+  --onPrimaryFixedVariant: 198.2 100% 21.4%;
+  --secondary: 206.5 30.4% 78%;
+  --onSecondary: 204.8 30.5% 18.6%;
+  --secondaryContainer: 206 21.1% 27.8%;
+  --onSecondaryContainer: 207.4 63.6% 89.2%;
+  --secondaryFixed: 207.4 63.6% 89.2%;
+  --onSecondaryFixed: 204 57.7% 10.2%;
+  --secondaryFixedDim: 206.5 30.4% 78%;
+  --onSecondaryFixedVariant: 206 21.1% 27.8%;
+  --tertiary: 259 48.2% 83.3%;
+  --onTertiary: 256.9 27.1% 23.1%;
+  --tertiaryContainer: 256.4 20% 32.4%;
+  --onTertiaryContainer: 261.2 100% 93.3%;
+  --tertiaryFixed: 261.2 100% 93.3%;
+  --onTertiaryFixed: 257.4 41.3% 14.7%;
+  --tertiaryFixedDim: 259 48.2% 83.3%;
+  --onTertiaryFixedVariant: 256.4 20% 32.4%;
+  --error: 6.4 100% 83.5%;
+  --errorContainer: 355.9 100% 28.8%;
+  --onError: 357.1 100% 20.6%;
+  --onErrorContainer: 5.9 100% 92%;
+  --background: 204 9.1% 10.8%;
+  --onBackground: 240 5.5% 89.2%;
+  --outline: 212.3 5.9% 57.1%;
+  --inverseOnSurface: 204 9.1% 10.8%;
+  --inverseSurface: 240 5.5% 89.2%;
+  --inversePrimary: 197.6 100% 28%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 203.8 100% 76.3%;
+  --outlineVariant: 205 8.5% 27.8%;
+  --scrim: 0 0% 0%;
+  --surface: 204 12.8% 7.6%;
+  --onSurface: 225 3.6% 78%;
+  --surfaceVariant: 205 8.5% 27.8%;
+  --onSurfaceVariant: 212.3 11.7% 78.2%;
+  --surfaceContainerHighest: 210 3.8% 20.8%;
+  --surfaceContainerHigh: 210 4.8% 16.5%;
+  --surfaceContainer: 204 7.9% 12.4%;
+  --surfaceContainerLow: 204 9.1% 10.8%;
+  --surfaceContainerLowest: 210 14.3% 5.5%;
+  --surfaceDim: 204 12.8% 7.6%;
+  --surfaceBright: 216 4.3% 22.5%;
+}`
+
+export const indigoTheme = `:root {
+  --primary: 256.9 100% 57.5%;
+  --onPrimary: 0 0% 100%;
+  --primaryContainer: 254.5 100% 93.5%;
+  --onPrimaryContainer: 257.9 100% 19%;
+  --primaryFixed: 254.5 100% 93.5%;
+  --onPrimaryFixed: 257.9 100% 19%;
+  --primaryFixedDim: 252 100% 87.3%;
+  --onPrimaryFixedVariant: 260.9 100% 41.6%;
+  --secondary: 253.6 10.8% 40%;
+  --onSecondary: 0 0% 100%;
+  --secondaryContainer: 256.2 68.4% 92.5%;
+  --onSecondaryContainer: 253.3 26.5% 13.3%;
+  --secondaryFixed: 256.2 68.4% 92.5%;
+  --onSecondaryFixed: 253.3 26.5% 13.3%;
+  --secondaryFixedDim: 256.8 26.3% 81.4%;
+  --onSecondaryFixedVariant: 252 12.8% 30.6%;
+  --tertiary: 335.7 20.4% 40.4%;
+  --onTertiary: 0 0% 100%;
+  --tertiaryContainer: 341.1 100% 92.5%;
+  --onTertiaryContainer: 332.9 47.7% 12.7%;
+  --tertiaryFixed: 341.1 100% 92.5%;
+  --onTertiaryFixed: 332.9 47.7% 12.7%;
+  --tertiaryFixedDim: 338.9 61.4% 82.7%;
+  --onTertiaryFixedVariant: 335.4 24.8% 30.8%;
+  --error: 0 75.5% 41.6%;
+  --errorContainer: 5.9 100% 92%;
+  --onError: 0 0% 100%;
+  --onErrorContainer: 358.2 100% 12.7%;
+  --background: 300 100% 99.2%;
+  --onBackground: 260 5.3% 11.2%;
+  --outline: 264 4.1% 47.8%;
+  --inverseOnSurface: 300 18.5% 94.7%;
+  --inverseSurface: 260 3% 19.4%;
+  --inversePrimary: 252 100% 87.3%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 256.9 100% 57.5%;
+  --outlineVariant: 265 11.3% 79.2%;
+  --scrim: 0 0% 0%;
+  --surface: 300 55.6% 98.2%;
+  --onSurface: 260 5.3% 11.2%;
+  --surfaceVariant: 270 24% 90.2%;
+  --onSurfaceVariant: 260 6.1% 28.8%;
+  --surfaceContainerHighest: 300 9.1% 89.2%;
+  --surfaceContainerHigh: 288 11.6% 91.6%;
+  --surfaceContainer: 300 15.2% 93.5%;
+  --surfaceContainerLow: 300 23.8% 95.9%;
+  --surfaceContainerLowest: 0 0% 100%;
+  --surfaceDim: 300 5.6% 85.9%;
+  --surfaceBright: 300 55.6% 98.2%;
+}
+
+.dark {
+  --primary: 252 100% 87.3%;
+  --onPrimary: 260 100% 30%;
+  --primaryContainer: 260.9 100% 41.6%;
+  --onPrimaryContainer: 254.5 100% 93.5%;
+  --primaryFixed: 254.5 100% 93.5%;
+  --onPrimaryFixed: 257.9 100% 19%;
+  --primaryFixedDim: 252 100% 87.3%;
+  --onPrimaryFixedVariant: 260.9 100% 41.6%;
+  --secondary: 256.8 26.3% 81.4%;
+  --onSecondary: 252.6 17.1% 21.8%;
+  --secondaryContainer: 252 12.8% 30.6%;
+  --onSecondaryContainer: 256.2 68.4% 92.5%;
+  --secondaryFixed: 256.2 68.4% 92.5%;
+  --onSecondaryFixed: 253.3 26.5% 13.3%;
+  --secondaryFixedDim: 256.8 26.3% 81.4%;
+  --onSecondaryFixedVariant: 252 12.8% 30.6%;
+  --tertiary: 338.9 61.4% 82.7%;
+  --onTertiary: 335 32.7% 21.6%;
+  --tertiaryContainer: 335.4 24.8% 30.8%;
+  --onTertiaryContainer: 341.1 100% 92.5%;
+  --tertiaryFixed: 341.1 100% 92.5%;
+  --onTertiaryFixed: 332.9 47.7% 12.7%;
+  --tertiaryFixedDim: 338.9 61.4% 82.7%;
+  --onTertiaryFixedVariant: 335.4 24.8% 30.8%;
+  --error: 6.4 100% 83.5%;
+  --errorContainer: 355.9 100% 28.8%;
+  --onError: 357.1 100% 20.6%;
+  --onErrorContainer: 5.9 100% 92%;
+  --background: 260 5.3% 11.2%;
+  --onBackground: 300 9.1% 89.2%;
+  --outline: 264 4.7% 58%;
+  --inverseOnSurface: 260 5.3% 11.2%;
+  --inverseSurface: 300 9.1% 89.2%;
+  --inversePrimary: 256.9 100% 57.5%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 252 100% 87.3%;
+  --outlineVariant: 260 6.1% 28.8%;
+  --scrim: 0 0% 0%;
+  --surface: 260 7.3% 8%;
+  --onSurface: 288 4.5% 78.2%;
+  --surfaceVariant: 260 6.1% 28.8%;
+  --onSurfaceVariant: 265 11.3% 79.2%;
+  --surfaceContainerHighest: 270 3.7% 21.2%;
+  --surfaceContainerHigh: 270 4.7% 16.9%;
+  --surfaceContainer: 255 6.1% 12.9%;
+  --surfaceContainerLow: 260 5.3% 11.2%;
+  --surfaceContainerLowest: 260 9.7% 6.1%;
+  --surfaceDim: 260 7.3% 8%;
+  --surfaceBright: 270 3.4% 22.7%;
+}`
+
+export const purpleTheme = `:root {
+  --primary: 282 100% 41.8%;
+  --onPrimary: 0 0% 100%;
+  --primaryContainer: 285.8 100% 92.5%;
+  --onPrimaryContainer: 280.3 100% 14.3%;
+  --primaryFixed: 285.8 100% 92.5%;
+  --onPrimaryFixed: 280.3 100% 14.3%;
+  --primaryFixedDim: 281.8 100% 85.1%;
+  --onPrimaryFixedVariant: 281.7 100% 32.2%;
+  --secondary: 285 10.1% 38.8%;
+  --onSecondary: 0 0% 100%;
+  --secondaryContainer: 290 52.2% 91%;
+  --onSecondaryContainer: 282.4 27% 12.4%;
+  --secondaryFixed: 290 52.2% 91%;
+  --onSecondaryFixed: 282.4 27% 12.4%;
+  --secondaryFixedDim: 287.5 23.5% 80%;
+  --onSecondaryFixedVariant: 284.2 12.6% 29.6%;
+  --tertiary: 0 22.3% 41.4%;
+  --onTertiary: 0 0% 100%;
+  --tertiaryContainer: 1.6 100% 92.5%;
+  --onTertiaryContainer: 358.2 50% 13.3%;
+  --tertiaryFixed: 1.6 100% 92.5%;
+  --onTertiaryFixed: 358.2 50% 13.3%;
+  --tertiaryFixedDim: 0 75.6% 83.9%;
+  --onTertiaryFixedVariant: 0 26.7% 31.6%;
+  --error: 0 75.5% 41.6%;
+  --errorContainer: 5.9 100% 92%;
+  --onError: 0 0% 100%;
+  --onErrorContainer: 358.2 100% 12.7%;
+  --background: 300 100% 99.2%;
+  --onBackground: 300 5.3% 11.2%;
+  --outline: 294 4.1% 47.5%;
+  --inverseOnSurface: 325.7 28% 95.1%;
+  --inverseSurface: 300 4.1% 19.2%;
+  --inversePrimary: 281.8 100% 85.1%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 282 100% 41.8%;
+  --outlineVariant: 300 10.1% 78.6%;
+  --scrim: 0 0% 0%;
+  --surface: 322.5 100% 98.4%;
+  --onSurface: 300 5.3% 11.2%;
+  --surfaceVariant: 300 20.8% 89.6%;
+  --onSurfaceVariant: 286.7 6.2% 28.4%;
+  --surfaceContainerHighest: 322.5 14.8% 89.4%;
+  --surfaceContainerHigh: 322.5 19% 91.8%;
+  --surfaceContainer: 325.7 22.6% 93.9%;
+  --surfaceContainerLow: 322.5 40% 96.1%;
+  --surfaceContainerLowest: 0 0% 100%;
+  --surfaceDim: 325.7 9.9% 86.1%;
+  --surfaceBright: 322.5 100% 98.4%;
+}
+
+.dark {
+  --primary: 281.8 100% 85.1%;
+  --onPrimary: 281 100% 22.9%;
+  --primaryContainer: 281.7 100% 32.2%;
+  --onPrimaryContainer: 285.8 100% 92.5%;
+  --primaryFixed: 285.8 100% 92.5%;
+  --onPrimaryFixed: 280.3 100% 14.3%;
+  --primaryFixedDim: 281.8 100% 85.1%;
+  --onPrimaryFixedVariant: 281.7 100% 32.2%;
+  --secondary: 287.5 23.5% 80%;
+  --onSecondary: 283.3 17% 20.8%;
+  --secondaryContainer: 284.2 12.6% 29.6%;
+  --onSecondaryContainer: 290 52.2% 91%;
+  --secondaryFixed: 290 52.2% 91%;
+  --onSecondaryFixed: 282.4 27% 12.4%;
+  --secondaryFixedDim: 287.5 23.5% 80%;
+  --onSecondaryFixedVariant: 284.2 12.6% 29.6%;
+  --tertiary: 0 75.6% 83.9%;
+  --onTertiary: 358.5 34.5% 22.2%;
+  --tertiaryContainer: 0 26.7% 31.6%;
+  --onTertiaryContainer: 1.6 100% 92.5%;
+  --tertiaryFixed: 1.6 100% 92.5%;
+  --onTertiaryFixed: 358.2 50% 13.3%;
+  --tertiaryFixedDim: 0 75.6% 83.9%;
+  --onTertiaryFixedVariant: 0 26.7% 31.6%;
+  --error: 6.4 100% 83.5%;
+  --errorContainer: 355.9 100% 28.8%;
+  --onError: 357.1 100% 20.6%;
+  --onErrorContainer: 5.9 100% 92%;
+  --background: 300 5.3% 11.2%;
+  --onBackground: 322.5 14.8% 89.4%;
+  --outline: 294 4.6% 57.6%;
+  --inverseOnSurface: 300 5.3% 11.2%;
+  --inverseSurface: 322.5 14.8% 89.4%;
+  --inversePrimary: 282 100% 41.8%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 281.8 100% 85.1%;
+  --outlineVariant: 286.7 6.2% 28.4%;
+  --scrim: 0 0% 0%;
+  --surface: 285 10% 7.8%;
+  --onSurface: 320 5.5% 78.4%;
+  --surfaceVariant: 286.7 6.2% 28.4%;
+  --onSurfaceVariant: 300 10.1% 78.6%;
+  --surfaceContainerHighest: 300 2.8% 21%;
+  --surfaceContainerHigh: 300 3.5% 16.7%;
+  --surfaceContainer: 300 4.6% 12.7%;
+  --surfaceContainerLow: 300 5.3% 11.2%;
+  --surfaceContainerLowest: 300 10.3% 5.7%;
+  --surfaceDim: 285 10% 7.8%;
+  --surfaceBright: 300 3.4% 22.7%;
+}`
+
+export const pinkTheme = `:root {
+  --primary: 311.3 100% 34.5%;
+  --onPrimary: 0 0% 100%;
+  --primaryContainer: 329.2 100% 92.4%;
+  --onPrimaryContainer: 313.2 100% 11.6%;
+  --primaryFixed: 329.2 100% 92.4%;
+  --onPrimaryFixed: 313.2 100% 11.6%;
+  --primaryFixedDim: 322.7 100% 83.9%;
+  --onPrimaryFixedVariant: 312 100% 26.5%;
+  --secondary: 326.4 12.6% 39%;
+  --onSecondary: 0 0% 100%;
+  --secondaryContainer: 330 81% 91.8%;
+  --onSecondaryContainer: 323.3 29% 12.2%;
+  --secondaryFixed: 330 81% 91.8%;
+  --onSecondaryFixed: 323.3 29% 12.2%;
+  --secondaryFixedDim: 330 32.7% 80.8%;
+  --onSecondaryFixedVariant: 326.1 15.2% 29.6%;
+  --tertiary: 20 34.7% 37.3%;
+  --onTertiary: 0 0% 100%;
+  --tertiaryContainer: 17.6 100% 90%;
+  --onTertiaryContainer: 20 84.9% 10.4%;
+  --tertiaryFixed: 17.6 100% 90%;
+  --onTertiaryFixed: 20 84.9% 10.4%;
+  --tertiaryFixedDim: 19.1 79.4% 79%;
+  --onTertiaryFixedVariant: 20 42.3% 27.8%;
+  --error: 0 75.5% 41.6%;
+  --errorContainer: 5.9 100% 92%;
+  --onError: 0 0% 100%;
+  --onErrorContainer: 358.2 100% 12.7%;
+  --background: 300 100% 99.2%;
+  --onBackground: 324 8.8% 11.2%;
+  --outline: 330 5.7% 47.8%;
+  --inverseOnSurface: 343.6 47.8% 95.5%;
+  --inverseSurface: 336 5.1% 19.4%;
+  --inversePrimary: 322.7 100% 83.9%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 311.3 100% 34.5%;
+  --outlineVariant: 335.3 16.2% 79.4%;
+  --scrim: 0 0% 0%;
+  --surface: 351.4 100% 98.6%;
+  --onSurface: 324 8.8% 11.2%;
+  --surfaceVariant: 336.7 37.5% 90.6%;
+  --onSurfaceVariant: 332.7 7.5% 28.8%;
+  --surfaceContainerHighest: 342 19.2% 89.8%;
+  --surfaceContainerHigh: 342 25% 92.2%;
+  --surfaceContainer: 343.6 37.9% 94.3%;
+  --surfaceContainerLow: 343.6 64.7% 96.7%;
+  --surfaceContainerLowest: 0 0% 100%;
+  --surfaceDim: 343.6 15.9% 86.5%;
+  --surfaceBright: 351.4 100% 98.6%;
+}
+
+.dark {
+  --primary: 322.7 100% 83.9%;
+  --onPrimary: 312.5 100% 18.8%;
+  --primaryContainer: 312 100% 26.5%;
+  --onPrimaryContainer: 329.2 100% 92.4%;
+  --primaryFixed: 329.2 100% 92.4%;
+  --onPrimaryFixed: 313.2 100% 11.6%;
+  --primaryFixedDim: 322.7 100% 83.9%;
+  --onPrimaryFixedVariant: 312 100% 26.5%;
+  --secondary: 330 32.7% 80.8%;
+  --onSecondary: 322.9 20% 20.6%;
+  --secondaryContainer: 326.1 15.2% 29.6%;
+  --onSecondaryContainer: 330 81% 91.8%;
+  --secondaryFixed: 330 81% 91.8%;
+  --onSecondaryFixed: 323.3 29% 12.2%;
+  --secondaryFixedDim: 330 32.7% 80.8%;
+  --onSecondaryFixedVariant: 326.1 15.2% 29.6%;
+  --tertiary: 19.1 79.4% 79%;
+  --onTertiary: 20 56.3% 18.8%;
+  --tertiaryContainer: 20 42.3% 27.8%;
+  --onTertiaryContainer: 17.6 100% 90%;
+  --tertiaryFixed: 17.6 100% 90%;
+  --onTertiaryFixed: 20 84.9% 10.4%;
+  --tertiaryFixedDim: 19.1 79.4% 79%;
+  --onTertiaryFixedVariant: 20 42.3% 27.8%;
+  --error: 6.4 100% 83.5%;
+  --errorContainer: 355.9 100% 28.8%;
+  --onError: 357.1 100% 20.6%;
+  --onErrorContainer: 5.9 100% 92%;
+  --background: 324 8.8% 11.2%;
+  --onBackground: 342 19.2% 89.8%;
+  --outline: 332 7% 58.2%;
+  --inverseOnSurface: 324 8.8% 11.2%;
+  --inverseSurface: 342 19.2% 89.8%;
+  --inversePrimary: 311.3 100% 34.5%;
+  --shadow: 0 0% 0%;
+  --surfaceTint: 322.7 100% 83.9%;
+  --outlineVariant: 332.7 7.5% 28.8%;
+  --scrim: 0 0% 0%;
+  --surface: 336 12.2% 8%;
+  --onSurface: 342 9.3% 78.8%;
+  --surfaceVariant: 332.7 7.5% 28.8%;
+  --onSurfaceVariant: 335.3 16.2% 79.4%;
+  --surfaceContainerHighest: 330 5.6% 21.2%;
+  --surfaceContainerHigh: 336 5.7% 17.1%;
+  --surfaceContainer: 324 7.7% 12.7%;
+  --surfaceContainerLow: 324 8.8% 11.2%;
+  --surfaceContainerLowest: 330 13.3% 5.9%;
+  --surfaceDim: 336 12.2% 8%;
+  --surfaceBright: 336 4.3% 22.9%;
+}`
 
 export const tailwindExample = `/** @type {import('tailwindcss').Config} */
 export default {
