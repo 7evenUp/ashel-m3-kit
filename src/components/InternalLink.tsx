@@ -17,7 +17,7 @@ const InternalLink = ({
       href={href}
       className={cn(
         className,
-        "text-light-primary dark:text-dark-primary underline underline-offset-4 hover:text-light-inversePrimary hover:dark:text-dark-inversePrimary"
+        "text-primary underline underline-offset-4 hover:text-inversePrimary"
       )}
     >
       {children}

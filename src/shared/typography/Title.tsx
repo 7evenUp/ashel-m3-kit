@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/cn"
 
-const titleVariants = cva("text-inherit dark:text-inherit", {
+const titleVariants = cva("text-inherit", {
   variants: {
     size: {
       large: "text-[22px] leading-7",

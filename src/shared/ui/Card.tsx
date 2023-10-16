@@ -6,11 +6,10 @@ import { cn } from "@/lib/cn"
 const cardVariants = cva("rounded-xl px-4 py-3", {
   variants: {
     appearance: {
-      elevated:
-        "bg-light-surfaceContainerLow dark:bg-dark-surfaceContainerLow shadow-elevation1",
+      elevated: "bg-surfaceContainerLow shadow-elevation1",
       filled:
-        "bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest shadow-elevation1 text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant",
-      outlined: "border border-light-outline dark:border-dark-outline",
+        "bg-surfaceContainerHighest shadow-elevation1 text-onSurfaceVariant",
+      outlined: "border border-outline",
     },
   },
 })

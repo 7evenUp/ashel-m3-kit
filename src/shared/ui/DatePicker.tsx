@@ -13,7 +13,7 @@ const CustomCaption = ({ displayMonth }: CaptionProps) => {
   const { goToMonth, currentMonth, previousMonth, nextMonth } = useNavigation()
 
   return (
-    <div className="flex items-center justify-between text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant">
+    <div className="flex items-center justify-between text-onSurfaceVariant">
       <div className="flex items-center justify-between min-w-[120px]">
         <button
           disabled={!previousMonth}
@@ -81,7 +81,7 @@ const DatePicker = ({
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cn(
-        "w-[328px] min-h-[428px] pt-5 pb-3 px-3 bg-light-surfaceContainerHigh dark:bg-dark-surfaceContainerHigh rounded-large",
+        "w-[328px] min-h-[428px] pt-5 pb-3 px-3 bg-surfaceContainerHigh rounded-large",
         className
       )}
       classNames={{
@@ -90,22 +90,19 @@ const DatePicker = ({
         table: "w-full border-collapse mt-[30px]",
         head_row: "flex h-10 items-center justify-around",
         head_cell:
-          "text-light-onSurface dark:text-dark-onSurface p-0 font-normal text-base tracking-[0.5px] w-10 h-10",
+          "text-onSurface p-0 font-normal text-base tracking-[0.5px] w-10 h-10",
         row: "flex justify-around w-full mt-2",
-        cell: "text-center text-base tracking-[0.5px] rounded-full p-0 relative [&:has([aria-selected])]:bg-light-primary dark:[&:has([aria-selected])]:bg-dark-primary [&:has([aria-selected])]:text-light-onPrimary dark:[&:has([aria-selected])]:text-dark-onPrimary focus-within:relative focus-within:z-20",
+        cell: "text-center text-base tracking-[0.5px] rounded-full p-0 relative [&:has([aria-selected])]:bg-primary  [&:has([aria-selected])]:text-onPrimary focus-within:relative focus-within:z-20",
         day: cn(
-          "h-10 w-10 rounded-full aria-selected:opacity-100 hover:bg-light-secondary hover:text-light-onSecondary dark:hover:bg-dark-secondary dark:hover:text-dark-onSecondary hover:opacity-50 dark:hover:opacity-70 transition-all"
+          "h-10 w-10 rounded-full aria-selected:opacity-100 hover:bg-secondary hover:text-onSecondary hover:opacity-50 transition-all"
         ),
         day_selected:
-          "rounded-full bg-light-primary dark:bg-dark-primary text-light-onPrimary dark:text-dark-onPrimary focus:bg-light-primary dark:focus:bg-dark-primary focus:text-light-onPrimary dark:focus:text-dark-onPrimary",
-        day_today:
-          "text-light-primary dark:text-dark-primary border border-light-primary dark:border-dark-primary rounded-full",
-        day_outside:
-          "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant opacity-80",
-        day_disabled:
-          "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant opacity-40",
+          "rounded-full bg-primary text-onPrimary focus:bg-primary focus:text-onPrimary",
+        day_today: "text-primary border border-primary rounded-full",
+        day_outside: "text-onSurfaceVariant opacity-80",
+        day_disabled: "text-onSurfaceVariant opacity-40",
         day_range_middle:
-          "aria-selected:bg-light-primary dark:aria-selected:bg-dark-primary aria-selected:text-light-onPrimary dark:aria-selected:text-dark-onPrimary",
+          "aria-selected:bg-primary aria-selected:text-onPrimary",
         day_hidden: "invisible",
         ...classNames,
       }}

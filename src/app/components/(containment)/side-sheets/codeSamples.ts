@@ -7,7 +7,7 @@ export const usageCode = `<Sheet>
       <SheetTitle>Заголовок</SheetTitle>
     </SheetHeader>
     <div className="flex flex-col px-6">
-      <Body className="text-light-onSurface dark:text-dark-onSurface">
+      <Body className="text-onSurface">
         Ваш контент будет находиться здесь
       </Body>
     </div>

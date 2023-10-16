@@ -33,7 +33,7 @@ const Snackbar = React.forwardRef<
     <ToastPrimitives.Root
       ref={forwardedRef}
       className={cn(
-        "flex items-center justify-between pl-4 pr-2 shadow-elevation3 rounded bg-light-inverseSurface dark:bg-dark-inverseSurface text-light-inverseOnSurface dark:text-dark-inverseOnSurface min-h-[48px]",
+        "flex items-center justify-between pl-4 pr-2 shadow-elevation3 rounded bg-inverseSurface text-inverseOnSurface min-h-[48px]",
         className
       )}
       {...props}
@@ -52,10 +52,7 @@ const SnackbarAction = React.forwardRef<
     {...props}
     asChild
   >
-    <Button
-      appearance="text"
-      className="text-light-inversePrimary dark:text-dark-inversePrimary"
-    >
+    <Button appearance="text" className="text-inversePrimary">
       {children}
     </Button>
   </ToastPrimitives.Action>
@@ -84,10 +81,7 @@ const SupportingText = React.forwardRef<
 >(({ className, children, ...props }, forwardedRef) => (
   <ToastPrimitives.Description
     ref={forwardedRef}
-    className={cn(
-      "text-light-inverseOnSurface dark:text-dark-inverseOnSurface py-3",
-      className
-    )}
+    className={cn("text-inverseOnSurface py-3", className)}
     {...props}
   >
     <Body>{children}</Body>

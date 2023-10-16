@@ -142,14 +142,14 @@ const ThemeToggle = () => {
   return (
     <div className="flex gap-2">
       <button
-        className="bg-slate-400 py-2 px-4 rounded-md text-light-onSurface dark:text-dark-onSurface"
+        className="bg-slate-400 py-2 px-4 rounded-md text-onSurface"
         type="button"
         onClick={() => setTheme("light")}
       >
         Light
       </button>
       <button
-        className="bg-slate-400 py-2 px-4 rounded-md text-light-onSurface dark:text-dark-onSurface"
+        className="bg-slate-400 py-2 px-4 rounded-md text-onSurface"
         type="button"
         onClick={() => setTheme("dark")}
       >
@@ -165,11 +165,11 @@ export const finalAppSrc = `import ThemeToggle from "@/components/ThemeToggle"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 bg-light-surface dark:bg-dark-surface">
-      <h1 className="text-5xl text-light-onSurface dark:text-dark-onSurface">
+    <main className="flex min-h-screen flex-col items-center p-24 bg-surface">
+      <h1 className="text-5xl text-onSurface">
         Работает!
       </h1>
-      <p className="bg-light-primaryContainer dark:bg-dark-primaryContainer text-light-onPrimaryContainer dark:text-dark-onPrimaryContainer">
+      <p className="bg-primaryContainer text-onPrimaryContainer">
         Этот текст находится на primary container
       </p>
       <ThemeToggle />
@@ -218,11 +218,11 @@ export const cn = (...inputs: ClassValue[]) => {
 
 export const basicApp = `export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 bg-light-surface dark:bg-dark-surface">
-      <h1 className="text-5xl text-light-onSurface dark:text-dark-onSurface">
+    <main className="flex min-h-screen flex-col items-center p-24 bg-surface">
+      <h1 className="text-5xl text-onSurface">
         Работает!
       </h1>
-      <p className="bg-light-primaryContainer dark:bg-dark-primaryContainer text-light-onPrimaryContainer dark:text-dark-onPrimaryContainer">
+      <p className="bg-primaryContainer text-onPrimaryContainer">
         Этот текст находится на primary container
       </p>
     </main>

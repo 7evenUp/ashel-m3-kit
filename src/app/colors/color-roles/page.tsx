@@ -47,7 +47,7 @@ const ColorRoles = () => {
         </Paragraph>
         <Heading>Роли в схеме</Heading>
         <Image
-          className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+          className="my-6 rounded-xl border border-outlineVariant"
           alt="Tones according to roles"
           src={tonesToRolesPic}
           width={700}

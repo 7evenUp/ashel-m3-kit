@@ -44,7 +44,7 @@ const FormFilledExample = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col gap-4 border border-light-outlineVariant dark:border-dark-outlineVariant p-6 rounded-md w-[400px]"
+        className="flex flex-col gap-4 border border-outlineVariant p-6 rounded-md w-[400px]"
       >
         <FormField
           control={form.control}
@@ -67,11 +67,7 @@ const FormFilledExample = () => {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <FormFilledInput
-                  className="w-full"
-                  label="Пароль"
-                  {...field}
-                />
+                <FormFilledInput className="w-full" label="Пароль" {...field} />
               </FormControl>
             </FormItem>
           )}

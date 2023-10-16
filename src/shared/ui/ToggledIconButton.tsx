@@ -9,36 +9,34 @@ import UIStateLayer from "@/shared/ui/UIStateLayer"
 import { cn } from "@/lib/cn"
 
 const buttonVariants = cva(
-  "group h-10 w-10 rounded-full disabled:bg-opacity-[0.12] dark:disabled:bg-opacity-[0.12] disabled:cursor-not-allowed disabled:text-light-onSurface disabled:dark:text-dark-onSurface disabled:text-opacity-[0.38] disabled:dark:text-opacity-[0.38]",
+  "group h-10 w-10 rounded-full disabled:bg-opacity-[0.12] disabled:cursor-not-allowed disabled:text-onSurface disabled:text-opacity-[0.38]",
   {
     variants: {
       appearance: {
         filled:
-          "bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest data-[state=on]:bg-light-primary dark:data-[state=on]:bg-dark-primary text-light-primary dark:text-dark-primary data-[state=on]:text-light-onPrimary dark:data-[state=on]:text-dark-onPrimary",
+          "bg-surfaceContainerHighest data-[state=on]:bg-primary text-primary data-[state=on]:text-onPrimary",
         tonal:
-          "bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest data-[state=on]:bg-light-secondaryContainer dark:data-[state=on]:bg-dark-secondaryContainer text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant data-[state=on]:text-light-onSecondaryContainer dark:data-[state=on]:text-dark-onSecondaryContainer",
+          "bg-surfaceContainerHighest data-[state=on]:bg-secondaryContainer text-onSurfaceVariant data-[state=on]:text-onSecondaryContainer",
         outlined:
-          "border border-light-outline dark:border-dark-outline disabled:border-opacity-[0.12] dark:disabled:border-opacity-[0.12] data-[state=on]:bg-light-inverseSurface dark:data-[state=on]:bg-dark-inverseSurface text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant data-[state=on]:text-light-inverseOnSurface dark:data-[state=on]:text-dark-inverseOnSurface",
-        standart:
-          "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant data-[state=on]:text-light-primary dark:data-[state=on]:text-dark-primary",
+          "border border-outline disabled:border-opacity-[0.12] data-[state=on]:bg-inverseSurface text-onSurfaceVariant data-[state=on]:text-inverseOnSurface",
+        standart: "text-onSurfaceVariant data-[state=on]:text-primary",
       },
     },
   }
 )
 
 const uiStateLayerVariants = cva(
-  "rounded-full flex items-center justify-center group-data-[state=on]:bg-opacity-0 dark:group-data-[state=on]:bg-opacity-0 group-data-[state=on]:group-hover:bg-opacity-[0.08] dark:group-data-[state=on]:group-hover:bg-opacity-[0.08] group-data-[state=on]:group-active:bg-opacity-[0.12] dark:group-data-[state=on]:group-active:bg-opacity-[0.12]",
+  "rounded-full flex items-center justify-center group-data-[state=on]:bg-opacity-0 group-data-[state=on]:group-hover:bg-opacity-[0.08] group-data-[state=on]:group-active:bg-opacity-[0.12]",
   {
     variants: {
       appearance: {
         filled:
-          "bg-light-primary dark:bg-dark-primary group-data-[state=on]:bg-light-onPrimary dark:group-data-[state=on]:bg-dark-onPrimary data-[state=on]:fill-light-onPrimary",
+          "bg-primary group-data-[state=on]:bg-onPrimary data-[state=on]:fill-onPrimary",
         tonal:
-          "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant group-data-[state=on]:bg-light-onSecondaryContainer dark:group-data-[state=on]:bg-dark-onSecondaryContainer",
+          "bg-onSurfaceVariant group-data-[state=on]:bg-onSecondaryContainer",
         outlined:
-          "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant group-data-[state=on]:bg-light-inverseOnSurface dark:group-data-[state=on]:bg-dark-inverseOnSurface",
-        standart:
-          "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant group-data-[state=on]:bg-light-primary dark:group-data-[state=on]:bg-dark-primary",
+          "bg-onSurfaceVariant group-data-[state=on]:bg-inverseOnSurface",
+        standart: "bg-onSurfaceVariant group-data-[state=on]:bg-primary",
       },
     },
   }
@@ -47,14 +45,10 @@ const uiStateLayerVariants = cva(
 const iconFillVariants = cva("", {
   variants: {
     appearance: {
-      filled:
-        "group-data-[state=on]:fill-light-onPrimary dark:group-data-[state=on]:fill-dark-onPrimary",
-      tonal:
-        "group-data-[state=on]:fill-light-onSecondaryContainer dark:group-data-[state=on]:fill-dark-onSecondaryContainer",
-      outlined:
-        "group-data-[state=on]:fill-light-inverseOnSurface dark:group-data-[state=on]:fill-dark-inverseOnSurface",
-      standart:
-        "group-data-[state=on]:fill-light-primary dark:group-data-[state=on]:fill-dark-primary",
+      filled: "group-data-[state=on]:fill-onPrimary",
+      tonal: "group-data-[state=on]:fill-onSecondaryContainer",
+      outlined: "group-data-[state=on]:fill-inverseOnSurface",
+      standart: "group-data-[state=on]:fill-primary",
     },
   },
 })

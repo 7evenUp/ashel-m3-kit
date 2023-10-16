@@ -66,7 +66,7 @@ const Intro = () => {
       </Paragraph>
 
       <Image
-        className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+        className="my-6 rounded-xl border border-outlineVariant"
         alt="Create next app"
         src={installNextAppPic}
         width={600}
@@ -128,7 +128,7 @@ const Intro = () => {
       </Paragraph>
 
       <Image
-        className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+        className="my-6 rounded-xl border border-outlineVariant"
         alt="Figma proccess"
         src={figmaPic}
         width={600}
@@ -140,7 +140,7 @@ const Intro = () => {
         <InlineCode>&quot;dark&quot;</InlineCode>.
       </Paragraph>
       <Image
-        className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+        className="my-6 rounded-xl border border-outlineVariant"
         alt="JSON color values"
         src={jsonPic}
         width={300}
@@ -222,7 +222,7 @@ const Intro = () => {
         тему, с готовой дизайн палитрой.
       </Paragraph>
       <Image
-        className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+        className="my-6 rounded-xl border border-outlineVariant"
         alt="Final result"
         src={finalResultPic}
         width={600}

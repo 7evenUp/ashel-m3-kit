@@ -63,7 +63,7 @@ const Themes = () => {
         </div>
         <div className="max-w-[700px]">
           <Image
-            className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+            className="rounded-xl border border-outlineVariant"
             alt="Cyan Light theme"
             src={cyanLight}
             quality={100}
@@ -71,7 +71,7 @@ const Themes = () => {
         </div>
         <div className="max-w-[700px]">
           <Image
-            className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+            className="rounded-xl border border-outlineVariant"
             alt="Cyan Dark theme"
             src={cyanDark}
             quality={100}
@@ -94,7 +94,7 @@ const Themes = () => {
         </div>
         <div className="max-w-[700px]">
           <Image
-            className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+            className="rounded-xl border border-outlineVariant"
             alt="Green Light theme"
             src={greenLight}
             quality={100}
@@ -102,7 +102,7 @@ const Themes = () => {
         </div>
         <div className="max-w-[700px]">
           <Image
-            className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+            className="rounded-xl border border-outlineVariant"
             alt="Green Dark theme"
             src={greenDark}
             quality={100}
@@ -125,7 +125,7 @@ const Themes = () => {
         </div>
         <div className="max-w-[700px]">
           <Image
-            className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+            className="rounded-xl border border-outlineVariant"
             alt="Purple Light theme"
             src={purpleLight}
             quality={100}
@@ -133,7 +133,7 @@ const Themes = () => {
         </div>
         <div className="max-w-[700px]">
           <Image
-            className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+            className="rounded-xl border border-outlineVariant"
             alt="Purple Dark theme"
             src={purpleDark}
             quality={100}
@@ -156,7 +156,7 @@ const Themes = () => {
         </div>
         <div className="max-w-[700px]">
           <Image
-            className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+            className="rounded-xl border border-outlineVariant"
             alt="Corral Light theme"
             src={corralLight}
             quality={100}
@@ -164,7 +164,7 @@ const Themes = () => {
         </div>
         <div className="max-w-[700px]">
           <Image
-            className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+            className="rounded-xl border border-outlineVariant"
             alt="Corral Dark theme"
             src={corralDark}
             quality={100}
@@ -187,7 +187,7 @@ const Themes = () => {
         </div>
         <div className="max-w-[700px]">
           <Image
-            className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+            className="rounded-xl border border-outlineVariant"
             alt="Yellow Light theme"
             src={yellowLight}
             quality={100}
@@ -195,7 +195,7 @@ const Themes = () => {
         </div>
         <div className="max-w-[700px]">
           <Image
-            className="rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+            className="rounded-xl border border-outlineVariant"
             alt="Yellow Dark theme"
             src={yellowDark}
             quality={100}

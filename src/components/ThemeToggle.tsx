@@ -31,16 +31,16 @@ const ThemeToggle: FC<HTMLAttributes<HTMLButtonElement>> = ({ className }) => {
   return (
     <button
       className={cn(
-        "group w-12 h-12 rounded-full border border-light-outline dark:border-dark-outline bg-transparent",
+        "group w-12 h-12 rounded-full border border-outline bg-transparent",
         className
       )}
       onClick={toggleTheme}
     >
-      <UIStateLayer className="rounded-full flex items-center justify-center bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant">
+      <UIStateLayer className="rounded-full flex items-center justify-center bg-onSurfaceVariant">
         {theme === "dark" ? (
           <SunLight className="text-dark-onSurfaceVariant group-hover:fill-dark-onSurfaceVariant animate-in spin-in-[-90deg] zoom-in-75 fade-in-0" />
         ) : (
-          <HalfMoon className="text-light-onSurfaceVariant group-hover:fill-light-onSurfaceVariant animate-in spin-in-90 zoom-in-75 fade-in-0" />
+          <HalfMoon className="text-onSurfaceVariant group-hover:fill-onSurfaceVariant animate-in spin-in-90 zoom-in-75 fade-in-0" />
         )}
       </UIStateLayer>
     </button>

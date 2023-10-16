@@ -36,7 +36,7 @@ const RichTooltip = React.forwardRef<
         <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
         <TooltipPrimitive.Content
           className={cn(
-            "z-50 flex flex-col px-4 pt-3 pb-2 rounded-xl shadow-elevation2 max-w-[300px] bg-light-surfaceContainer dark:bg-dark-surfaceContainer animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+            "z-50 flex flex-col px-4 pt-3 pb-2 rounded-xl shadow-elevation2 max-w-[300px] bg-surfaceContainer animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
             className
           )}
           sideOffset={sideOffset}
@@ -46,18 +46,12 @@ const RichTooltip = React.forwardRef<
           {...props}
         >
           {subhead && (
-            <Title
-              size="small"
-              className="mb-1 text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
-            >
+            <Title size="small" className="mb-1 text-onSurfaceVariant">
               {subhead}
             </Title>
           )}
           {supportingText && (
-            <Body
-              size="medium"
-              className="text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
-            >
+            <Body size="medium" className="text-onSurfaceVariant">
               {supportingText}
             </Body>
           )}

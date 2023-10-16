@@ -11,9 +11,9 @@ const containerVariants = cva(
     variants: {
       variant: {
         default:
-          "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant ring-light-outline dark:ring-dark-outline focus-within:ring-light-primary dark:focus-within:ring-dark-primary hover:ring-light-onSurface dark:hover:ring-dark-onSurface focus-within:hover:ring-light-primary dark:focus-within:hover:ring-dark-primary",
+          "text-onSurfaceVariant ring-outline focus-within:ring-primary hover:ring-onSurface focus-within:hover:ring-primary",
         error:
-          "text-light-error dark:text-dark-error hover:text-light-onErrorContainer dark:hover:text-dark-onErrorContainer focus-within:hover:text-light-error dark:focus-within:hover:text-dark-error ring-light-error dark:ring-dark-error hover:ring-light-onErrorContainer dark:hover:ring-dark-onErrorContainer focus-within:hover:ring-light-error dark:focus-within:hover:ring-dark-error",
+          "text-error hover:text-onErrorContainer focus-within:hover:text-error ring-error hover:ring-onErrorContainer focus-within:hover:ring-error",
       },
     },
     defaultVariants: {
@@ -23,13 +23,12 @@ const containerVariants = cva(
 )
 
 const labelVariants = cva(
-  "absolute pointer-events-none text-xs tracking-[0.4px] translate-x-3 px-1 -translate-y-2 peer-placeholder-shown:translate-y-4 peer-placeholder-shown:text-base peer-placeholder-shown:tracking-[0.5px] peer-focus:-translate-y-2 peer-focus:text-xs peer-focus:tracking-[0.4px] will-change-transform bg-light-surface dark:bg-dark-surface transition-all duration-short4 ease-standard",
+  "absolute pointer-events-none text-xs tracking-[0.4px] translate-x-3 px-1 -translate-y-2 peer-placeholder-shown:translate-y-4 peer-placeholder-shown:text-base peer-placeholder-shown:tracking-[0.5px] peer-focus:-translate-y-2 peer-focus:text-xs peer-focus:tracking-[0.4px] will-change-transform bg-surface transition-all duration-short4 ease-standard",
   {
     variants: {
       variant: {
-        default:
-          "peer-focus:text-light-primary dark:peer-focus:text-dark-primary",
-        error: "peer-focus:text-light-error dark:peer-focus:text-dark-error",
+        default: "peer-focus:text-primary",
+        error: "peer-focus:text-error",
       },
     },
     defaultVariants: {
@@ -39,12 +38,12 @@ const labelVariants = cva(
 )
 
 const inputVariants = cva(
-  "peer opacity-100 placeholder-shown:opacity-0 focus:opacity-100 text-light-onSurface dark:text-dark-onSurface pt-4 px-4 pb-4 outline-none text-base tracking-[0.5px] bg-transparent placeholder:text-light-onSurfaceVariant dark:placeholder:text-dark-onSurfaceVariant w-full",
+  "peer opacity-100 placeholder-shown:opacity-0 focus:opacity-100 text-onSurface pt-4 px-4 pb-4 outline-none text-base tracking-[0.5px] bg-transparent placeholder:text-onSurfaceVariant w-full",
   {
     variants: {
       variant: {
-        default: "caret-light-primary dark:caret-dark-primary",
-        error: "caret-light-error dark:caret-dark-error",
+        default: "caret-primary",
+        error: "caret-error",
       },
     },
     defaultVariants: {
@@ -56,8 +55,8 @@ const inputVariants = cva(
 const supportingTextVariants = cva("flex items-center gap-4 px-4", {
   variants: {
     variant: {
-      default: "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant",
-      error: "text-light-error dark:text-dark-error",
+      default: "text-onSurfaceVariant",
+      error: "text-error",
     },
   },
   defaultVariants: {

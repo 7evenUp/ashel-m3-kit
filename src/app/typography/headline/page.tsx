@@ -120,7 +120,7 @@ const HeadlinePage = () => {
           </TabsList>
           <TabsContent
             value="preview"
-            className="border border-light-outlineVariant dark:border-dark-outlineVariant rounded-md mt-1"
+            className="border border-outlineVariant rounded-md mt-1"
           >
             <Headline className="text-rose-400 dark:text-rose-400 tracking-widest">
               Розовый текст с увеличенным letter-spacing

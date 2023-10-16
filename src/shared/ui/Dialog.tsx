@@ -17,7 +17,7 @@ const DialogTitle = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof RadixDialog.Title>
 >(({ children, ...props }, forwardedRef) => (
   <RadixDialog.Title
-    className="text-light-onSurface dark:text-dark-onSurface mb-4"
+    className="text-onSurface mb-4"
     {...props}
     ref={forwardedRef}
     asChild
@@ -32,7 +32,7 @@ const DialogDescription = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof RadixDialog.Description>
 >(({ children, ...props }, forwardedRef) => (
   <RadixDialog.Description
-    className="text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
+    className="text-onSurfaceVariant"
     {...props}
     ref={forwardedRef}
     asChild
@@ -66,9 +66,9 @@ const DialogContent = React.forwardRef<
 >(({ children, ...props }, forwardedRef) => {
   return (
     <RadixDialog.Portal>
-      <RadixDialog.Overlay className="fixed inset-0 bg-light-scrim dark:bg-dark-scrim bg-opacity-20 dark:bg-opacity-20 will-change-[opacity] animate-fade-in data-[state=closed]:animate-fade-out" />
+      <RadixDialog.Overlay className="fixed inset-0 bg-scrim bg-opacity-20 will-change-[opacity] animate-fade-in data-[state=closed]:animate-fade-out" />
       <RadixDialog.Content
-        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest min-w-[280px] max-w-[560px] shadow-elevation3 p-6 rounded-[28px] will-change-[opacity,transform] animate-dialog-show data-[state=closed]:animate-dialog-hide"
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-surfaceContainerHighest min-w-[280px] max-w-[560px] shadow-elevation3 p-6 rounded-[28px] will-change-[opacity,transform] animate-dialog-show data-[state=closed]:animate-dialog-hide"
         {...props}
         ref={forwardedRef}
       >

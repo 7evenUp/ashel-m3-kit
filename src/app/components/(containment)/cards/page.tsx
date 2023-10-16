@@ -165,11 +165,11 @@ const CardsPage = () => {
           </TabsList>
           <TabsContent
             value="preview"
-            className="border border-light-outlineVariant dark:border-dark-outlineVariant rounded-md mt-1 data-[state=active]:flex justify-center"
+            className="border border-outlineVariant rounded-md mt-1 data-[state=active]:flex justify-center"
           >
             <Card
               appearance="outlined"
-              className="w-fit my-4 bg-yellow-200 bg-opacity-20 border-yellow-400 dark:bg-yellow-200 dark:bg-opacity-80 dark:border-yellow-100 dark:text-dark-inverseOnSurface"
+              className="w-fit my-4 bg-yellow-200 bg-opacity-20 border-yellow-400 dark:bg-yellow-200 dark:bg-opacity-80 dark:border-yellow-100 text-inverseOnSurface"
             >
               <Body>Данный компонент имеет фон и обводку жёлтого цвета</Body>
             </Card>

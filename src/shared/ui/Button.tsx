@@ -8,19 +8,19 @@ import UIStateLayer from "@/shared/ui/UIStateLayer"
 import { cn } from "@/lib/cn"
 
 const buttonVariants = cva(
-  "group h-10 rounded-full w-fit disabled:bg-opacity-[0.12] dark:disabled:bg-opacity-[0.12] disabled:cursor-not-allowed disabled:shadow-none disabled:text-light-onSurface disabled:dark:text-dark-onSurface disabled:text-opacity-[0.38] disabled:dark:text-opacity-[0.38] transition-shadow duration-short2 ease-standard",
+  "group h-10 rounded-full w-fit disabled:bg-opacity-[0.12] disabled:cursor-not-allowed disabled:shadow-none disabled:text-onSurface disabled:text-opacity-[0.38] transition-shadow duration-short2 ease-standard",
   {
     variants: {
       appearance: {
         elevated:
-          "bg-light-surfaceContainerLow dark:bg-dark-surfaceContainerLow shadow-elevation1 disabled:bg-light-primary disabled:dark:bg-dark-primary hover:shadow-elevation2 active:shadow-elevation1 text-light-primary dark:text-dark-primary",
+          "bg-surfaceContainerLow shadow-elevation1 disabled:bg-primary hover:shadow-elevation2 active:shadow-elevation1 text-primary",
         filled:
-          "bg-light-primary dark:bg-dark-primary disabled:bg-light-onSurface disabled:dark:bg-dark-onSurface hover:shadow-elevation1 active:shadow-none text-light-onPrimary dark:text-dark-onPrimary",
+          "bg-primary disabled:bg-onSurface hover:shadow-elevation1 active:shadow-none text-onPrimary",
         tonal:
-          "bg-light-secondaryContainer dark:bg-dark-secondaryContainer disabled:bg-light-onSurface disabled:dark:bg-dark-onSurface hover:shadow-elevation1 active:shadow-none text-light-onSecondaryContainer dark:text-dark-onSecondaryContainer",
+          "bg-secondaryContainer disabled:bg-onSurface hover:shadow-elevation1 active:shadow-none text-onSecondaryContainer",
         outlined:
-          "border border-light-outline dark:border-dark-outline disabled:border-light-onSurface disabled:dark:border-dark-onSurface disabled:border-opacity-[0.12] dark:disabled:border-opacity-[0.12] text-light-primary dark:text-dark-primary",
-        text: "text-light-primary dark:text-dark-primary",
+          "border border-outline disabled:border-onSurface disabled:border-opacity-[0.12] text-primary",
+        text: "text-primary",
       },
     },
     defaultVariants: {},
@@ -32,11 +32,11 @@ const buttonVariants = cva(
 const uiStateLayerVariants = cva("rounded-full flex justify-center items-center gap-2 px-6", {
   variants: {
     appearance: {
-      elevated: "bg-light-primary dark:bg-dark-primary",
-      filled: "bg-light-onPrimary dark:bg-dark-onPrimary",
-      tonal: "bg-light-onSecondaryContainer dark:bg-dark-onSecondaryContainer",
-      outlined: "bg-light-primary dark:bg-dark-primary",
-      text: "bg-light-primary dark:bg-dark-primary px-3",
+      elevated: "bg-primary",
+      filled: "bg-onPrimary",
+      tonal: "bg-onSecondaryContainer",
+      outlined: "bg-primary",
+      text: "bg-primary px-3",
     },
   },
 })

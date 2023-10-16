@@ -36,7 +36,7 @@ const Colors = () => {
           широкого цветового выражения в продуктах.
         </Paragraph>
         <Image
-          className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+          className="my-6 rounded-xl border border-outlineVariant"
           alt="Accent colors"
           src={keyColorsPic}
           width={700}
@@ -54,7 +54,7 @@ const Colors = () => {
           компонентов.
         </Paragraph>
         <Image
-          className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+          className="my-6 rounded-xl border border-outlineVariant"
           alt="Neutral colors"
           src={neutralColorsPic}
           width={700}

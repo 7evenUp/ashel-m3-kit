@@ -121,7 +121,7 @@ const BodyPage = () => {
           </TabsList>
           <TabsContent
             value="preview"
-            className="border border-light-outlineVariant dark:border-dark-outlineVariant rounded-md mt-1"
+            className="border border-outlineVariant rounded-md mt-1"
           >
             <Body size="large" className="text-lg w-[150px]">
               Короткий текст размером 18px

@@ -27,16 +27,14 @@ const NavLink: FC<Props> = ({ href, label, custom }) => {
       className={cn(
         "relative group min-h-[40px] w-full rounded-full outline-offset-0",
         isActive
-          ? "bg-light-secondaryContainer dark:bg-dark-secondaryContainer text-light-onSecondaryContainer dark:text-dark-onSecondaryContainer"
-          : "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
+          ? "bg-secondaryContainer text-onSecondaryContainer"
+          : "text-onSurfaceVariant"
       )}
     >
       <UIStateLayer
         className={cn(
           "px-4 rounded-full flex items-center",
-          isActive
-            ? "bg-light-onSurface dark:bg-dark-onSurface"
-            : "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant"
+          isActive ? "bg-onSurface" : "bg-onSurfaceVariant"
         )}
       >
         <Title>{label}</Title>
@@ -47,7 +45,7 @@ const NavLink: FC<Props> = ({ href, label, custom }) => {
           subhead="Кастомный компонент"
           supportingText="Компонент, которого нет в официальной документации, но который широко распространён в вебе. Исполнен с учётом стайл гайдов Material Design V3"
         >
-          <span className="absolute right-2 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-light-tertiary dark:bg-dark-tertiary" />
+          <span className="absolute right-2 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-tertiary" />
         </RichTooltip>
       )}
     </Link>

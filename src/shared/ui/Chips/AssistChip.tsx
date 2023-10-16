@@ -12,10 +12,9 @@ const assistChipVariants = cva(
   {
     variants: {
       appearance: {
-        outlined:
-          "border border-light-outline dark:border-dark-outline focus-visible:border-light-onSurface dark:focus-visible:border-dark-onSurface",
+        outlined: "border border-outline focus-visible:border-onSurface",
         elevated:
-          "bg-light-surfaceContainerLow dark:bg-dark-surfaceContainerLow shadow-elevation1 hover:shadow-elevation2 active:shadow-elevation1",
+          "bg-surfaceContainerLow shadow-elevation1 hover:shadow-elevation2 active:shadow-elevation1",
       },
     },
   }
@@ -37,19 +36,12 @@ const AssistChip = React.forwardRef<HTMLButtonElement, AssistChipProps>(
       >
         <UIStateLayer
           className={cn(
-            "flex items-center gap-2 px-4 rounded-lg bg-light-onSurface dark:bg-dark-onSurface group-focus-visible:bg-light-onSurface dark:group-focus-visible:bg-dark-onSurface group-focus-visible:bg-opacity-[0.12] dark:group-focus-visible:bg-opacity-[0.12]",
+            "flex items-center gap-2 px-4 rounded-lg bg-onSurface group-focus-visible:bg-onSurface group-focus-visible:bg-opacity-[0.12]",
             icon && "pl-2"
           )}
         >
-          {icon && (
-            <span className="text-light-primary dark:text-dark-primary">
-              {icon}
-            </span>
-          )}
-          <Label
-            size="large"
-            className="text-light-onSurface dark:text-dark-onSurface"
-          >
+          {icon && <span className="text-primary">{icon}</span>}
+          <Label size="large" className="text-onSurface">
             {children}
           </Label>
         </UIStateLayer>

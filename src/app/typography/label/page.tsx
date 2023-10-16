@@ -119,7 +119,7 @@ const LabelPage = () => {
           </TabsList>
           <TabsContent
             value="preview"
-            className="border border-light-outlineVariant dark:border-dark-outlineVariant rounded-md mt-1"
+            className="border border-outlineVariant rounded-md mt-1"
           >
             <Label className="text-red-400 dark:text-red-400">(R)ed</Label>
             <Label className="text-green-400 dark:text-green-400">

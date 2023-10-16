@@ -52,7 +52,7 @@ const CommonButtonsPage = () => {
           крайней необходимости, например, когда кнопка требует визуального
           отделения от фона с рисунком.
         </Paragraph>
-        <div className="flex gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10">
+        <div className="flex gap-4 rounded-xl border border-outline p-10">
           <div className="flex flex-col gap-4">
             <Button appearance="elevated" type="button">
               Elevated
@@ -84,7 +84,7 @@ const CommonButtonsPage = () => {
           <InlineCode>Присоединиться</InlineCode> или{" "}
           <InlineCode>Подтвердить</InlineCode>.
         </Paragraph>
-        <div className="flex gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10">
+        <div className="flex gap-4 rounded-xl border border-outline p-10">
           <div className="flex flex-col gap-4">
             <Button appearance="filled" type="button">
               Filled
@@ -111,7 +111,7 @@ const CommonButtonsPage = () => {
           предоставить, например, <InlineCode>Далее</InlineCode> в настройке
           профиля. Tonal кнопки используют secondary цветовое отображение.
         </Paragraph>
-        <div className="flex gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10">
+        <div className="flex gap-4 rounded-xl border border-outline p-10">
           <div className="flex flex-col gap-4">
             <Button appearance="tonal" type="button">
               Filled Tonal
@@ -140,7 +140,7 @@ const CommonButtonsPage = () => {
           Outlined кнопки хорошо сочетаются с filled кнопками, указывая на
           альтернативное, второстепенное действие.
         </Paragraph>
-        <div className="flex gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10">
+        <div className="flex gap-4 rounded-xl border border-outline p-10">
           <div className="flex flex-col gap-4">
             <Button appearance="outlined" type="button">
               Outlined
@@ -171,7 +171,7 @@ const CommonButtonsPage = () => {
           опроса, где ответами являются <InlineCode>Да</InlineCode>,{" "}
           <InlineCode>Нет</InlineCode> и <InlineCode>Возможно</InlineCode>.
         </Paragraph>
-        <div className="flex gap-4 rounded-xl border border-light-outline dark:border-dark-outline p-10">
+        <div className="flex gap-4 rounded-xl border border-outline p-10">
           <div className="flex flex-col gap-4">
             <Button appearance="text" type="button">
               Text button

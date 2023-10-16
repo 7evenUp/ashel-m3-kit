@@ -33,7 +33,7 @@ const MenuContent = React.forwardRef<
 >(({ className, children, ...props }, forwardedRef) => (
   <DropdownMenu.Content
     className={cn(
-      "flex flex-col rounded bg-light-surfaceContainer dark:bg-dark-surfaceContainer shadow-elevation2 py-2 w-[280px] will-change-[opacity,transform] data-[side=bottom]:animate-slide-down-and-fade-in origin-top-left data-[state=closed]:animate-slide-up-and-fade-out",
+      "flex flex-col rounded bg-surfaceContainer shadow-elevation2 py-2 w-[280px] will-change-[opacity,transform] data-[side=bottom]:animate-slide-down-and-fade-in origin-top-left data-[state=closed]:animate-slide-up-and-fade-out",
       className
     )}
     {...props}
@@ -58,29 +58,20 @@ const MenuItem = React.forwardRef<MenuItemElement, MenuItemProps>(
   ({ className, children, leading, trailing, ...props }, forwardedRef) => (
     <DropdownMenu.Item
       className={cn(
-        "text-light-onSurface dark:text-dark-onSurface h-12 flex items-center gap-3 px-3 aria-disabled:text-opacity-[0.38] dark:aria-disabled:text-opacity-[0.38] select-none outline-none hover:bg-light-onSurface dark:hover:bg-dark-onSurface bg-opacity-0 dark:bg-opacity-0 hover:bg-opacity-[0.08] active:bg-opacity-[0.12] dark:hover:bg-opacity-[0.08] dark:active:bg-opacity-[0.12] aria-disabled:bg-opacity-0 dark:aria-disabled:bg-opacity-0 data-[highlighted]:bg-light-onSurface dark:data-[highlighted]:bg-dark-onSurface data-[highlighted]:bg-opacity-[0.12] dark:data-[highlighted]:bg-opacity-[0.12]",
+        "text-onSurface h-12 flex items-center gap-3 px-3 aria-disabled:text-opacity-[0.38] select-none outline-none hover:bg-onSurface bg-opacity-0 hover:bg-opacity-[0.08] active:bg-opacity-[0.12] aria-disabled:bg-opacity-0 data-[highlighted]:bg-onSurface data-[highlighted]:bg-opacity-[0.12]",
         className
       )}
       {...props}
       ref={forwardedRef}
     >
-      {leading && (
-        <span className="text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant">
-          {leading}
-        </span>
-      )}
+      {leading && <span className="text-onSurfaceVariant">{leading}</span>}
       <Label size="large">{children}</Label>
       {typeof trailing === "string" ? (
-        <Label
-          size="large"
-          className="ml-auto text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
-        >
+        <Label size="large" className="ml-auto text-onSurfaceVariant">
           {trailing}
         </Label>
       ) : (
-        <span className="ml-auto text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant">
-          {trailing}
-        </span>
+        <span className="ml-auto text-onSurfaceVariant">{trailing}</span>
       )}
     </DropdownMenu.Item>
   )
@@ -88,7 +79,7 @@ const MenuItem = React.forwardRef<MenuItemElement, MenuItemProps>(
 MenuItem.displayName = "MenuItem"
 
 const MenuSeparator = () => (
-  <DropdownMenu.Separator className="w-full my-2 h-[1px] bg-light-outlineVariant dark:bg-dark-outlineVariant" />
+  <DropdownMenu.Separator className="w-full my-2 h-[1px] bg-outlineVariant" />
 )
 
 const MenuSub = DropdownMenu.Sub
@@ -99,7 +90,7 @@ const MenuSubTrigger = React.forwardRef<
 >(({ className, children, ...props }, forwardedRef) => (
   <DropdownMenu.SubTrigger
     className={cn(
-      "text-light-onSurface dark:text-dark-onSurface h-12 flex items-center justify-between gap-3 px-3 aria-disabled:text-opacity-[0.38] dark:aria-disabled:text-opacity-[0.38] select-none outline-none hover:bg-light-onSurface dark:hover:bg-dark-onSurface bg-opacity-0 dark:bg-opacity-0 hover:bg-opacity-[0.08] active:bg-opacity-[0.12] dark:hover:bg-opacity-[0.08] dark:active:bg-opacity-[0.12] aria-disabled:bg-opacity-0 dark:aria-disabled:bg-opacity-0 data-[highlighted]:bg-light-onSurface dark:data-[highlighted]:bg-dark-onSurface data-[highlighted]:bg-opacity-[0.12] dark:data-[highlighted]:bg-opacity-[0.12]",
+      "text-onSurface h-12 flex items-center justify-between gap-3 px-3 aria-disabled:text-opacity-[0.38] select-none outline-none hover:bg-onSurface bg-opacity-0 hover:bg-opacity-[0.08] active:bg-opacity-[0.12] aria-disabled:bg-opacity-0 data-[highlighted]:bg-onSurface data-[highlighted]:bg-opacity-[0.12]",
       className
     )}
     ref={forwardedRef}
@@ -120,7 +111,7 @@ const MenuSubContent = React.forwardRef<
 >(({ children, className, ...props }, forwardedRef) => (
   <DropdownMenu.SubContent
     className={cn(
-      "flex flex-col rounded bg-light-surfaceContainer dark:bg-dark-surfaceContainer shadow-elevation2 py-2 w-[280px] will-change-[opacity,transform] data-[side=right]:animate-slide-down-and-fade-in origin-top-left data-[state=closed]:animate-slide-up-and-fade-out",
+      "flex flex-col rounded bg-surfaceContainer shadow-elevation2 py-2 w-[280px] will-change-[opacity,transform] data-[side=right]:animate-slide-down-and-fade-in origin-top-left data-[state=closed]:animate-slide-up-and-fade-out",
       className
     )}
     ref={forwardedRef}

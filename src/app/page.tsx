@@ -23,7 +23,7 @@ import IconButton from "@/shared/ui/IconButton"
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-2 text-light-onSurface dark:text-dark-onSurface p-6">
+    <main className="flex flex-col gap-2 text-onSurface p-6">
       <Display>Ashel M3 Kit</Display>
       <Paragraph>
         Переиспользуемые компоненты, построенные с помощью Radix-ui и
@@ -36,8 +36,8 @@ export default function Home() {
         цветовой палитры как для светлой, так и для тёмной тем приложения, не
         забывая о доступности UI элементов.
       </Paragraph>
-      <div className="mt-10 flex flex-col w-full max-w-[1200px] rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant">
-        <header className="bg-light-surfaceContainerLow dark:bg-dark-surfaceContainerLow h-20 flex justify-end items-center gap-2 px-3 rounded-t-xl">
+      <div className="mt-10 flex flex-col w-full max-w-[1200px] rounded-xl border border-outlineVariant">
+        <header className="bg-surfaceContainerLow h-20 flex justify-end items-center gap-2 px-3 rounded-t-xl">
           <IconButton
             appearance="outlined"
             icon={<Menu />}
@@ -47,7 +47,7 @@ export default function Home() {
           <IconButton appearance="standart" icon={<Cart />} />
           <IconButton appearance="filled" icon={<User />} />
         </header>
-        <main className="bg-light-surfaceContainer dark:bg-dark-surfaceContainer px-3 py-6 rounded-b-xl">
+        <main className="bg-surfaceContainer px-3 py-6 rounded-b-xl">
           <Headline>Shopping center</Headline>
           <div className="mt-4 flex gap-2">
             <Card appearance="filled" className="flex-1 flex flex-col gap-2">
@@ -57,7 +57,7 @@ export default function Home() {
                 tune. A seven-speed automatic transmission and rear-wheel drive
                 are standard.
               </Body>
-              <div className="flex justify-between items-center border-t border-light-outlineVariant dark:border-dark-outlineVariant py-2 mt-auto">
+              <div className="flex justify-between items-center border-t border-outlineVariant py-2 mt-auto">
                 <Label>You can not afford it anyway:)</Label>
                 <Button appearance="elevated" disabled>
                   Buy
@@ -72,7 +72,7 @@ export default function Home() {
                 of the body, received new headlights, hood, radiator lining,
                 bumper and moldings.
               </Body>
-              <div className="flex justify-between items-center border-t border-light-outlineVariant dark:border-dark-outlineVariant py-2 mt-auto">
+              <div className="flex justify-between items-center border-t border-outlineVariant py-2 mt-auto">
                 <Title size="large">1500 $</Title>
                 <Button appearance="filled">Buy</Button>
               </div>
@@ -85,7 +85,7 @@ export default function Home() {
                 of the Russian Federation to rather competitive price tags,
                 which have always been.
               </Body>
-              <div className="flex justify-between items-center border-t border-light-outlineVariant dark:border-dark-outlineVariant py-2 mt-auto">
+              <div className="flex justify-between items-center border-t border-outlineVariant py-2 mt-auto">
                 <Title size="large">1000 $</Title>
                 <Dialog>
                   <DialogTrigger asChild>

@@ -26,7 +26,7 @@ const Templates = () => {
         <Heading>CosSin</Heading>
         <Paragraph>Пример UI для дашборда.</Paragraph>
         <Image
-          className="max-w-[600px] my-2 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+          className="max-w-[600px] my-2 rounded-xl border border-outlineVariant"
           alt="CosSin template"
           src={CosSinImage}
           width={1920}

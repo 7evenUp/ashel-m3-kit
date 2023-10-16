@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/cn"
 
-const labelVariants = cva("text-inherit dark:text-inherit", {
+const labelVariants = cva("text-inherit", {
   variants: {
     size: {
       large: "text-sm tracking-[0.1px] font-medium",

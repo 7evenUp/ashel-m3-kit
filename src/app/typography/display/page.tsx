@@ -110,7 +110,7 @@ const DisplayPage = () => {
           </TabsList>
           <TabsContent
             value="preview"
-            className="border border-light-outlineVariant dark:border-dark-outlineVariant rounded-md mt-1"
+            className="border border-outlineVariant rounded-md mt-1"
           >
             <Display
               size="small"

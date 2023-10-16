@@ -6,7 +6,7 @@ const InlineCode = ({ children }: { children: ReactNode }) => {
   return (
     <Label
       size="large"
-      className="px-1 py-[2px] rounded-sm bg-light-surfaceVariant dark:bg-dark-surfaceVariant text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
+      className="px-1 py-[2px] rounded-sm bg-surfaceVariant text-onSurfaceVariant"
     >
       {children}
     </Label>

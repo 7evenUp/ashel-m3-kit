@@ -31,7 +31,7 @@ const Typography = () => {
           </InlineLink>
         </Paragraph>
         <Image
-          className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+          className="my-6 rounded-xl border border-outlineVariant"
           alt="Type styles"
           src={typeStylesPic}
           width={600}

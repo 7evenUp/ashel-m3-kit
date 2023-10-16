@@ -32,21 +32,21 @@ const InstallPackage = ({
       value={manager}
       onValueChange={(val) => setManager(val as PackageManagers)}
     >
-      <Tabs.List className="w-fit px-2 py-1 rounded-t-md flex gap-2 bg-light-surfaceVariant dark:bg-dark-surfaceVariant">
+      <Tabs.List className="w-fit px-2 py-1 rounded-t-md flex gap-2 bg-surfaceVariant">
         <Tabs.Trigger
-          className="data-[state=active]:border-b data-[state=active]:border-light-primary dark:data-[state=active]:border-dark-primary text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant data-[state=active]:text-light-primary dark:data-[state=active]:text-dark-primary transition-colors duration-short4 ease-standard"
+          className="data-[state=active]:border-b data-[state=active]:border-primary text-onSurfaceVariant data-[state=active]:text-primary transition-colors duration-short4 ease-standard"
           value="npm"
         >
           npm
         </Tabs.Trigger>
         <Tabs.Trigger
-          className="data-[state=active]:border-b data-[state=active]:border-light-primary dark:data-[state=active]:border-dark-primary text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant data-[state=active]:text-light-primary dark:data-[state=active]:text-dark-primary transition-colors duration-short4 ease-standard"
+          className="data-[state=active]:border-b data-[state=active]:border-primary text-onSurfaceVariant data-[state=active]:text-primary transition-colors duration-short4 ease-standard"
           value="yarn"
         >
           yarn
         </Tabs.Trigger>
         <Tabs.Trigger
-          className="data-[state=active]:border-b data-[state=active]:border-light-primary dark:data-[state=active]:border-dark-primary text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant data-[state=active]:text-light-primary dark:data-[state=active]:text-dark-primary transition-colors duration-short4 ease-standard"
+          className="data-[state=active]:border-b data-[state=active]:border-primary text-onSurfaceVariant data-[state=active]:text-primary transition-colors duration-short4 ease-standard"
           value="pnpm"
         >
           pnpm
@@ -54,7 +54,7 @@ const InstallPackage = ({
       </Tabs.List>
 
       <Tabs.Content
-        className="px-2 py-1 bg-light-inverseSurface dark:bg-dark-surfaceVariant w-[600px] border border-light-outline"
+        className="px-2 py-1 bg-zinc-700 w-[600px] border border-outline"
         value="npm"
       >
         <BashString
@@ -62,7 +62,7 @@ const InstallPackage = ({
         />
       </Tabs.Content>
       <Tabs.Content
-        className="px-2 py-1 bg-light-inverseSurface dark:bg-dark-surfaceVariant w-[600px] border border-light-outline"
+        className="px-2 py-1 bg-zinc-700 w-[600px] border border-outline"
         value="yarn"
       >
         <BashString
@@ -70,7 +70,7 @@ const InstallPackage = ({
         />
       </Tabs.Content>
       <Tabs.Content
-        className="px-2 py-1 bg-light-inverseSurface dark:bg-dark-surfaceVariant w-[600px] border border-light-outline"
+        className="px-2 py-1 bg-zinc-700 w-[600px] border border-outline"
         value="pnpm"
       >
         <BashString
@@ -93,7 +93,7 @@ const BashString = ({ code }: { code: string }) => {
           <pre
             className={cn(
               className,
-              "max-w-[600px] max-h-[650px] overflow-auto bg-light-inverseSurface dark:bg-dark-surfaceVariant py-2"
+              "max-w-[600px] max-h-[650px] overflow-auto bg-zinc-700 py-2"
             )}
           >
             {tokens.map((line, i) => {
@@ -118,7 +118,7 @@ const BashString = ({ code }: { code: string }) => {
       </Highlight>
 
       <button
-        className="absolute right-2 top-1 p-1 hidden group-hover:block transition-all rounded-md text-dark-primary bg-dark-surface hover:bg-dark-surfaceContainer active:bg-dark-surfaceContainerHigh"
+        className="absolute right-2 top-1 p-1 hidden group-hover:block transition-all rounded-md text-primary bg-surface hover:bg-surfaceContainer active:bg-surfaceContainerHigh"
         onClick={() => {
           navigator.clipboard.writeText(code)
 

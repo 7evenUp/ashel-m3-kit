@@ -131,7 +131,7 @@ const Vite = () => {
       <Code language="tsx" code={appExample} />
 
       <Image
-        className="my-6 rounded-xl border border-light-outlineVariant dark:border-dark-outlineVariant"
+        className="my-6 rounded-xl border border-outlineVariant"
         alt="Example App"
         src={ExampleAppGif}
         width={600}

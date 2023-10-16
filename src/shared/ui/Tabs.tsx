@@ -18,7 +18,7 @@ const TabsList = React.forwardRef<
   <RadixTabs.List
     ref={forwardedRef}
     className={cn(
-      "h-[48px] w-full flex items-center justify-between bg-light-surface dark:bg-dark-surface",
+      "h-[48px] w-full flex items-center justify-between bg-surface",
       className
     )}
     {...props}
@@ -32,13 +32,13 @@ const TabsTrigger = React.forwardRef<
 >(({ className, children, ...props }, forwardedRef) => (
   <RadixTabs.Trigger
     className={cn(
-      "flex-1 group data-[state=active]:border-b-2 data-[state=active]:border-light-primary dark:data-[state=active]:border-dark-primary data-[state=active]:text-light-primary dark:data-[state=active]:text-dark-primary text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant border-b border-light-surfaceVariant dark:border-dark-surfaceVariant transition-colors duration-short4 ease-standard",
+      "flex-1 group data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:text-primary text-onSurfaceVariant border-b border-surfaceVariant transition-colors duration-short4 ease-standard",
       className
     )}
     {...props}
     ref={forwardedRef}
   >
-    <UIStateLayer className="p-2 group-data-[state=active]:bg-light-primary group-data-[state=active]:dark:bg-dark-primary bg-light-onSurface dark:bg-dark-onSurface group-data-[state=active]:bg-opacity-0 dark:group-data-[state=active]:bg-opacity-0 group-data-[state=active]:group-hover:bg-opacity-[0.08] dark:group-data-[state=active]:group-hover:bg-opacity-[0.08] group-data-[state=active]:group-active:bg-opacity-[0.12] dark:group-data-[state=active]:group-active:bg-opacity-[0.12]">
+    <UIStateLayer className="p-2 group-data-[state=active]:bg-primary bg-onSurface group-data-[state=active]:bg-opacity-0 group-data-[state=active]:group-hover:bg-opacity-[0.08] group-data-[state=active]:group-active:bg-opacity-[0.12]">
       <Title size={"small"}>{children}</Title>
     </UIStateLayer>
   </RadixTabs.Trigger>

@@ -17,7 +17,7 @@ const Code = ({ code, language }: { code: string; language: Language }) => {
           <pre
             className={cn(
               className,
-              "max-w-[600px] max-h-[650px] overflow-auto bg-light-inverseSurface dark:bg-dark-surfaceVariant border border-light-outline rounded-t-md p-3"
+              "max-w-[600px] max-h-[650px] overflow-auto bg-zinc-700 border border-outline rounded-t-md p-3"
             )}
           >
             {tokens.map((line, i) => {
@@ -42,7 +42,7 @@ const Code = ({ code, language }: { code: string; language: Language }) => {
       </Highlight>
 
       <button
-        className="absolute right-3 top-3 p-1 hidden group-hover:block transition-all rounded-md text-dark-primary bg-dark-surface hover:bg-dark-surfaceContainer active:bg-dark-surfaceContainerHigh"
+        className="absolute right-3 top-3 p-1 hidden group-hover:block transition-all rounded-md text-primary bg-surface hover:bg-surfaceContainer active:bg-surfaceContainerHigh"
         onClick={() => {
           navigator.clipboard.writeText(code)
 

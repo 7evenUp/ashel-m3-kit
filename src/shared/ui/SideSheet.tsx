@@ -29,7 +29,7 @@ const SheetOverlay = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <SheetPrimitive.Overlay
     className={cn(
-      "fixed inset-0 z-50 bg-light-scrim/20 dark:bg-dark-scrim/20 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      "fixed inset-0 z-50 bg-scrim/20 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
       className
     )}
     {...props}
@@ -39,7 +39,7 @@ const SheetOverlay = React.forwardRef<
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName
 
 const sheetVariants = cva(
-  "fixed z-50 flex flex-col py-6 rounded-l-extra-large shadow-elevation1 bg-light-surfaceContainerLow dark:bg-dark-surfaceContainerLow transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+  "fixed z-50 flex flex-col py-6 rounded-l-extra-large shadow-elevation1 bg-surfaceContainerLow transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
   {
     variants: {
       side: {
@@ -88,7 +88,7 @@ const SheetHeader = ({
     {...props}
   >
     {children}
-    <SheetPrimitive.Close className="ml-auto text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant rounded-sm opacity-100 transition-opacity hover:opacity-70">
+    <SheetPrimitive.Close className="ml-auto text-onSurfaceVariant rounded-sm opacity-100 transition-opacity hover:opacity-70">
       <Cancel />
     </SheetPrimitive.Close>
   </div>
@@ -100,7 +100,7 @@ const SheetFooter = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div className="mt-auto">
-    <div className="h-px w-full bg-light-outline dark:bg-dark-outline" />
+    <div className="h-px w-full bg-outline" />
     <div
       className={cn("flex items-center gap-2 h-[72px] pt-4 px-6", className)}
       {...props}
@@ -115,10 +115,7 @@ const SheetTitle = React.forwardRef<
 >(({ className, children, ...props }, forwardedRef) => (
   <SheetPrimitive.Title
     ref={forwardedRef}
-    className={cn(
-      "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant",
-      className
-    )}
+    className={cn("text-onSurfaceVariant", className)}
     {...props}
     asChild
   >

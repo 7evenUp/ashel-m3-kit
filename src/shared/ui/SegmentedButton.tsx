@@ -11,7 +11,7 @@ import UIStateLayer from "@/shared/ui/UIStateLayer"
 import { cn } from "@/lib/cn"
 
 const segmentedRootVariants = cva(
-  "flex border border-light-outline dark:border-dark-outline rounded-full divide-x divide-light-outline dark:divide-dark-outline min-w-[200px]",
+  "flex border border-outline rounded-full divide-x divide-outline min-w-[200px]",
   {
     variants: {
       density: {
@@ -55,8 +55,8 @@ const SegmentedButton = React.forwardRef<
     ref={forwardedRef}
     asChild
   >
-    <button className="flex-1 text-light-onSurface dark:text-dark-onSurface data-[state=on]:text-light-onSecondaryContainer dark:data-[state=on]:text-dark-onSecondaryContainer data-[state=on]:bg-light-secondaryContainer dark:data-[state=on]:bg-dark-secondaryContainer first:rounded-l-full last:rounded-r-full transition-colors duration-short4 ease-standard">
-      <UIStateLayer className="flex justify-center items-center gap-2 py-2 px-3 bg-light-onSurface dark:bg-dark-onSurface group-data-[state=on]:bg-light-onSecondaryContainer dark:group-data-[state=on]:bg-dark-onSecondaryContainer group-first:rounded-l-full group-last:rounded-r-full group-data-[state=on]:bg-opacity-0 dark:group-data-[state=on]:bg-opacity-0 group-data-[state=on]:group-hover:bg-opacity-[0.08] group-data-[state=on]:group-active:bg-opacity-[0.12] dark:group-data-[state=on]:group-hover:bg-opacity-[0.08] dark:group-data-[state=on]:group-active:bg-opacity-[0.12]">
+    <button className="flex-1 text-onSurface data-[state=on]:text-onSecondaryContainer data-[state=on]:bg-secondaryContainer first:rounded-l-full last:rounded-r-full transition-colors duration-short4 ease-standard">
+      <UIStateLayer className="flex justify-center items-center gap-2 py-2 px-3 bg-onSurface group-data-[state=on]:bg-onSecondaryContainer group-first:rounded-l-full group-last:rounded-r-full group-data-[state=on]:bg-opacity-0 group-data-[state=on]:group-hover:bg-opacity-[0.08] group-data-[state=on]:group-active:bg-opacity-[0.12]">
         {icon && icon}
         <Label size={"large"}>{children}</Label>
       </UIStateLayer>

@@ -22,10 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={"bg-white antialiased " + roboto.className}>
-      <body className="min-h-screen w-full flex bg-light-surface dark:bg-dark-surface">
+      <body className="min-h-screen w-full flex bg-surface">
         <Providers>
           <NavigationRail />
-          <div className="ml-[100px] w-full text-light-onSurface dark:text-dark-onSurface">
+          <div className="ml-[100px] w-full text-onSurface">
             {children}
           </div>
         </Providers>

@@ -8,7 +8,7 @@ import InlineLink from "./InlineLink"
 
 const Footer = () => {
   return (
-    <footer className="border-t border-light-outline dark:border-dark-outline mt-16 px-10 py-16">
+    <footer className="border-t border-outline mt-16 px-10 py-16">
       <div className="flex justify-between">
         <div>
           <Headline size="large">Ashel M3 Kit</Headline>
@@ -25,7 +25,9 @@ const Footer = () => {
           <InlineLink href="https://github.com/7evenUp/ashel-ui-kit">
             Project&apos;s github
           </InlineLink>
-          <InlineLink href="https://shared.material.io/">Official docs</InlineLink>
+          <InlineLink href="https://shared.material.io/">
+            Official docs
+          </InlineLink>
           <InlineLink href="https://www.ashel.site/">My website</InlineLink>
         </div>
         <div className="flex flex-col gap-5">

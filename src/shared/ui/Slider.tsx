@@ -22,14 +22,14 @@ const SliderThumb = React.forwardRef<
   return (
     <SliderPrimitive.Thumb ref={forwardedRef} asChild>
       <div className="group block relative w-px h-px">
-        <UIStateLayer className="group/pin left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute rounded-full w-10 h-10 flex justify-center items-center bg-light-primary dark:bg-dark-primary overflow-hidden hover:overflow-visible group-focus-visible:overflow-visible group-focus-visible:bg-opacity-[0.12]">
-          <div className="relative block w-5 h-5 shadow-elevation1 bg-light-primary dark:bg-dark-primary rounded-full">
+        <UIStateLayer className="group/pin left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute rounded-full w-10 h-10 flex justify-center items-center bg-primary overflow-hidden hover:overflow-visible group-focus-visible:overflow-visible group-focus-visible:bg-opacity-[0.12]">
+          <div className="relative block w-5 h-5 shadow-elevation1 bg-primary rounded-full">
             {showLabel && (
               <>
-                <PinIcon className="absolute -top-[40px] left-1/2 -translate-x-1/2 opacity-0 group-hover/pin:opacity-100 group-focus-visible:opacity-100 text-light-primary dark:text-dark-primary" />
+                <PinIcon className="absolute -top-[40px] left-1/2 -translate-x-1/2 opacity-0 group-hover/pin:opacity-100 group-focus-visible:opacity-100 text-primary" />
                 <Label
                   size="medium"
-                  className="absolute opacity-0 group-hover/pin:opacity-100 group-focus-visible:opacity-100 text-light-onPrimary dark:text-dark-onPrimary -top-[34px] left-1/2 -translate-x-1/2"
+                  className="absolute opacity-0 group-hover/pin:opacity-100 group-focus-visible:opacity-100 text-onPrimary -top-[34px] left-1/2 -translate-x-1/2"
                 >
                   {value}
                 </Label>
@@ -102,22 +102,22 @@ export const Slider = React.forwardRef<
         {...props}
         ref={forwardedRef}
       >
-        <SliderPrimitive.Track className="bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest relative grow rounded-full h-1">
-          <SliderPrimitive.Range className="absolute bg-light-primary dark:bg-dark-primary rounded-full h-full" />
+        <SliderPrimitive.Track className="bg-surfaceContainerHighest relative grow rounded-full h-1">
+          <SliderPrimitive.Range className="absolute bg-primary rounded-full h-full" />
           {withMarks && (
             <div className="absolute left-0 top-0 w-full flex items-center justify-between">
               {new Array(totalMarks).fill(null).map((_, i) => (
                 <span
                   key={i}
                   className={cn(
-                    "w-1 h-1 bg-opacity-[0.38] dark:bg-opacity-[0.38] rounded-full cursor-pointer",
+                    "w-1 h-1 bg-opacity-[0.38] rounded-full cursor-pointer",
                     value.length === 1
                       ? i <= activeMarkIndex
-                        ? "bg-light-onPrimary dark:bg-dark-onPrimary"
-                        : "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant"
+                        ? "bg-onPrimary"
+                        : "bg-onSurfaceVariant"
                       : i >= activeMarkRange.start && i <= activeMarkRange.end
-                      ? "bg-light-onPrimary dark:bg-dark-onPrimary"
-                      : "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant"
+                      ? "bg-onPrimary"
+                      : "bg-onSurfaceVariant"
                   )}
                 />
               ))}

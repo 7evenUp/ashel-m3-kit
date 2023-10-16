@@ -120,7 +120,7 @@ const TitlePage = () => {
           </TabsList>
           <TabsContent
             value="preview"
-            className="border border-light-outlineVariant dark:border-dark-outlineVariant rounded-md mt-1"
+            className="border border-outlineVariant rounded-md mt-1"
           >
             <Title size="large" className="leading-5 w-[200px]">
               Текст с очень низким line-height
