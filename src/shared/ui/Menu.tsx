@@ -58,7 +58,7 @@ const MenuItem = React.forwardRef<MenuItemElement, MenuItemProps>(
   ({ className, children, leading, trailing, ...props }, forwardedRef) => (
     <DropdownMenu.Item
       className={cn(
-        "text-onSurface h-12 flex items-center gap-3 px-3 aria-disabled:text-opacity-[0.38] select-none outline-none hover:bg-onSurface bg-opacity-0 hover:bg-opacity-[0.08] active:bg-opacity-[0.12] aria-disabled:bg-opacity-0 data-[highlighted]:bg-onSurface data-[highlighted]:bg-opacity-[0.12]",
+        "h-12 flex items-center gap-3 px-3 select-none outline-none text-onSurface aria-disabled:text-opacity-[0.38] data-[highlighted]:bg-onSurface/[0.12]",
         className
       )}
       {...props}
@@ -79,7 +79,7 @@ const MenuItem = React.forwardRef<MenuItemElement, MenuItemProps>(
 MenuItem.displayName = "MenuItem"
 
 const MenuSeparator = () => (
-  <DropdownMenu.Separator className="w-full my-2 h-[1px] bg-outlineVariant" />
+  <DropdownMenu.Separator className="w-full my-2 h-px bg-outlineVariant" />
 )
 
 const MenuSub = DropdownMenu.Sub

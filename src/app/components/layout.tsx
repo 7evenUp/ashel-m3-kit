@@ -59,6 +59,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <NavLink href={"/components/chips"} label="Chips" />
         <NavLink href={"/components/date-pickers"} label="Date pickers" />
         <NavLink href={"/components/menus"} label="Menus" />
+        <NavLink href={"/components/menubar"} label="Menubar" custom/>
         <NavLink href={"/components/radio-button"} label="Radio button" />
         <NavLink href={"/components/sliders"} label="Sliders" />
         <NavLink href={"/components/switch"} label="Switch" />

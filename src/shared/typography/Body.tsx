@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/cn"
 
-const bodyVariants = cva("text-inherit", {
+export const bodyVariants = cva("text-inherit", {
   variants: {
     size: {
       large: "text-base tracking-[0.5px]",
